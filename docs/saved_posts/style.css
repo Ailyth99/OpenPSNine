@@ -1,0 +1,36 @@
+
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; line-height: 1.6; margin: 0 auto; max-width: 900px; padding: 20px; background-color: #f8f9fa; color: #212529; }
+    h1 { color: #343a40; border-bottom: 2px solid #dee2e6; padding-bottom: 10px; text-align: center; }
+    h2 { color: #495057; border-bottom: 1px solid #e9ecef; padding-bottom: 8px; margin-top: 40px; text-align: center;}
+    .original-url-container { text-align: center; margin-bottom: 25px; font-size: 0.9em; color: #6c757d; background-color: #e9ecef; padding: 8px; border-radius: 5px; }
+    .post-meta-header { border-bottom: 1px solid #e9ecef; padding-bottom: 10px; margin-bottom: 20px; font-size: 0.9em; color: #6c757d; }
+    .main-post-container { border: 1px solid #ced4da; padding: 20px 30px; background-color: #fff; margin-bottom: 30px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+    .post-page-content { border-bottom: 2px dashed #e9ecef; padding-bottom: 20px; margin-bottom: 20px; }
+    .post-page-content:last-child { border-bottom: none; margin-bottom: 0; }
+    .page-title { font-size: 1.5em; font-weight: bold; color: #0056b3; margin-bottom: 20px; }
+    .post { background-color: #fff; padding: 15px; border-bottom: 1px solid #e9ecef; overflow: hidden; }
+    .post:first-of-type { border-top: 2px solid #dee2e6; }
+    .post .l { float: left; width: 50px; height: 50px; margin-right: 15px; }
+    .post .l img { width: 100%; height: 100%; border-radius: 50%; border: 1px solid #dee2e6; }
+    .post .ml64 { margin-left: 65px; }
+    .meta { font-size: 0.9em; color: #6c757d; margin-bottom: 10px; }
+    .pd10[class*=" t"] { padding: 10px; margin: 15px 0; border-radius: 8px; overflow: auto; border: 1px solid #ccc; }
+    .pd10[class*=" t"] .l { float: left; margin-right: 15px; }
+    .pd10[class*=" t"] .l img { border-radius: 8px; border: 1px solid #a2a2a2; }
+    .pd10[class*=" t"] .ml64 { margin-left: 70px; }
+    .pd10.t1 { background-color: rgb(213, 217, 228); } .pd10.t2 { background-color: rgb(245, 229, 201); }
+    .pd10.t3 { background-color: rgb(220, 220, 220); } .pd10.t4 { background-color: rgb(227, 205, 194); }
+    .game-list-box { background-color: #fff; border: 1px solid #ced4da; border-radius: 8px; padding: 10px; margin-top: 30px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+    .game-list-box table { width: 100%; border-collapse: collapse; }
+    .game-list-box tr { border-bottom: 1px solid #f1f3f5; }
+    .game-list-box tr:last-child { border-bottom: none; }
+    .game-list-box td { padding: 10px; vertical-align: middle; }
+    .game-list-box .twoge { text-align: right; vertical-align: middle; width: 15%; white-space: nowrap;}
+    .game-list-box .twoge span { display: block; font-size: 1.1em; font-weight: 500; margin-bottom: 4px; }
+    .game-list-box .twoge em { font-size: 0.9em; color: #6c757d; font-style: normal; }
+    .text-platinum, .text-gold, .text-silver, .text-bronze { margin-right: 8px; font-style: normal; }
+    .text-platinum { color: #5B759E; } .text-gold { color: #C2A617; } .text-silver { color: #A0A0A0; } .text-bronze { color: #BF7230; }
+    .text-primary { color: #007bff; } .text-info { color: #17a2b8; } .text-success { color: #28a745; }
+    .text-warning { color: #ffc107; } .text-danger { color: #dc3545; }
+    img { max-width: 100%; height: auto; } a { color: #007bff; text-decoration: none; } a:hover { text-decoration: underline; }
+    
