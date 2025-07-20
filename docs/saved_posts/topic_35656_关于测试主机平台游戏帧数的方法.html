@@ -1,0 +1,136 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8"/><title>关于测试主机平台游戏帧数的方法</title><link href="style.css" rel="stylesheet"/></head>
+<body>
+<div class="original-url-container"><p><strong>原始链接:</strong> <a href="https://psnine.com/topic/35656" target="_blank">https://psnine.com/topic/35656</a></p></div>
+<h1>关于测试主机平台游戏帧数的方法</h1><div class="main-post-container"><div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/damo_baigan" itemprop="author">damo_baigan</a>
+<span class="text-warning">
+2020-11-10 13:10编辑
+</span>   
+11评论
+</div><div class="content pd10" itemprop="articleBody">  首先，你得需要一张采集卡。<br/><br/>  我的方法使用的是Github上的一个项目叫做Trdrop,详情可见：<a href="https://github.com/cirquit/trdrop" target="_blank">https://github.com/cirquit/trdrop</a><br/> <br/>  很多油管上频道测试帧数使用的就是Trdrop，当然数毛社这类非常专业的除外，他们有着自己的测试方法。所以相比起数毛社这种，Trdrop测试出来准确性肯定不如他们，或者说Trdrop测试帧数的准确性很大程度上取决于你的采集卡性能。你的采集卡越好，能采集到更好的无损视频，那么测试精准度也就越高。<br/><br/>  至于原理，可以看他们的Github页面。如果你不想看，我可以直接提供下载链接：<a href="https://github.com/cirquit/trdrop/releases/download/v1.0.0-stable/TrdropInstaller.exe" target="_blank">https://github.com/cirquit/trdrop/releases/download/v1.0.0-stable/TrdropInstaller.exe</a><br/> <br/>  网络不好下载不了的同学可能要自行科学<img src="../emoticons\face\majiang\41.gif"/><br/><br/>  首先我们在测试之前，需要用采集卡录制一段尽可能无损的视频，简单点可以用OBS，在设置中将速率控制改为无损，由于我是使用新版N卡编码器，所以profile和预设全部都调整到最高。<br/><center><a href="https://imgchr.com/i/Bqs4fg" target="_blank"><img class="imgclick" src="https://www.modelscope.cn/studio/flyheadko/J2Z_experience/resolve/master/data/images/35656_001.webp"/></a></center><br/> <br/>  然后简单说一下，Trdrop一些参数设置。<br/>  在设置里，这里的帧数和帧生成时间，可以根据游戏而定，如果是锁30帧的游戏当然就改成30 frames更好喽<img src="../emoticons\face\majiang\41.gif"/><br/><center><a href="https://imgchr.com/i/BqDxET" target="_blank"><img class="imgclick" src="https://www.modelscope.cn/studio/flyheadko/J2Z_experience/resolve/master/data/images/35656_002.webp"/></a></center><br/><br/>  然后是设置下的FPS选单中，这里会有三栏可设置的选项。因为Trdrop最多支持同时导入三个不同视频测试帧数，如果你只是导入一段视频的话，只需要设置第一栏即可。其中这里面的Pixel difference一般情况下都需要填写，否则很有可能出现测不出的情况。软件可填写的范围在0-255之间，但我一般设置5-7左右，可以根据你自己的采集卡自行调整。<br/><center><a href="https://imgchr.com/i/BqsaTK" target="_blank"><img class="imgclick" src="https://www.modelscope.cn/studio/flyheadko/J2Z_experience/resolve/master/data/images/35656_003.webp"/></a></center><br/><br/>  最后是导出的选项里，切记将分辨率改为你录制时的分辨率，否则后续生成视频一定会出问题。<br/><center><a href="https://imgchr.com/i/Bqyqvd" target="_blank"><img class="imgclick" src="https://www.modelscope.cn/studio/flyheadko/J2Z_experience/resolve/master/data/images/35656_004.webp"/></a></center><br/><br/><br/>导出完成后，你可能惊奇的发现全部都是图片。如果你想将它变为视频，可以使用ffmpeg来生成。这里直接给出下载地址：<a href="https://www.gyan.dev/ffmpeg/builds/ffmpeg-release-essentials.7z" target="_blank">https://www.gyan.dev/ffmpeg/builds/ffmpeg-release-essentials.7z</a><br/><br/>解压后，我们只需要bin目录下的ffmpeg可执行文件，将它拷贝到你生成图片的目录中，在目录中按住shift键右击打开powershell窗口，输入这段神秘代码：<b>./ffmpeg -framerate 60 -i exportsequence_%10d.jpg  -c:v libx264 -pix_fmt yuv420p analysis2.mp4</b><img src="../emoticons\face\majiang\41.gif"/><img src="../emoticons\face\majiang\41.gif"/><img src="../emoticons\face\majiang\41.gif"/>，注意这串命令里的60是指你录制的帧数，如果是30帧录制则需改成30。analysis2.mp4是最后成成的文件名，可以自行更改。<br/><br/>回车键按下后，等待完成视频就出来啦，不过因为是图片合成的所以没有声音，如果你想要有声音，可以用原录制视频的声轨在剪辑软件里和你目前的视频合成一下就可以了<img src="../emoticons\face\alu\27.gif"/><br/><br/>最后放上两张掉帧神域的测试截图<img src="../emoticons\face\alu\43.gif"/><img src="../emoticons\face\alu\43.gif"/><img src="../emoticons\face\alu\43.gif"/><br/><center><a href="https://imgchr.com/i/Bqghbn" target="_blank"><img class="imgclick" src="https://www.modelscope.cn/studio/flyheadko/J2Z_experience/resolve/master/data/images/35656_005.webp"/></a></center><br/><center><a href="https://imgchr.com/i/Bqg5Eq" target="_blank"><img class="imgclick" src="https://www.modelscope.cn/studio/flyheadko/J2Z_experience/resolve/master/data/images/35656_006.webp"/></a></center></div></div>
+<h2>评论</h2><div class="post">
+<a class="l" href="https://psnine.com/psnid/cobray-gxy888"><img height="50" src="../avatars/cobray-gxy888-1697262069-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    三连了 收藏回复顶
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/cobray-gxy888">cobray-gxy888</a>
+                                            2020-11-10 13:39                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/luanwu1997"><img height="50" src="../avatars/luanwu1997-1648338313-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    好<img src="../emoticons\face\alu\43.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/luanwu1997">luanwu1997</a>
+                                            2020-11-10 15:43                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/eklesdeeny03"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP9002/CUSA09076_00-NIERBON000000002_A184BF387496B14E3FE3_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    又一个实用的帖子，顶顶顶<img src="../emoticons\face\alu\35.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/eklesdeeny03">eklesdeeny03</a>
+                                            2020-11-10 17:46                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/ai798998203"><img height="50" src="../avatars/ai798998203-1716971920-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    没有采集卡<img src="../emoticons\face\majiang\40.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/ai798998203">ai798998203</a>
+                                            2020-11-10 17:51                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/wingsonic-x"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0507/CUSA04966_00-AVATAR0000000012_D1C2518AA4A68E1E70FE_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    好帖必须支持，上次看因主发帖介绍还在下面问的，以为石沉大海。没想到竟然做了详细教程，感谢感谢，已顶<img src="../emoticons\face\alu\35.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/wingsonic-x">wingsonic-x</a>
+                                            2020-11-10 18:29                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/zms-bd"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP9000/CUSA07183_00-AVATAR0000000001_3CCCAB66560F975D3D6D_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    实用，顶一个，那么哪里可以领到采集卡<img src="../emoticons\face\majiang\41.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/zms-bd">zms-bd</a>
+                                            2020-11-10 18:39                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/mutoemiya"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA18093_00-13KAVATAR0000002_FF77443CE09C855DBBAF_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<img src="../emoticons\face\majiang\4.gif"/>好，以后闲来可以试试
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/mutoemiya">mutoemiya</a>
+                                            2020-11-10 18:55                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/captain_teamo"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/3RD/EP43121208056_3DEC417753613268C4DB_L.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    数毛社也是用采集的视频来分析，不过工具是专业人士编写的，原理都差不多，只是他们的工具可以实时查看。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/captain_teamo">captain_teamo</a>
+                                            2020-11-10 19:01                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/sayamiki"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/3RD/JP00311208003_FAF58454E1BB13094C66_L.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    很实用的帖子<img src="../emoticons\face\alu\35.gif"/><img src="../emoticons\face\alu\35.gif"/><img src="../emoticons\face\alu\35.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/sayamiki">sayamiki</a>
+                                            2020-11-10 21:26                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/god_help_sakula"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP5846/CUSA20175_00-HJMRAVATARSWIN00_104FB90BBAED38161AE0_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    ffmpeg，很多播放器都用这个解码
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/god_help_sakula">god_help_sakula</a>
+                                            2020-11-10 21:31                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/nathaniel_wu"><img height="50" src="../avatars/nathaniel_wu-1676590428-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    这个的效果应该跟DF的差不离，原理都是一样的，1秒60帧，一帧16.67毫秒，对比前后帧重复的话就是同一帧，应该直接就是逐像素比较，不然也不用设置pixel difference，帧数就用一个窗口内的帧数量算就可以了。以后HDMI 2.1 VRR普及的话，原理就会复杂一些，好在H.264编码也是支持可变帧率的，不过现在都还没有HDMI 2.1的采集卡。<br/>不过你的教程有个很大的槽点，ffmpeg参数没有指定x264 preset或者crf，默认是medium，还指定了pixel format为yuv420p，所以实际上完全没有必要让OBS输出无损的图片，因为你最终用这些图片进行了十分有损的编码所输出的视频才是Trdrop的输入，这也是为什么你需要在Trdrop里设置高达7的pixel difference才能测出比较准的结果。<br/>直接让OBS用GPU编码器，选quality/high profile，设置很高的码率就可以了（1080p 60fps设置50Mbps以上就差不多了），这样比先输出图片再利用CPU编码视频快多了（x264编码器没有GPU加速），应该说是实时的，视频质量也会高很多，Trdrop的pixel difference可以设置得很小。<br/>另外就算是分析30fps的游戏，输入视频也应该用60fps的，因为如果游戏帧率不稳定，帧更新可能既有偶数帧也有奇数帧，用30fps分析会不准确。事实上根据采样定理，你需要至少两倍采样率才能还原原始信号，所以要准确分析60fps的游戏，需要120fps的视频采集。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/nathaniel_wu">nathaniel_wu</a>
+                                            2020-11-11 02:38修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div>
+</body></html>

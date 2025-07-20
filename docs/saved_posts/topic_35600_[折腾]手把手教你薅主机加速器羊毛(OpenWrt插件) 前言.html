@@ -1,0 +1,404 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8"/><title>[折腾]手把手教你薅主机加速器羊毛(OpenWrt插件) 前言</title><link href="style.css" rel="stylesheet"/></head>
+<body>
+<div class="original-url-container"><p><strong>原始链接:</strong> <a href="https://psnine.com/topic/35600" target="_blank">https://psnine.com/topic/35600</a></p></div>
+<h1>[折腾]手把手教你薅主机加速器羊毛(OpenWrt插件) 前言</h1><div class="main-post-container"><div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/yagami_yang" itemprop="author">yagami_yang</a>
+<span class="text-warning">
+2020-10-07 15:02编辑
+</span>   
+35评论
+</div><div class="post-page-content"><h3 class="page-title">前言</h3><div class="content pd10" itemprop="articleBody"><span style="font-size:18px;">前言</span><br/>灵缇加速器插件免费加速，我试了试效果还不错。然后想到可以用电脑虚拟一个路由器来实现同样的效果，就有了如下的攻略。因为市面上只有这一款支持openwrt，所以大概只能薅这家的。但是理论上支持日后可能的其他支持openwrt的加速器。不知道有没有arm的虚拟机呢？<br/><br/>全流程可能需要1h，实际上不太难，但是没用过的话需要这个时间。熟悉的话10分钟的事。<br/><br/>适合喜欢折腾一下的玩家，反正免费的。配置完成后还可以当一个给ps4全局代理的路由器用。<br/><center>不是广告<img src="../emoticons\face\alu\30.gif"/></center><br/><br/>需要:网线，一台性能比路由器强的电脑，一台能正常上网的路由器。<br/><br/></div></div><div class="post-page-content"><h3 class="page-title">安装虚拟环境，VMware，和其他准备工作</h3><div class="content pd10" itemprop="articleBody"><span style="font-size:18px;">安装虚拟环境，VMware，和其他准备工作</span><br/>这个网上随便搜一下应该就有，比如我下的是<a href="https://www.onlinedown.net/soft/2062.htm" target="_blank">这个</a>。免费版能试用30天，至于怎么续就不多讨论，在此只作讲解。<br/>安装基本上一路下一步就好。<br/><br/>另外下载一个vmdk文件，即路由的固件。<s>这个转换vmdk其实挺容易的但是我嫌麻烦找个地方偷了一个</s><br/><a href="https://netflixcn.com/miji/46.html" target="_blank">作者地址</a>，<a href="https://drive.google.com/file/d/1umRc-_NL1ShhAWr3YeIFi85sguzF2pi2/view?usp=sharing" target="_blank">下载地址</a>，网盘链接:https://pan.baidu.com/s/1Q62fZD85fh9fySaalvsbLA 提取码:4g54，尽量还是从作者那下吧。<br/><br/></div></div><div class="post-page-content"><h3 class="page-title">配置Linux虚拟机</h3><div class="content pd10" itemprop="articleBody"><span style="font-size:18px;">配置Linux虚拟机</span><br/>安装好后主界面上有个大大的“创建新的虚拟机”，点它。<br/>您希望使用什么类型的配置？<br/>→自定义（高级），下一步<br/><br/>虚拟机硬件兼容性         <br/>→不做改变，下一步<br/><br/>安装来源:               <br/>→稍后安装操作系统(S)。下一步<br/><br/>客户机操作系统:         <br/>→Linux(L)<br/>→在下拉列表里选择“其他 Linux 3.x 内核 64位”，下一步<br/><br/>虚拟机名称：<br/>→随意，这里我叫OpenWrt<br/>位置：<br/>→虚拟机使用的物理位置。自定义。下一步<br/><br/>处理器：<br/>→有硬件直通的话可以按你的配置填，或者干脆1 1就好了。反正需要的性能极低极低。设置好下一步<br/><br/>此虚拟机的内存：<br/>→分配给虚拟机的内存。推荐配置就挺好的，最好不要太低。设置好下一步<br/><br/>网络连接：<br/>→使用桥接网络(R)下一步<br/><br/>I/O控制器类型：<br/>→不改变，下一步<br/><br/>虚拟磁盘类型：<br/>→不改变，下一步<br/><br/>磁盘：<br/>→使用现有虚拟磁盘(E)，下一步<br/><br/>磁盘文件：<br/>选择下载好的vmdk文件。下一步.<br/><br/>然后保持现有格式，一路下一步直到完成。<br/>至此虚拟机创建完成。<br/><br/></div></div><div class="post-page-content"><h3 class="page-title">使用虚拟机</h3><div class="content pd10" itemprop="articleBody"><span style="font-size:18px;">使用虚拟机</span><br/>左上角点击启动虚拟机。然后会刷刷刷的出来很多文字，等他完全停下来的时候，点进窗口，按一下回车。会看到一个OpenWRT的文字画，以及root@OpenWrt:/#<br/><img class="imgclick" src="https://www.modelscope.cn/studio/flyheadko/J2Z_experience/resolve/master/data/images/35600_001.webp"/><br/><br/>点击虚拟机内部的那个黑黑的命令行窗口，输入vi etc/config/network，进入文字编辑器。按键盘上的i进入编辑模式，用方向键定位，delete删除，键盘输入，把图中<br/><img class="imgclick" src="https://www.modelscope.cn/studio/flyheadko/J2Z_experience/resolve/master/data/images/35600_002.webp"/><br/>这行改成你的局域网网段下的ip，大多数人是192.168.0.x，250是为了尽量不冲突。别破坏其他的文字。编辑后按esc,输入"冒号wq叹号",回车保存。<br/><br/>然后输入reboot回车重启虚拟机。<br/><br/>tips：如何切出虚拟机：ctrl+alt<br/><br/>重启后，浏览器输入192.168.0.250应该能进入到这个openwrt的控制页面了，如图。<br/><img class="imgclick" src="https://www.modelscope.cn/studio/flyheadko/J2Z_experience/resolve/master/data/images/35600_003.webp"/><br/>这样就表明成功了90%。<br/><br/>如果没成功，找找上面哪步做错了。<br/><br/><br/></div></div><div class="post-page-content"><h3 class="page-title">配置网络及加速器，以及如何连接</h3><div class="content pd10" itemprop="articleBody"><span style="font-size:18px;">配置网络及加速器，以及如何连接</span><br/>浏览器输入192.168.0.250或者你自定义的ip，输入密码netflixcn.com，进入。<br/>左边栏最下面接口处，有一个br-lan的接口，点击修改。<br/>在“IPv4 网关”一栏，填入你上网用的路由的ip，比如常见的192.168.0.1，然后"使用自定义的 DNS 服务器<br/>"一栏也填入192.168.0.1，最下面“DHCP 服务器”，忽略此接口勾掉，不在此接口提供 DHCP 服务。保存&amp;应用。<br/><br/>这段嫌麻烦可以不看：后面可能会有大量输入文字，如果不想打字可以下载一个叫做puTTY的软件，主界面hostname一栏输入192.168.0.250可以连接这个虚拟机。用户名root，密码netflixcn.com，可以在窗口上按鼠标右键粘贴。后面也是，复制后按右键粘贴会省点事。<br/><br/>灵缇官网上写了<a href="https://lingti666.com/router" target="_blank">openwrt怎么安装</a>，在这里复述一下。<br/>输入opkg install kmod-tun 回车<br/>输入curl -o /mnt/sda1/lingti.tar.gz http://lingti-1302055788.file.myqcloud.com/router/1.2.3/lingti-router-x86_64.tar.gz 回车，应该能看见一个类似下载100%的东西。<br/>输入tar zxvf /mnt/sda1/lingti.tar.gz -C /mnt/sda1 回车，提示lingti<br/>输入/mnt/sda1/lingti &amp; 回车，提示lingti start，路由器配置部分完成！<br/><br/>然后是如何连接：<br/>ps4设置，网络设置中，ip随便填一个不冲突的比如192.168.0.233，网关和DNS都填入192.168.0.250<br/>打开手机wifi设置，把“DHCP”那项改成“静态”，网关和DNS都填入192.168.0.250。<br/>下载他们家的app，注册登录，选路由器加速，应该能获取到ps4了。<br/>以上的设置如需"掩码"，设置为255.255.255.0或24。<br/><br/>另：关闭后再打开虚拟机<s>加速器</s>时需要重新输入/mnt/sda1/lingti &amp;。<br/><br/></div></div><div class="post-page-content"><h3 class="page-title">疑难杂症</h3><div class="content pd10" itemprop="articleBody"><span style="font-size:18px;">疑难杂症</span><br/>1.有可能虚拟机启动不成功。百度搜索对应主板的"Intel VT怎么打开""AMD-V怎么打开"等等，需要进入bios设置。<br/>如何快速进入bios设置（win10）：开始右下角的小齿轮（设置）-更新与安全-恢复-高级重新启动→立即重新启动-疑难解答→高级选项-UEFI固件设置-重启。<br/></div></div><div class="post-page-content"><h3 class="page-title">其他功能，后记</h3><div class="content pd10" itemprop="articleBody"><span style="font-size:18px;">其他功能，后记</span><br/>实际上这就是一个软路由的配置，没什么太大的难度，但是功能其实还蛮不错的，我相信站内用不可描述上网的也挺多的，有可能也有一定代理ps4的需求。就在192.168.0.250的控制面板下，除了默认密码netflixcn.com外，可以在系统-管理权内改成自己用的密码。然后在服务里有个酸酸乳plus+，我相信用过酸酸乳的应该都会用。<img src="../emoticons\face\majiang\41.gif"/></div></div></div>
+<h2>评论</h2><div class="post">
+<a class="l" href="https://psnine.com/psnid/unclesev"><img height="50" src="../avatars/unclesev-1556434632-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    Lean 或者官方 OpenWrt 固件如果有动手能力，可以选择手动编译
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/unclesev">unclesev</a>
+                                            2020-10-12 14:18修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/zhihuhuhu"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/WWS_A/A0004.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    VMware Player 成吗？说是个人免费
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/zhihuhuhu">zhihuhuhu</a>
+                                            2020-10-07 00:02                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/leafvindy"><img height="50" src="../avatars/leafvindy-1619960680-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<img src="../emoticons\face\alu\5.gif"/>lingti 我在用的固件里面也自带了，不过我还是喜欢搭配pa￥￥wall用回自己鸡场的<br/>所以其实可以直接去找装好加速器插件的固件在vmware里面安装就行了，省得麻烦啦
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/leafvindy">leafvindy</a>
+                                            2020-10-07 00:12修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/yagami_yang"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA17544_00-P5RAVATAR000006A_C787E4AC677E22E0EAD9_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/zhihuhuhu">@zhihuhuhu</a> 不清楚，主要实际上变正式版的方法挺多的<img src="../emoticons\face\alu\30.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/yagami_yang">yagami_yang</a>
+                                            2020-10-07 00:06                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/ptwxhq"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/WWS_J/JP90021507D01_38E5AE19607B52C80D5E_L.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/zhihuhuhu">@zhihuhuhu</a> player主要不能自己通过界面操作创建虚拟机吧，得有现成的配置直接用
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/ptwxhq">ptwxhq</a>
+                                            2020-10-07 00:09                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/yagami_yang"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA17544_00-P5RAVATAR000006A_C787E4AC677E22E0EAD9_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/leafvindy">@leafvindy</a> 现在openwrt/lede的加速器支持只有ks的固件有吧，主流腾讯uu好像都没看到有openwrt的。不过我也是因为自己用的软路由即兴写的这个攻略...
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/yagami_yang">yagami_yang</a>
+                                            2020-10-07 00:09                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/unclesev"><img height="50" src="../avatars/unclesev-1556434632-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/zhihuhuhu">@zhihuhuhu</a> 可以用现成的，没啥问题
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/unclesev">unclesev</a>
+                                            2020-10-07 00:12                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/zephyr230"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0700/CUSA06959_00-DIGINE0AVA000002_722B2BC82E7B221BAC94_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    已顶，一直想搞软路由，感谢教程。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/zephyr230">zephyr230</a>
+                                            2020-10-07 08:58                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/lshaowang"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/WWS_J/J0001.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    可以的，正好解决了路由器AP模式不能用加速器插件的问题<img src="../emoticons\face\alu\35.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/lshaowang">lshaowang</a>
+                                            2020-10-07 17:29                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/lijundao123"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/3RD/EP43121209064_3200BAA645CC6AC1BF0E_L.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<img src="../emoticons\face\majiang\25.gif"/>路由器安了插件白嫖试试效果，感谢lz分享
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/lijundao123">lijundao123</a>
+                                            2020-10-07 19:31                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/guchenwei"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/WWS_A/UP90001209G02_08F7E8A60B670126C182_L.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    斐讯n1能用吗
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/guchenwei">guchenwei</a>
+                                            2020-10-08 00:16                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/yagami_yang"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA17544_00-P5RAVATAR000006A_C787E4AC677E22E0EAD9_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/guchenwei">@guchenwei</a> openwrt的话，可以<br/>教程配置加速器页，把"输入curl -o /mnt/sda1/lingti.tar.gz http://lingti-1302055788.file.myqcloud.com/router/1.2.3/lingti-router-x86_64.tar.gz"这段里http那段像网址的部分替换成灵缇官网上对应版本的下载地址。具体下哪个版本，ssh进去输入uname -m可以查看
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/yagami_yang">yagami_yang</a>
+                                            2020-10-08 00:37                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/thymol1996"><img height="50" src="../avatars/thymol1996-1577274917-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    软路由攻略 顶一个<img src="../emoticons\face\alu\43.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/thymol1996">thymol1996</a>
+                                            2020-10-08 02:40                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/wy-max"><img height="50" src="../avatars/wy-max-1622834223-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    路由器加速插件用过太多，到头来只有UU做的比较好，其它的都太稀烂了，等一个UU打折直接买年卡比较划算，或者找基友合购，1个人用路由插件，1个人用PC给主机加速，可以同时在线。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/wy-max">wy-max</a>
+                                            2020-10-08 10:25                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/evangelineh"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/3RD/UP10631011005l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    我也不知道是wan口炸了还是网管把我禁了，我学校里用k2p+padavan用了半个月然后死活没信号输入了<img src="../emoticons\face\alu\13.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/evangelineh">evangelineh</a>
+                                            2020-10-08 10:57                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/mizukinone"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA14326_00-AVATAR0000000012_2244C6FEF994572ABA08_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    本来寻思折腾一下，给微软飞行用用，结果安到软路由发现只能给主机加速。<br/>也下了他家的PC版，pc版游戏不支持pc的微软飞行。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/mizukinone">mizukinone</a>
+                                            2020-10-08 12:43                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/mjuijnm"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP9008/CUSA03605_00-SUMMERCPNTOROAV6_DA1F082E5D1BC7DA9111_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    帆游不支持的嘛？？
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/mjuijnm">mjuijnm</a>
+                                            2020-10-08 22:26                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/chjachn"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0101/CUSA01099_00-AVATAR1511000019_D5535C7B285670E88F48_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    macOS下用virtualbox行吗？
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/chjachn">chjachn</a>
+                                            2020-10-08 22:36                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/yagami_yang"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA17544_00-P5RAVATAR000006A_C787E4AC677E22E0EAD9_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/chjachn">@chjachn</a> 没用过macos啊，只要是能虚拟x86的Linux应该也行。另外现在macos好像腾讯加速器免费，直接用那个大概比这种三流加速器强<img src="../emoticons\face\alu\44.gif"/><br/>按说装黑苹果白嫖腾讯这个才是最好的，但是实在是太麻烦太麻烦了。<img src="../emoticons\face\alu\30.gif"/><br/><br/><a href="https://psnine.com/psnid/mjuijnm">@mjuijnm</a> 看了眼帆游只支持梅林<img src="../emoticons\face\alu\27.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/yagami_yang">yagami_yang</a>
+                                            2020-10-08 23:40修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/mythfantasy"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP9000/CUSA12613_00-DSAV000EXCITEDBB_E9F14C80B3D339041CD1_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    20多买个小米MINI路由器就行了，电脑开加速器也太费电了
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/mythfantasy">mythfantasy</a>
+                                            2020-10-12 11:19                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/destinybo14"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/3RD/JP05071403F10_F258FC6D00D821B7B267_L.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    如果手上有nas就最方便了，直接nas虚拟openwrt。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/destinybo14">destinybo14</a>
+                                            2020-10-12 12:35                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/leax0617"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/WWS_A/A2114_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    路过看看。没有电脑，只能选加速盒
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/leax0617">leax0617</a>
+                                            2020-10-12 14:50                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/higemugen"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/UT0016/CUSA06833_00-AV00000000000273_2832CF5E8800BFD82935_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    我直接用的梅林版灵缇插件<img src="../emoticons\face\majiang\11.gif"/>不怎么喜欢折腾了
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/higemugen">higemugen</a>
+                                            2020-10-21 20:42                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/bigboss60wx"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP9000/CUSA12613_00-AVA00LUDENSCHIBI_8349E7A2EBBE0C2D9433_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    因为PS3，PS4网络知识已经高于同龄平均人，现在已经用上黑群晖跑OPENWRT+WIN10了<img src="../emoticons\face\majiang\37.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/bigboss60wx">bigboss60wx</a>
+                                            2020-10-21 22:15                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/winteryang"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/WWS_J/J0037.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    免费的吗？
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/winteryang">winteryang</a>
+                                            2020-10-23 06:17                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/nami_xm"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA18093_00-13KAVATAR0000014_44B6140B46514EC6E5C4_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    有点屌。。终于有支持openWrt的主机加速插件了。。我去研究一下。。<br/><br/>想起之前问答区交流WiFi掉速问题时也和因主交流过，看来都是喜欢折腾这方面的人，可否私聊个联系方式以后交流<img src="../emoticons\face\majiang\41.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/nami_xm">nami_xm</a>
+                                            2020-10-23 09:49修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/uunniiko"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0082/CUSA19072_00-REPAVATAR0000005_FA25DFA19B7DDB4AF289_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    好复杂，为什么不直接把路由器刷成openwrt
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/uunniiko">uunniiko</a>
+                                            2020-10-24 08:52                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/yellowbigbird-ps"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/WWS_A/UP90001411REI_3E7485EDA19383D5B2B8_L.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    建议使用docker ，方便share， 配置更少。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/yellowbigbird-ps">yellowbigbird-ps</a>
+                                            2020-10-25 00:57                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/sunliang1993"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/UP8812/CUSA05210_00-AV00000000000091_D1AD25EC5A545D4BAA22_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    路过看看  讲的很详细
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/sunliang1993">sunliang1993</a>
+                                            2020-10-26 09:42                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/incucc"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP1003/PPSA02532_00-DEATHLOOPFIA0000_2CAEB2E2E3CCD3F61A02_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/yagami_yang">@yagami_yang</a> 腾讯那个PS4游戏好少，就四五个的样子
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/incucc">incucc</a>
+                                            2020-10-26 14:38                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/deeeen_j"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0005/CUSA01557_00-P5AVATAR00000040_09CA9431A2A8867B853B_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    求一个lede或者docker的教程…
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/deeeen_j">deeeen_j</a>
+                                            2020-10-30 08:29                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/yagami_yang"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA17544_00-P5RAVATAR000006A_C787E4AC677E22E0EAD9_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/deeeen_j">@deeeen_j</a> lede直接进入如何配置加速器章节就好了吧<img src="../emoticons\face\alu\5.gif"/>，我记得指令和openwrt是一样的<br/>不关机的话写入/tmp也行
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/yagami_yang">yagami_yang</a>
+                                            2020-11-01 22:46修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/patrickchenyihui"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/WWS_A/A0007.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    已经用上了，谢谢，另外，我觉得这个应该会和酸酸乳，passwall之类的会有冲突，所以我群晖上是开了2个不同的虚拟机来分别部署这2个应用
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/patrickchenyihui">patrickchenyihui</a>
+                                            2020-11-02 10:09                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/yagami_yang"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA17544_00-P5RAVATAR000006A_C787E4AC677E22E0EAD9_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/patrickchenyihui">@patrickchenyihui</a> 试了一下真的会冲突<img src="../emoticons\face\alu\39.gif"/> 不过影响的只有PS4和NS，其他的正常
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/yagami_yang">yagami_yang</a>
+                                            2020-11-02 23:12                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/yagami_yang"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA17544_00-P5RAVATAR000006A_C787E4AC677E22E0EAD9_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    羊毛到期了，可以卸载了<img src="../emoticons\face\alu\30.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/yagami_yang">yagami_yang</a>
+                                            2020-12-18 22:49                                                                            </div>
+<!--回复结束-->
+</div>
+</div>
+</body></html>
