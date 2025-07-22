@@ -1,10 +1,10 @@
-// search.js (最终版 - 新增搜索结果分页)
+ 
 document.addEventListener('DOMContentLoaded', () => {
     const searchBox = document.getElementById('search-box');
     const topicListContainer = document.getElementById('topic-list-container');
     const paginationContainer = document.getElementById('pagination-container');
     
-    // 检查基本元素是否存在
+ 
     if (!searchBox || !topicListContainer || !paginationContainer) {
         console.error("缺少必要的HTML元素(search-box, topic-list-container, pagination-container)。");
         return;
@@ -92,7 +92,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // 使用事件委托处理搜索分页点击
     paginationContainer.addEventListener('click', (e) => {
-        // 确保只有在搜索激活时，这个逻辑才生效
+ 
         if (searchBox.value.trim() !== '' && e.target.tagName === 'A' && e.target.dataset.page) {
             e.preventDefault();
             const page = parseInt(e.target.dataset.page, 10);
