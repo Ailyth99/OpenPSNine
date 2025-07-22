@@ -1,0 +1,1029 @@
+
+        <!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><title>懒人向  《刀剑神域 虚空幻界》利用官方串流软件和按键精灵刷熟练和好感</title><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="stylesheet" href="style.css"></head>
+        <body>
+            <div class="original-url-container"><p><strong>原始链接:</strong> <a href="https://psnine.com/topic/29966" target="_blank">https://psnine.com/topic/29966</a></p></div>
+            <h1>懒人向  《刀剑神域 虚空幻界》利用官方串流软件和按键精灵刷熟练和好感</h1><div class="main-post-container"><div class="meta">
+
+<a class="psnnode" href="https://psnine.com/psnid/elohim_kurumi" itemprop="author">elohim_kurumi</a>
+<span class="text-warning">
+2016-11-23 23:06编辑
+</span>   
+91评论
+</div><div class="content pd10" itemprop="articleBody">首先谢谢<a href="https://psnine.com/psnid/luna_noire">@luna_noire</a> 大神的帖子参考，原帖地址：http://psnine.com/gene/12258<br/>由于难民，买不起连发手柄和第三方串流软件，就利用官方串流软件做了这个教程，应该更多玩家能用到，真正解放双手，后台运行，可以做其他事情<br/>需要工具：<span style="color:red;"><b>PS4，官方PS4串流软件，按键精灵</b></span><br/><br/>按键精灵脚本下载：<span class="mark">链接：http://pan.baidu.com/s/1o7KMoHW 密码：murj</span><br/><br/>这是我写好刷好感和武器熟练的脚本，都是通用的<br/><br/>前期工作：<br/>1.下载安装按键精灵<br/>2.安装按键精灵后，进入到这个界面，按右键导入我写好的脚本<br/><img class="imgclick" referrerpolicy="no-referrer" src="http://ww1.sinaimg.cn/large/6ac7d49egw1fa2c2a6n45j20nc0gojue.jpg"/><br/><br/><img class="imgclick" referrerpolicy="no-referrer" src="http://ww1.sinaimg.cn/large/6ac7d49egw1fa2c29nmzlj20nc0goad4.jpg"/><br/>点击增加脚本<br/><br/><img class="imgclick" referrerpolicy="no-referrer" src="http://ww3.sinaimg.cn/large/6ac7d49egw1fa2c2bb7o5j20nc0gotc9.jpg"/><br/><br/><img class="imgclick" referrerpolicy="no-referrer" src="http://ww1.sinaimg.cn/large/6ac7d49egw1fa2c2c6ujmj20nc0gojuz.jpg"/><br/><br/><img class="imgclick" referrerpolicy="no-referrer" src="http://ww3.sinaimg.cn/large/6ac7d49egw1fa2c2cmvkgj20nc0go76x.jpg"/><br/>在我写好的脚本前面打钩，其他不打<br/><br/>3.打开PS4遥控操作（就是官方串流软件）连上PS4<br/> <br/> <span style="color:red;"><b>解释下运行机制</b></span><br/>右键 <span style="color:red;">刀剑神域 </span>这个脚本，点击源代码，可以看见<br/><img class="imgclick" referrerpolicy="no-referrer" src="http://ww3.sinaimg.cn/large/6ac7d49egw1fa2c299tg2j20sc0k0djn.jpg"/><br/><br/>Hwnd = Plugin.Window.find(0,"PS4遥控操作")<br/>Call Plugin.Bkgnd.KeyPress(Hwnd,13)<br/>Delay 1100<br/><br/>第一行代码是把按键精灵定位到某个窗口，<span style="color:red;">因为官方串流软件叫PS4遥控操作，所以双引号里面用这个名字，有些人是英文名字，请自行修改，然后其他不动，保存并退出）<br/>例如：你的窗口叫ABCD，就把第一行改成Hwnd = Plugin.Window.find(0,"ABCD")即可</span><br/><br/>第二行代码是按键按下回车键<br/><br/>第三行代码是延迟1秒，因为扔飞刀CD是1秒，所以我就这么设置了<br/>大概运行机制就这样<br/><br/>前期工作完成以后，就可以刷熟练和刷好感了<br/>下面进入正题：<br/>1.刷熟练度<br/>游戏里把<img src="../emoticons\face\shoubing\3.gif"/>和<img src="../emoticons\face\shoubing\4.gif"/>换过来，因为电脑只能控制<img src="../emoticons\face\shoubing\4.gif"/>和交叉<img src="../emoticons\face\shoubing\1.gif"/>，脚本是通过按回车键控制<img src="../emoticons\face\shoubing\4.gif"/>来扔飞刀刷熟练<br/>跑到第四章图（沙漠）下面这个地图<br/><img class="imgclick" referrerpolicy="no-referrer" src="http://ww3.sinaimg.cn/large/6ac7d49egw1fa2c2fmivsj211y0lck8e.jpg"><br/><br/><img class="imgclick" referrerpolicy="no-referrer" src="http://ww4.sinaimg.cn/large/6ac7d49egw1fa2c2jjb9ij211y0lctic.jpg"><br/>然后跑到NM怪这个位置跳上去<br/><br/>然后就可以按F10打开脚本进行疯狂刷熟练了，<img src="../emoticons\face\alu\36.gif"/><br/><span style="color:red;"><b>！！！注意，脚本是可以后台，就是设置好以后，F10启动脚本就可以干其他事情了，无须停留在游戏界面，F12就是停止脚本。可以停下来换其他武器刷熟练。<br/>注意！！！要看下飞刀扔出去有没有伤害，要造成伤害才能刷熟练。</b></span><br/><img class="imgclick" referrerpolicy="no-referrer" src="http://ww3.sinaimg.cn/large/6ac7d49egw1fa2c2e264jj211y0lcjx1.jpg"><br/><br/>2.刷好感<br/>按键保持不改动，就是<img src="../emoticons\face\shoubing\3.gif"/>和<img src="../emoticons\face\shoubing\4.gif"/>不用换位置，与妹子组队，利用在城镇里无限打<img src="../emoticons\face\shoubing\4.gif"/>对话，一次对话加4左右，比较慢，但是可以不用手动，适合懒人专用<br/><br/>脚本依然直接按F10启动，F12停止<br/><br/>以上，完毕，以后可能写个自动刷SSC的脚本，毕竟轻松！</img></img></img></div></div>
+            
+            <h2>评论</h2><div class="post">
+<a class="l" href="https://psnine.com/psnid/wubs12345"><img height="50" src="../avatars/wubs12345-1607940783-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    感谢分享~
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/wubs12345">wubs12345</a>
+                                            2016-11-23 21:17                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/nox2083"><img height="50" src="../avatars/nox2083-1617928650-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    这是今天的膝盖<img src="../emoticons\face\majiang\40.gif"/> 按键精灵还能这么用<img src="../emoticons\face\majiang\40.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/nox2083">nox2083</a>
+                                            2016-11-23 21:19                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/jimmyleohk"><img height="50" src="../avatars/jimmyleohk-1587086898-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    6666666<img src="../emoticons\face\alu\43.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/jimmyleohk">jimmyleohk</a>
+                                            2016-11-23 21:20                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/elohim_kurumi"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0700/CUSA17351_00-5551213075909887_40AE3125842C8B380437_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/nox2083">@nox2083</a> 是啊，第三方串流软件用起来可能更厉害，第三方串流好像能完全键盘控制PS4<img src="../emoticons\face\alu\43.gif"/>，官方只能控制<img src="../emoticons\face\shoubing\4.gif"/><img src="../emoticons\face\shoubing\1.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/elohim_kurumi">elohim_kurumi</a>
+                                            2016-11-23 21:21                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/summer_1_breeze"><img height="50" src="../avatars/summer_1_breeze-1556721522-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<img src="../emoticons\face\alu\31.gif"/><img src="../emoticons\face\alu\31.gif"/><img src="../emoticons\face\alu\31.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/summer_1_breeze">summer_1_breeze</a>
+                                            2016-11-23 21:22                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/whatthetruth"><img height="50" src="../avatars/whatthetruth-1724207383-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    ...卧槽 这个厉害了
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/whatthetruth">whatthetruth</a>
+                                            2016-11-23 21:24                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/sakura_p789cs"><img height="50" src="../avatars/sakura_p789cs-1724555730-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    这熊今天回国了 建议肏死他 @Luna_NOIRE
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/sakura_p789cs">sakura_p789cs</a>
+                                            2016-11-23 21:28                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/ikuta-kumiko"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP9000/CUSA14006_00-AV00000000000012_EE311A10EF9DFE150343_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    给跪了，先收藏以备将来使用
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/ikuta-kumiko">ikuta-kumiko</a>
+                                            2016-11-23 21:36                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/zh20419"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/WWS_J/J0003.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    那个只用不停按X就能白金的游戏也能这么用吗
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/zh20419">zh20419</a>
+                                            2016-11-23 21:36                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/lvyxia"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/WWS_E/E0031.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    突然觉得打开了新世界的大门。。。。感觉码农10年加班经验终于有用武之地了<img src="../emoticons\face\majiang\41.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/lvyxia">lvyxia</a>
+                                            2016-11-23 21:38                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/elohim_kurumi"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0700/CUSA17351_00-5551213075909887_40AE3125842C8B380437_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/zh20419">@zh20419</a> 理论是可以的，把第二行代码改成Call Plugin.Bkgnd.KeyPress(Hwnd,27)  因为13代表回车键，27代表ESC键，电脑回车键控制<img src="../emoticons\face\shoubing\4.gif"/>，ESC键控制<img src="../emoticons\face\shoubing\1.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/elohim_kurumi">elohim_kurumi</a>
+                                            2016-11-23 21:42                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/linruigfrttghgh"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0507/CUSA03274_00-FATEEXAVATAR0014_6588AC4E54ADFF81657E_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    感谢楼主 马克
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/linruigfrttghgh">linruigfrttghgh</a>
+                                            2016-11-23 21:48                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/chenbolin950920"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP5846/CUSA20175_00-HJMRAVATARLAPIS0_921630FABB03C9B0FA52_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    这个要有第三方串流才能达到最高效果，全自动刷太刀都行，奈何买不起第三方<img src="../emoticons\face\alu\30.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/chenbolin950920">chenbolin950920</a>
+                                            2016-11-23 21:52                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/elohim_kurumi"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0700/CUSA17351_00-5551213075909887_40AE3125842C8B380437_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/chenbolin950920">@chenbolin950920</a> 不用第三方也能刷太刀EX，有<img src="../emoticons\face\shoubing\4.gif"/><img src="../emoticons\face\shoubing\1.gif"/>两个够了，我现在在测试了，应该只写五连，因为五连重要，3连和16连就不打算写了，到时看情况
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/elohim_kurumi">elohim_kurumi</a>
+                                            2016-11-23 21:54                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/chenbolin950920"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP5846/CUSA20175_00-HJMRAVATARLAPIS0_921630FABB03C9B0FA52_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/elohim_kurumi">@elohim_kurumi</a> 我试过全自动刷太刀，但实际设置好后实际运行起来技能各种接不上
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/chenbolin950920">chenbolin950920</a>
+                                            2016-11-23 21:59                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/elohim_kurumi"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0700/CUSA17351_00-5551213075909887_40AE3125842C8B380437_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/chenbolin950920">@chenbolin950920</a> 确实，所以我自己还在测试，没放出来，成功在看看吧，估计把延迟时间写好就行了
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/elohim_kurumi">elohim_kurumi</a>
+                                            2016-11-23 22:02                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/treeseedzhu"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0082/CUSA06592_00-NIERGOTYAVATAR03_3C1BECCA4945142D8C48_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<img src="../emoticons\face\alu\43.gif"/><img src="../emoticons\face\alu\43.gif"/><img src="../emoticons\face\alu\36.gif"/>逗比
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/treeseedzhu">treeseedzhu</a>
+                                            2016-11-23 22:37                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/elohim_kurumi"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0700/CUSA17351_00-5551213075909887_40AE3125842C8B380437_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/treeseedzhu">@treeseedzhu</a> 儿子，你来了，儿子<img src="../emoticons\face\majiang\41.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/elohim_kurumi">elohim_kurumi</a>
+                                            2016-11-23 22:42                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/mersang"><img height="50" src="../avatars/mersang-1556118843-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<img src="../emoticons\face\majiang\40.gif"/>想起来以前用按键精灵+串流解锁极光游侠的800目押连闪，虽然失败了
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/mersang">mersang</a>
+                                            2016-11-23 22:53修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/summer_wind520"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0036/CUSA14993_00-CRYSTARDLA000008_DA0196C5D30F723B50A6_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<img src="../emoticons\face\majiang\40.gif"/>连发手柄已废
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/summer_wind520">summer_wind520</a>
+                                            2016-11-23 23:01                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/chenbolin950920"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP5846/CUSA20175_00-HJMRAVATARLAPIS0_921630FABB03C9B0FA52_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/elohim_kurumi">@elohim_kurumi</a> 正在考虑改用键盘录制试试
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/chenbolin950920">chenbolin950920</a>
+                                            2016-11-23 23:03                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/zyt133123132"><img height="50" src="../avatars/zyt133123132-1556541506-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<img src="../emoticons\face\alu\20.gif"/>原来P9不介意这些邪道方式啊<br/>SSC连接最稳定的是2连和3连，我能做到无限放<br/>但是5连的话会有微妙的差异，纯看运气了<br/>既然有两个按键能用那么：<br/>刷熟练度还可以试试不断平砍打乌龟+再生回血，我是用这组刷的，太刀，单手锤，升的飞快<img src="../emoticons\face\alu\37.gif"/><br/>另外刷SS熟练度也可以，利用闪避可以重置技能后摇，秒连续放同一ss。（我刷的还是旋风，正常的话超慢）<br/><br/>如果利用第三方，外加写脚本熟练地话，可以做到真网游脚本的程度吧，第三方似乎打不开触摸板菜单，用图像识别可以知道技能CD，然后对应好那几个“无敌”般的技能……虽然可能因为获取不到具体自己位置所以无法做到自己循环切图，但是至少手动看到NM怪，点一下，自动击杀<img src="../emoticons\face\alu\39.gif"/><br/><br/><span class="mark">第三方或许能拿去刷音游，等之后闲下来试试能不能刷偶像大师，如果成功了我就去买X HD好了。</span>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/zyt133123132">zyt133123132</a>
+                                            2016-11-23 23:19修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/elohim_kurumi"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0700/CUSA17351_00-5551213075909887_40AE3125842C8B380437_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/chenbolin950920">@chenbolin950920</a> 好了，我写了个单手剑的五连了，能用了
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/elohim_kurumi">elohim_kurumi</a>
+                                            2016-11-24 00:17                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/elohim_kurumi"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0700/CUSA17351_00-5551213075909887_40AE3125842C8B380437_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/zyt133123132">@zyt133123132</a> 刚写完单手剑五连<img src="../emoticons\face\alu\36.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/elohim_kurumi">elohim_kurumi</a>
+                                            2016-11-24 00:18                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/treeseedzhu"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0082/CUSA06592_00-NIERGOTYAVATAR03_3C1BECCA4945142D8C48_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/elohim_kurumi">@elohim_kurumi</a> 啥孙子<img src="../emoticons\face\alu\39.gif"/>没脸见人了
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/treeseedzhu">treeseedzhu</a>
+                                            2016-11-24 00:28                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/picnicker_tyou"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0700/CUSA08526_00-PREMIUMAVATAR007_0D4CA15D7BF10A77B60C_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    耗时耗电 用第三方弄成功了 还是放弃了。。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/picnicker_tyou">picnicker_tyou</a>
+                                            2016-11-24 00:37                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/elohim_kurumi"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0700/CUSA17351_00-5551213075909887_40AE3125842C8B380437_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/chenbolin950920">@chenbolin950920</a> 美中不足就是只能单次触发，循环触发会出现技能连不上的情况
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/elohim_kurumi">elohim_kurumi</a>
+                                            2016-11-24 00:38                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/chenbolin950920"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP5846/CUSA20175_00-HJMRAVATARLAPIS0_921630FABB03C9B0FA52_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/elohim_kurumi">@elohim_kurumi</a> 我用的键盘录制偶尔也能触发，但是由于都是wifi链接的原因，延迟不固定，看来还是得老老实实手动<img src="../emoticons\face\alu\20.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/chenbolin950920">chenbolin950920</a>
+                                            2016-11-24 01:02                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/elohim_kurumi"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0700/CUSA17351_00-5551213075909887_40AE3125842C8B380437_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/chenbolin950920">@chenbolin950920</a> 我明天发，估计就是wifi连接，延迟原因，只能单次触发，不能全自动
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/elohim_kurumi">elohim_kurumi</a>
+                                            2016-11-24 01:03                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/do_not_ask_meeee"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP9002/CUSA09076_00-NIERBON000000002_A184BF387496B14E3FE3_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/elohim_kurumi">@elohim_kurumi</a> 可以全自动，推荐前往第四章boss前的地图刷OSS，因为会有延迟，如果想开技buff多连 最好在用抓图定位到最开始的技能，然后Logout 在重新登录 就可以挂机刷OSS了
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/do_not_ask_meeee">do_not_ask_meeee</a>
+                                            2016-11-24 01:16                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/elohim_kurumi"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0700/CUSA17351_00-5551213075909887_40AE3125842C8B380437_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/do_not_ask_meeee">@do_not_ask_meeee</a> 我写了个蛇咬配平面连砍，第一次五连能成功，但是循环到第二次就只能连到第三下就停止了，求解决方案<img src="../emoticons\face\alu\13.gif"/>。但是设置成按一次触发一次就不会有问题<img src="../emoticons\face\alu\39.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/elohim_kurumi">elohim_kurumi</a>
+                                            2016-11-24 01:43                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/chenbolin950920"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP5846/CUSA20175_00-HJMRAVATARLAPIS0_921630FABB03C9B0FA52_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/elohim_kurumi">@elohim_kurumi</a> 我搞定了5连的问题，但是我是录制的不知道怎么加后台程序，进图开超载加快速技能，然后甩一波5连就等CD了，循环
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/chenbolin950920">chenbolin950920</a>
+                                            2016-11-24 01:50                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/elohim_kurumi"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0700/CUSA17351_00-5551213075909887_40AE3125842C8B380437_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/zyt133123132">@zyt133123132</a> <img src="../emoticons\face\alu\35.gif"/>厉害了，我SSC写了五连单次触发可以，循环就不行<img src="../emoticons\face\alu\13.gif"/>，循环变成3连的
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/elohim_kurumi">elohim_kurumi</a>
+                                            2016-11-24 01:52                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/elohim_kurumi"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0700/CUSA17351_00-5551213075909887_40AE3125842C8B380437_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/chenbolin950920">@chenbolin950920</a> 介意加个Q吗，我私聊你<img src="../emoticons\face\alu\13.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/elohim_kurumi">elohim_kurumi</a>
+                                            2016-11-24 01:52                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/chenbolin950920"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP5846/CUSA20175_00-HJMRAVATARLAPIS0_921630FABB03C9B0FA52_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/elohim_kurumi">@elohim_kurumi</a> 用录制的比较稳定，但是我不知道怎么设置后台，目前正在多次录制，以求达到每下都是5连
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/chenbolin950920">chenbolin950920</a>
+                                            2016-11-24 03:38修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/do_not_ask_meeee"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP9002/CUSA09076_00-NIERBON000000002_A184BF387496B14E3FE3_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/elohim_kurumi">@elohim_kurumi</a> 平面四方斩 Delay1500 音速斩 Delay 1000，到第五下结束后最好延迟3秒 然后循环.....等SP用完 就直接登出再登陆 就可以节省等SP和CD的时间
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/do_not_ask_meeee">do_not_ask_meeee</a>
+                                            2016-11-24 01:56                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/elohim_kurumi"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0700/CUSA17351_00-5551213075909887_40AE3125842C8B380437_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<img src="../emoticons\face\alu\43.gif"/><a href="https://psnine.com/psnid/do_not_ask_meeee">@do_not_ask_meeee</a> 能求教具体方法吗<img src="../emoticons\face\alu\13.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/elohim_kurumi">elohim_kurumi</a>
+                                            2016-11-24 01:57                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/elohim_kurumi"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0700/CUSA17351_00-5551213075909887_40AE3125842C8B380437_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/zyt133123132">@zyt133123132</a> 确实，明天我也写个刷乌龟的
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/elohim_kurumi">elohim_kurumi</a>
+                                            2016-11-24 02:02                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/chenbolin950920"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP5846/CUSA20175_00-HJMRAVATARLAPIS0_921630FABB03C9B0FA52_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/do_not_ask_meeee">@do_not_ask_meeee</a> 登出登录用官方的没法解决了，因为没有<img src="../emoticons\face\shoubing\19.gif"/><img src="../emoticons\face\alu\30.gif"/>，所以还是老老实实等CD吧
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/chenbolin950920">chenbolin950920</a>
+                                            2016-11-24 02:08修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/do_not_ask_meeee"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP9002/CUSA09076_00-NIERBON000000002_A184BF387496B14E3FE3_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/elohim_kurumi">@elohim_kurumi</a> 你需要我明天中午可以把我的脚步发给你，一轮2分半（大概） OSS5 可以连10～12次（我加完Buff 800多SP），但是先说明脚本并不完善，脚本抓图识别率很坑，以及每个人面板和技能不能 很难通用
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/do_not_ask_meeee">do_not_ask_meeee</a>
+                                            2016-11-24 02:14                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/do_not_ask_meeee"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP9002/CUSA09076_00-NIERBON000000002_A184BF387496B14E3FE3_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/chenbolin950920">@chenbolin950920</a> 官方的有option，我就说官方的 讲鼠标移动到窗口下方
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/do_not_ask_meeee">do_not_ask_meeee</a>
+                                            2016-11-24 02:15                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/elohim_kurumi"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0700/CUSA17351_00-5551213075909887_40AE3125842C8B380437_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/do_not_ask_meeee">@do_not_ask_meeee</a> <img src="../emoticons\face\alu\23.gif"/>能否给个源文件，实在不能挂机刷，尴尬了
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/elohim_kurumi">elohim_kurumi</a>
+                                            2016-11-24 02:22                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/elohim_kurumi"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0700/CUSA17351_00-5551213075909887_40AE3125842C8B380437_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/do_not_ask_meeee">@do_not_ask_meeee</a> 好好，明天中午发我调试看看
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/elohim_kurumi">elohim_kurumi</a>
+                                            2016-11-24 02:23                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/chenbolin950920"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP5846/CUSA20175_00-HJMRAVATARLAPIS0_921630FABB03C9B0FA52_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/do_not_ask_meeee">@do_not_ask_meeee</a> 脑残了，我都忘记虚拟键的存在了<img src="../emoticons\face\alu\31.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/chenbolin950920">chenbolin950920</a>
+                                            2016-11-24 02:33                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/chenbolin950920"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP5846/CUSA20175_00-HJMRAVATARLAPIS0_921630FABB03C9B0FA52_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    新开一贴，这个编辑掉，移步至http://psnine.com/topic/29970
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/chenbolin950920">chenbolin950920</a>
+                                            2016-11-24 04:15修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/spectre_l1n"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/3RD/EP07001401146_AECA5E82B38914B681E1_L.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    Mac版按键+官方remote play完美ssc5连..自动5连然后退出，再进入.（因为家里电脑win7用不了remote play） 有需要的话@我，不过是Mac版估计也没什么人要。测试太刀第一个技能后延迟500ms，第二个技能延迟2200ms，可以交替ssc。当然你还需要插入左右来选技能。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/spectre_l1n">spectre_l1n</a>
+                                            2016-11-24 03:44                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/zyt133123132"><img height="50" src="../avatars/zyt133123132-1556541506-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<img src="../emoticons\face\alu\20.gif"/>没有人试试加上闪避那个技能带来的无视SS后摇衔接SSC么，那样的话全部的延迟都是同一个数值，稳定性能好点吧。另外网线直接插PS4上应该也能遥控游玩吧（第三方的可以）<img src="../emoticons\face\alu\15.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/zyt133123132">zyt133123132</a>
+                                            2016-11-24 08:38                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/wkira_vivio"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0031/CUSA01054_00-AVATAR1505NEP005_F752BFEF2E825C750BAE_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/spectre_l1n">@spectre_l1n</a> 求mac版_(:з」∠)_
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/wkira_vivio">wkira_vivio</a>
+                                            2016-11-24 08:47                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/shock_troooper"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0700/CUSA04737_00-AVATARPHILIA0000_E28839454FD9A8FDD647_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    用连发手柄的基本无鸭梨……
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/shock_troooper">shock_troooper</a>
+                                            2016-11-24 09:02                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/shinnwalker61"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP9002/CUSA01666_00-2018HWCHCHOCOCHO_B14FF85CFB2AF5398209_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<img src="../emoticons\face\majiang\13.gif"/>好强啊。那格斗游戏连发也可以一键发招？
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/shinnwalker61">shinnwalker61</a>
+                                            2016-11-24 09:22                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/elohim_kurumi"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0700/CUSA17351_00-5551213075909887_40AE3125842C8B380437_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/shinnwalker61">@shinnwalker61</a> 第三方串流软件理论上是可以的
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/elohim_kurumi">elohim_kurumi</a>
+                                            2016-11-24 09:46                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/zyuyi007"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP9002/CUSA09076_00-NIERBON000000006_A481B0473E1A86E9C66C_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/jimmyleohk">@jimmyleohk</a> <img src="../emoticons\face\majiang\28.gif"/>站长，这种事情真的可以吗<img src="../emoticons\face\majiang\41.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/zyuyi007">zyuyi007</a>
+                                            2016-11-24 09:55                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/jimmyleohk"><img height="50" src="../avatars/jimmyleohk-1587086898-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/zyuyi007">@zyuyi007</a> 为什么不可以，有什么不妥？
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/jimmyleohk">jimmyleohk</a>
+                                            2016-11-24 10:03                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/zyuyi007"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP9002/CUSA09076_00-NIERBON000000006_A481B0473E1A86E9C66C_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/jimmyleohk">@jimmyleohk</a> <img src="../emoticons\face\majiang\4.gif"/><img src="../emoticons\face\majiang\28.gif"/>我以为这种类似金手指的东西在站里不应该提倡才对，看来我错了<img src="../emoticons\face\majiang\13.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/zyuyi007">zyuyi007</a>
+                                            2016-11-24 10:17                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/jimmyleohk"><img height="50" src="../avatars/jimmyleohk-1587086898-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/zyuyi007">@zyuyi007</a> <br/>人家用的是官方远控，不是第三方远控。至于对远控做什么，应该是自由吧。<br/>就好比你对手柄做什么非物理修改的手脚是你的自由吧。<br/>不提倡，但是不限制。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/jimmyleohk">jimmyleohk</a>
+                                            2016-11-24 10:22修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/wyyu"><img height="50" src="../avatars/wyyu-1607957648-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/elohim_kurumi">@elohim_kurumi</a> 第三方串流虽说可以全按键支持 然而 操作延迟 感觉有点大
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/wyyu">wyyu</a>
+                                            2016-11-24 10:23                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/zyuyi007"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP9002/CUSA09076_00-NIERBON000000006_A481B0473E1A86E9C66C_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/jimmyleohk">@jimmyleohk</a> <img src="../emoticons\face\alu\6.gif"/>懂了
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/zyuyi007">zyuyi007</a>
+                                            2016-11-24 10:25                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/cunhanjp"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP3974/CUSA09340_00-AVATAR2019110601_A0A329FA439972617F41_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/zyuyi007">@zyuyi007</a> 也可以反过来问问，p9要不要抵制一下这种刷子游戏？
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/cunhanjp">cunhanjp</a>
+                                            2016-11-24 10:25                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/elohim_kurumi"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0700/CUSA17351_00-5551213075909887_40AE3125842C8B380437_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/wyyu">@wyyu</a> 可以直接拿网线连，只是电脑不能上网，好像是
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/elohim_kurumi">elohim_kurumi</a>
+                                            2016-11-24 10:29                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/maoyalu"><img height="50" src="../avatars/maoyalu-1560869333-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    害怕，实力打杯
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/maoyalu">maoyalu</a>
+                                            2016-11-24 10:30                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/elohim_kurumi"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0700/CUSA17351_00-5551213075909887_40AE3125842C8B380437_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/do_not_ask_meeee">@do_not_ask_meeee</a> 我给你站内留言了，你有空就发我吧，谢谢了<img src="../emoticons\face\alu\10.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/elohim_kurumi">elohim_kurumi</a>
+                                            2016-11-24 10:48                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/spectre_l1n"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/3RD/EP07001401146_AECA5E82B38914B681E1_L.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    和老金没什么关系吧。只是合理节约下自己的时间，毕竟这刷的杯太没人性，而且过程并不欢乐......我照几张照片一会传图吧。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/spectre_l1n">spectre_l1n</a>
+                                            2016-11-24 11:19                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/ace-cat-zero"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP3372/CUSA09078_00-ALTLAVATAR000000_E923C70FEF5644DAA6D4_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    这算邪道吗……不过我好像有个连发手柄……
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/ace-cat-zero">ace-cat-zero</a>
+                                            2016-11-24 11:26                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/elohim_kurumi"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0700/CUSA17351_00-5551213075909887_40AE3125842C8B380437_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/ace-cat-zero">@ace-cat-zero</a> 确实邪道，但也没作弊<img src="../emoticons\face\alu\39.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/elohim_kurumi">elohim_kurumi</a>
+                                            2016-11-24 11:32                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/do_not_ask_meeee"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP9002/CUSA09076_00-NIERBON000000002_A184BF387496B14E3FE3_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/elohim_kurumi">@elohim_kurumi</a> 脚本需要调教的地方有点多... <br/><br/>技能 按键 设置如下图<br/><br/><img class="imgclick" src="http://img18.poco.cn/mypoco/myphoto/20161124/02/18499268520161124024655066.jpg?1920x1080_120"/><br/><br/>运行效果: 从第一排 第一个技能开始上buff, 然后会停在<span style="color:red;">音速冲击</span>开始刷 OSS5  一轮大约11次 (延迟好的情况下). 刷完之后会开始自动寻找对应的技能说明(按键精灵的识图算法真是...<img src="../emoticons\face\alu\30.gif"/>) 鼠标会移动到<img src="../emoticons\face\shoubing\19.gif"/> 开始重新登录 循环<br/><br/>需要调节的地方 分辨率, 按键, 以及 需要重置复位的 技能说明 的识图 <br/>度盘: <span style="color:black;">pan.baidu.com/s/1o8dJgRg</span><br/><br/>拒绝恶意延长游戏时间<img src="../emoticons\face\alu\39.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/do_not_ask_meeee">do_not_ask_meeee</a>
+                                            2016-11-24 11:39修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/do_not_ask_meeee"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP9002/CUSA09076_00-NIERBON000000002_A184BF387496B14E3FE3_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    还有脚本刷熟练度之类的应该能算的是 "BUG" 了 因为日版最新补丁 已经把熟练度和好感度都封了, OSS的连接时间好像也调整了
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/do_not_ask_meeee">do_not_ask_meeee</a>
+                                            2016-11-24 11:43修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/elohim_kurumi"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0700/CUSA17351_00-5551213075909887_40AE3125842C8B380437_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/do_not_ask_meeee">@do_not_ask_meeee</a> <img src="../emoticons\face\alu\43.gif"/>6666.我去研究一下
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/elohim_kurumi">elohim_kurumi</a>
+                                            2016-11-24 11:52                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/spectre_l1n"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/3RD/EP07001401146_AECA5E82B38914B681E1_L.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/wkira_vivio">@wkira_vivio</a> <br/><img class="imgclick" src="http://chuantu.biz/t5/42/1479959751x1001132438.png"><br/><img class="imgclick" src="http://chuantu.biz/t5/42/1479959782x1001132438.png"/><br/><br/>MAC的按键比较简陋，WIN10版的同理应该也可以用吧，需要注意的是，坐标需要自己根据电脑设置，我的MAC正好这个位置而已。<br/>技能方面，按出技能版面，放2个技能上去，左边【绝空】，右边【旋风】  都是太刀的。理论上不会翻车，比较稳定，太刀技能就靠这个了...让我手动SSC4000次...我选择死亡<br/>对了，Return就是回车
+                </img></div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/spectre_l1n">spectre_l1n</a>
+                                            2016-11-24 12:16修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/melody2074"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0425/CUSA08398_00-AVATAR0000000012_D1F32EE2D9A814382075_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/do_not_ask_meeee">@do_not_ask_meeee</a> 按键精灵也算是脚本吗？这个他怎么封啊，很好奇，求解答~
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/melody2074">melody2074</a>
+                                            2016-11-24 12:04                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/do_not_ask_meeee"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP9002/CUSA09076_00-NIERBON000000002_A184BF387496B14E3FE3_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/melody2074">@melody2074</a> 算的哦, 日版最新补丁中 投掷 已经不会再加熟练度了,以及 城镇里老婆们<span style="color:black;">(还有两个基友)</span>不能长时间的与你在长椅上亲亲我我了<img src="../emoticons\face\alu\40.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/do_not_ask_meeee">do_not_ask_meeee</a>
+                                            2016-11-24 12:18                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/spectre_l1n"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/3RD/EP07001401146_AECA5E82B38914B681E1_L.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/melody2074">@melody2074</a> <br/>我估计意思是对话不加好感，丢飞刀不加熟练度的意思吧......<br/>这种良性BUG如果不保留...真的就是制作组脑子抽了...200个技能让你见了海龟就想吐...
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/spectre_l1n">spectre_l1n</a>
+                                            2016-11-24 12:22                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/luna_noire"><img height="50" src="../avatars/luna_noire-1577794824-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/wyyu">@wyyu</a> 网线直连的话 第三方的有延迟但这个延迟基本是固定不变的……我投掷飞刀脚本设置1.02秒 预留20ms就已经足够不会因为跳延迟导致变慢
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/luna_noire">luna_noire</a>
+                                            2016-11-24 12:34修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/wkira_vivio"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0031/CUSA01054_00-AVATAR1505NEP005_F752BFEF2E825C750BAE_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/spectre_l1n">@spectre_l1n</a> 多谢
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/wkira_vivio">wkira_vivio</a>
+                                            2016-11-24 14:15                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/shrri"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/3RD/JP00311111A02_52129D7E1B232041F909_L.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/shock_troooper">@shock_troooper</a> 可以安利一下手柄吗
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/shrri">shrri</a>
+                                            2016-11-24 15:09修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/elohim_kurumi"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0700/CUSA17351_00-5551213075909887_40AE3125842C8B380437_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/shrri">@shrri</a> HORI的连发手柄，某宝就有 250+左右
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/elohim_kurumi">elohim_kurumi</a>
+                                            2016-11-24 15:11                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/shrri"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/3RD/JP00311111A02_52129D7E1B232041F909_L.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/elohim_kurumi">@elohim_kurumi</a> 可以录制宏到什么程度，最近想买个刷RPG
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/shrri">shrri</a>
+                                            2016-11-24 15:18                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/elohim_kurumi"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0700/CUSA17351_00-5551213075909887_40AE3125842C8B380437_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/shrri">@shrri</a> 我没有买，不敢下定论，你要问问其他人，我知道有连发这个功能。。。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/elohim_kurumi">elohim_kurumi</a>
+                                            2016-11-24 15:21                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/n0t0non"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/UP0680/CUSA02724_00-AV00000000000016_37EEE0C7C657AD9566FB_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/elohim_kurumi">@elohim_kurumi</a> 我用过这手柄，连发只能选择一直按某（一个）键吧，主要是日文说明书看不详细、、<img src="../emoticons\face\majiang\41.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/n0t0non">n0t0non</a>
+                                            2016-11-24 16:59                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/kinly94"><img height="50" src="../avatars/kinly94-1707980798-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    SAO港中更新1.02了，熟练度还是可以刷，其他bug不知道。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/kinly94">kinly94</a>
+                                            2016-11-24 22:42修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/godo512323187"><img height="50" src="../avatars/godo512323187-1621165565-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    按键精灵还能模拟ps4的手柄啊
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/godo512323187">godo512323187</a>
+                                            2016-11-24 21:43                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/wubs12345"><img height="50" src="../avatars/wubs12345-1607940783-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/kinly94">@kinly94</a> 一不小心就被更新了，貌似和日版首日补丁1.02是一样的。这么说的话刷好感，刷熟练度还能用，材料BUG印象中是日版1.03修复的但是据说也不能用了（消耗1BUG没了，返还BUG还在）。<br/>不过我也没办法回去看基兹梅尔有没有穿衣服了。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/wubs12345">wubs12345</a>
+                                            2016-11-24 23:28修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/futexlocker"><img height="50" src="../avatars/futexlocker-1587166168-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    飞刀打NM伤害是0怎么办。。。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/futexlocker">futexlocker</a>
+                                            2016-11-28 00:53                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/caocaodehen"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/WWS_J/J0021.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    厉害了我的哥。。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/caocaodehen">caocaodehen</a>
+                                            2016-11-28 02:45                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/shinecj"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/WWS_J/J0003.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    我想问下，我用国人开发的第三方免费串流，代码就第一行是改成了可以后台的，打了一个多小时就开始旋转视角，被nm怪干死，我并没有设置其他按键啊，搞不懂问题出在哪
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/shinecj">shinecj</a>
+                                            2016-12-02 09:23                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/elohim_kurumi"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0700/CUSA17351_00-5551213075909887_40AE3125842C8B380437_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/shinecj">@shinecj</a> 你可以直接按L3，锁定怪
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/elohim_kurumi">elohim_kurumi</a>
+                                            2016-12-02 09:26                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/elohim_kurumi"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0700/CUSA17351_00-5551213075909887_40AE3125842C8B380437_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/futexlocker">@futexlocker</a> 武器伤害不够，找其他低等级怪，依然找能利用高低差来扔飞刀的地方
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/elohim_kurumi">elohim_kurumi</a>
+                                            2016-12-02 09:27                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/shinecj"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/WWS_J/J0003.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    我昨晚也试了锁定怪再开始脚本，挂了一会人就跑到怪边上了
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/shinecj">shinecj</a>
+                                            2016-12-02 09:56                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/zyt133123132"><img height="50" src="../avatars/zyt133123132-1556541506-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    自动旋转，那个收费第三方的也会出现<br/>最开始我以为是脚本里出现了移动鼠标（鼠标模拟成右摇杆）<br/>然后发现并不是<br/>简易解决方法：动下鼠标（或右摇杆对应的按键），即可临时解决
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/zyt133123132">zyt133123132</a>
+                                            2016-12-02 10:00                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/faster595"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP9000/CUSA12613_00-DSAV000EXCITEDBB_E9F14C80B3D339041CD1_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/elohim_kurumi">@elohim_kurumi</a> 哥你可以做个初音的脚本了，自动识别颜色按按钮可以么
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/faster595">faster595</a>
+                                            2017-02-26 19:39                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/zero-baoye"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0031/CUSA01054_00-AVATAR1505NEP001_C9CC6B1C92C1BC68184F_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<img src="../emoticons\face\alu\13.gif"/>现在不能用了么？
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/zero-baoye">zero-baoye</a>
+                                            2017-08-10 10:08                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/rexsarge"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/WWS_J/J0006.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/elohim_kurumi">@elohim_kurumi</a> <a href="https://psnine.com/psnid/zero-baoye">@zero-baoye</a> 版本提升了，飞刀伤害为0了。是不是就不能用了？<img src="../emoticons\face\alu\17.gif"/>有没有提升飞刀伤害的办法？
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/rexsarge">rexsarge</a>
+                                            2018-01-08 10:54                                                                            </div>
+<!--回复结束-->
+</div>
+</div>
+        </body></html>

@@ -1,0 +1,1644 @@
+
+        <!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><title>PS4 RemotePlay 串流集中讨论+问题解答帖（请勿另开）</title><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="stylesheet" href="style.css"></head>
+        <body>
+            <div class="original-url-container"><p><strong>原始链接:</strong> <a href="https://psnine.com/topic/24861" target="_blank">https://psnine.com/topic/24861</a></p></div>
+            <h1>PS4 RemotePlay 串流集中讨论+问题解答帖（请勿另开）</h1><div class="main-post-container"><div class="meta">
+
+<a class="psnnode" href="https://psnine.com/psnid/sai8808" itemprop="author">sai8808</a>
+<span class="text-warning">
+2016-04-07 08:11编辑
+</span>   
+147评论
+</div><div class="content pd10" itemprop="articleBody">鉴于今天PS4更新了3.5之后开通了 PC/MAC端 remote 的功能，想必很多同学都有积极的测试，也有一些同学会遇到一些问题，这里开一个集中讨论帖，方便大家集中交流。<br/><br/>首先要说的是，最终的效果跟你的局域网络环境有关，如果你都是通过无线来连接，那么为了保证一个更好的效果，请使用更好更稳定的路由器和电脑网卡。否则请尽量使用有线连接。<br/><br/><b>1.Q：WINDOWS下软件运行报错怎么办？</b><br/>A：请重新安装VC运行库vcredist_x86（32位系统），vcredist_x64（64位系统）<br/><br/><b>2.Q：如果软件连不上PS4怎么办？</b><br/>A：请使用手动输入8位码的方式连接<br/><br/><b>3.Q：进去之后一片模糊怎么办？</b><br/>A：请在连接PS4之前先设定分辨率（最高720p）和帧率<br/><br/><b>4.Q：别人都说很流畅，为什么我延迟特别高？</b><br/>A：请检查你的局域网网络环境<br/><br/><b>5.Q：我点击开始连接之后弹出一个白色的框框，然后就没有然后了？</b><br/>A：那个白色的框框是通过网页登录你的PSN帐号用的，可能你的网络刚好打不开那个登录页面，请考虑在这里使用威屁恩或者SS</div></div>
+            
+            <h2>评论</h2><div class="post">
+<a class="l" href="https://psnine.com/psnid/paprika_c87"><img height="50" src="../avatars/paprika_c87-1642051876-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    一打开就“停止工作”，win10求助<img src="../emoticons\face\majiang\29.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/paprika_c87">paprika_c87</a>
+                                            2016-04-06 20:55                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/sai8808"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/default/DefaultAvatar.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/paprika_c87">@paprika_c87</a> 请参考第一条~试试看
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/sai8808">sai8808</a>
+                                            2016-04-06 20:57                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/paprika_c87"><img height="50" src="../avatars/paprika_c87-1642051876-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/sai8808">@sai8808</a> 多谢sai酱，马上试试
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/paprika_c87">paprika_c87</a>
+                                            2016-04-06 20:57                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/luna_noire"><img height="50" src="../avatars/luna_noire-1577794824-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    win7用户建议等待第三方串流工具的更新，由于PS等设备的机制，第三方工具同样需要在系统更新后进行更新才能使用，作者表示他现在正在更新程序。<br/><a href="https://tmacdev.com/forum/files/file/2-remote-play-pc-free-alpha/" target="_blank">https://tmacdev.com/forum/files/file/2-remote-play-pc-free-alpha/</a><br/><br/>路由器性能导致的串流画质过低，可以考虑<span style="color:red;">用网线直连PS4和PC</span>，电脑双网卡就可以（笔记本基本都是双网卡）。<br/>用无线网卡连接路由器上网，电脑在控制面板的无线网卡设置里将“共享网络”打开给有线网卡，有线网卡将自己设置成另一个网关。然后自行输入一个任意本机IP作为PS4的网关（不要和无线的网关和IP相同），子网掩码255.255.255.0就可以，下面的DNS和网关可以不填，例如你无线网关是192.168.1.1，有线IP就可以设置成192.168.0.1，然后PS4就以有线网卡为网关手动输入数值（如IP为192.168.0.2，网关、DNS为192.168.0.1）。<br/>这样你的PS4在上网、下载、联机时是通过PC进行上网，速度不受影响，而串流则是直连PC，可以获得最佳效果与最低延迟。<br/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/luna_noire">luna_noire</a>
+                                            2016-04-06 21:09修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/nathaniel_wu"><img height="50" src="../avatars/nathaniel_wu-1676590428-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    有汇总帖了啊。<br/>我建议大家都用网线连接PS4与路由器或者直接到PC/Mac，因为PS4的无线网卡只支持IEEE 802.11 b/g/n，不支持ac，很容易卡顿或者是丢失连接，还有被干扰，这也是之前用PSV遥控PS4效果并不好的原因。<br/>如果你的路由器支持IEEE 802.11 ac，那么PC/Mac用无线也可以，如果只支持b/g/n，我劝你还是用网线连接。<br/>720p@60fps时的峰值速率大约在1.2MB/s左右，b/g/n的速率不能算绝对足够，特别是干扰强以及离路由器比较远的时候。<br/><br/>我这里有两个网络接口，所以对我来说最佳解决方案是路由器用一个，然后用网线连接路由器和PS4，Mac再用一个网络接口，然后通过IEEE 802.11 ac连结路由器，PS4和PC都可以各自连接外部网络，而且也能利用高速局域网进行串流，这种情况下Mac还可以保持一定的灵活性，可以搬来搬去，而PS4则不需要移动
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/nathaniel_wu">nathaniel_wu</a>
+                                            2016-04-06 21:16修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/smaite-hung"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0507/CUSA00893_00-AVATAR0000RYOK01_E3A1437910A0F4636319_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    MBA没有网线端口，看来我需要买一个外置的端口才行么…
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/smaite-hung">smaite-hung</a>
+                                            2016-04-06 21:06                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/nilymax"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/UP4507/CUSA01682_00-AV00000000000001_4F3EA36B9FC78F8745DB_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    What\'s the point
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/nilymax">nilymax</a>
+                                            2016-04-06 21:07                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/hello_cun"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/UP4396/CUSA04449_00-AV00000000000002_2FDAB9099BDD1F930EB5_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    最好出个虚拟按键，不想用手柄
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/hello_cun">hello_cun</a>
+                                            2016-04-06 21:07                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/nathaniel_wu"><img height="50" src="../avatars/nathaniel_wu-1676590428-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/hello_cun">@hello_cun</a> 你只玩文字AVG么？<img src="../emoticons\face\majiang\15.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/nathaniel_wu">nathaniel_wu</a>
+                                            2016-04-06 21:12                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/bigboss60wx"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP9000/CUSA12613_00-AVA00LUDENSCHIBI_8349E7A2EBBE0C2D9433_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    ps4与电脑要日期时间一样，我平板几天没开时间不对就连不上
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/bigboss60wx">bigboss60wx</a>
+                                            2016-04-06 21:13                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/zyuyi007"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP9002/CUSA09076_00-NIERBON000000006_A481B0473E1A86E9C66C_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    游戏全频是个问题……<br/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/zyuyi007">zyuyi007</a>
+                                            2016-04-06 21:19                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/fox_immotal"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/3RD/EP42721105034_B938CDD4662124999461_L.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    家里一直用WIN7 所以，没做任何测试
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/fox_immotal">fox_immotal</a>
+                                            2016-04-06 21:51                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/bigpig00002"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/WWS_J/J0037.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/zyuyi007">@zyuyi007</a> 确实，底下的控制条好刺眼
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/bigpig00002">bigpig00002</a>
+                                            2016-04-06 21:59                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/xiboiay"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/WWS_J/J0040.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    我是SONY 笔记本电脑 W8.1 系统 运行PS4 RemotePlay PS4遥控操作 显示无法连接服务器 更不鸟新 进步去 
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/xiboiay">xiboiay</a>
+                                            2016-04-06 22:07                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/gemini_6x6"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0704/CUSA02582_00-AVATAR1511N2SAKU_325C2E1A34BE897DFBB9_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    运行时直接停止工作，请问有人遇到这个问题么...........<br/>c++库都已经装好了......
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/gemini_6x6">gemini_6x6</a>
+                                            2016-04-06 22:07                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/nathaniel_wu"><img height="50" src="../avatars/nathaniel_wu-1676590428-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/bigpig00002">@bigpig00002</a> 控制条？把鼠标移开就会消失啊？至少Mac上是这样
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/nathaniel_wu">nathaniel_wu</a>
+                                            2016-04-06 22:07                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/oridzuru"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/3RD/JP00311208012_D6895AF204B5AB54F6C2_L.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    虽说win8.0不能安装RemotePlay，但是在别人win10安装好的文件打包发送过来解压却可以使用。<br/><img class="imgclick" src="http://i2.piimg.com/bf3143375134f8b2.jpg"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/oridzuru">oridzuru</a>
+                                            2016-04-06 23:29                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/xlphxj"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/3RD/JP07001201YUK_69163984863AE500070F_L.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    怎么样算是局域网连接而不是互联网呢
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/xlphxj">xlphxj</a>
+                                            2016-04-06 23:31                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/fre_00"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0082/CUSA09575_00-AVATAR0000000002_29AEC7B6A8D6B25417D8_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    请问手柄必须要跟电脑USB连线才可以吗<br/>不知道我为什么一直连接不上，不管是接USB还是不接，自己搜索和手动输入都不行<br/>自己搜不到，手动输入又说无法连接，求教怎么解决~~
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/fre_00">fre_00</a>
+                                            2016-04-06 23:34                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/mengxiaohuai"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0425/CUSA08398_00-AVATAR0000000017_D48B6D99D8357E0C2512_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    家里网速不行断线严重，有种说法是手动输入8位数字添加是本地串流然而我每次输入就报错停止工作所以<img src="../emoticons\face\majiang\18.gif"/><img src="../emoticons\face\majiang\18.gif"/><img src="../emoticons\face\majiang\18.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/mengxiaohuai">mengxiaohuai</a>
+                                            2016-04-06 23:35                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/rin___sizyun"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0031/CUSA01054_00-AVATAR1505NEP020_8F9F8D5DDAC22DB4414A_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    windows10黑屏有声音
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/rin___sizyun">rin___sizyun</a>
+                                            2016-04-06 23:45                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/crisp_potato"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/UP3493/CUSA07861_00-AV00000000000044_1C4887F53069FCD11277_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/rin___sizyun">@rin___sizyun</a> 关闭重新连多一次就好，我一开始也是黑屏有声音。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/crisp_potato">crisp_potato</a>
+                                            2016-04-06 23:47                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/leeccoldsun_"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/WWS_A/UP90001411TSU_FB31EBC005B411248436_L.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    感觉还有很大提升空间。虽说是设置成720P高码率的画面，但总觉得跟PSV遥控PS4的画质差不多……<br/>我其实更想看看第三方串流软件和官方串流软件的对比……
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/leeccoldsun_">leeccoldsun_</a>
+                                            2016-04-06 23:50                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/rin___sizyun"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0031/CUSA01054_00-AVATAR1505NEP020_8F9F8D5DDAC22DB4414A_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/crisp_potato">@crisp_potato</a> 试6次左右了。都是黑屏。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/rin___sizyun">rin___sizyun</a>
+                                            2016-04-06 23:56                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/qiancao"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP9000/CUSA12613_00-AVA00LUDENSCHIBI_8349E7A2EBBE0C2D9433_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    话说安卓端现在连PS4提示需要更新......这个该去哪里更新呢？
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/qiancao">qiancao</a>
+                                            2016-04-06 23:58                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/heikki5504"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0425/CUSA11911_00-AVATAR180920TIO0_4BE4CCA377AB4BAB2C2F_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/fre_00">@fre_00</a> 手柄要和电脑连接才可以的，看看PS4设定里启用遥控操作有木有打钩，还有要在PSN里认证为常用PS4
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/heikki5504">heikki5504</a>
+                                            2016-04-07 00:07                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/nathaniel_wu"><img height="50" src="../avatars/nathaniel_wu-1676590428-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/leeccoldsun_">@leeccoldsun_</a> 第三方不可能跟第一方有什么区别的，画面水平完全取决于PS4，PC/Mac端程序基本只是个视频播放器而已
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/nathaniel_wu">nathaniel_wu</a>
+                                            2016-04-07 00:27                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/scgabriel"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP1804/CUSA08621_00-AVATAR0000000021_4DD200084FD8A887DC2C_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    这个Remote Play什么时候能让手柄不要接在PC上啊。咱又不是用PC来玩，咱只是想用PC做一个屏幕来录像
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/scgabriel">scgabriel</a>
+                                            2016-04-07 00:47                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/nathaniel_wu"><img height="50" src="../avatars/nathaniel_wu-1676590428-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/scgabriel">@scgabriel</a> Remote Play登录小号遥控PS4，DS4登录大号玩就可以了
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/nathaniel_wu">nathaniel_wu</a>
+                                            2016-04-07 00:56                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/betsuniiikara"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP9002/CUSA10625_00-NEIRMCAV2B000001_3FF151024DE34FC3CDC2_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    串流合购不可得兼有点讨厌
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/betsuniiikara">betsuniiikara</a>
+                                            2016-04-07 00:56                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/soikong_zero"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/WWS_E/E0007.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/leeccoldsun_">@leeccoldsun_</a> 画质一般吧，我略感模糊，希望不是iMac 4K屏的原因…另，玩花园战争2打起来有点拖影，特不自在，全屏明显、小屏无感。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/soikong_zero">soikong_zero</a>
+                                            2016-04-07 00:59                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/godo512323187"><img height="50" src="../avatars/godo512323187-1621165565-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    能连上画面挺顺畅但有延迟..100块左右的极路由路由器..两边都是wifi连接
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/godo512323187">godo512323187</a>
+                                            2016-04-07 01:00                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/scgabriel"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP1804/CUSA08621_00-AVATAR0000000021_4DD200084FD8A887DC2C_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/nathaniel_wu">@nathaniel_wu</a> 这个不是在讨论Remote Play Pc那个黑客写的软件。你没有试过PS官方这个串流，在遥控的时候不能切换使用者么？或者你是怎么弄的？
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/scgabriel">scgabriel</a>
+                                            2016-04-07 01:04                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/osirlohk"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/3RD/JP01061506001_4195AA61181FB5BB940D_L.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    为什么我点击开始连接的时候，弹出右侧的框框，然后就一直保持这样了，程序也没死，但手动输入那个按钮就是不能按。<br/><img class="imgclick" referrerpolicy="no-referrer" src="http://ww4.sinaimg.cn/large/a15b4afegw1f2nhysn335j20vr0iv764.jpg"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/osirlohk">osirlohk</a>
+                                            2016-04-07 01:31                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/dt_psvita"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0031/CUSA06573_00-AVATARNEPDOT0017_4ADF62CC2968FB8A57A8_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    我这里的情况是画面不卡也不会断...但感觉操作延迟挺大的...游戏用的是极品19
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/dt_psvita">dt_psvita</a>
+                                            2016-04-07 01:33                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/ssenkrad1994"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP9008/CUSA03605_00-PREMIUMAVATAR002_5FF04A237241B852F2D0_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/osirlohk">@osirlohk</a> 正常情况下这时候会让你登陆PSN，所以……大概是网抽了
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/ssenkrad1994">ssenkrad1994</a>
+                                            2016-04-07 01:40                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/osirlohk"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/3RD/JP01061506001_4195AA61181FB5BB940D_L.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/ssenkrad1994">@ssenkrad1994</a> 死活登陆不上PSN。。。弹出的窗口似乎是个网页，查看源代码发现完全没有跳转信息，然而我在其他浏览器上登陆PSN是完全没问题的，无论港服日服。。。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/osirlohk">osirlohk</a>
+                                            2016-04-07 01:46                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/luckyleoyoung"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/UP0082/CUSA00288_00-AV00000000000005_57D9D7127BF504A52A80_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/osirlohk">@osirlohk</a> 我也遇到这个问题，最后挂ss解决
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/luckyleoyoung">luckyleoyoung</a>
+                                            2016-04-07 01:56                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/osirlohk"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/3RD/JP01061506001_4195AA61181FB5BB940D_L.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/luckyleoyoung">@luckyleoyoung</a> 我已经解决了，我发现是IE抽了。。。不知为何，其他浏览器都没问题，就是IE连不上任何网站。我估计RemotePlay调用的是IE的浏览器，所以我重设了一下IE的设置。。。重启电脑之后IE恢复正常能打开网页了，<br/>RemotePlay里的PSN也能登陆了。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/osirlohk">osirlohk</a>
+                                            2016-04-07 02:05                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/vlitvyakprpr"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/default/DefaultAvatar.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/scgabriel">@scgabriel</a> 本来就可以用ds4蓝牙连接电脑吧
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/vlitvyakprpr">vlitvyakprpr</a>
+                                            2016-04-07 02:33                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/csergo"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0507/CUSA04966_00-AVATAR0000000002_4B67147A69CED74F875A_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    win10连接没问题，就是手柄没震动，是正常的吗？
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/csergo">csergo</a>
+                                            2016-04-07 02:36                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/kaedeex"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0507/CUSA04966_00-AVATAR0000000016_F6F9A69911721CE05E01_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/scgabriel">@scgabriel</a> 官方这个一样能切, 只要你用ds4切到的不是pc上app登录的那个小号就行 
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/kaedeex">kaedeex</a>
+                                            2016-04-07 03:05                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/smaite-hung"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0507/CUSA00893_00-AVATAR0000RYOK01_E3A1437910A0F4636319_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    试了几把，两边都是无线，感觉还不错，之后打算买个外置的网络端口，用MBA接线看看效果如何
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/smaite-hung">smaite-hung</a>
+                                            2016-04-07 03:59                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/tangjie0425"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0700/CUSA11685_00-JUMP50THANNIVA05_E44003A2646CF8CE03F8_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    还不错<img class="imgclick" referrerpolicy="no-referrer" src="http://ww4.sinaimg.cn/large/a15b4afegw1f2nrkz4qbpj21hc0u0h2m.jpg"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/tangjie0425">tangjie0425</a>
+                                            2016-04-07 07:08                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/mario00wario99"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/WWS_J/J0001.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/luna_noire">@luna_noire</a> 最优解
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/mario00wario99">mario00wario99</a>
+                                            2016-04-07 08:06                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/shiww"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP9002/CUSA01666_00-2018HWCHCHOCOCHO_B14FF85CFB2AF5398209_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    昨天晚上在笔记本上用串流玩了一个小时左右，ss流量用了1个多G（路由器挂着ss，只把ps4加入白名单）。<br/>这货难道不走局域网？忘了说，游戏是单机的。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/shiww">shiww</a>
+                                            2016-04-07 09:22修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/ganxianghua"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP3372/CUSA09078_00-ALTLAVATAR000000_E923C70FEF5644DAA6D4_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/crisp_potato">@crisp_potato</a> 我也是黑屏……
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/ganxianghua">ganxianghua</a>
+                                            2016-04-07 09:42                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/ganxianghua"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP3372/CUSA09078_00-ALTLAVATAR000000_E923C70FEF5644DAA6D4_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    Win10 连接成功，但是黑屏，能听到选择东西的声音，就是没画面……擦
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/ganxianghua">ganxianghua</a>
+                                            2016-04-07 09:46                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/ganxianghua"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP3372/CUSA09078_00-ALTLAVATAR000000_E923C70FEF5644DAA6D4_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/nathaniel_wu">@nathaniel_wu</a> 请问，可不可以直接把PS4的网线口用一根网线插到电脑的网线口……
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/ganxianghua">ganxianghua</a>
+                                            2016-04-07 09:49                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/wgulysses"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/WWS_E/E0030.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    ps4和mbp都是连无线的，可能是ps4放的远，掉线好几次，画质选的720p和30帧，玩起来小卡，体验没想象的好
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/wgulysses">wgulysses</a>
+                                            2016-04-07 09:49                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/diors_v587"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0101/CUSA01099_00-AVATAR1511000001_0E7DB844418754C8A501_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    坐等1080P 720P太难受
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/diors_v587">diors_v587</a>
+                                            2016-04-07 09:50                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/freedom934"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/3RD/UP10631304006_9C1516B4387AFA1ED54D_L.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    刚查了下PS4和PSV的网络参数，无线最高都只支持802.11n,不支持802.11ac，所以无线速度最高也就54M，串流效果肯定一般。但是PS4的网口却是支持1000M的，所以可以把PS4和支持1000M网口的PC连到千兆交换机上，网速应该会快很多。PC如果支持802.11ac，那用无线也应该没问题，毕竟802.11ac最高速度也能到1000M左右。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/freedom934">freedom934</a>
+                                            2016-04-07 09:52                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/yeeyui"><img height="50" src="../avatars/yeeyui-1687018026-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    校园网，这个功能对我来说不存在……
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/yeeyui">yeeyui</a>
+                                            2016-04-07 10:41                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/whatthetruth"><img height="50" src="../avatars/whatthetruth-1724207383-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/nathaniel_wu">@nathaniel_wu</a> <img src="../emoticons\face\majiang\13.gif"/>手头有一个MACair，平时要用一般都得带上采集卡才能用。<br/>这次的串流可以直接用网线直连吗？有外置网口。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/whatthetruth">whatthetruth</a>
+                                            2016-04-07 11:01                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/nathaniel_wu"><img height="50" src="../avatars/nathaniel_wu-1676590428-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/whatthetruth">@whatthetruth</a> 可以的，但是必须要通过无线联接外网，不通过PSN验证不让遥控
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/nathaniel_wu">nathaniel_wu</a>
+                                            2016-04-07 11:28                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/krystialee"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0031/CUSA01054_00-AVATAR1505NEP012_9452E5AC3A53CA110436_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/luna_noire">@luna_noire</a> 下了新版的remote play连不上PS4了。。。不知道是不是设置问题，还有民间的这个据说可以广域网了？
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/krystialee">krystialee</a>
+                                            2016-04-07 11:33                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/rszhang"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/UT0016/CUSA06833_00-DOP2021PSSAVATAR_6E0F675608763DC36B08_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/freedom934">@freedom934</a> 11n单天线150M  双天线300M 三天线450M 移动设备为了省电一般是75M的 
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/rszhang">rszhang</a>
+                                            2016-04-07 11:40                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/sakura_akiho"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0005/CUSA14276_00-13KAVATER0000010_53517C762A3CE783CB1B_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/oridzuru">@oridzuru</a> 听说win7也可以用……能否共享下程序文件
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/sakura_akiho">sakura_akiho</a>
+                                            2016-04-07 11:41                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/luna_noire"><img height="50" src="../avatars/luna_noire-1577794824-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/krystialee">@krystialee</a> 第三方的都还没更新
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/luna_noire">luna_noire</a>
+                                            2016-04-07 11:53                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/krystialee"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0031/CUSA01054_00-AVATAR1505NEP012_9452E5AC3A53CA110436_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/luna_noire">@luna_noire</a> 不是更新了个0.113吗？那个不是最新的么？
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/krystialee">krystialee</a>
+                                            2016-04-07 11:55                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/luna_noire"><img height="50" src="../avatars/luna_noire-1577794824-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<br/><a href="https://psnine.com/psnid/krystialee">@krystialee</a> 最新的出来该是0.115了
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/luna_noire">luna_noire</a>
+                                            2016-04-07 11:57                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/lv-devil7"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/3RD/JP01021011001l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/luna_noire">@luna_noire</a> 问一下这个方法如果我PC上有ss能共享给ps4吗？
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/lv-devil7">lv-devil7</a>
+                                            2016-04-07 12:00                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/luna_noire"><img height="50" src="../avatars/luna_noire-1577794824-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/lv-devil7">@lv-devil7</a> 没试过，你SS开全局，然后PS4下载，电脑看下SS的速度就知道了
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/luna_noire">luna_noire</a>
+                                            2016-04-07 12:02                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/lv-devil7"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/3RD/JP01021011001l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/smaite-hung">@smaite-hung</a> mba支持ac的直接连WiFi就行了
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/lv-devil7">lv-devil7</a>
+                                            2016-04-07 12:02                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/krystialee"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0031/CUSA01054_00-AVATAR1505NEP012_9452E5AC3A53CA110436_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/luna_noire">@luna_noire</a> 了解了，3了个Q
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/krystialee">krystialee</a>
+                                            2016-04-07 12:07                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/lv-devil7"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/3RD/JP01021011001l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/yeeyui">@yeeyui</a> 是看局域网的，就是看你路由器的好坏，我校园网慢的要死用遥控720p高FPS还是挺流畅的
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/lv-devil7">lv-devil7</a>
+                                            2016-04-07 12:08                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/lv-devil7"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/3RD/JP01021011001l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    看到有些人说网速不好用不来的，其实并没有关系。我试过把PPPOE那边密码改错(上不了外网)ps4和PC还是正常很流畅。这个主要还是看你局域网的速度，说白了就是路由器或者交换机的好坏。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/lv-devil7">lv-devil7</a>
+                                            2016-04-07 12:13                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/brpey"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/WWS_E/E0016.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    不能用鼠标键盘，不开心.....
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/brpey">brpey</a>
+                                            2016-04-07 12:18                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/ganxianghua"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP3372/CUSA09078_00-ALTLAVATAR000000_E923C70FEF5644DAA6D4_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/rin___sizyun">@rin___sizyun</a> 你解决了吗？黑屏问题……
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/ganxianghua">ganxianghua</a>
+                                            2016-04-07 12:45                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/sakura_akiho"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0005/CUSA14276_00-13KAVATER0000010_53517C762A3CE783CB1B_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    试了试 win7虽然能运行 但是一连接就自动切断 ps4倒是也能记录到连接<br/>估计就是系统特性不支持……
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/sakura_akiho">sakura_akiho</a>
+                                            2016-04-07 12:47                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/ganxianghua"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP3372/CUSA09078_00-ALTLAVATAR000000_E923C70FEF5644DAA6D4_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/nathaniel_wu">@nathaniel_wu</a> 请问，怎么解决黑屏问题……
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/ganxianghua">ganxianghua</a>
+                                            2016-04-07 12:47                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/ganxianghua"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP3372/CUSA09078_00-ALTLAVATAR000000_E923C70FEF5644DAA6D4_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/freedom934">@freedom934</a> 请问，黑屏问题是什么情况？有办法解决吗？
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/ganxianghua">ganxianghua</a>
+                                            2016-04-07 12:47                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/tohnoseika"><img height="50" src="../avatars/tohnoseika-1556687572-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/ganxianghua">@ganxianghua</a> 虽然不太明白你的情况.但是肯定是有方法解决的.我也win10.没黑屏.看看是不是缺什么组件之类的?
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/tohnoseika">tohnoseika</a>
+                                            2016-04-07 12:50                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/fallstarmiao"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0031/CUSA01054_00-AVATAR1505NEP011_0C72EB65CB18F6AF317D_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    别用了，我在罪恶装备里看到了碎片化月牙天冲的效果<img src="../emoticons\face\majiang\41.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/fallstarmiao">fallstarmiao</a>
+                                            2016-04-07 13:05                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/ziwang992"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0101/CUSA01099_00-AVATAR1511000014_C833E8CC6D0F22473C94_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/betsuniiikara">@betsuniiikara</a> 其实是可以的，手动链接就行
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/ziwang992">ziwang992</a>
+                                            2016-04-07 13:08                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/zyuyi007"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP9002/CUSA09076_00-NIERBON000000006_A481B0473E1A86E9C66C_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    虽然游玩时有些花频……但上边电视机，下面电脑，简直立体音效= - =
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/zyuyi007">zyuyi007</a>
+                                            2016-04-07 13:15                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/freedom934"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/3RD/UP10631304006_9C1516B4387AFA1ED54D_L.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/ganxianghua">@ganxianghua</a> 我还没更新系统呢
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/freedom934">freedom934</a>
+                                            2016-04-07 14:11                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/vessalius_yami"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0425/CUSA07298_00-AVATAR170420DANA_A1CBFB7C6D4F3CCD4910_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    我路由器没接外网网线 插上电源直接连pc ps4 延迟没有就是画质720有点糊  加上不能上网。。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/vessalius_yami">vessalius_yami</a>
+                                            2016-04-07 14:21                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/rin___sizyun"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0031/CUSA01054_00-AVATAR1505NEP020_8F9F8D5DDAC22DB4414A_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/ganxianghua">@ganxianghua</a> 没有 不弄了。或许是显卡问题。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/rin___sizyun">rin___sizyun</a>
+                                            2016-04-07 17:11                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/sheldond0308"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/SCEI/I0038.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    请问可以像小v那样直连吗？不行就不折腾了，网速不给力
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/sheldond0308">sheldond0308</a>
+                                            2016-04-07 18:00                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/sscarle-1l"><img height="50" src="../avatars/sscarle-1l-1609612804-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    win8.1的寨板，   一打开软件就正在确认更新，然后无法连接服务器。    什么鬼
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/sscarle-1l">sscarle-1l</a>
+                                            2016-04-07 18:18                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/dapatuzuki"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0031/CUSA01054_00-AVATAR1505NEP007_9D6BA5931F489FA3E769_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    为什么我不能更新 不自动手动也没用
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/dapatuzuki">dapatuzuki</a>
+                                            2016-04-07 18:44                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/guabao"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/SCEI/I0057.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    同8.1无法连接服务器
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/guabao">guabao</a>
+                                            2016-04-07 20:39                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/smaite-hung"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0507/CUSA00893_00-AVATAR0000RYOK01_E3A1437910A0F4636319_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/sheldond0308">@sheldond0308</a> 直连是不行的，感觉还是和网速有些挂钩，至少也要在同一个局域网上。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/smaite-hung">smaite-hung</a>
+                                            2016-04-07 23:26修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/ganxianghua"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP3372/CUSA09078_00-ALTLAVATAR000000_E923C70FEF5644DAA6D4_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/rin___sizyun">@rin___sizyun</a> 不可能是显卡吧？如果是显卡，我电脑早爆了
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/ganxianghua">ganxianghua</a>
+                                            2016-04-07 23:43                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/ganxianghua"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP3372/CUSA09078_00-ALTLAVATAR000000_E923C70FEF5644DAA6D4_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/tohnoseika">@tohnoseika</a> 一直很好奇，肯定有人跟我一样吧？难道是网络传输不够？我上网买一个高级路由器试试
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/ganxianghua">ganxianghua</a>
+                                            2016-04-07 23:44                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/liana_xizi"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0031/CUSA01054_00-AVATAR1505NEP202_3E4475FCAE3D8094DCD5_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<img src="../emoticons\face\majiang\13.gif"/>现在网线直连就只有PS4用网线连PC? 不经过路由器? 经过路由器如何用局域网直连?
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/liana_xizi">liana_xizi</a>
+                                            2016-04-08 00:42                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/smaite-hung"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0507/CUSA00893_00-AVATAR0000RYOK01_E3A1437910A0F4636319_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/ganxianghua">@ganxianghua</a> 显卡完全不是问题，mac air都能开了，还有什么电脑撑不起的。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/smaite-hung">smaite-hung</a>
+                                            2016-04-08 00:50                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/rin___sizyun"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0031/CUSA01054_00-AVATAR1505NEP020_8F9F8D5DDAC22DB4414A_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/ganxianghua">@ganxianghua</a> 难道会是宽带问题，我是联通的。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/rin___sizyun">rin___sizyun</a>
+                                            2016-04-08 00:54                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/longdaze"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0082/CUSA09575_00-AVATAR0000000002_29AEC7B6A8D6B25417D8_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    有没有用串流直播的………折腾一晚上obs都是黑屏，能显示最大化的那一条按键。就是不显示屏幕……
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/longdaze">longdaze</a>
+                                            2016-04-08 00:57                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/lovesisi"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0102/CUSA05517_00-AVATAR0000000002_2A3A87139758C5C4928B_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    我想知道这功能有啥用？是我在公司也能玩PS4了？还是我出差也能玩PS4了，在家我就用电视玩呗，何必呢？为了和家里面不抢电视？再买一个电视就完了呗
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/lovesisi">lovesisi</a>
+                                            2016-04-08 01:45                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/zwei_ce"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0036/CUSA14993_00-CRYSTARDLA000019_5B9AFBB79B0BCCB242E0_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    求助 ,前置的系统更新 KB3099229_x64.msu 始终装不上 , 有什么解决方法么. 系统是 WIN10 64位
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/zwei_ce">zwei_ce</a>
+                                            2016-04-08 02:42修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/fantasy_hx"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/UP0680/CUSA02724_00-AV00000000000019_1FDDE336A8300B852B13_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<img class="imgclick" referrerpolicy="no-referrer" src="http://ww4.sinaimg.cn/large/a15b4afegw1f2oqyndgxqj20jh0abq42.jpg"/><br/>求问老司机们这是啥问题，两个都是无线（没条件连有线<img src="../emoticons\face\majiang\36.gif"/>），根据流程连不上去，手动添加也连不上去<img src="../emoticons\face\majiang\37.gif"/><img src="../emoticons\face\majiang\40.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/fantasy_hx">fantasy_hx</a>
+                                            2016-04-08 03:30修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/cfvwsong"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/3RD/30008.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/lovesisi">@lovesisi</a> 顶 不知有何用，非局域网环境又连不上，家里连着电脑玩不是脱了裤子放屁？
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/cfvwsong">cfvwsong</a>
+                                            2016-04-08 03:39                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/guabao"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/SCEI/I0057.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/sscarle-1l">@sscarle-1l</a> 试试升级win10，我升级win10以后就可以过检查更新了。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/guabao">guabao</a>
+                                            2016-04-08 05:05                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/tohnoseika"><img height="50" src="../avatars/tohnoseika-1556687572-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    我也是感到很有趣了.PS4 3.5的远程遥控更新外边各大媒体都在报道.评论很多都在喷远程无用,要局域网同路由才好.而在我们PS4论坛,有人却在喷只能局域网不能远程有个毛用,要远程才有用.但是实际情况是3.5远程游玩既支持局域网同路由,也支持异网远程.我也是感到很醉人.<img src="../emoticons\face\majiang\41.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/tohnoseika">tohnoseika</a>
+                                            2016-04-08 13:50修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/yukine312"><img height="50" src="../avatars/yukine312-1556455968-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    设置了720P打开的窗口只有960*540的分辨率，   难道只有我一个人么 <img src="../emoticons\face\majiang\41.gif"/>   然后自己拉伸了下
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/yukine312">yukine312</a>
+                                            2016-04-08 15:22                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/tohnoseika"><img height="50" src="../avatars/tohnoseika-1556687572-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/yukine312">@yukine312</a> 断开连接关闭并重启软件，连接前重新设置分辨率和帧率，我第一次和你一样。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/tohnoseika">tohnoseika</a>
+                                            2016-04-08 16:27                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/wy67775"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0082/CUSA19072_00-REPAVATAR0000013_7F1C584E3032A9F58A49_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    1080p输出依旧没有
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/wy67775">wy67775</a>
+                                            2016-04-08 16:30                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/ganxianghua"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP3372/CUSA09078_00-ALTLAVATAR000000_E923C70FEF5644DAA6D4_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/rin___sizyun">@rin___sizyun</a> 我是电信20M……
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/ganxianghua">ganxianghua</a>
+                                            2016-04-08 17:49                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/ganxianghua"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP3372/CUSA09078_00-ALTLAVATAR000000_E923C70FEF5644DAA6D4_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/smaite-hung">@smaite-hung</a> 所以说，到底是什么问题，坑爹的SONY……
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/ganxianghua">ganxianghua</a>
+                                            2016-04-08 17:50                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/flewsea"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/UT0016/CUSA06833_00-AV00000000000273_2832CF5E8800BFD82935_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/tohnoseika">@tohnoseika</a> 的确有趣
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/flewsea">flewsea</a>
+                                            2016-04-08 19:28                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/rollingmydice"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0102/CUSA02102_00-AVJ0000000000007_197C77525BBE82385963_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/freedom934">@freedom934</a> 11n标准最高300 还能MIMO
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/rollingmydice">rollingmydice</a>
+                                            2016-04-09 08:59                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/ps_vigoss"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/3RD/JP01061403001_B6FBF060731CC7EF255B_L.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    手柄操作不能，然后手柄按PS键就断开连接。。。。。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/ps_vigoss">ps_vigoss</a>
+                                            2016-04-09 09:21                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/liang_h"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP9008/CUSA03605_00-GENSHINPAIMON200_992FE33302228BDA1E94_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/lovesisi">@lovesisi</a> ……你不需要 总会有人需要的 
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/liang_h">liang_h</a>
+                                            2016-04-09 19:06                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/lincect"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP9002/CUSA10625_00-NEIRMCAV2B000001_3FF151024DE34FC3CDC2_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    KB3099229_x64.msu 同装不上，共勉<br/>此题如何破？
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/lincect">lincect</a>
+                                            2016-04-10 10:05修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/ganxianghua"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP3372/CUSA09078_00-ALTLAVATAR000000_E923C70FEF5644DAA6D4_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/rin___sizyun">@rin___sizyun</a> 我已经解决【黑屏问题】了！<br/><br/>解决办法：<br/><br/>更新自己的电脑的显卡驱动，官网可以查询是否为最新版本<br/><br/>其次是使用 "驱动大师" 等【驱动安装类】的软件，运行检查更新即可
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/ganxianghua">ganxianghua</a>
+                                            2016-04-13 13:12                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/teamj_ronaldo"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA09614_00-PREMIUMAVATAR004_34F602D273DA8518B2DD_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    win10 x64 10586 也就是现在最多最常见的th2版，正常<br/>win10 x64 Insider Preview 14316 目前最新的预览版，正常<br/>手头还有一台机没有升级th2的x86版，尚未测试，不过我觉得应该也不会有什么问题
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/teamj_ronaldo">teamj_ronaldo</a>
+                                            2016-04-13 13:28                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/rin___sizyun"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0031/CUSA01054_00-AVATAR1505NEP020_8F9F8D5DDAC22DB4414A_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/ganxianghua">@ganxianghua</a> 果然是显卡。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/rin___sizyun">rin___sizyun</a>
+                                            2016-04-14 20:52                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/gyy1201"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP5015/CUSA02518_00-PREMIUMAVATAR001_12740B07E9D36591E645_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/lv-devil7">@lv-devil7</a> ss客户端有支持局域网共享，软件开启共享后，在ps4上网络设置里proxy里设置就行
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/gyy1201">gyy1201</a>
+                                            2016-04-15 00:05                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/f0urxu"><img height="50" src="../avatars/f0urxu-1556445460-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    20M上传带宽，非局域网能够正常流畅的游玩，经常在公司玩家里的PS4
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/f0urxu">f0urxu</a>
+                                            2016-04-15 02:02                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/diors_v587"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0101/CUSA01099_00-AVATAR1511000001_0E7DB844418754C8A501_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    我就想问啥时候有1080P
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/diors_v587">diors_v587</a>
+                                            2016-04-15 02:03                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/wittypeaman"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP9000/CUSA01275_00-PREMIUMAVATAR006_9748E7790AD80D27D446_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    r7500，串流遥控根本不稳定，xbox的就很好，sony还需努力啊
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/wittypeaman">wittypeaman</a>
+                                            2016-04-15 13:10                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/wuyuemax"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/SCEI/I0001.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/osirlohk">@osirlohk</a> 我也是同样问题，打得开网站就是登录页面一片白，求问IE怎么设置
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/wuyuemax">wuyuemax</a>
+                                            2016-06-06 22:01                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/osirlohk"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/3RD/JP01061506001_4195AA61181FB5BB940D_L.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/wuyuemax">@wuyuemax</a> IE-&gt;Internet选项-&gt;高级-&gt;重置IE设置
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/osirlohk">osirlohk</a>
+                                            2016-06-06 22:25                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/wuyuemax"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/SCEI/I0001.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/osirlohk">@osirlohk</a> 搞定啦！谢谢！
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/wuyuemax">wuyuemax</a>
+                                            2016-06-07 01:23                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/croliondl"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/UP1018/CUSA00133_00-AV00000000000005_4FA44780B7C97FEDF836_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/ps_vigoss">@ps_vigoss</a> 我也是，特意试了下只要手柄不动，画面一切安好，一按手柄的PS键立马GG
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/croliondl">croliondl</a>
+                                            2016-07-15 12:08                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/liushuoshu-hk"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/WWS_E/E0002.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    这玩意画质感人<img src="../emoticons\face\majiang\7.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/liushuoshu-hk">liushuoshu-hk</a>
+                                            2016-07-15 12:47                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/youwao"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0704/CUSA02582_00-AVATAR1511N2YUYU_EE1D9D8F7DD87F911A33_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/osirlohk">@osirlohk</a> 你好，你现在能pc串流了么，我是输入8位密码后说登录了其他psn账号，请问怎么解决。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/youwao">youwao</a>
+                                            2016-07-24 23:16                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/stewardx007"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/SCEI/I0002.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/youwao">@youwao</a> 我连psn都登不进去... 输psn账号密码的界面打开过几秒钟后自动关闭，根本无法输入...
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/stewardx007">stewardx007</a>
+                                            2016-07-25 00:47                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/youwao"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0704/CUSA02582_00-AVATAR1511N2YUYU_EE1D9D8F7DD87F911A33_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/stewardx007">@stewardx007</a> 我跟你一样，如果直接用手动联接，直因为不是同个psn账号报错，打开登录直接过几秒没反应，这软件也是没谁了。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/youwao">youwao</a>
+                                            2016-07-25 08:36                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/zsk8833"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP9000/CUSA12307_00-AVATAR0000000013_1CD4E6F2770EAD369B49_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    有线连的同一个路由器，可是不管设置成720还是多少，只显示540p,应该不是网速的问题吧
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/zsk8833">zsk8833</a>
+                                            2016-07-25 08:56                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/croliondl"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/UP1018/CUSA00133_00-AV00000000000005_4FA44780B7C97FEDF836_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/youwao">@youwao</a> 你可以在软件上登录另外一个账号，主机设置开机就登陆那个账号，连上软件之后按下PS键，选择你实际想用的那个账户然后就可以了
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/croliondl">croliondl</a>
+                                            2016-07-25 09:04                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/youwao"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0704/CUSA02582_00-AVATAR1511N2YUYU_EE1D9D8F7DD87F911A33_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/croliondl">@croliondl</a> 目前情况是在下载完软件后可以登录一次psn，后面那个软件怎么都登陆不了psn，哪怕改账号都不行，我psv和ps4连得很好，这个软件跳转到登录界面是白的，然后就关闭了，是楼主说的Q5问题吧。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/youwao">youwao</a>
+                                            2016-07-25 09:15                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/stewardx007"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/SCEI/I0002.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/youwao">@youwao</a> 确实 但是我家是20M的电信别的都连的好好的就这个登录登不进去 开蓝灯也不行 可能要换个更稳定点的？
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/stewardx007">stewardx007</a>
+                                            2016-07-25 11:49                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/youwao"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0704/CUSA02582_00-AVATAR1511N2YUYU_EE1D9D8F7DD87F911A33_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/stewardx007">@stewardx007</a> 我买了ss然后win10报错failed to update PAC,win7可以用ss，我也是醉了，逼得我买了个便携显示器，现在家里3个显示器了。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/youwao">youwao</a>
+                                            2016-07-25 15:57                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/stewardx007"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/SCEI/I0002.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/youwao">@youwao</a> 刚刚试了下神奇的连上了  感觉果然还是很玄学
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/stewardx007">stewardx007</a>
+                                            2016-07-25 20:49                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/rj_george"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/UP2026/CUSA11998_00-AV00000000000002_51E29661261355DDD9F4_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/croliondl">@croliondl</a> 今天偶然发现手柄可以无线连接了<img src="../emoticons\face\majiang\26.gif"/>，又重新看了一下关于遥控的帖子，没想到楼上的朋友已经发现了。<br/>话说拿遥控玩音游效果实在是感人，有时候明明按了按钮，就是没反应，都想摔手柄了。现在虽然画面偶尔还卡，但是按键精准了。<br/>PS:以前局域网内ipad方案（几个人一个宿舍的时候，就想躺在床上一个人静静地玩<img src="../emoticons\face\majiang\23.gif"/>）可能是采集卡+pc远程桌面（windows自带/teamviewer/splashtop），现在变成了remote play+pc远程桌面。采集卡可以省了。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/rj_george">rj_george</a>
+                                            2016-08-03 20:49修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/wowmijing"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP9008/CUSA03605_00-LNY2021AVATAR000_EA28FBBDC5AB00B0B18A_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    我遇到的问题....<br/><br/><a href="http://psnine.com/qa/7496" target="_blank">http://psnine.com/qa/7496</a>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/wowmijing">wowmijing</a>
+                                            2016-10-30 16:28修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/wowmijing"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP9008/CUSA03605_00-LNY2021AVATAR000_EA28FBBDC5AB00B0B18A_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    登陆帐号无反应，另一台电脑就没事....很尴尬
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/wowmijing">wowmijing</a>
+                                            2016-10-30 16:29修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/laxus-m-dreyar"><img height="50" src="../avatars/laxus-m-dreyar-1577676516-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    有没人知道为什么我串联后连wifi，连了后wifi却失灵了，手机上不了，电脑也上不了网
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/laxus-m-dreyar">laxus-m-dreyar</a>
+                                            2016-11-27 22:53                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/firesoul-hx"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0005/CUSA01557_00-P5AVATAR00000013_1A29365C1C4911EC0DD2_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    好久不用串流，怎么发现登出账号之后没法换新账号了。。。这是什么情况点登出之后再选登陆 就是默认那个账号
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/firesoul-hx">firesoul-hx</a>
+                                            2016-11-29 21:02                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/dearmysister"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0177/CUSA02647_00-AVATAR00000RAPPY_13B62C01FD676CB0AE80_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/firesoul-hx">@firesoul-hx</a> 搜索setting.cache 这个文件 路径在sony什么下面 把他删掉
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/dearmysister">dearmysister</a>
+                                            2017-02-06 13:58                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/vectorevolution"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0005/CUSA01557_00-P5AVATAR00000012_459A9A1AFE228FB3E0C7_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    现在用这个一直显示 与服务器连接超时 这东西已经停用了吗<img src="../emoticons\face\majiang\21.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/vectorevolution">vectorevolution</a>
+                                            2017-02-17 17:22                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/feipang2"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP9000/PPSA01971_00-DEATHSDCAVATAR04_B2876EA11038CB158772_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    龙珠 超宇宙 无法遥控游玩
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/feipang2">feipang2</a>
+                                            2017-02-17 19:57                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/martian_14"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/WWS_J/J0003.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    一般延迟能有多少？不知道像初音FT那样的游戏能不能良好地体验
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/martian_14">martian_14</a>
+                                            2017-02-17 21:07                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/nathaniel_wu"><img height="50" src="../avatars/nathaniel_wu-1676590428-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/martian_14">@martian_14</a> 音游就不要想了…用有线延迟都会有较大影响…
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/nathaniel_wu">nathaniel_wu</a>
+                                            2017-02-17 21:12                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/xiaoaishiabu"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA14833_00-CFBAVATAR0000052_F3EC4CEF1832EFBEABC1_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    以前直播一直用的好好的，今天突然显示无法连接服务器？我晕死了
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/xiaoaishiabu">xiaoaishiabu</a>
+                                            2017-08-26 14:38                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/jack-24911"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP9000/CUSA05682_00-AVATAR0000000010_C832AACE79829BC3AF12_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    为什么我的720P投到电脑上，画面很暗，看不清黑暗处
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/jack-24911">jack-24911</a>
+                                            2017-10-19 13:47                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/riunkai"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/WWS_J/J0004.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    能按home键，然后进入账户选择界面，手柄可用，但是选了账户进入主页就用不了了，求助啊
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/riunkai">riunkai</a>
+                                            2017-12-17 21:39                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/fireruin"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP9000/CUSA14006_00-TLOUPIIELLIEAVA3_CA47FBF0B68951EF682A_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    手机蓝牙连接ds4报错退出，电脑线连，蓝牙连没反应
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/fireruin">fireruin</a>
+                                            2018-01-28 21:06                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/maker777"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/WWS_A/UP90001103K33_F893743CA237622AE266_L.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    机子不在身边，又想玩，想试试remote play<br/>手机Sony XZs 移动4G无限流量<br/>PS4放家里，家里50m电信光纤<br/>不在局域网里，相隔两地是否可玩<br/>需要不要在PS4要先进行一些设置。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/maker777">maker777</a>
+                                            2018-02-01 23:36                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/longjiayi"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/3RD/JP00361111B06_184299A1FE29A4AB47D2_L.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<img src="../emoticons\face\majiang\5.gif"/>想问下，PS4遥控操作点开始之后，登陆PSN界面里无法显示机器人。。。刷新过后会看到一开始有验证窗口，然后刷新完成之后就不见了~~~
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/longjiayi">longjiayi</a>
+                                            2018-04-15 14:32                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/kakinuma4ko"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA05030_00-PREMIUMAVATAR006_21E1097AD85D8E377611_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    mac 2.7.0 点登录没任何反应<br/>把这个楼爬完以后发现这问题都好多年了，也太惨了<img src="../emoticons\face\majiang\40.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/kakinuma4ko">kakinuma4ko</a>
+                                            2019-01-17 00:20修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/soglad2cu"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP9000/CUSA12613_00-AVA00LUDENSCHIBI_8349E7A2EBBE0C2D9433_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    过年没带四公主回家，带了iPad和手柄远程串流玩，玩了一下午，发现几个问题：<br/><br/>1.手柄的ps键和触摸板无法使用<br/>2.无法进行音量设置（3.5插手柄也没用）<br/>3.画质会越来越差，只能手动退出remote play重连<br/><br/>请问一下这几个问题是目前都无法解决的还是有什么技巧哟？用付费那个app体验会好点么？<img src="../emoticons\face\alu\44.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/soglad2cu">soglad2cu</a>
+                                            2020-01-24 21:56                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/gloryxie"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/WWS_J/J2064_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/soglad2cu">@soglad2cu</a> iOS不支持<img src="../emoticons\face\shoubing\18.gif"/><img src="../emoticons\face\shoubing\21.gif"/>，画质变差是因为网络质量问题。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/gloryxie">gloryxie</a>
+                                            2020-03-16 16:16                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/soglad2cu"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP9000/CUSA12613_00-AVA00LUDENSCHIBI_8349E7A2EBBE0C2D9433_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/gloryxie">@gloryxie</a> 感谢回答~~发现这贴原来不会浮上去之后当时已经发了问答了~~
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/soglad2cu">soglad2cu</a>
+                                            2020-03-16 17:45                                                                            </div>
+<!--回复结束-->
+</div>
+</div>
+        </body></html>

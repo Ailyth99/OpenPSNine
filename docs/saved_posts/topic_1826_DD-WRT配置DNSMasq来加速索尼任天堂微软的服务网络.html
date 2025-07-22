@@ -1,0 +1,448 @@
+
+        <!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><title>DD-WRT配置DNSMasq来加速索尼/任天堂/微软的服务网络</title><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="stylesheet" href="style.css"></head>
+        <body>
+            <div class="original-url-container"><p><strong>原始链接:</strong> <a href="https://psnine.com/topic/1826" target="_blank">https://psnine.com/topic/1826</a></p></div>
+            <h1>DD-WRT配置DNSMasq来加速索尼/任天堂/微软的服务网络</h1><div class="main-post-container"><div class="meta">
+
+<a class="psnnode" href="https://psnine.com/psnid/sokinokatu" itemprop="author">sokinokatu</a>
+<span class="text-warning">
+2014-08-22 13:27编辑
+</span>   
+39评论
+</div><div class="content pd10" itemprop="articleBody"><span style="color:red;"><b>本文原文来自本人朋友也是A9的PS3区常客，也是91wii的版主lucky☆star，原地址：<a href="http://bbs.a9vg.com/thread-3476870-1-1.html" target="_blank">包括最新更新都见这里</a></b></span><br/><span style="color:red;">因为大部分游戏的网战都是采用P2P技术，所以受限于双方的网络，用此方法无法解决联机网战的掉线问题（主要还是和供应商有关。）</span><br/>众所周知，一般现在大型一点的网络服务都是利用cdn服务器（内容分发网络）来同步数据镜像以达到资源优化，任索微三大件也不例外，但是这样最大的问题就是一般大陆这边的ip的划片问题，一般cdn托管的智能识别对大陆ip都喜欢往欧美划，导致都会给分配到一个奇慢无比CDN服务器而不是最快的港台韩CDN服务器，而本身就连接不好的大陆网络又到了这些地区，导致网络质量更差。而通过改DNS虽然有可能会对链接有帮助，但是DNS是影响全网，而不同的服务可能最快的解析IP不同，比如索尼的奖杯、下载、图片都不是一个服务器，用DNS解析就会出现有的快有的慢的现象，而且很多国内的网站都是两个IP（国内一个，国外一个）用外国DNS解析成外国IP反而会让去这些网站的时候变慢。。。<br/>于是DNSmasq就出现了，说白了这个是一个低内存占有率的DHCP服务器，但是由于可以配置某些解析（和hosts的功效差不多，但是hosts某些设备无法使用），所以这样就达到加速的能力了。<br/><blockquote>但是：<span style="color:red;">你必须有一个支持DNSMasq的路由器。获得方法:你的路由器支持刷写DD-WRT、OpenWRT、番茄等开源固件。或者直接淘宝购买刷好番茄、DD-WRT的路由器，目前支持的有linksys，华硕，buffalo等厂商的中高端路由器，或一些企业级路由器，推荐Buffalo WHR-HP-G300N，buffalo里面可刷DD固件中最便宜的，需要注意，不要用厂商定制版DD固件（又称专业版固件） ，版本太旧。</span></blockquote><br/>这里以DD固件为准<br/><img class="imgclick" referrerpolicy="no-referrer" src="http://ww1.sinaimg.cn/mw690/40235c9btw1efghon2ov5j20id0bbt9j.jpg"/><br/>设置→基本设置→网络地址服务器设置 (DHCP)，勾选这三个选项<br/><b>静态DNS1一定要填写路由器的IP地址（如192.168.1.1），剩下2个建议选择小众DNS，114DNS这样的最好都不要选择（为了保障任天堂服务的稳定性，建议第一DNS选择OPEN DNS ，第二DNS 选择oneDNS</b><br/><img class="imgclick" referrerpolicy="no-referrer" src="http://ww3.sinaimg.cn/mw690/40235c9btw1efghonu3gej20li0hwtcc.jpg"/><br/>服务→服务→DNSMasq，<b>记住要勾选本地DNS！（图里面搞错了）</b><br/>之后在底下DNSMasq 附加选项填写脚本：<br/><a href="http://bbs.a9vg.com/thread-3476870-1-1.html" target="_blank">脚本见此贴</a><br/><br/><b>注意FQ部分因为openerDNS的公开DNS服务器IP已经失效，所以不能用了。FQ部分就别想了</b><br/><br/><br/><br/>之后只要点击保存设置→应用即可。。。<br/><br/><br/><span style="color:red;"><b>如遇IP地址失效，请到开头的帖子里查看更新，此处仅是发帖时可用IP！</b></span></div></div>
+            
+            <h2>评论</h2><div class="post">
+<a class="l" href="https://psnine.com/psnid/silentsjw"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/WWS_A/UP90001411TSU_FB31EBC005B411248436_L.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    好复杂啊
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/silentsjw">silentsjw</a>
+                                            2014-04-15 20:26                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/suki_iku"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP9000/CUSA00912_00-PREMIUMAVATAR001_463D5ABA2488EA593C00_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    好复杂啊
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/suki_iku">suki_iku</a>
+                                            2014-04-15 20:37                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/sokinokatu"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/3RD/UP10041306044_F7FBE9C796C3F1CBEC92_L.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/jimmyleohk">@jimmyleohk</a> 好像他在A9被暂时禁言了。。。。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/sokinokatu">sokinokatu</a>
+                                            2014-04-15 23:24                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/siritios"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/3RD/JP00361111B04_08AD8EBD9F4C4DED25AA_L.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    一万个感谢！
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/siritios">siritios</a>
+                                            2014-05-06 21:57                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/scgabriel"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP1804/CUSA08621_00-AVATAR0000000021_4DD200084FD8A887DC2C_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<img src="../emoticons\face\majiang\12.gif"/>略高端喵，战术mark下，以后用
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/scgabriel">scgabriel</a>
+                                            2014-05-06 22:06                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/ziqingmoyi"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA14326_00-AVATAR0000000009_B19CF6DF2D2A716CA320_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    这个东西为了能每天都能正常使用还需要每天改IP么？
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/ziqingmoyi">ziqingmoyi</a>
+                                            2014-05-06 23:00                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/sokinokatu"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/3RD/UP10041306044_F7FBE9C796C3F1CBEC92_L.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/ziqingmoyi">@ziqingmoyi</a> 如果失效，尝试用电脑ping一下ip，如果不通，暂时删掉对应的解析即可
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/sokinokatu">sokinokatu</a>
+                                            2014-05-07 00:56修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/sidaly"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/UT0016/CUSA06833_00-AV00000000000273_2832CF5E8800BFD82935_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    虽然已经在A9学会了，但还是要支持一个
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/sidaly">sidaly</a>
+                                            2014-05-07 01:34                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/pocterzero"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/3RD/UP10631304008_B5E8400AEF3A8EC451B4_L.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/yukitoisyo">@yukitoisyo</a> PSXdownloadhelper?那个也能提高联机速度？
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/pocterzero">pocterzero</a>
+                                            2014-05-07 07:05                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/yukitoisyo"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/SCEI/IP91001401PR3_107F831A6F6EB8F42F0C_L.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/pocterzero">@pocterzero</a> 不能…仅限下载
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/yukitoisyo">yukitoisyo</a>
+                                            2014-05-08 18:08                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/sokinokatu"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/3RD/UP10041306044_F7FBE9C796C3F1CBEC92_L.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    稍微更新一点
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/sokinokatu">sokinokatu</a>
+                                            2014-08-22 13:24                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/kamino_sama"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/UT0016/CUSA06833_00-DOP2021PSSAVATAR_6E0F675608763DC36B08_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    马克思一下<img src="../emoticons\face\majiang\3.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/kamino_sama">kamino_sama</a>
+                                            2014-08-22 13:29                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/ronglin"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/UT0016/CUSA06833_00-KINGOFFIGHTERSS2_9E50D6D578B5ADE6F9E1_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    一直不知道换不换路由好
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/ronglin">ronglin</a>
+                                            2014-08-24 21:27                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/a8470004"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP1804/CUSA08621_00-AVATAR0000000005_9C200B98311124FBC4F5_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    好像很高端 以后尝试一下
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/a8470004">a8470004</a>
+                                            2014-08-24 22:19                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/alexmanutd77"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/3RD/UP20451102B06_FF947C827E32DD00EF04_L.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    TB入个100块左右的巴法罗 路由器 刷一下机 很快搞定 加速效果明显
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/alexmanutd77">alexmanutd77</a>
+                                            2014-08-24 22:21                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/life1104jp"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0425/CUSA07298_00-AVATAR170420ADOL_D39C67FA954767E1BDFB_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    便宜货就是磊科Q3，60多块搞定<img src="../emoticons\face\majiang\3.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/life1104jp">life1104jp</a>
+                                            2015-01-15 23:15                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/aojia"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/UP3493/CUSA07861_00-AV00000000000136_FEDD8B98DF5567306947_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    好像挺不错，回头试一试<img src="../emoticons\face\majiang\2.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/aojia">aojia</a>
+                                            2015-01-16 00:49                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/zstdreamer"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA17544_00-P5RAVATAR000002A_DEE99AB23E6492B924F6_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    好东西啊,mark一下
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/zstdreamer">zstdreamer</a>
+                                            2015-01-16 02:32                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/diu-_-diu"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/WWS_A/UP90001312L23_7F84D74ABEA843C43125_L.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    DD的好设置点。OP的有没有详细教程呢？<a href="https://psnine.com/psnid/sokinokatu">@sokinokatu</a> <br/>OP功能多  我想用我那路由实现迅雷离线  同时开启DNSmasq <br/>不过都是介绍DD的，很少有详细讲解OP开启DNSmasq的。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/diu-_-diu">diu-_-diu</a>
+                                            2015-01-24 15:54                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/pm_kb1985"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP9002/CUSA09075_00-JS2DBON000000006_F94FC16E2C476963F131_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    马克一下
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/pm_kb1985">pm_kb1985</a>
+                                            2015-01-24 16:13                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/nexx_czw"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0102/CUSA09554_00-AV00000000000015_1F53BA8BDADD3A4D7480_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    怒马一记~
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/nexx_czw">nexx_czw</a>
+                                            2015-01-24 16:15                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/wknet1988"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/SCEI/I0006.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    这个实现起来比较复杂，首先得有个能刷DD固件的路由器，其次还得花时间精力去刷，另外还得配置DNS规则，成本太高了。<br/>我就慷他人之慨一回，分享个简单的。<br/>注意，为了避免给服务器搭建者带来不必要的麻烦，请<span style="color:red;"><b>一定要低调分享</b></span>。<br/>http://public-dns.tk/nameserver/cn.html<br/>这个是按照楼主所说的dnsmasq方式搭建的DNS服务器列表。都是国内的，从北京到广东都有。<br/>服务器的有效性不保证，所以请随用随查，最好不要作为日常DNS使用。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/wknet1988">wknet1988</a>
+                                            2015-01-24 19:05修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/winteryang"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/WWS_J/J0037.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    我只想知道对联机有没有效果？用过的朋友说下。文章里说可以改善索尼服务，可是就算psn再稳定，速度再快，如果ping游戏服务器很慢又有什么用？
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/winteryang">winteryang</a>
+                                            2015-01-24 17:03                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/wubs12345"><img height="50" src="../avatars/wubs12345-1607940783-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/wknet1988">@wknet1988</a> 我看中间甚至还有南京中医药大学的dns，这些都是改过了dns的嘛？
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/wubs12345">wubs12345</a>
+                                            2015-01-24 18:47                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/wknet1988"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/SCEI/I0006.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/wubs12345">@wubs12345</a> 请参考Software / Version这一列，标记了dnsmasq版本号的基本上都是改过的，其他的技术不太了解，建议还是优先选用dnsmasq的。<br/><a href="https://psnine.com/psnid/winteryang">@winteryang</a> 连接速度取决于连线双方，如果服务器本身连线就很差的话，那就爱莫能助了。修改DNS的目的就是减小解析域名产生的网络延迟，建议选择一个与你实际上网地区在数据链路上最近的中心节点。例如华北地区最好选用北京的，华东则是上海，华南是广州或深圳，。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/wknet1988">wknet1988</a>
+                                            2015-01-24 19:09                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/winteryang"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/WWS_J/J0037.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    这个实在太给力了，完全可以摆脱PSX了，下载游戏可以达到满速，打开商店什么的都是秒开。谷歌又可以上了<img src="../emoticons\face\majiang\32.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/winteryang">winteryang</a>
+                                            2015-01-26 08:57                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/sk_lonely"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0106/CUSA16157_00-NIOH2SEASONAVA00_10B24BB7DE6721F8EE61_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    X1的话基本上用不到 连大EA和2K都没有任何问题 下载也能满速 40多GB游戏基本上几小时就下完 PSN的话 基本上不玩联网 下载的话一般也是开一夜下载 夜里用棒子的DNS也能慢速40GB也能下完。。 所以无所谓了。。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/sk_lonely">sk_lonely</a>
+                                            2015-01-26 09:10                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/foxjacob"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA11727_00-P5DAVATARPS40004_C5219FF40F3F35DBE4FF_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/sokinokatu">@sokinokatu</a>  正好最近想买个新的无线路由（旧的寿终正寝了），非常及时的看到了这篇文章<br/><br/>——不过文中推荐的那款Buffalo WHR-HP-G300N京东天猫无货，淘宝上的价格差又非常大不可信（100多~1000多的跨度），所以弱弱的来请教，可否推荐几款比较容易购买的？（不一定最便宜，性价比较高即可~）
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/foxjacob">foxjacob</a>
+                                            2015-01-26 09:29                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/sayamiki"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/3RD/JP00311208003_FAF58454E1BB13094C66_L.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    好高端的方法···留个名慢慢研究··
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/sayamiki">sayamiki</a>
+                                            2015-01-26 09:41                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/wknet1988"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/SCEI/I0006.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/foxjacob">@foxjacob</a> 巴法络(Buffalo)的东西偏贵,而且假货不少,买的话建议到亚马逊之类的地方去买.个人建议你选美国网件(Netgear),台湾友讯(D-Link)的路由,支持型号在官网可以查.<br/>链接: http://www.dd-wrt.com/site/support/router-database
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/wknet1988">wknet1988</a>
+                                            2015-01-26 13:18修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/foxjacob"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA11727_00-P5DAVATARPS40004_C5219FF40F3F35DBE4FF_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/wknet1988">@wknet1988</a> 原来如此，学习了~<br/><br/>弱弱的继续提问，我搜索了一下NETGEAR和D-LINK的，支持DD-WRT的貌似都只有比较旧的型号诶~<br/><br/>如果我想入一个预算500以内，4M有线网络环境下的无线路由器，有什么推荐么？
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/foxjacob">foxjacob</a>
+                                            2015-01-26 13:10                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/wknet1988"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/SCEI/I0006.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/foxjacob">@foxjacob</a> NETGEAR/网件 WNDR4300 这个应该符合你的要求,也在DD的支持列表里.(注意硬件版本是v1和v4才支持DD固件)<br/>链接:http://www.amazon.cn/dp/B00BTWIO7E?tag=etaonew1634307-23<br/>不过还是建议你多花点钱买这个更好的.Netgear 美国网件 R6300v2,看评论可以刷DD固件,虽然官网列表里面无此型号.<br/>http://www.amazon.cn/dp/B00EE2PYTM/ref=wl_it_dp_o_pC_nS_ttl?_encoding=UTF8&amp;colid=31V4X3KRMO3V4&amp;coliid=I2ZBBKARBNVIGS
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/wknet1988">wknet1988</a>
+                                            2015-01-26 13:29                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/foxjacob"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA11727_00-P5DAVATARPS40004_C5219FF40F3F35DBE4FF_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/wknet1988">@wknet1988</a> 看着就觉得好漂亮！  果断下单后者，谢谢推荐~
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/foxjacob">foxjacob</a>
+                                            2015-01-26 14:09修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/foxjacob"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA11727_00-P5DAVATARPS40004_C5219FF40F3F35DBE4FF_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/wknet1988">@wknet1988</a> 弱弱的提问：thirstypanda673是什么意思呢？ 为什么网件的默认密码是这个？
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/foxjacob">foxjacob</a>
+                                            2015-01-28 20:25                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/wknet1988"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/SCEI/I0006.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/foxjacob">@foxjacob</a> thirstypanda673这个就是字面意思吧,"口渴的熊猫".网件的默认账号密码,我见过的一般都是admin/password.你这个确实没见过,可能是"有人"设置过.你先看看路由器或说明书上写的默认密码是什么.如果不一致,就再检查一下包装,看看是不是原封的.
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/wknet1988">wknet1988</a>
+                                            2015-01-28 20:34                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/foxjacob"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA11727_00-P5DAVATARPS40004_C5219FF40F3F35DBE4FF_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/wknet1988">@wknet1988</a> 倒是没错，官方也是。。。。。噢噢，我还以为这句话有什么典故呢（就像微软WORD的那个彩蛋 狐狸跳猎狗）
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/foxjacob">foxjacob</a>
+                                            2015-01-28 22:16                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/foxjacob"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA11727_00-P5DAVATARPS40004_C5219FF40F3F35DBE4FF_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/wknet1988">@wknet1988</a> 不好意思，又来咨询了~<br/><br/>路由器入手，翻资料学习了一下，基本上明白刷固件的方法了~ <br/><br/>不过。。。。需要<br/><br/>dd-wrt.K3_R6300V2.chk<br/>dd-wrt.v24-K3_AC_ARM.bin<br/><br/>这两个文件，前者是用来从官方固件升级到DDWRT，后者是稳定版的DDWRT~<br/><br/>然后我各种搜索。。。。都没有找到下载的地址——所以弱弱的过来提问。。。。是否知道这两个固件哪里还能下载呢？
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/foxjacob">foxjacob</a>
+                                            2015-01-29 21:07                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/wknet1988"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/SCEI/I0006.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/foxjacob">@foxjacob</a> http://pan.baidu.com/s/1i3GdhUP         mmv7
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/wknet1988">wknet1988</a>
+                                            2015-01-29 23:47                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/foxjacob"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA11727_00-P5DAVATARPS40004_C5219FF40F3F35DBE4FF_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/wknet1988">@wknet1988</a> 超感谢，握爪~
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/foxjacob">foxjacob</a>
+                                            2015-01-29 23:56                                                                            </div>
+<!--回复结束-->
+</div>
+</div>
+        </body></html>

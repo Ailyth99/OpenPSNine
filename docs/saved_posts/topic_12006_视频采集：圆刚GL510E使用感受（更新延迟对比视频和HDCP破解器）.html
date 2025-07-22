@@ -1,0 +1,959 @@
+
+        <!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><title>视频采集：圆刚GL510E使用感受（更新延迟对比视频和HDCP破解器）</title><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="stylesheet" href="style.css"></head>
+        <body>
+            <div class="original-url-container"><p><strong>原始链接:</strong> <a href="https://psnine.com/topic/12006" target="_blank">https://psnine.com/topic/12006</a></p></div>
+            <h1>视频采集：圆刚GL510E使用感受（更新延迟对比视频和HDCP破解器）</h1><div class="main-post-container"><div class="meta">
+
+<a class="psnnode" href="https://psnine.com/psnid/vempx_hk" itemprop="author">vempx_hk</a>
+<span class="text-warning">
+2015-05-07 11:56编辑
+</span>   
+85评论
+</div><div class="content pd10" itemprop="articleBody"><b>前言：</b><br/>前段时间借出去的梅露露Plus回来了，这游戏自打买了就一直坑着，后来干脆直接借人借了半年多。拿回来之后放PSVTV里面玩，在我的23寸显示器上画面被拉的惨不忍睹。去年在PSVTV玩讨鬼极的时候也没觉得画面这么差，当时和基友也讨论过讨鬼极的画面，结论是KT美工强悍，虽然只有960×544的分辨率，但是拉到23寸1080p显示器上看依旧觉得画面很不错。不过这次梅露露plus似乎达不到讨鬼极的这个效果了。而且我一直以来对玩主机游戏的时候会彻底把我的主显占用这件事儿感到很闹心，虽然有副显在旁边，但是还是免不了切换主显的输入信号来查看某些PC上面的东西。于是这么一折腾，就让我萌生了买一块儿HDMI采集卡的想法。 <br/><br/><br/><b>圆刚EXTREME CAP U3（CV710）</b><br/>一开始看了半天，最后选定了这款USB3接口的外置录像盒，理由很简单，可以1080p@60fps。买之前我也发现了，这款对USB3接口有一定的要求，至少我在日本圆刚官网的Q&amp;A看到了Etron的USB3芯片不在兼容范围内，嗯我的技嘉主板就是这个芯片的USB3。于是我去家里的另外一台机器上把很久以前买的Orico USB3扩展卡拆下来装到我的机器上。这块卡的主控芯片是NEC Renesas的，在CV710的兼容范围内。<br/><br/><img class="imgclick" referrerpolicy="no-referrer" src="http://ww1.sinaimg.cn/large/43823ba4gw1eruxq4ck8mj20sc0d274w.jpg"/><br/><br/>CV710到手后，问题来了……插在扩展卡上完全不工作，录像盒的指示灯蓝灯慢闪，系统根本没有发现新设备。我一开始以为扩展卡的供电不足，于是翻出来4pin供电线把扩展卡的外接供电接上了，结果依旧不行。然后我硬着头皮把录像盒插在了板载Etron USB3口上，勉强能用，但是果然兼容性有问题，会出现各种奇奇怪怪的毛病。再然后我把录像盒插在了我的凹凸本上，这个本儿的USB3是Intel的，这次没问题了。不，其实还有问题。一是我不可能拿凹凸本干这事儿，二是感觉有100ms左右的延迟。于是纠结了一晚，最后还是把这个盒子退了。<br/><br/><br/><b>主角GL510E来了：</b><br/>我当然是不会善罢甘休的，既然USB3你不靠谱，我就找PCIE的卡。于是在圆刚的产品线里发现了两款，一个是Live Gamer HD（C985），另一个就是这次的主角Live Gamer HD Lite（GL510E）。<br/><br/><img class="imgclick" referrerpolicy="no-referrer" src="http://ww1.sinaimg.cn/large/43823ba4gw1eruxq4vlpcj20sc0d2gms.jpg"/><br/><br/>嗯，就是这款，价格799。其实它和C985几乎没有区别，但是C985卖1799，差了整整1000块。那么这两者有什么区别呢？C985多了一个外接的独立录像按钮，C985的卡上面多了一个散热盖板，C985送了一个串流软件的3个月使用授权，C985送了一个HDMI到DVI的转接头，没了。是的，贵了1000块钱只不过就是多了一些这样可有可无的东西，除此之外两者的硬件是完全一样的，你说买哪个？<img src="../emoticons\face\majiang\32.gif"/><br/><br/>这张卡有一个重要的功能，就是HDMI passthru，这个功能可以把输入到这张卡的HDMI信号原样复制一份从HDMI Out接口输出出去，这样就可以在PC采集的同时还能得到一份完全无延迟的信号，对于某些动作游戏这是非常重要的。<br/><br/>然后来看一下这张卡的规格。<br/><br/><center><img class="imgclick" referrerpolicy="no-referrer" src="http://ww1.sinaimg.cn/large/43823ba4gw1eruxq5eeq0j20fd0edn25.jpg"/></center><br/><br/>很可惜，这张卡在采集的时候最高只能支持到1080p@30fps，也就是说我PS4输出的1080p@60fps的信号，在PC端用采集软件最高只能看到1080p@30fps，但是passthru直出的信号会保持1080p@60fps。于是我梦想着，在PC这边用720p@60fps采集不就好了嘛。<br/><br/><br/><b>AVerMedia RECentral</b><br/>这个东西就是圆刚的官方软件了，用了一下感觉还不错，设置页面也很详细。<br/><br/><img class="imgclick" referrerpolicy="no-referrer" src="http://ww1.sinaimg.cn/large/43823ba4gw1eruxq5xe4kj20re0hiad9.jpg"/><br/><br/>但是这个软件无法设定信号采集格式，也就是说HDMI喂进来什么规格的信号，它就会采集什么规格的信号，于是我的720p@60fps梦直接就破灭了。PS4在1080p@60fps输出的状态下，在这个软件里只能采集到1080p@30fps，没办法把采集分辨率指定成720p，嗯……然后这个软件还有另外一点很蛋疼的地方就是你没有办法指定窗口大小百分比，想精确的得到720的大小只能用手拖拽窗口进行调节，很蛋疼……。<br/><br/><br/><b>AmarecTV</b><br/>这是一个日本人开发的软件，用的人也不少。诡异的是英文官网最新版本只到2.31，日文官网已经3.10了……囧。<br/><br/><img class="imgclick" referrerpolicy="no-referrer" src="http://ww3.sinaimg.cn/large/43823ba4gw1eruxq6sr14j20l00fmjvf.jpg"/><br/><br/>嗯，能找到我的采集卡，一切看起来都很好，那么就点OK吧！<br/><br/><img class="imgclick" referrerpolicy="no-referrer" src="http://ww2.sinaimg.cn/large/43823ba4gw1eruxq79dx0j20dj066mxo.jpg"/><br/><br/>嗯，不行，无论如何也不行，我折腾了半天都没用，一直就是这个鸟样，放弃。<br/><br/><br/><b>PotPlayer</b><br/>说实话我一点也不想用这个东西（笑），但是好像有不少人是用它作为采集软件的，没办法我姑且试试看好了。设置如下。<br/><br/><img class="imgclick" referrerpolicy="no-referrer" src="http://ww1.sinaimg.cn/large/43823ba4gw1eruxq7mwq4j20f10f2taa.jpg"/><br/><br/>一切都设置好之后，打开设备，然后神奇的事情发生了！！<br/><br/><img class="imgclick" referrerpolicy="no-referrer" src="http://ww2.sinaimg.cn/large/43823ba4gw1eruxq8cpyjj20zu0m5gut.jpg"/><br/><br/>我上面设置格式的时候选的是默认格式，于是它真的采集成720p@60fps了！但是我高兴的有点太早，因为我听不到任何声音。折腾了好久，最后始终无法解决声音的问题。后来我发现，我用的PotPlayer是x64版的，x64版里面输入那一项只有HDMI可以选，但是我换到x86之后，这里居然多了很多选项，我换到另外一个选项，声音的问题就这么解决了！<br/><br/><img class="imgclick" referrerpolicy="no-referrer" src="http://ww2.sinaimg.cn/large/43823ba4gw1eruxq8wv42j20f10f2wg4.jpg"/><br/><br/><br/><br/><b>MPC-HC</b><br/>其实我一开始是用mpc-be来采集的，但是我误以为mpc-be的采集功能实在是弱的和没有一样，然后我想到了mpc-hc，结果果然不负众望！（其实mpc-be是一样的<img src="../emoticons\face\majiang\3.gif"/>）<br/><br/><img class="imgclick" referrerpolicy="no-referrer" src="http://ww1.sinaimg.cn/large/43823ba4gw1eruxq9kw1qj20kg0hp417.jpg"><br/><br/>设置很简单，几乎没什么可设置的，这么弄完了之后就打开设备吧！<br/><br/><img class="imgclick" referrerpolicy="no-referrer" src="http://ww2.sinaimg.cn/large/43823ba4gw1eruxqacatcj215e0na49w.jpg"/><br/><br/>它默认也给我采集为720p@60fps了，而且有声音！实在是太给力了！不过声音有点问题，会不定时的小小爆音一下，让我觉得有些不爽。另外就是我感觉mpc-hc采集出来的画面好像不清楚，不知道究竟是怎么回事，我下面会列出AVerMedia RECentral、potplayer、mpc-hc三者在1080p分辨率下采集的血源主菜单截图，大家可以对比一下。<br/><br/><img class="imgclick" referrerpolicy="no-referrer" src="http://ww1.sinaimg.cn/large/43823ba4gw1eruxqbl926j21hc0u0gzq.jpg"/><br/>RECentral<br/><br/><img class="imgclick" referrerpolicy="no-referrer" src="http://ww4.sinaimg.cn/large/43823ba4gw1eruxqczumrj21hc0u07kz.jpg"/><br/>PotPlayer<br/><br/><img class="imgclick" referrerpolicy="no-referrer" src="http://ww1.sinaimg.cn/large/43823ba4gw1eruxqdkj8kj21hc0u0alw.jpg"/><br/>MPC-HC<br/><br/>我的感受是，RECentral &gt; PotPlayer &gt; MPC-HC，区别非常明显。<br/><br/><br/><b>总结：</b><br/>总体来说这张卡我还是比较满意的，passthru功能能够提供给显示器无延迟的原始信号（需关闭HDCP保护），PCIE接口又提供了远比USB3好的兼容性，搭配官方软件录像时使用这张卡进行硬件编码不耗费CPU资源。当然我个人认为唯一的缺点就是无法达到1080p@60fps规格的采集，不过细想想，似乎也并没有什么卵用。真要录的话，我相信绝大多数人也会选择录制720p，而60fps更是没有卵用，自己留着看还行，但是一旦上传到视频网站上，你的60fps就会被狠狠的艹成不知道什么鬼东西了。<br/><br/>那么这张卡我现在的用法是这样的：玩PS4的话，就使用passthru功能在我的显示器上直接看PS4的无延迟信号，游戏支持的话还能看到1080p@60fps，副显示器这边需要录像就打开RECentral，设定好录像规格进行录像就可以了。但是有时我想两边同时看到画面，我就会用PotPlayer在电脑这边看720P@60fps的采集画面，当然主显示器那边还是保持1080P@60fps；PSVTV和PS3因为有HDCP保护，我的破解器也还没到手，所以就直接用采集卡玩了。PS3这边大部分游戏都是720的，所以60fps无压力，PSVTV这边就更无压力了，等HDCP破解器到手之后自由度又会更高一些。<br/><br/><img src="../emoticons\face\majiang\38.gif"/>生命不息，折腾不止<br/>=============================================<br/>更新了一个延迟的对比视频，左边主显是passthru信号，右边是potplayer采集信号<br/>链接：<a href="http://pan.baidu.com/s/1czqrG" target="_blank">http://pan.baidu.com/s/1czqrG</a> 密码：joe3<br/>=============================================<br/>HDCP破解器到手了，用了一下非常棒，上图先<br/><br/><img class="imgclick" referrerpolicy="no-referrer" src="http://ww3.sinaimg.cn/large/bfb87cf8jw1ervjmtyg81j20zk0nn0yc.jpg"><br/><br/><img class="imgclick" referrerpolicy="no-referrer" src="http://ww1.sinaimg.cn/large/bfb87cf8jw1ervjmuq9jmj20zk0nntem.jpg"/><br/><br/>这个破解器支持双输出，所以用CV710的同学可以考虑上这个破解器，一路输出给CV710采集用，一路输出给显示器无延迟信号。破解HDCP之后，PSVTV和PS3都没有问题了<img src="../emoticons\face\majiang\3.gif"/><br/>然后关于破解器的供电，这款要求5V 2A的直流供电，原配了一个变压器。或者找一条USB转DC3.5的线也是可以的，但是普通USB接口的供电量为5V 500mA可能满足不了，我的技嘉板子有那个什么USB 3倍电力，倒是从主板的USB口直接取电工作的很正常，如果你的主板USB口供电充足那么直接取电过来也是可以的。</img></img></div></div>
+            
+            <h2>评论</h2><div class="post">
+<a class="l" href="https://psnine.com/psnid/hikaritt101"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP9002/CUSA01666_00-2018HWCHCANDYCAN_FB56279F5969C8B4FE98_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    太长了看起来好累……于是看了一分钟之后还是放弃了
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/hikaritt101">hikaritt101</a>
+                                            2015-05-06 22:45                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/id_t-mac"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP9000/CUSA12613_00-AVA00LUDENSCHIBI_8349E7A2EBBE0C2D9433_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    看了下原来说的是采集卡<img src="../emoticons\face\majiang\2.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/id_t-mac">id_t-mac</a>
+                                            2015-05-06 22:56                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/nathaniel_wu"><img height="50" src="../avatars/nathaniel_wu-1676590428-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    说到底还是因为穷<img src="../emoticons\face\majiang\23.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/nathaniel_wu">nathaniel_wu</a>
+                                            2015-05-06 23:04                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/mechille"><img height="50" src="../avatars/mechille-1632902931-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/vempx_hk">@vempx_hk</a> 写的太棒了。我也用过一阵子CV710，可惜不知道是我买到次品了还是怎么的，用了大约2周，就挂了（一直红灯，不出画面）好在卖家人不错，原价给退货。于是就不怎么敢用外置采集盒了
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/mechille">mechille</a>
+                                            2015-05-06 23:07修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/cyukishine"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/UT0016/CUSA06833_00-DOP2021JINAVATAR_A31FEBBCC36C54501648_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    圆刚易录盒C875也好象不能录1080P，60帧
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/cyukishine">cyukishine</a>
+                                            2015-05-06 23:07                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/mechille"><img height="50" src="../avatars/mechille-1632902931-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/cyukishine">@cyukishine</a> 不能，按官网标的最多1080P 30帧。CV710据说是可以1080P 60帧，但我没成功...
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/mechille">mechille</a>
+                                            2015-05-06 23:15                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/cyukishine"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/UT0016/CUSA06833_00-DOP2021JINAVATAR_A31FEBBCC36C54501648_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/mechille">@mechille</a> 分辨率怎么调都是1280*720，看盒子里说可以到1080p 60帧，不过官方录制软件有串流功能还不错
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/cyukishine">cyukishine</a>
+                                            2015-05-06 23:18                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/panstmiao"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0005/CUSA01557_00-P5AVATAR00000029_5FC349C8E71DEEA20697_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    原来potplayer是这个问题！谢谢楼主排雷~。~<img src="../emoticons\face\majiang\16.gif"/><img src="../emoticons\face\majiang\16.gif"/><br/>圆刚原生软件如果能加强推流功能就完美了，现在直播还是得用obs再录一次窗口然后加字幕图片TAT
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/panstmiao">panstmiao</a>
+                                            2015-05-06 23:26                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/jwq-1416"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP9000/CUSA12613_00-DSAV0000SCAREDBB_76BD05D6FF2FCE728D23_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    长草【你快住手！
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/jwq-1416">jwq-1416</a>
+                                            2015-05-06 23:37                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/lawqzyz"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA05030_00-PREMIUMAVATAR005_AF74587908A78B2CA256_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    我的就是圆刚cv710，只不过在ps3输出1080p时，容易设备断掉，目测供电不足造成的。ps3输出720p时，保持稳定，一晚上游玩都不会出毛病，加上笔记本就1440*768<br/>，效果足够了。还有帧数60fps
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/lawqzyz">lawqzyz</a>
+                                            2015-05-06 23:47修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/osu-nightmare"><img height="50" src="../avatars/osu-nightmare-1556450402-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    你可以尝试使用XSplit这款软件来玩和录制。记得用破解版
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/osu-nightmare">osu-nightmare</a>
+                                            2015-05-07 00:31                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/madsheep2012"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/3RD/JP00311111A10_212E9AB1CD12A1FD5350_L.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    MARK一下，考虑之后入个HDMI采集卡录点东西
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/madsheep2012">madsheep2012</a>
+                                            2015-05-07 02:27                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/turpentines"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA17544_00-P5RAVATAR000002A_DEE99AB23E6492B924F6_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    一直对采集卡玩长草 但usb3.0接口还是不能忽视延迟，除了USB外笔记本也只剩thunderbolt接口了，网上好像也没找到利用这个接口的帖子<img src="../emoticons\face\majiang\9.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/turpentines">turpentines</a>
+                                            2015-05-07 03:28                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/kvirus-2012"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0365/CUSA01470_00-000000AVATAR0005_060F37CA028E5DEFB4B8_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    这种采集卡对电脑配置有要求么？
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/kvirus-2012">kvirus-2012</a>
+                                            2015-05-07 05:26                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/sysxfml"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0704/CUSA02582_00-AVATAR1511N1REMI_0F1CCA8AA46EC593CC4C_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    CV710一直用得很舒服
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/sysxfml">sysxfml</a>
+                                            2015-05-07 07:25                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/vempx_hk"><img height="50" src="../avatars/vempx_hk-1556637192-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/nathaniel_wu">@nathaniel_wu</a> 瞎特么说什么大实话呢<br/><a href="https://psnine.com/psnid/mechille">@mechille</a> 710挑U3口主控芯片，兼容性比较头疼<br/><a href="https://psnine.com/psnid/lawqzyz">@lawqzyz</a> 我在凹凸本上用710的时候1080输出都没问题，就是没有passthru让我受不了<br/><a href="https://psnine.com/psnid/kvirus-2012">@kvirus-2012</a> 多少还是有的，官网有说明。需要注意的是这两款PCIE卡在录像的时候用的是卡自带的芯片硬件编码，几乎不占用CPU，但是CV710这款外置盒录像的时候是要用CPU编码的，相应的对PC配置要求会高一些
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/vempx_hk">vempx_hk</a>
+                                            2015-05-07 08:36修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/lawqzyz"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA05030_00-PREMIUMAVATAR005_AF74587908A78B2CA256_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/vempx_hk">@vempx_hk</a> 可能是usb供电问题，或者笔记本配置，感觉供电更有可能
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/lawqzyz">lawqzyz</a>
+                                            2015-05-07 10:09                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/weever_"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/WWS_J/J0039.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    上个月刚刚坑了美亚一块710<img src="../emoticons\face\majiang\37.gif"/><br/>换了双头供电的3.0线，舒爽中，延迟对于我这种迟钝的人来说，简直没有一样<img src="../emoticons\face\majiang\3.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/weever_">weever_</a>
+                                            2015-05-07 10:19                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/alisaunder"><img height="50" src="../avatars/alisaunder-1652561011-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    还有吐槽一点，截屏默认bmp，都不能修改，害得我每次还要用秀秀修改jpg。。。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/alisaunder">alisaunder</a>
+                                            2015-05-07 10:21                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/aoxuisme"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/WWS_A/UP90001009023l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    感谢LZ，朋友拿来一个CV710，结果我的Win7 Thinkpad笔记本连采集卡的驱动都装不上，一直报错，兼容性堪忧。。。顺便问下LZ什么叫凹凸本？
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/aoxuisme">aoxuisme</a>
+                                            2015-05-07 12:02                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/vempx_hk"><img height="50" src="../avatars/vempx_hk-1556637192-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/aoxuisme">@aoxuisme</a> 我的是骚尼的T13，USB3接口是Intel的芯片。CV710的驱动安装和采集卡没有关系吧，不连接采集卡的时候就可以直接安装驱动和RECentral，之后插上CV710就能自动认出来的。一定要插在USB3接口上才可以好像。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/vempx_hk">vempx_hk</a>
+                                            2015-05-07 12:06                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/aoxuisme"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/WWS_A/UP90001009023l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/vempx_hk">@vempx_hk</a> 是的，我还没连采集卡的时候，就已经败在驱动安装这一步了，死活装不上去，不管x86版本还是x64版本都不行。我的本本是有USB 3.0口的，配合USB 3.0的移动硬盘用着从来没有任何问题。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/aoxuisme">aoxuisme</a>
+                                            2015-05-07 12:10                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/vempx_hk"><img height="50" src="../avatars/vempx_hk-1556637192-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/aoxuisme">@aoxuisme</a> 有什么错误提示么？
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/vempx_hk">vempx_hk</a>
+                                            2015-05-07 12:11                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/lawqzyz"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA05030_00-PREMIUMAVATAR005_AF74587908A78B2CA256_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/aoxuisme">@aoxuisme</a> 我win10都没问题啊，肯定是你系统的问题或者硬件问题
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/lawqzyz">lawqzyz</a>
+                                            2015-05-07 12:12                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/zichuan"><img height="50" src="../avatars/zichuan-1556418212-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    我的采集卡最高支持到1080p 30fps，而且画面会有延迟，没有办法来作为单独画面玩游戏，只能用来采集ps3的游戏画面。<br/><br/>其实ps4的话已经完全没必要用采集卡了，内置的录像系统已经足够。ps3的话，不录视频于是采集卡一直吃灰中……以后可能搞个psv tv，这样的话采集卡可能还不至于彻地退休<img src="../emoticons\face\majiang\3.gif"/><br/><br/>p.s. 采集卡是elgato的，game capture HD
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/zichuan">zichuan</a>
+                                            2015-05-07 13:07                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/aoxuisme"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/WWS_A/UP90001009023l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/vempx_hk">@vempx_hk</a> 有的，错误信息是安装到一半时弹出一个提示框，只有一句话『 ERROR: Cannot update driver for Plugandplay Devices! 0x2』。后来找客服，客服说等我有空的时候，远程帮我装上去，但是目前还没来得及弄。<br/><a href="https://psnine.com/psnid/lawqzyz">@lawqzyz</a> 我估计也是我系统问题，但是看着这个错误信息太不友好了，一头雾水，确实不知道如何解决。另外你是Win10的话我们系统不一样，其实没有什么可比性。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/aoxuisme">aoxuisme</a>
+                                            2015-05-07 13:23修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/weever_"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/WWS_J/J0039.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/zichuan">@zichuan</a> 内置录像还是不太够的吧， 单次录制时长是个问题， 有的游戏有受保护的部分录不了， 有的可能声音录不上， 内置硬盘容量也是个限制。。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/weever_">weever_</a>
+                                            2015-05-07 13:31                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/vempx_hk"><img height="50" src="../avatars/vempx_hk-1556637192-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/aoxuisme">@aoxuisme</a> 这个比较像你系统问题了……囧<br/><a href="https://psnine.com/psnid/zichuan">@zichuan</a> PS4的内置录像其实挺蛋疼的，时间短不说，录的质量也不是很好，而且碰到某些游戏限制的比较多录都录不了，或者像讨鬼极这种录完没声音
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/vempx_hk">vempx_hk</a>
+                                            2015-05-07 13:33                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/lawqzyz"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA05030_00-PREMIUMAVATAR005_AF74587908A78B2CA256_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/zichuan">@zichuan</a> <a href="https://psnine.com/psnid/vempx_hk">@vempx_hk</a> 我怎么感觉不到延迟，打花园战争也是，可能没玩高帧数的游戏
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/lawqzyz">lawqzyz</a>
+                                            2015-05-07 13:38                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/vempx_hk"><img height="50" src="../avatars/vempx_hk-1556637192-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/lawqzyz">@lawqzyz</a> 我对延迟比较敏感，你看我更新的那个视频，两个显示器之间的画面对比，也能明显的看出来采集卡的画面有一点点延迟
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/vempx_hk">vempx_hk</a>
+                                            2015-05-07 13:42                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/lawqzyz"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA05030_00-PREMIUMAVATAR005_AF74587908A78B2CA256_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/vempx_hk">@vempx_hk</a> 延迟肯定是有的，除非那些对帧数要求特别高的游戏，不然感觉不到的
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/lawqzyz">lawqzyz</a>
+                                            2015-05-07 13:47                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/vempx_hk"><img height="50" src="../avatars/vempx_hk-1556637192-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/lawqzyz">@lawqzyz</a> 嘛，我是感觉的非常明显，尤其是玩血源的时候，严重影响枪反的操作<img src="../emoticons\face\majiang\3.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/vempx_hk">vempx_hk</a>
+                                            2015-05-07 13:50                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/lawqzyz"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA05030_00-PREMIUMAVATAR005_AF74587908A78B2CA256_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/vempx_hk">@vempx_hk</a> 可能电脑配置吧，还有ps4端输出的画质和帧数比较高
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/lawqzyz">lawqzyz</a>
+                                            2015-05-07 13:53                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/aoxuisme"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/WWS_A/UP90001009023l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/zichuan">@zichuan</a> PS4内置录像我觉得最蛋疼的是从内置硬盘拷出来的过程，那个速度。。。我都是放那去睡觉的。。。关键是拷贝不能后台执行，拷贝的时候什么事情都做不了，只能干等着。。。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/aoxuisme">aoxuisme</a>
+                                            2015-05-07 14:27                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/vempx_hk"><img height="50" src="../avatars/vempx_hk-1556637192-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/aoxuisme">@aoxuisme</a> 用USB3的U盘速度能快很多很多
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/vempx_hk">vempx_hk</a>
+                                            2015-05-07 14:31                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/lawqzyz"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA05030_00-PREMIUMAVATAR005_AF74587908A78B2CA256_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    更新win10 10074后，居然会开始程序崩溃了
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/lawqzyz">lawqzyz</a>
+                                            2015-05-07 21:00                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/orochihk"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP9000/CUSA00912_00-PREMIUMAVATAR002_340062BC52B47674C6CE_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    原来potplayer还可以干这个， 好像64位有问题，一般推荐在64位系统上用32位的potplayer
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/orochihk">orochihk</a>
+                                            2015-05-07 21:09                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/vempx_hk"><img height="50" src="../avatars/vempx_hk-1556637192-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/lawqzyz">@lawqzyz</a> win10玩玩就行了，不建议用在日常生产环境……
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/vempx_hk">vempx_hk</a>
+                                            2015-05-08 09:53                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/lawqzyz"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA05030_00-PREMIUMAVATAR005_AF74587908A78B2CA256_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/vempx_hk">@vempx_hk</a> 找到原因了，应该是系统过热造成的程序强制关闭，等系统优化和驱动适配了。10074总体还是满意的，可以使用中文cortana了
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/lawqzyz">lawqzyz</a>
+                                            2015-05-08 10:54                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/hibiki_moe"><img height="50" src="../avatars/hibiki_moe-1556431419-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    好屌。一直用垃圾时立HD72A的飘过= = 屌丝卡经济实惠又便宜
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/hibiki_moe">hibiki_moe</a>
+                                            2015-05-08 16:14                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/vempx_hk"><img height="50" src="../avatars/vempx_hk-1556637192-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    圆刚官网更新了驱动，2015年7月13日<br/>RECentral:1.3.0.93 Driver:3.3.x.52<br/>更新了这个驱动之后，AmaRecTV 3.10使用起来完全没有问题了<br/>使用AmaRecTV要求系统先安装一个YV12的vfw解码器，之前有问题是因为没有解码器
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/vempx_hk">vempx_hk</a>
+                                            2015-07-24 18:42                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/hankleu"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP9000/CUSA07413_00-AVATAR0000000023_E3298B065F071B35984C_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    CV710 一定是要USB3.0 才能使用  (晶片也有要求)<br/><br/>PS3再用採集盒時 請務必將PS3系統的影像輸出調成720P   (PS3的遊戲一直都是以720P運行)<br/>如果沒調成到720P 雖然還是可以用 不過在遊戲上面 畫面中的物件移動會有延遲差異<br/><br/>個人建議如果要開實況 還是用OBS之類的軟體   圓剛自帶的截取軟件 再進行實況時偶爾會有一些小問題(很少)<br/>採集盒上面雖然可支援到1080P 不過還是要看實際主機或遊戲上面的設定 當然如果是實況PS4就不用去管畫面問題了<br/><br/>聲音輸出問題  如果是使用POTPLAYER 先將PS3聲音輸出設定為HDMI 之後POYPLAYER設定上 就依樓主的設定圖片就行<br/>記得將下面的"連接在我的電腦上能夠聽到的聲音"勾選起來<br/><br/>至於聲音會有些許破音 是因為主機的聲音輸出是先經過HDMI然後在透過採集盒將音源轉為USB3傳輸到電腦上 此時電腦跟主機的聲音設定都變為"電腦"輸出 就會造成電腦或主機音源相衝 就會偶爾產生破音<br/><br/>如果在進行遊戲中你有設定到播放軟件的聲音設定或是打開電腦內的音訊/影像檔案 也會造成遊戲小破音
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/hankleu">hankleu</a>
+                                            2015-07-24 20:10                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/hackkyo"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/WWS_E/E0002.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/vempx_hk">@vempx_hk</a> 请问我用AmarecTV 3.10还是上图那个错误，解码器哪里可以下载？
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/hackkyo">hackkyo</a>
+                                            2015-07-27 19:39                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/scgabriel"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP1804/CUSA08621_00-AVATAR0000000021_4DD200084FD8A887DC2C_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<img src="../emoticons\face\majiang\12.gif"/>很高端的帖子，mark下喵
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/scgabriel">scgabriel</a>
+                                            2015-07-27 20:39                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/scgabriel"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP1804/CUSA08621_00-AVATAR0000000021_4DD200084FD8A887DC2C_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<img src="../emoticons\face\majiang\7.gif"/>楼主你没有写出破解器的型号啦喵
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/scgabriel">scgabriel</a>
+                                            2015-07-27 20:40                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/yeyuanshun"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP9002/CUSA09076_00-NIERBON000000002_A184BF387496B14E3FE3_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    然而我买的cv710要ps3 tv并不需要破解器∠( ᐛ 」∠)＿
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/yeyuanshun">yeyuanshun</a>
+                                            2015-07-27 21:58                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/yeyuanshun"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP9002/CUSA09076_00-NIERBON000000002_A184BF387496B14E3FE3_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/yeyuanshun">@yeyuanshun</a> 玩，错别字理解就好。。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/yeyuanshun">yeyuanshun</a>
+                                            2015-07-27 21:59                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/vempx_hk"><img height="50" src="../avatars/vempx_hk-1556637192-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/hackkyo">@hackkyo</a> 可以选择安装ffdhow，然后打开ffdshow的vfw设置，Decoder哪里的RAW选上所有课支援的格式。<br/>或者安装<a href="http://www.free-codecs.com/download/helix_yuv_codecs.htm" target="_blank">Helix YUV Codecs</a><br/><a href="https://psnine.com/psnid/scgabriel">@scgabriel</a> <img src="../emoticons\face\majiang\3.gif"/>没写型号我是怕有推销嫌疑，某宝搜“科唯奇”<br/><a href="https://psnine.com/psnid/yeyuanshun">@yeyuanshun</a> 使用圆刚自带软件的话，是不需要破解器的，因为它自己支持HDCP协议，但是要用其他的采集工具就需要破解器了。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/vempx_hk">vempx_hk</a>
+                                            2015-07-28 13:21修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/yeyuanshun"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP9002/CUSA09076_00-NIERBON000000002_A184BF387496B14E3FE3_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/vempx_hk">@vempx_hk</a> 然而其他软件也可以使用<img src="../emoticons\face\majiang\5.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/yeyuanshun">yeyuanshun</a>
+                                            2015-07-29 10:07                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/youmusuki"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/3RD/JP00311208013_ABD69533BFD1AA16B1A9_L.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/vempx_hk">@vempx_hk</a>  买了cv710。之后一直闪屏 两三个月了一直录游戏偶尔闪屏 得不到解决方法 搁置了。主板是b85pro   电脑配置测试也全过。楼主能给看看咋回事么(´･_･`)太谢谢了。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/youmusuki">youmusuki</a>
+                                            2015-07-29 10:37                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/babynami"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0082/CUSA00301_00-AVATAR1511JOB005_B157AB780E0240C5E276_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    同用GL510E的飘过，看着采集画面玩游戏的话感觉按键按下去后还是会有0.5秒左右的延迟，玩RPG还可以，玩格斗或是体育竞速之类就比较难受了，所以我直播的时候还是看着电视机玩，电脑那边用无线HDMI传输器传输到采集卡。。。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/babynami">babynami</a>
+                                            2015-07-29 10:58                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/gordianz"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/UP9000/CUSA11260_00-AV00000000000001_7C8170E2BAA0BD50C216_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    为什么这么多在乎延迟的？拿采集卡在电脑上玩么？<br/>话说国内有视频网站支持 60fps 么？
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/gordianz">gordianz</a>
+                                            2015-07-29 14:05                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/rukiasama"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/WWS_A/UP90001312L05_95A5912C80C5D2D6EEFA_L.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/babynami">@babynami</a> 这个无线HDMI传输器到底是怎么一回事啊，之前看到有人提过，然后X宝一搜，才200块钱的东西，但是不知道是如何连接的，X宝上看到的是就一个像U盘一样的HDMI插口的<span style="color:red;">接收器</span>，但是没看到有<span style="color:red;">发射器</span>，都是用什么手机，平板发射信号，有什么设备接在PS4发射信号吗
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/rukiasama">rukiasama</a>
+                                            2015-07-29 16:31                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/babynami"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0082/CUSA00301_00-AVATAR1511JOB005_B157AB780E0240C5E276_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/rukiasama">@rukiasama</a> 那个不行的。。。怎么也得1000+软妹币的
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/babynami">babynami</a>
+                                            2015-07-29 17:10                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/rukiasama"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/WWS_A/UP90001312L05_95A5912C80C5D2D6EEFA_L.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/babynami">@babynami</a> 有什么品牌型号推荐吗？我ps4放客厅，书房放了psvtv，插在采集卡上，画质感觉好渣，而且总是出现花屏<br/>psv连的时候也花，只有距离5m内才不花<br/>用的是直连，不过Wi-Fi的连接方式
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/rukiasama">rukiasama</a>
+                                            2015-07-29 18:13                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/vempx_hk"><img height="50" src="../avatars/vempx_hk-1556637192-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/youmusuki">@youmusuki</a> 这个我也不知道，CV710在我这里根本不能用。CV710录像是用CPU编码的，你看看会不会是CPU性能不够导致编码跟不上出现了Frame Drop<br/><a href="https://psnine.com/psnid/yeyuanshun">@yeyuanshun</a> 是吗，我这里不行。如果用AmaRecTV或者PotPlayer采集PS3 PSVTV的话，会黑屏写着四个大大的HDCP字样。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/vempx_hk">vempx_hk</a>
+                                            2015-07-29 20:36                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/youmusuki"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/3RD/JP00311208013_ABD69533BFD1AA16B1A9_L.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/vempx_hk">@vempx_hk</a> 好吧=-= 应该不会是u的问题 我i5 4590k。非常感谢。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/youmusuki">youmusuki</a>
+                                            2015-07-30 00:58                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/babynami"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0082/CUSA00301_00-AVATAR1511JOB005_B157AB780E0240C5E276_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/rukiasama">@rukiasama</a> 我用的ZINWELL WHD-200这个，效果还算可以
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/babynami">babynami</a>
+                                            2015-07-30 06:30                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/vempx_hk"><img height="50" src="../avatars/vempx_hk-1556637192-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    圆刚官网已经更新了Win10版的驱动，有需要的同学可以去下载<img src="../emoticons\face\majiang\4.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/vempx_hk">vempx_hk</a>
+                                            2015-08-18 20:38                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/solar0090"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/3RD/UP10631304003_6E7A9688B6B159A0F1EE_L.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    我也是这个卡··用的官方采集软件··全屏下720P有延迟·1080却没什么延迟··然后小窗口的话都没有延迟··不知道什么原因··头疼<img src="../emoticons\face\majiang\21.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/solar0090">solar0090</a>
+                                            2015-08-19 01:03                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/wuuarhk"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP5041/CUSA09862_00-DLC0010000000000_CB4F9E072EFBD09DE5FF_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/vempx_hk">@vempx_hk</a> 请问一下……我的是c875，系统win10 用自带的rec串流20分钟左右，app就会停止工作，我重新安装驱动，app，重装电脑，更改兼容性都不行……不知道有木有神马解决方案额。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/wuuarhk">wuuarhk</a>
+                                            2015-10-08 09:58                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/vempx_hk"><img height="50" src="../avatars/vempx_hk-1556637192-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/wuuarhk">@wuuarhk</a> 抱歉我没用过c875，也没试过那个串流软件，你去windows自己的事件查看器里看看错误信息有没有什么有价值的内容，或者重装个win7试试有没有问题，是在找不出原因就问一下圆刚的技术支持吧。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/vempx_hk">vempx_hk</a>
+                                            2015-10-08 13:19                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/zjf1200"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA06197_00-PREMIUMAVATAR010_A6559D23550A1EF2708A_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    PSVTV真是个神奇的东西，有的人说需要HDCP破解器，有的人说不需要，连采集卡吧的JS都说不准
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/zjf1200">zjf1200</a>
+                                            2015-10-14 23:22                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/imso18"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0700/CUSA11685_00-JUMP50THANNIVA01_2FF9028C5D0F0F88CA20_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/vempx_hk">@vempx_hk</a> 请问一下，我今天刚拿到这款采集卡，上机试了一下，用REC采集提示我"装置目前被其他软件占用，请先关闭冲突软件"，但是我并没有软件正在占用采集卡，然后用potplayer试，软件直接卡死了，关也关不掉，只能重启。<br/><img class="imgclick" referrerpolicy="no-referrer" src="http://ww1.sinaimg.cn/large/a03728f3jw1ex2q9bvt0rj21kw16okgq.jpg"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/imso18">imso18</a>
+                                            2015-10-16 09:41修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/wingsonic-x"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0507/CUSA04966_00-AVATAR0000000012_D1C2518AA4A68E1E70FE_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    圆刚c027飘过，一直720p60帧，加个奥世通的hdcp破解一分二，接一个显示器和pc端，采集用的是potplayer，偶尔直播，一直很稳定
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/wingsonic-x">wingsonic-x</a>
+                                            2015-10-16 03:09                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/moon_digi"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0177/CUSA03828_00-DIVAFTAVATAR0040_972E7E4DA6F18EEDA087_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    目前普通用户最好的选择是：usb3&gt;圆刚u3，pcie&gt;黑魔法4k
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/moon_digi">moon_digi</a>
+                                            2015-10-16 08:51                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/lalasin2009"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/SCEI/IP91001401PR2_BFFC2B8AD0E21BC6CE29_L.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/yeyuanshun">@yeyuanshun</a> 玩是不需要，如果你录视频，或者去视频网站直播那就需要了。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/lalasin2009">lalasin2009</a>
+                                            2015-10-16 08:54                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/vempx_hk"><img height="50" src="../avatars/vempx_hk-1556637192-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/imso18">@imso18</a> 什么操作系统，驱动装的是最新的么？设备管理器里看采集卡的状态是正常的么？<br/><a href="https://psnine.com/psnid/moon_digi">@moon_digi</a> u3录像靠CPU编码，CPU不行的话会很蛋疼。黑魔法确实是好东西，不过听说拿来录游戏机之类的非专业设备似乎有问题还是怎么样不太清楚。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/vempx_hk">vempx_hk</a>
+                                            2015-10-16 12:15                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/moon_digi"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0177/CUSA03828_00-DIVAFTAVATAR0040_972E7E4DA6F18EEDA087_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/vempx_hk">@vempx_hk</a> 目前市面上所有硬件压缩的卡效果都很差，只能用超高的码率去达到相对好的画质，但后果就是需要占用大量的硬盘空间，而想在低码率下达到理想的画质就只能用软件编码，纯软件编码cpu跑不动的话可以调低编码的参数，不会比硬件编码的效果差多少除非你要用笔记本电脑和平板之类的设备。<br/><br/>现在新的这些intel cpu基本全线支持quick-sync加速编码，我有surface pro3 i5版已测试过编码没有问题，如果调低压缩参数使用高码率的话就更没压力了，当然除了intel的quick-sync外还有nvidia的nvenc使用显卡编码。<br/><br/>总结就是不管是quick-sync还是nvenc还是采集卡硬件编码，都必须靠拉高码率花费硬盘空间来保证画质。而如果你想做游戏直播，但是你的上传带宽只有可怜的几百k的话，除了用cpu软件编码外没有靠谱方案（intel的勉强可以试试看）
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/moon_digi">moon_digi</a>
+                                            2015-10-16 14:02                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/imso18"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0700/CUSA11685_00-JUMP50THANNIVA01_2FF9028C5D0F0F88CA20_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/vempx_hk">@vempx_hk</a> WIN7X64 驱动是最新的 设备管理器看采集卡状态正常 我以前一直用时立HD72B一直没问题
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/imso18">imso18</a>
+                                            2015-10-16 14:11                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/vempx_hk"><img height="50" src="../avatars/vempx_hk-1556637192-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/moon_digi">@moon_digi</a> 并不是效果差，而是transparent这种级别的编码都是用高码率取胜的，比如蓝光原盘这种。相反x26x这种编码器适合编码near-transparent或者中低码率的片子，不适合transparent，这是编码器在设计的时候就决定了的。比如很多硬件编码甚至没有B帧，为的就是降低编码复杂度，这都是高码率下的优势。<br/><br/>对于不直播只录像的玩家来说，圆刚的硬件编码也好，Intel的QS也好NV的NVENC也好，都是很不错的初期记录方案，之后再重新用x26x压一遍就好了，当然做直播的话是另外一回事了。不过我测试NVENC在720P@60F下，H265编码在2000K的码率就能保持一个能接受观感，不过还是不能跟x26x比。好处是不用担心CPU性能够不够，只是不知道直播支不支持H265格式。<br/><br/><a href="https://psnine.com/psnid/imso18">@imso18</a> 试试装回上一个版本的驱动呢？这个采集卡被占用的情况倒是真心没见过，你确定后台没什么其他程序调用了采集卡吧，像QQ这类的视频聊天设置摄像头的时候也是可以选择采集卡的。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/vempx_hk">vempx_hk</a>
+                                            2015-10-16 19:31修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/moon_digi"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0177/CUSA03828_00-DIVAFTAVATAR0040_972E7E4DA6F18EEDA087_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/vempx_hk">@vempx_hk</a> x264设置一下就能关闭各种花费cpu性能的特性，甚至最简单地ultrafast+crf15就能搞定，而且只要cpu不烂到一定程度的话都能得到很好的效果。cpu实在烂得厉害甚至可以用divx或者xvid来做初次采集，更不用说quick-sync和nvenc这种了，所以对普通用户来说搞一个支持硬件编码的没有特别大的必要，更何况是在高码率下基本看不出差别，能支持采集1080p60的应该是优先选择。<br/><br/>720p60只用2m码率绝对不够，我3m码率x264 preset slow，直播闪乱这种高动态的也得出马赛克，265不觉得能有那么大的提升而且现在开源的编码器还没有x264成熟，现在网上直播的网站也就支持264
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/moon_digi">moon_digi</a>
+                                            2015-10-16 23:33修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/vempx_hk"><img height="50" src="../avatars/vempx_hk-1556637192-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/moon_digi">@moon_digi</a> 确实我一直都是用x264开很高的参数压BDRip，没试过低参数下的画面到底如何。这边有个<a href="https://www.nmm-hd.org/newbbs/viewtopic.php?f=8&amp;t=1667" target="_blank">帖子</a>是我拿来测试3M码率下的编码器效果的，NVENC的H265看着说实话已经挺好的了。当然x265更好，但是编码速度慢到感人根本不可能拿来直播。x264的细节也好过NVENC的H265，但是不如x265，而且编码速度在我这个参数下肯定也没法拿来直播，所以综合来看直播编码的话，NVENC的H265是最合适的，但是直播不支持H265所以就然并卵啦。<img src="../emoticons\face\majiang\3.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/vempx_hk">vempx_hk</a>
+                                            2015-10-17 00:07修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/ashshawn_uk"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/WWS_J/J0033.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/vempx_hk">@vempx_hk</a> 突然想麻烦楼主帮我提供一套方案，不知道行不行。我主要想录制视频并且直播PS4，PSV（未来可能会有XBOXONE）的游戏，CPU是I5-4670，GPU是GTX 760，系统WIN7，上传速率5M左右。有USB3.0，但是没看是什么板载的（稍后会查一下），然后以前做过PC游戏的视频录制以及直播，用的OBS，算了解一点，但是要说到采集卡录制主机那我真的是小白了，想尝试一下直播主机这块。采集卡的预算大概1000左右，当然低于1000更好啦，只要好用就行，希望楼主帮我出谋划策一下，推荐什么采集卡，和什么采集软件。麻烦了
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/ashshawn_uk">ashshawn_uk</a>
+                                            2015-10-17 00:07                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/vempx_hk"><img height="50" src="../avatars/vempx_hk-1556637192-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/ashshawn_uk">@ashshawn_uk</a> 我采集卡用的并不多，只是试过圆刚的CV710和目前在用的GL510E。如果你的USB3支持的话，CV710是最好的选择，毕竟能够采集1080P@60FPS，而且你的CPU并不弱。从我使用GL510E到目前来看，我觉得圆刚的Gamer系列产品挺不错的，性能也好稳定性也好都没有问题。采集软件的话，如果你用OBS直播我推荐使用AmaRecTV，当然你可能会需要HDCP破解器。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/vempx_hk">vempx_hk</a>
+                                            2015-10-17 00:12                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/ashshawn_uk"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/WWS_J/J0033.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/vempx_hk">@vempx_hk</a> 好的，谢谢给的建议，大致了解点了
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/ashshawn_uk">ashshawn_uk</a>
+                                            2015-10-17 00:21                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/ashshawn_uk"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/WWS_J/J0033.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/vempx_hk">@vempx_hk</a> 打算到时候再看看吧，CV710这款貌似对USB3要求蛮高的，不管是供电还是电脑系统，到时可能还买要个显示器拖两根HDMI线，一根看一根录，总之麻烦你了，如果以后有什么问题希望还能联系到你
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/ashshawn_uk">ashshawn_uk</a>
+                                            2015-10-17 00:42                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/zhouzhou4715"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/WWS_A/UP90001111J02_639FF69B38D24B185C62_L.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    我也是GL510这款采集卡，但是游戏中感觉延迟好大呀，画面也不流畅，只能外接显示器来录制，录制出的视频倒是很正常，就是采集画面操作延迟，画面不流畅
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/zhouzhou4715">zhouzhou4715</a>
+                                            2015-10-17 06:41                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/moon_digi"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0177/CUSA03828_00-DIVAFTAVATAR0040_972E7E4DA6F18EEDA087_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/zhouzhou4715">@zhouzhou4715</a> 建议你搞一个破解hdcp的小铁盒子，一般这盒子都是一进二出，一边接电脑采集另外一边就接电视玩<br/>以我的环境测试下的圆刚u3来说，经过盒子后直接出来的延迟是30ms左右，但是经过采集卡电脑里出来的直接翻倍（并没有编码），盒子对延迟的影响基本能忽略（不排除盒子的个体差别问题，反正都是无牌山寨货）<br/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/moon_digi">moon_digi</a>
+                                            2015-10-17 10:34                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/moon_digi"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0177/CUSA03828_00-DIVAFTAVATAR0040_972E7E4DA6F18EEDA087_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    对了如果是用黑魔法卡的又不需要录制的话可以试试看鬼子这东西 http://ptbi.metaclassofnil.com/
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/moon_digi">moon_digi</a>
+                                            2015-10-17 10:41                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/sumky"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/3RD/EP43121402024_1541D82B32444CF50F30_L.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    支持一下，我是CV710的，感觉不错。用的采集软件是朋友介绍的potplayer，借了别人的电脑e3的cpu，几乎没有延迟。不过下个月要换回我笔记本了（低压版i5）。有点虚
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/sumky">sumky</a>
+                                            2015-10-17 12:28                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/haplemon"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/UP9000/PPSA08329_00-GOW20THANNIVAVAT_112B67AAFFD9FBCF0F1E_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    HDCP破解器一般价格多少 便宜的不敢买啊，能给发个链接吗或者直接发邮箱2413094009@qq.com  谢谢
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/haplemon">haplemon</a>
+                                            2015-10-17 14:25                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/shenyoudemama"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/UT0016/CUSA06833_00-AM2RCRAAVATAR000_0DFA30E5F80240ABA9BD_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/haplemon">@haplemon</a> lz那个就可以用，科唯奇的hdmi一分2
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/shenyoudemama">shenyoudemama</a>
+                                            2015-10-17 15:57                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/zhouzhou4715"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/WWS_A/UP90001111J02_639FF69B38D24B185C62_L.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/moon_digi">@moon_digi</a> 我用的GL510自带hdmi输出，可以把信号无延迟的输出到另一个显示器。我想问的是采集卡在桌面上的窗口延迟有点大
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/zhouzhou4715">zhouzhou4715</a>
+                                            2015-10-17 18:51                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/bioxcn"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/3RD/30006.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    然而买了LZ说的这个破解器，在采集输出里依然显示需要关闭hdcp功能，ps3主机，不知道什么原因？
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/bioxcn">bioxcn</a>
+                                            2018-03-26 08:33                                                                            </div>
+<!--回复结束-->
+</div>
+</div>
+        </body></html>

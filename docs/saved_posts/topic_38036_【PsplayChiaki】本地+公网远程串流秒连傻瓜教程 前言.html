@@ -1,0 +1,368 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8"/><title>【Psplay/Chiaki】本地+公网远程串流秒连傻瓜教程 前言</title><meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="style.css" rel="stylesheet"/></head>
+<body>
+<div class="original-url-container"><p><strong>原始链接:</strong> <a href="https://psnine.com/topic/38036" target="_blank">https://psnine.com/topic/38036</a></p></div>
+<h1>【Psplay/Chiaki】本地+公网远程串流秒连傻瓜教程 前言</h1><div class="main-post-container"><div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/cobray-gxy888" itemprop="author">cobray-gxy888</a>
+<span class="text-warning">
+2024-06-27 20:45编辑
+</span>   
+32评论
+</div><div class="post-page-content"><h3 class="page-title">前言</h3><div class="content pd10" itemprop="articleBody"><span style="font-size:18px;">前言</span><br/><br/>三大运营商免费公网IP申请情况如下：<br/><br/><b><span style="color:blue;">备注：以下各地运营商情况不同 仅供参考。</span></b><br/><br/>电信：（免费开通/保险起见问问清楚是否免费）：打10000人工客服要求开通公网IP 等开通后重启光猫即可获得公网IP。<br/><br/>联通：（免费开通/保险起见问问清楚是否免费）：打10010人工客服要求开通公网IP 等开通后重启光猫即可获得公网IP。<br/><br/>移动：<b><span style="color:red;">无法申请</span></b>（听说只有北京地区可以付费申请 其他地区不行）<br/><br/><span style="color:blue;">申请不到公网IP的站友 也能跟着流程设置成本地串流游玩。</span><br/><br/></div></div><div class="post-page-content"><h3 class="page-title">前置准备</h3><div class="content pd10" itemprop="articleBody"><span style="font-size:18px;">前置准备</span><br/><br/><center><span style="font-size:24px;"><b><u>软件下载</u></b></span></center><br/><center>软件清单：（默认安卓软件 苹果用户请自己想办法克服）<br/><span style="color:blue;">例：比如我是电信网络 只想用Psplay串流 那就下载【网络管家】+【Psplay】即可</span></center><div style="overflow-x:auto;width: 100%;"><table cellpadding="6" cellspacing="0" class="tbl tbl_three" style=" background-color:three-#008B8B"><tr><td style="color:#FFFFFF;background-color:#008B8B"><center><b>序号</b></center></td><td style="color:#FFFFFF;background-color:#008B8B"><center><b>软件名称</b></center></td><td style="color:#FFFFFF;background-color:#008B8B" width="60"><center><b>软件图标</b></center></td><td style="color:#FFFFFF;background-color:#008B8B"><center><b>获取方式</b></center></td><td style="color:#FFFFFF;background-color:#008B8B"><center><b>备注</b></center></td></tr><tr><td>No.1</td><td>网络管家</td><td><img class="imgclick" src="https://www.modelscope.cn/studio/flyheadko/J2Z_experience/resolve/master/data/images/38036_001.webp"/></td><td><a href="https://pan.baidu.com/s/1usLQ3cXD7yaG_fstA0s17Q?pwd=8888" target="_blank">点我下载</a></td><td>电信光猫APP</td></tr><tr><td>No.2</td><td>联通智家</td><td><img class="imgclick" src="https://www.modelscope.cn/studio/flyheadko/J2Z_experience/resolve/master/data/images/38036_002.webp"/></td><td><a href="https://pan.baidu.com/s/1Wv-zHpqmUIGWh4IUSwNhFQ?pwd=8888" target="_blank">点我下载</a></td><td>联通光猫APP</td></tr><tr><td>No.3</td><td>安卓：Psplay<br/>苹果：MirrorPlay</td><td><img class="imgclick" src="https://www.modelscope.cn/studio/flyheadko/J2Z_experience/resolve/master/data/images/38036_003.webp"/></td><td>6.40中文版：<br/>谷歌商店50.4hkd</td><td>有PC付费版本 12.99欧 <a href="https://streamingdv.com/shop-list-ns.html" target="_blank">点击购买</a><br/><span style="color:blue;">截至发帖时最新版本</span></td></tr><tr><td>No.4</td><td>Chiaki-up</td><td><img class="imgclick" src="https://www.modelscope.cn/studio/flyheadko/J2Z_experience/resolve/master/data/images/38036_004.webp"/></td><td>2.1.1版：<br/><a href="https://pan.baidu.com/s/1vi471AdaxTR-r4u334BzPg?pwd=8888" target="_blank">点我下载</a></td><td>需要获得Chiaki上对应的PSNID <a href="https://psn.flipscreen.games/" target="_blank">点击获取</a><br/><span style="color:blue;">截至发帖时最新版本</span></td></tr><tr><td>No.5</td><td>Chiaki for PC</td><td><img class="imgclick" src="https://www.modelscope.cn/studio/flyheadko/J2Z_experience/resolve/master/data/images/38036_004.webp"/></td><td>2.2.0版：<br/><a href="https://pan.baidu.com/s/1nF0NRqTJgM2gwdSyfX2ofg?pwd=8888" target="_blank">点我下载</a></td><td>需要获得Chiaki上对应的PSNID <a href="https://psn.flipscreen.games/" target="_blank">点击获取</a><br/><span style="color:blue;">截至发帖时最新版本</span></td></tr></table></div><img class="imgclick" src="https://www.modelscope.cn/studio/flyheadko/J2Z_experience/resolve/master/data/images/38036_005.webp"/><br/><br/><b><span style="color:red;">风险提示：</span>站友说公网IP使用DMZ主机绑定类似于在公网上裸奔 安全角度上不建议开启。<br/>不知道我理解对不对 也就是说不串流的时候 进入光猫APP关掉DMZ主机 用的时候再开启就行了吧？</b><br/><b><span style="color:blue;">测试场景：</span>打开光猫软件的DMZ主机功能 设备远程串流PS5 然后切回光猫软件关掉DMZ主机功能 依旧可以串流。但是断开串流后 就无法再连上了 还得再回去光猫软件开启DMZ主机。</b><br/><br/><center><span style="font-size:24px;"><b><u>光猫DMZ绑定游戏主机</u></b></span></center><br/><b><center>【光猫】wifi/网线直连【PS4/PS5】 设置教程<span style="color:red;">（半一劳永逸）</span></center></b><br/><br/><center>串流路线图：【PS4/PS5】→【DMZ地址绑定光猫】→本地串流or远程串流</center><br/><br/><span style="color:blue;">※以下教程使用电信的【网络管家】为例：</span><br/><br/><b>步骤①：确认PS4/PS5的IPv4地址</b><br/><span style="color:blue;">（备注：作者我本人的光猫默认 192.168.1.1）</span><br/><br/>如下图所示：PS5连接【光猫】后的IPv4地址：<b><span style="color:green;">【192.168.1.4】</span></b><br/><br/><center><img class="imgclick" src="https://www.modelscope.cn/studio/flyheadko/J2Z_experience/resolve/master/data/images/38036_006.webp" width="720"/></center><br/><br/><b>步骤②：进入【网络管家】-【DMZ主机】绑定【PS4/PS5】在【光猫】上的IPv4地址</b><br/><span style="color:red;">（如果能在光猫里把IPv4地址永久固定到设备上更好 电信光猫不给设置 缺点是PS4/PS5的IPv4地址可能会变动 比如192.168.1.5/192.168.1.6等 其他设备连接光猫wifi会占掉机器的ip）</span><br/><br/><center><img class="imgclick" src="https://www.modelscope.cn/studio/flyheadko/J2Z_experience/resolve/master/data/images/38036_007.webp" width="240"/></center><br/><center><img class="imgclick" src="https://www.modelscope.cn/studio/flyheadko/J2Z_experience/resolve/master/data/images/38036_008.webp" width="240"/></center><br/><br/><span style="color:blue;">光猫-PS4/PS5的准备工作就完成了！只要PS4/PS5的IPv4地址不变动 算一劳永逸了。<br/>如果变动的话 再到PS4/PS5中查一下IPv4地址后 改光猫的DMZ地址就行。<br/>现在可以去串流APP进行设置了！</span><br/><br/><img class="imgclick" src="https://www.modelscope.cn/studio/flyheadko/J2Z_experience/resolve/master/data/images/38036_005.webp"/><br/><center><span style="font-size:24px;"><b><u>路由器DMZ绑定游戏主机</u></b></span></center><br/><b><center>【路由器】wifi/网线直连【PS4/PS5】 设置教程<span style="color:blue;">（一劳永逸）</span></center></b><br/><br/><center>串流路线图：【PS4/PS5】→【IP与MAC地址绑定路由器】→【路由器DMZ地址绑定光猫】→本地串流or远程串流</center><br/><br/><span style="color:blue;">※以下教程使用电信的【网络管家】＆【路由器】为例：</span><br/><br/><b>步骤①：确认PS4/PS5的IPv4地址</b><br/><span style="color:blue;">（备注：作者我本人路由器默认 192.168.0.1）</span><br/><br/>如下图所示：PS5连接【路由器】后的IPv4地址：<b><span style="color:green;">【192.168.0.108】</span></b><br/><br/><center><img class="imgclick" src="https://www.modelscope.cn/studio/flyheadko/J2Z_experience/resolve/master/data/images/38036_009.webp" width="720"/></center><br/><br/><b>步骤②：浏览器或路由器APP进入【路由器】管理界面：【192.168.0.1】</b><br/><br/><center><img class="imgclick" src="https://www.modelscope.cn/studio/flyheadko/J2Z_experience/resolve/master/data/images/38036_010.webp" width="720"/></center><br/><br/><b>2-1：进入路由器的【IP与MAC绑定】<span style="color:green;">（绑定后PS4/PS5在路由器内网的IPv4地址永久固定不变）</span></b><br/>把PS4/PS5在路由器上对应的IPv4地址绑定到【路由器】上即可。<br/><br/><center><img class="imgclick" src="https://www.modelscope.cn/studio/flyheadko/J2Z_experience/resolve/master/data/images/38036_011.webp" width="720"/></center><br/><br/><b>2-2：进入【路由器】的【DMZ主机】</b><br/>把PS4/PS5在路由器对应的IPv4地址绑定到【DMZ主机】上即可。<br/><br/><center><img class="imgclick" src="https://www.modelscope.cn/studio/flyheadko/J2Z_experience/resolve/master/data/images/38036_012.webp" width="720"/></center><br/><br/><b>步骤③：进入【网络管家】-【DMZ主机】绑定【路由器】在【光猫】上的IPv4地址</b><br/><br/><b>3-1：确认【路由器】在【光猫】上的IPv4地址（如下图：192.168.1.2）</b><br/><br/><center><img class="imgclick" src="https://www.modelscope.cn/studio/flyheadko/J2Z_experience/resolve/master/data/images/38036_013.webp" width="240"/></center><br/><center><img class="imgclick" src="https://www.modelscope.cn/studio/flyheadko/J2Z_experience/resolve/master/data/images/38036_014.webp" width="240"/></center><br/><br/><b>3-2：【光猫DMZ主机】绑定【路由器】的IPv4地址</b><br/><br/><center><img class="imgclick" src="https://www.modelscope.cn/studio/flyheadko/J2Z_experience/resolve/master/data/images/38036_007.webp" width="240"/></center><br/><center><img class="imgclick" src="https://www.modelscope.cn/studio/flyheadko/J2Z_experience/resolve/master/data/images/38036_015.webp" width="240"/></center><br/><br/><span style="color:blue;">路由器-PS4/PS5的准备工作就完成了！一劳永逸！现在可以去串流APP进行设置了！</span><br/><br/></div></div><div class="post-page-content"><h3 class="page-title">Psplay串流</h3><div class="content pd10" itemprop="articleBody"><span style="font-size:18px;">Psplay串流</span><br/><br/><b>步骤①：将PS4/PS5＆手机or平板连接在同一个网络下（同光猫下or同路由器下）</b><br/><br/>比如：手机或平板连接路由器WIFI：【ABC】；PS4/PS5网线连接路由器 或 PS4/PS5连接路由器WIFI：【ABC】<br/><br/><b>步骤②：绑定PS4/PS5与Psplay</b><b><span style="color:green;">（第一次遥控游玩绑定 在本地网络下进行）</span></b><br/><br/>以PS5为例：【设置】→【系统】→【遥控游玩】→【启用遥控游玩】→【连结装置】→【显示8位数字】<br/><br/><center><img class="imgclick" src="https://www.modelscope.cn/studio/flyheadko/J2Z_experience/resolve/master/data/images/38036_016.webp" width="720"/></center><br/><center><img class="imgclick" src="https://www.modelscope.cn/studio/flyheadko/J2Z_experience/resolve/master/data/images/38036_017.webp" width="720"/></center><br/><br/>打开Psplay：【注册PS】→【PS5】→输入【注册号码 8位数字】→【注册PS5】→【输入PSN账号＆密码】<br/>→【手机验证码】→【尝试自动配置路由器：是/否】（是否都行 选否快一些）<br/><br/><center><img class="imgclick" src="https://www.modelscope.cn/studio/flyheadko/J2Z_experience/resolve/master/data/images/38036_018.webp" width="720"/></center><br/><center><img class="imgclick" src="https://www.modelscope.cn/studio/flyheadko/J2Z_experience/resolve/master/data/images/38036_019.webp" width="720"/></center><br/><center><img class="imgclick" src="https://www.modelscope.cn/studio/flyheadko/J2Z_experience/resolve/master/data/images/38036_020.webp" width="720"/></center><br/><center><img class="imgclick" src="https://www.modelscope.cn/studio/flyheadko/J2Z_experience/resolve/master/data/images/38036_021.webp" width="720"/></center><br/><br/><b><span style="color:blue;">备注：Psplay 5.80版本开始支持多个PSN帐号绑定到Psplay中任意切换（Chiaki就不行）</span></b><br/><br/><center><img class="imgclick" src="https://www.modelscope.cn/studio/flyheadko/J2Z_experience/resolve/master/data/images/38036_022.webp" width="720"/></center><br/><br/><b>步骤③：设置Psplay串流参数</b><b><span style="color:green;">（设置一次一劳永逸 多账户通用）</span></b><br/><div style="overflow-x:auto;width: 100%;"><table cellpadding="6" cellspacing="0" class="tbl tbl_three" style=" background-color:three-#008B8B"><tr><td colspan="3" style="color:#FFFFFF;background-color:#008B8B"><center><b>远程</b></center></td></tr><tr><td><center><b>项目</b></center></td><td><center><b>参数</b></center></td><td><center><b>备注</b></center></td></tr><tr><td><center>分辨率</center></td><td><center>1080P</center></td><td><center>根据上传网络条件设置</center></td></tr><tr><td><center>每秒帧数</center></td><td><center>60FPS</center></td><td><center>同上</center></td></tr><tr><td><br/><center>比特率</center></td><td><br/><center>推荐手动最大：50000</center></td><td><center>50000码率=50Mbps=上传极限速率：6.25MB/S<br/>根据自己带宽上传速率设置<br/>或者选择【自动】<br/><span style="color:deeppink;">只有画面极好的游戏上传流量才很大</span></center></td></tr><tr><td><br/><center>自动远程连接</center><br/></td><td><br/><center>建议打勾</center><br/></td><td><center>PS4/PS5 NAT2网络可勾选 远程连接时会出现【自动】按钮<br/><span style="color:red;">连接成功时长约为55秒（手动输入公网IP仅需5~7秒）</span><br/><span style="color:green;">优点：无需查询家中宽带的公网IP（IP差不多2天变更一次）</span></center></td></tr><tr><td><center>实时解码</center></td><td><center>建议打勾</center></td><td><center>减少解码延迟</center></td></tr><tr><td><center>视频流格式</center></td><td><center>建议第一项：保持长宽比</center></td><td><center>第二项：拉伸/第三项：缩放</center></td></tr><tr><td><center>忽略显示槽口</center></td><td><center>默认打勾</center></td><td><center></center></td></tr><tr><td><center>不要丢帧</center></td><td><center>默认打勾</center></td><td><center>略微增加延迟 按需开启</center></td></tr><tr><td><center>启用画中画模式</center></td><td><center>默认打勾</center></td><td><center>游玩过程中可以切换别的应用 串流画面变小窗</center></td></tr><tr><td><center>兼容模式</center></td><td><center>默认不打勾</center></td><td><center>串流出现异常时可以开启试试</center></td></tr><tr><td><center>使用软件解码</center></td><td><center>默认不打勾</center></td><td><center>比硬件解码慢很多 容易出现拖影</center></td></tr><tr><td><center>双击停止串流</center></td><td><center>建议不打勾</center></td><td><center>打勾的话快速双击屏幕结束串流</center></td></tr><tr><td><center>使用WIFI性能模式</center></td><td><center>默认打勾</center></td><td><center></center></td></tr><tr><td><center>缓冲视频帧</center></td><td><center>默认第一项：很少</center></td><td><center>中等的or很多会增加延迟</center></td></tr><tr><td><center>HEVC解码器</center></td><td><center>建议打勾</center></td><td><center></center></td></tr><tr><td><center>HDR</center></td><td><center>默认不打勾</center></td><td><center>依据个人喜好也可打勾</center></td></tr><tr><td><br/><center>启用本机USB游戏手柄模式</center><br/></td><td><br/><center>默认打勾</center></td><td><center>USB-C to USB-c连接设备+PS5手柄<br/>可使用PS5手柄各种特色功能<br/>也可以选择手柄蓝牙连接设备（没特色功能）</center></td></tr><tr><td><center>本机游戏手柄灯条颜色</center></td><td><center>按喜好自行选择颜色</center></td><td><center></center></td></tr><tr><td><center>触觉反馈模式（仅限PS5）</center></td><td><center>按喜好自行选择</center></td><td><center>USB连接手柄时震动开启设置</center></td></tr><tr><td><center>激活隆隆声</center></td><td><center>按喜好勾选</center></td><td><center>USB连接手柄时震动开启设置</center></td></tr><tr><td><center>显示屏幕游戏手柄布局</center></td><td><center>默认打勾</center></td><td><center>搓屏幕用的按键</center></td></tr><tr><td><center>显示麦克风按钮</center></td><td><center>默认打勾</center></td><td><center></center></td></tr><tr><td><center>透明度</center></td><td><center>按需调节百分比</center></td><td><center>数字越小越淡/数字越大越深</center></td></tr><tr><td><center>自动隐藏按钮</center></td><td><center>建议打勾</center></td><td><center>搓屏幕不要打勾 用手柄切记打勾</center></td></tr><tr><td><center>显示触发按钮</center></td><td><center>默认打勾</center></td><td><center>搓屏幕显示L3/R3按钮</center></td></tr><tr><td><center>使用音量键</center></td><td><center>默认不打勾</center></td><td><center>将音量键作为游戏手柄按钮</center></td></tr><tr><td><center>相对模拟摇杆位置</center></td><td><center>默认不打勾</center></td><td><center>摇杆使用触摸坐标定位 仅在横向模式下支持（设备横向把持）</center></td></tr><tr><td><center>音频模式</center></td><td><center>默认自动</center></td><td><center></center></td></tr><tr><td><center>详细日志记录</center></td><td><center>默认不打勾</center></td><td><center></center></td></tr><tr><td><center>DualSense映射类型错误</center></td><td><center>默认自动</center></td><td><center>我手机蓝牙手柄 自动没问题<br/>平板蓝牙手柄 自动不正常<br/>遇到问题可以选择类型1或类型2解决</center></td></tr><tr><td><center>始终请求关键帧</center></td><td><center>默认不打勾</center></td><td><center>对上传带宽要求较高 按需开启</center></td></tr><tr><td><center>游戏手柄刷新率</center></td><td><center>默认标准</center></td><td><center>三挡：高/标准/低 按需选择</center></td></tr><tr><td><center>重置设置</center></td><td><center>恢复最初设置</center></td><td><center></center></td></tr><tr><td bgcolor="#008B8B" colspan="3"><center><b><span style="color:white;">运动传感器</span></b></center></td></tr><tr><td><center>模拟运动传感器</center></td><td><center>建议打勾</center></td><td><center>启用PS4/PS5手柄运动传感器模拟。</center></td></tr><tr><td bgcolor="#008B8B" colspan="3"><center><b><span style="color:white;">振动感应器</span></b></center></td></tr><tr><td><center>模拟振动传感器</center></td><td><center>建议打勾</center></td><td><center>启用PS4手柄振动传感器模拟。</center></td></tr></table></div><br/><center><img class="imgclick" src="https://www.modelscope.cn/studio/flyheadko/J2Z_experience/resolve/master/data/images/38036_023.webp" width="720"/></center><br/><br/><b>步骤④：回到软件打开时的一级页面 测试【本地连接】同网络下连接是否正常 约7~8秒连接成功</b><br/><b><span style="color:blue;">备注：【本地连接】可直接唤醒【待机状态】的PS4/PS5</span></b><br/><br/><b>步骤5-1：回到软件打开时的一级页面 测试【远程连接】→【自动】约55秒连接成功<br/><span style="color:red;">※非同一网络下自动远程串流（建议手机4G/5G网络或其他WIFI网络）</span></b><br/><br/><center><img class="imgclick" src="https://www.modelscope.cn/studio/flyheadko/J2Z_experience/resolve/master/data/images/38036_024.webp" width="720"/></center><br/><br/><b>步骤5-2：回到软件打开时的一级页面 测试【远程连接】→【手动】<b><span style="color:deeppink;">输入家里宽带公网IPv4地址</span></b>（5~7秒连接成功）<br/><span style="color:red;">※非同一网络下手动输入IPv4地址串流（建议手机4G/5G网络或其他WIFI网络）</span></b><br/><br/><b><span style="color:blue;">备注：【远程连接】亦可点击【唤醒并连接】→【待机状态】的PS4/PS5</span></b><br/><br/><center><img class="imgclick" src="https://www.modelscope.cn/studio/flyheadko/J2Z_experience/resolve/master/data/images/38036_025.webp" width="720"/></center><br/><br/><b>IP查询网站：</b><a href="https://www.itdog.cn/localhost/" target="_blank">点我查询</a>（<span style="color:red;">出门在外不要查成外面的WIFI或手机4G/5G网络的IP地址哦 是自家宽带IP地址</span>）<br/><b><span style="color:blue;">推荐外出时想查询家中公网IP时 可以在手机/平板+家中电脑上安装远程控制软件 比如：ToDesk<br/>在外面远程控制家中电脑 查询当前IP地址即可。</span></b><br/><br/><center><img class="imgclick" src="https://www.modelscope.cn/studio/flyheadko/J2Z_experience/resolve/master/data/images/38036_026.webp" width="720"/></center><br/><br/><b><span style="color:blue;">※如果机器上设置过串流对应的PSN帐号登入通行4位数密码 串流成功时也需要输入4位数密码</span></b><br/><br/><center><img class="imgclick" src="https://www.modelscope.cn/studio/flyheadko/J2Z_experience/resolve/master/data/images/38036_027.webp" width="720"/></center><br/><br/><b><span style="color:blue;">★退出串流时可在提示处打勾【休眠模式】 让PS4/PS5自动进入【待机状态】 方便再次串流</span></b><br/><b><span style="color:red;">※如果在外面远程串流的情况下 不小心关机的话 除非家里有人能帮忙开机 不然无法【关机唤醒】</span></b><br/><br/><center><img class="imgclick" src="https://www.modelscope.cn/studio/flyheadko/J2Z_experience/resolve/master/data/images/38036_028.webp" width="720"/></center><br/><br/></div></div><div class="post-page-content"><h3 class="page-title">Chiaki串流</h3><div class="content pd10" itemprop="articleBody"><span style="font-size:18px;">Chiaki串流</span><br/><br/><b>步骤①：获取用于Chiaki绑定用的PSN帐户ID</b><br/><br/><a href="https://psn.flipscreen.games/" target="_blank">点我获取</a>→输入自己的PSNID→获得【Encoded ID (for Chiaki)】框中的ID信息<br/><br/><center><img class="imgclick" src="https://www.modelscope.cn/studio/flyheadko/J2Z_experience/resolve/master/data/images/38036_029.webp" width="720"/></center><br/><center><img class="imgclick" src="https://www.modelscope.cn/studio/flyheadko/J2Z_experience/resolve/master/data/images/38036_030.webp" width="720"/></center><br/><br/><blockquote><b><span style="color:red;">※Q：PSNID输入正确 但无法查询到绑定Chiaki绑定用的ID如何解决？</span></b><br/><br/><center><img class="imgclick" src="https://www.modelscope.cn/studio/flyheadko/J2Z_experience/resolve/master/data/images/38036_031.webp" width="720"/></center><br/><br/><b><span style="color:green;">※A：登陆自己的PSN帐号（官网网页/PSAPP/PS主机上）修改隐私设定</span></b><br/>【隐私设定】→【朋友丨社交关系】→所有的关系选项都改为【任何人】→等大约5分钟<br/>→再前往获取ID网站（<a href="https://psn.flipscreen.games/" target="_blank">点我获取</a>）输入PSNID<br/><br/><center><img class="imgclick" src="https://www.modelscope.cn/studio/flyheadko/J2Z_experience/resolve/master/data/images/38036_032.webp" width="720"/></center><center><img class="imgclick" src="https://www.modelscope.cn/studio/flyheadko/J2Z_experience/resolve/master/data/images/38036_033.webp" width="720"/></center><br/><br/><b><span style="color:red;">※获得绑定Chiaki的ID后别忘记再恢复之前的社交关系状态！</span></b></blockquote><br/><br/><b>步骤②：将PS4/PS5＆手机or平板连接在同一个网络下（同光猫下or同路由器下）</b><br/><br/>比如：手机或平板连接路由器WIFI：【ABC】；PS4/PS5网线连接路由器 或 PS4/PS5连接路由器WIFI：【ABC】<br/><br/><b>步骤③：绑定PS4/PS5与Chiaki</b><br/><br/>以PS5为例：【设置】→【系统】→【遥控游玩】→【启用遥控游玩】→【连结装置】→【显示8位数字】<br/><center><img class="imgclick" src="https://www.modelscope.cn/studio/flyheadko/J2Z_experience/resolve/master/data/images/38036_016.webp" width="720"/></center><br/><center><img class="imgclick" src="https://www.modelscope.cn/studio/flyheadko/J2Z_experience/resolve/master/data/images/38036_017.webp" width="720"/></center><br/><br/>打开Chiaki→【点击同网络下自动显示的主机】→【输入图2信息】→【点击最下方注册按钮】→【绑定成功】<br/><b><span style="color:red;">※提示：手动输入Chiaki绑定ID 哪怕输错一个字母或大小写 绑定都会失败！</span></b><br/><br/><center><img class="imgclick" src="https://www.modelscope.cn/studio/flyheadko/J2Z_experience/resolve/master/data/images/38036_034.webp" width="720"/></center><br/><center><img class="imgclick" src="https://www.modelscope.cn/studio/flyheadko/J2Z_experience/resolve/master/data/images/38036_035.webp" width="720"/></center><br/><center><img class="imgclick" src="https://www.modelscope.cn/studio/flyheadko/J2Z_experience/resolve/master/data/images/38036_036.webp" width="720"/></center><br/><br/><blockquote><center><b>绑定成功后返回一级界面会看到ID右侧多了个（registered）-已注册的标识。</b></center><br/><center><span style="color:blue;">显示蓝色灯条ICON的PS5主机代表可以直接点击【本地串流】</span></center><br/><center><img class="imgclick" src="https://www.modelscope.cn/studio/flyheadko/J2Z_experience/resolve/master/data/images/38036_037.webp" width="720"/></center><br/><br/><center><span style="color:orange;">显示橙色灯条ICON的PS5主机代表需要点击【Wakeup】唤醒后再【本地串流】</span></center><br/><center><img class="imgclick" src="https://www.modelscope.cn/studio/flyheadko/J2Z_experience/resolve/master/data/images/38036_038.webp" width="720"/></center></blockquote><br/><br/><b>步骤②：【远程串流】设置</b><br/><b><span style="color:red;">※确保串流设备切换至 手机4G/5G或其他WIFI</span></b><br/><br/>【Chiaki一级界面点击右下角“+”号】→【Add Console Manually】→【Host：PS4/PS5公网IPv4地址】<br/>（<b>IP查询网站：</b><a href="https://www.itdog.cn/localhost/" target="_blank">点我查询</a>）→【Registered Console处选择步骤①中绑定过的主机】→【SAVE】<br/><center><img class="imgclick" src="https://www.modelscope.cn/studio/flyheadko/J2Z_experience/resolve/master/data/images/38036_039.webp" width="720"/></center><br/><br/><b><span style="color:blue;">回到一级界面 点击设置好的主机 就可以远程串流了。</span></b><br/><center><img class="imgclick" src="https://www.modelscope.cn/studio/flyheadko/J2Z_experience/resolve/master/data/images/38036_040.webp" width="720"/></center><br/><center><img class="imgclick" src="https://www.modelscope.cn/studio/flyheadko/J2Z_experience/resolve/master/data/images/38036_041.webp" width="720"/></center><br/><br/><b>步骤③：Chiaki串流参数设置（一级界面右上角“3个点”进入设置）</b><br/>由于Chiaki设置项目很少 不做表格了 参照下图设置即可<br/>【分辨率】【码率】都请根据自己的带宽按需设置。<br/><b><span style="color:blue;">备注：建议上传带宽≥50Mbps的站友 码率设置【50000】 上传带宽低建议选择【Auto】</span></b><br/><br/><center><img class="imgclick" src="https://www.modelscope.cn/studio/flyheadko/J2Z_experience/resolve/master/data/images/38036_042.webp" width="720"/></center><br/><br/></div></div><div class="post-page-content"><h3 class="page-title">Chiaki for PC</h3><div class="content pd10" itemprop="articleBody"><span style="font-size:18px;">Chiaki for PC</span><br/><br/><center><b><span style="color:red;">Chiaki PC版的设置流程和安卓版的一模一样 只是界面不一样 详情请看【Chiaki】页面。</span></b></center><br/><center><b><span style="color:blue;">以下是PC版的设置界面一览图 仅供参考！</span></b></center><br/><br/><center><img class="imgclick" src="https://www.modelscope.cn/studio/flyheadko/J2Z_experience/resolve/master/data/images/38036_043.webp" width="720"/></center><br/><center><img class="imgclick" src="https://www.modelscope.cn/studio/flyheadko/J2Z_experience/resolve/master/data/images/38036_044.webp" width="720"/></center><br/><center><img class="imgclick" src="https://www.modelscope.cn/studio/flyheadko/J2Z_experience/resolve/master/data/images/38036_045.webp" width="720"/></center><br/><center><img class="imgclick" src="https://www.modelscope.cn/studio/flyheadko/J2Z_experience/resolve/master/data/images/38036_046.webp" width="720"/></center><br/><center><img class="imgclick" src="https://www.modelscope.cn/studio/flyheadko/J2Z_experience/resolve/master/data/images/38036_047.webp" width="720"/></center><br/><center><img class="imgclick" src="https://www.modelscope.cn/studio/flyheadko/J2Z_experience/resolve/master/data/images/38036_048.webp" width="720"/></center><br/><center><img class="imgclick" src="https://www.modelscope.cn/studio/flyheadko/J2Z_experience/resolve/master/data/images/38036_049.webp" width="720"/></center><br/><center><img class="imgclick" src="https://www.modelscope.cn/studio/flyheadko/J2Z_experience/resolve/master/data/images/38036_050.webp" width="720"/></center><br/></div></div><div class="post-page-content"><h3 class="page-title">PS4/PS5手柄蓝牙连接</h3><div class="content pd10" itemprop="articleBody"><span style="font-size:18px;">PS4/PS5手柄蓝牙连接</span><br/><br/><b><span style="color:blue;">手柄蓝牙连接串流设备流程</span></b><br/><br/><b>【串流设备打开蓝牙】→【确保手柄没通电】→【同时长按手柄<img src="../emoticons\face\shoubing\20.gif"/>+<img src="../emoticons\face\shoubing\18.gif"/>】→【检查串流设备 确认匹配成功】</b><br/><b><span style="color:red;">备注：一旦蓝牙配对成功 以后本地玩主机 必须得用手柄线重新连接主机和手柄 不然无法使用手柄！</span></b><br/><br/><center><img class="imgclick" src="https://www.modelscope.cn/studio/flyheadko/J2Z_experience/resolve/master/data/images/38036_051.webp" width="720"/></center><br/><br/><blockquote><b><span style="color:red;">※【Psplay】手柄蓝牙连接串流设备后按键不正常 3D游戏画面疯狂旋转怎么办？</span></b><br/><br/><b><span style="color:blue;">※【Psplay设置】→【远程】→【DualSense映射类型错误】→【从自动改成类型1或类型2】→检查手柄控制游戏是否正常。</span></b></blockquote></div></div></div>
+<h2>评论</h2><div class="post">
+<a class="l" href="https://psnine.com/psnid/sayamiki"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/3RD/JP00311208003_FAF58454E1BB13094C66_L.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<img src="../emoticons\face\alu\35.gif"/><img src="../emoticons\face\alu\43.gif"/>资瓷
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/sayamiki">sayamiki</a>
+                                            2024-06-27 17:42                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/wu6_114477786"><img height="50" src="../avatars/wu6_114477786-1655699507-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<img src="../emoticons\face\alu\35.gif"/>步骤相当详细呀。<img src="../emoticons\face\alu\35.gif"/>以后一定会用到。。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/wu6_114477786">wu6_114477786</a>
+                                            2024-06-27 17:48                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/incucc"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP1003/PPSA02532_00-DEATHLOOPFIA0000_2CAEB2E2E3CCD3F61A02_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    收藏，收藏，感谢分享
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/incucc">incucc</a>
+                                            2024-06-27 17:52                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/fred_sanity"><img height="50" src="../avatars/fred_sanity-1556419143-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    Chiaki最新版貌似能通过PSN串流了，具体还没研究过
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/fred_sanity">fred_sanity</a>
+                                            2024-06-27 18:06                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/wakune_kimu"><img height="50" src="../avatars/wakune_kimu-1556505611-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    虽然感谢楼主，但从安全角度强烈不建议开启 DMZ，本质上是在公网上裸奔，虽说游戏主机被打了被黑掉的概率本身小之又小，但是这毕竟还是一个很危险的操作。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/wakune_kimu">wakune_kimu</a>
+                                            2024-06-27 19:45                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/cobray-gxy888"><img height="50" src="../avatars/cobray-gxy888-1697262069-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/wakune_kimu">@wakune_kimu</a> 啊？还有这种事啊 这样用了两年多了 还没出过问题 谢谢告知安全问题<br/>那我平时不远程串流的时候把光猫里的dmz主机关了就没什么风险了对吧
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/cobray-gxy888">cobray-gxy888</a>
+                                            2024-06-27 19:58                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/print-bug"><img height="50" src="../avatars/print-bug-1601306287-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<img src="../emoticons\face\majiang\12.gif"/><img src="../emoticons\face\majiang\41.gif"/><img src="../emoticons\face\majiang\41.gif"/><img src="../emoticons\face\alu\35.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/print-bug">print-bug</a>
+                                            2024-06-27 22:49                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/poi_holic"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA05030_00-PREMIUMAVATAR024_90F345FB9E95720C905E_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    DMZ不是太放心，我还是在tailscale在软路由上打洞吧。如果用DDNS+反代是不是也可以实现安全点暴露主机。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/poi_holic">poi_holic</a>
+                                            2024-06-28 09:04                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/zeldasoul"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0082/CUSA06592_00-NIERGOTYAVATAR01_B69E121DC1B16147E9F5_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    家里联通千兆，淘宝找人改了桥接模式，然后开启了IPv6，外网串流现在流程的一逼<img src="../emoticons\face\majiang\41.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/zeldasoul">zeldasoul</a>
+                                            2024-06-28 10:13                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/neo_dennis"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP2374/CUSA12786_00-PREMIUMAVATAR005_95A9C1EC570212ECD8FC_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    感谢分享！ 不过一想到我最近也只玩实况足球了，还是算了，串流没法玩这类游戏，要被对手打成筛子
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/neo_dennis">neo_dennis</a>
+                                            2024-06-28 10:15                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/cdgeass97"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0700/CUSA13137_00-GE3AVATARNPC0003_4CD1E4C28E50EF5B60F2_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    用tailscale之类的安全点，也不用搞公网ip
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/cdgeass97">cdgeass97</a>
+                                            2024-06-28 10:49                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/fr0zen1heart"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0700/CUSA09843_00-SC6AVATAR0000000_781A96D13B4597C7FDEB_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    DMZ风险太高了，而且虽然申请了公网IP但是IPV4地址也不是固定的，大概两周左右会变，建议还是用DDNS<img src="../emoticons\face\alu\30.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/fr0zen1heart">fr0zen1heart</a>
+                                            2024-06-28 11:30                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/cobray-gxy888"><img height="50" src="../avatars/cobray-gxy888-1697262069-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    串流前先开dmz 串流上了再到app里关DMZ也能继续串流的<img src="../emoticons\face\alu\5.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/cobray-gxy888">cobray-gxy888</a>
+                                            2024-06-28 11:33                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/hk_xiaoliu_duck"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/SCEI/I0003.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    PC开串流是不是就能不借助采集卡直播了，画质低点无所谓，就播给朋友看看的
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/hk_xiaoliu_duck">hk_xiaoliu_duck</a>
+                                            2024-06-28 13:15                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/koikoiyo"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP9002/CUSA01666_00-2018HWCHMACARONM_C2F13D0839A869A98D44_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/hk_xiaoliu_duck">@hk_xiaoliu_duck</a>  一直可以，小号串流+直播，大号在主机正常玩，无视串流的延迟
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/koikoiyo">koikoiyo</a>
+                                            2024-06-28 13:32                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/mo-wanted001"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/3RD/JP01061506005_E768B5D1F0DD093BB442_L.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    ROG掌机使用chiaki会爆音，更换jgb777分支版本后正常，并且可以开硬件解码<br/>https://github.com/jbg77/chiaki/releases/download/v0.1.0-alpha/chiaki-win64.zip
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/mo-wanted001">mo-wanted001</a>
+                                            2024-06-28 15:58                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/yhnetfish0620"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP9000/CUSA06935_00-AVATAR0000000003_8196D9FA5B7658F9D2B8_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    虽然可能用不上，但是好人一生平安！！！<img src="../emoticons\face\alu\35.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/yhnetfish0620">yhnetfish0620</a>
+                                            2024-06-28 16:12                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/hotcat1311"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP9000/CUSA12613_00-AVA00LUDENSCHIBI_8349E7A2EBBE0C2D9433_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    Chiaki跟官方的ps remote有什么区别吗，我在外面用官方的也能连接，画质应该是一样的吧<blockquote><img src="../emoticons\face\alu\20.gif"/></blockquote>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/hotcat1311">hotcat1311</a>
+                                            2024-06-28 18:47                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/cobray-gxy888"><img height="50" src="../avatars/cobray-gxy888-1697262069-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/hotcat1311">@hotcat1311</a> 官方软件不能改码率 只能改分辨率<br/>官方串流最大问题是远程串流太慢 一次要差不多一分钟 万一中间断流又要等一分钟左右 而且不支持小窗口 万一切换其他app 就断了 第三方可以切其他app并保持串流不断<br/><br/>第三方最大优势是远程串流几秒钟就可以玩了 万一断了立刻可以接上
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/cobray-gxy888">cobray-gxy888</a>
+                                            2024-06-28 20:16                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/linkang666"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0700/CUSA07677_00-DEREVRDLCAVAWB14_086F91E975BEB383A4C9_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    我家电信宽带开了公网，路由器不开DMZ，就要设置端口转发才能在外用外网串流，不过这种时候在家用局域网就不能串流了<img src="../emoticons\face\alu\30.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/linkang666">linkang666</a>
+                                            2024-06-29 22:53                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/hk_xiaoliu_duck"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/SCEI/I0003.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    我用PC串流有电流声，是什么原因啊，我是家里面同WIFI串流的
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/hk_xiaoliu_duck">hk_xiaoliu_duck</a>
+                                            2024-07-01 10:01                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/cobray-gxy888"><img height="50" src="../avatars/cobray-gxy888-1697262069-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/hk_xiaoliu_duck">@hk_xiaoliu_duck</a> 解决方案在这里<br/><a href="https://www.psnine.com/qa/46609" target="_blank">https://www.psnine.com/qa/46609</a>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/cobray-gxy888">cobray-gxy888</a>
+                                            2024-07-01 13:48修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/lawlited1"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA17544_00-P5RAVATAR000001A_4403DD414944CE149A78_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    想问一下 ， 如果异地串流的话， 用Chiaki可以远程唤醒吗
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/lawlited1">lawlited1</a>
+                                            2024-07-01 14:41                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/cobray-gxy888"><img height="50" src="../avatars/cobray-gxy888-1697262069-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/lawlited1">@lawlited1</a> 可以远程唤醒待机状态主机 异地我也测试过 200多公里 效果依旧很好<br/>关机了话不行哦
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/cobray-gxy888">cobray-gxy888</a>
+                                            2024-07-01 16:20                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/likea__dragon"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/WWS_J/J2085_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    公网ipv6行吗，大师
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/likea__dragon">likea__dragon</a>
+                                            2024-07-01 18:28                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/cobray-gxy888"><img height="50" src="../avatars/cobray-gxy888-1697262069-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/likea__dragon">@likea__dragon</a> ipv6不会弄 第三方串流app都是输入ipv4地址的 楼上几个站友有人说用ddns<br/>还有淘宝找人改桥接模式ipv6外面串流流畅的一逼的两个人大概会弄的
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/cobray-gxy888">cobray-gxy888</a>
+                                            2024-07-01 21:17                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/lawlited1"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA17544_00-P5RAVATAR000001A_4403DD414944CE149A78_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/cobray-gxy888">@cobray-gxy888</a> 哇，那可以的！赞诶！
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/lawlited1">lawlited1</a>
+                                            2024-07-02 00:24                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/sylar_cn"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA17544_00-P5RAVATAR000012A_1E77AC8279373F91922A_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    没有公网 PSPLAY可以达到远程游玩吗？
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/sylar_cn">sylar_cn</a>
+                                            2024-10-16 18:34                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/ca11hu4"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/SCEI/I0051.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    之前直接串流不管是官方的还是chiaki都是直接连上就可以使用，今天官方的也错误代码8000几来着，chiaki显示（Session has quit<br/>Chiaki Session has quit:Ctrl failed to connect<br/>）这是怎么回事啊
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/ca11hu4">ca11hu4</a>
+                                            2024-11-03 18:45                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/cobray-gxy888"><img height="50" src="../avatars/cobray-gxy888-1697262069-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/sylar_cn">@sylar_cn</a> 有击穿内网的方法内公网也行 不过我没研究过不会<br/><a href="https://psnine.com/psnid/ca11hu4">@ca11hu4</a> 这个情况不是今天出现的 是前段时间ps5系统更新后出现的 我也碰到过一样的情况<br/>只能完全关闭ps5以后再开机 才行 重启无效
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/cobray-gxy888">cobray-gxy888</a>
+                                            2024-11-06 17:41                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/husanneverland"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/SCEI/I0043.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    大佬，小白请教下，现在家里ps5只要连着加速器，我在公司用安卓psplay点自动远程串连接，就可以远程串流。在这种网络情况下，我用chiaki可以做到远程串流吗？
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/husanneverland">husanneverland</a>
+                                            2024-12-05 10:45                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/cobray-gxy888"><img height="50" src="../avatars/cobray-gxy888-1697262069-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/husanneverland">@husanneverland</a> psplay的自动串流好像自动找到主机的ipv4地址 如果可以自动找到主机 到主机里看下ipv4地址是多少 照理说用chiaki输入主机地址也可以远程串流的<br/>因为我不用加速器串流的 所以不知道加速器每次开关是否都会影响主机ipv4地址变动
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/cobray-gxy888">cobray-gxy888</a>
+                                            2024-12-18 09:42修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div>
+</body></html>

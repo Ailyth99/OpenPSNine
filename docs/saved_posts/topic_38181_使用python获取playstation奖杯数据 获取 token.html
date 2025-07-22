@@ -1,0 +1,573 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8"/><title>使用python获取playstation奖杯数据 获取 token</title><meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="style.css" rel="stylesheet"/></head>
+<body>
+<div class="original-url-container"><p><strong>原始链接:</strong> <a href="https://psnine.com/topic/38181" target="_blank">https://psnine.com/topic/38181</a></p></div>
+<h1>使用python获取playstation奖杯数据 获取 token</h1><div class="main-post-container"><div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/zz-werke" itemprop="author">zz-werke</a>
+<span class="text-warning">
+2024-10-12 14:50发布
+</span>   
+50评论
+</div><div class="post-page-content"><h3 class="page-title">获取 token</h3><div class="content pd10" itemprop="articleBody">参考了 github 上通过 ps api 获取奖杯的方式，比较麻烦的部分是认证 token 的获取，github 项目关于这部分写的比较简单且使用的是 powershell 的方式。此处使用 python 重写了一遍，增加了 token 的刷新，部分 api 使用方式（翻译），文章底部会附上参考来源。<br/><br/><span style="font-size:18px;">获取 token</span><br/><b>1.1 获取 npsso</b><br/>使用浏览器访问 playstation 官网登录账号（国服、港服都可以），之后在同一个浏览器（注意不要使用浏览器的无痕模式）中再访问 https://ca.account.sony.com/api/v1/ssocookie 获取 npsso。<br/><b>1.2 获取 auth_code</b><br/><blockquote><br/>import requests<br/>from urllib.parse import parse_qs, urlparse<br/><br/># 1.1 中获取的 npsso<br/>npsso = "xrvW*****************************NYjq"<br/>auth_url = "https://ca.account.sony.com/api/authz/v3/oauth/authorize"<br/><br/># 固定参数<br/>params = {<br/>    "access_type": "offline",<br/>    "client_id": "09515159-7237-4370-9b40-3806e67c0891",<br/>    "response_type": "code",<br/>    "scope": "psn:mobile.v2.core psn:clientapp",<br/>    "redirect_uri": "com.scee.psxandroid.scecompcall://redirect",<br/>}<br/>auth_url += "?" + "&amp;".join([f"{key}={value}" for key, value in params.items()])<br/>response = requests.get(auth_url, cookies={"npsso": npsso}, allow_redirects=False)<br/><br/># 请求的 status code 为 302，auth_code 在 response headers 中<br/>if response.status_code == 302:<br/>    location = response.headers.get("Location")<br/>    query = parse_qs(urlparse(location).query)<br/>    auth_code = query.get("code")[0]<br/></blockquote><br/><b>1.3 获取 access_token 及 refresh_token</b><br/><blockquote><br/>token_url = "https://ca.account.sony.com/api/authz/v3/oauth/token"<br/><br/># 1.2 中获取的 auth_code<br/>token_data = {<br/>    "code": auth_code,<br/>    "redirect_uri": "com.scee.psxandroid.scecompcall://redirect",<br/>    "grant_type": "authorization_code",<br/>    "token_format": "jwt",<br/>}<br/><br/># 请求头为固定内容<br/>headers = {<br/>    "Authorization": "Basic MDk1MTUxNTktNzIzNy00MzcwLTliNDAtMzgwNmU2N2MwODkxOnVjUGprYTV0bnRCMktxc1A=",<br/>    "Content-Type": "application/x-www-form-urlencoded",<br/>    "User-Agent": "PlayStation/21090100 CFNetwork/1126 Darwin/19.5.0",<br/>}<br/>response = requests.post(token_url, data=token_data, headers=headers)<br/>response.raise_for_status()<br/><br/># 请求成功后返回 access_token 及 refresh_token<br/>access_token = response.json().get("access_token")<br/>refresh_token = response.json().get("refresh_token")<br/></blockquote><br/>access_token 时效只有 1 小时，refresh_token 的时效有 60 天，所以当 access_token 失效后，需要通过 refresh_token 来刷新 access_token。<br/><b>1.4 刷新 access_token</b><br/><blockquote><br/>token_url = "https://ca.account.sony.com/api/authz/v3/oauth/token"<br/><br/># 1.1 中获取的 npsso<br/>headers = {<br/>    "Authorization": "Basic MDk1MTUxNTktNzIzNy00MzcwLTliNDAtMzgwNmU2N2MwODkxOnVjUGprYTV0bnRCMktxc1A=",<br/>    "Cookie": f"npsso={npsso}",<br/>    "User-Agent": "PlayStation/21090100 CFNetwork/1126 Darwin/19.5.0",<br/>}<br/><br/># 1.3 获取的 refresh_token<br/>token_data = {<br/>    "refresh_token": refresh_token,<br/>    "scope": "psn:mobile.v2.core psn:clientapp",<br/>    "grant_type": "refresh_token",<br/>    "token_format": "jwt",<br/>}<br/>response = requests.post(token_url, data=token_data, headers=headers)<br/>response.raise_for_status()<br/><br/># 请求成功后获取 access_token<br/>access_token = response.json().get("access_token")<br/></blockquote><br/><br/></div></div><div class="post-page-content"><h3 class="page-title">API 文档</h3><div class="content pd10" itemprop="articleBody">参考了 github 上通过 ps api 获取奖杯的方式，比较麻烦的部分是认证 token 的获取，github 项目关于这部分写的比较简单且使用的是 powershell 的方式。此处使用 python 重写了一遍，增加了 token 的刷新，部分 api 使用方式（翻译），文章底部会附上参考来源。<br/><br/><span style="font-size:18px;">API 文档</span><br/><b>2.1 accountId（如果只获取本人游戏及奖杯数据可以跳过）</b><br/><blockquote><br/># psn id<br/>username = ""<br/>url = f"https://us-prof.np.community.playstation.net/userProfile/v1/users/{username}/profile2?fields=npId,onlineId,accountId,avatarUrls,plus,aboutMe,languagesUsed,trophySummary(@default,level,progress,earnedTrophies),isOfficiallyVerified,personalDetail(@default,profilePictureUrls),personalDetailSharing,personalDetailSharingRequestMessageFlag,primaryOnlineStatus,presences(@default,@titleInfo,platform,lastOnlineDate,hasBroadcastData),requestMessageFlag,blocking,friendRelation,following,consoleAvailability"<br/><br/># 1.3 及 1.4 中获取的 access_token<br/>headers = {"Authorization": f"Bearer {access_token}"}<br/>response = requests.get(url, headers=headers, allow_redirects=False)<br/><br/># 请求成功后从账号信息中获取 accountId<br/>accountId = response.json().get("profile").get("accountId")<br/></blockquote><br/>测试可以通过国服账号获取其他服账号的 accountId<br/><b>2.2 奖杯汇总信息</b><br/><blockquote><br/># 2.1 中获取的 accountId 或 me<br/>accountId = "me"<br/>url = f"https://m.np.playstation.com/api/trophy/v1/users/{accountId}/trophySummary"<br/><br/># 1.3 及 1.4 中获取的 access_token<br/>headers = {"Authorization": f"Basic {access_token}"}<br/>trophy_request = requests.get(url, headers=headers, allow_redirects=False)<br/>print(trophy_request.json())<br/></blockquote><br/>返回结果如下：<br/><blockquote><br/>{<br/>    "accountId": "1301***********2184",<br/>    "trophyLevel": 301,<br/>    "trophyPoint": 60975,<br/>    "trophyLevelBasePoint": 60840,<br/>    "trophyLevelNextPoint": 61740,<br/>    "progress": 15,<br/>    "tier": 4,<br/>    "earnedTrophies": {"bronze": 1471, "silver": 420, "gold": 149, "platinum": 43},<br/>}<br/></blockquote><br/><div style="overflow-x:auto;width: 100%;"><table cellpadding="6" cellspacing="0" class="tbl" style="background-color:#EEC"><tr><td>字段</td><td>类型</td><td>描述</td></tr><tr><td>accountId</td><td>字符</td><td>accountId</td></tr><tr><td>trophyLevel</td><td>数值</td><td>级别</td></tr><tr><td>trophyPoint</td><td>数值</td><td>点数</td></tr><tr><td>trophyLevelBasePoint</td><td>数值</td><td>当前级别点数</td></tr><tr><td>trophyLevelNextPoint</td><td>数值</td><td>下一级所需点数</td></tr><tr><td>progress</td><td>数值</td><td>点数百分比</td></tr><tr><td>tier</td><td>数值</td><td>ps stars？</td></tr><tr><td>earnedTrophies</td><td>json 对象</td><td>已获取奖杯情况</td></tr></table></div><b>2.3 全部游戏列表及奖杯信息</b><br/><blockquote><br/># 2.1 中获取的 accountId 或 me<br/>accountId = "me"<br/>url = f"https://m.np.playstation.com/api/trophy/v1/users/{accountId}/trophyTitles"<br/># params = {"limit": "", "offset": 0}<br/># url += "?" + "&amp;".join([f"{key}={value}" for key, value in params.items()])<br/><br/># 1.3 及 1.4 中获取的 access_token<br/>headers = {"Authorization": f"Basic {access_token}"}<br/>trophy_request = requests.get(url, headers=headers, allow_redirects=False)<br/>print(trophy_request.json())<br/></blockquote><br/>入参说明：<br/><div style="overflow-x:auto;width: 100%;"><table cellpadding="6" cellspacing="0" class="tbl" style="background-color:#EEC"><tr><td>参数</td><td>类型</td><td>描述</td></tr><tr><td>accountId</td><td>字符</td><td>使用 me 获取本人游戏数据，或获取制定账号数据</td></tr><tr><td>limit</td><td>数值（最小 1，最大 800，默认 100）</td><td>限制返回游戏数据的数量</td></tr><tr><td>offset</td><td>数值（最小 0，最大游戏总数-1，默认 0）</td><td>游戏数据索引，第一个游戏为 0，最后一个为游戏总数-1</td></tr></table></div>返回结果：<br/><blockquote><br/>{<br/>    "trophyTitles": [<br/>        {<br/>            "npServiceName": "trophy2",<br/>            "npCommunicationId": "NPWR20188_00",<br/>            "trophySetVersion": "01.40",<br/>            "trophyTitleName": "ASTRO’s PLAYROOM",<br/>            "trophyTitleIconUrl": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR20188_00/035a02db-e64f-4572-8653-4a3db37fe2f6.png",<br/>            "trophyTitlePlatform": "PS5",<br/>            "hasTrophyGroups": true,<br/>            "trophyGroupCount": 3,<br/>            "definedTrophies": {<br/>                "bronze": 31,<br/>                "silver": 14,<br/>                "gold": 5,<br/>                "platinum": 1<br/>            },<br/>            "progress": 2,<br/>            "earnedTrophies": {<br/>                "bronze": 2,<br/>                "silver": 0,<br/>                "gold": 0,<br/>                "platinum": 0<br/>            },<br/>            "hiddenFlag": false,<br/>            "lastUpdatedDateTime": "2024-09-30T11:08:02Z"<br/>        }<br/>    ],<br/>    "totalItemCount": 1<br/>}<br/></blockquote><br/><div style="overflow-x:auto;width: 100%;"><table cellpadding="6" cellspacing="0" class="tbl" style="background-color:#EEC"><tr><td>字段</td><td>类型</td><td>描述</td></tr><tr><td>trophyTitles</td><td>json 对象</td><td>基于入参数量限制返回的游戏具体数据</td></tr><tr><td>totalItemCount</td><td>数值</td><td>游戏总数</td></tr><tr><td>nextOffset</td><td>数值</td><td>trophyTitles 的第一个游戏索引</td></tr><tr><td>previousOffse</td><td>数值</td><td>trophyTitles 的最后一个游戏索引</td></tr></table></div>trophyTitles：<br/><div style="overflow-x:auto;width: 100%;"><table cellpadding="6" cellspacing="0" class="tbl" style="background-color:#EEC"><tr><td>字段</td><td>类型</td><td>描述</td></tr><tr><td>npServiceName</td><td>字符</td><td>游戏平台，trophy 为 PS3、PS4、PSV；trophy2 为 PS5、PC</td></tr><tr><td>npCommunicationId</td><td>字符</td><td>游戏的唯一 id</td></tr><tr><td>trophyTitleName</td><td>字符</td><td>游戏名称</td></tr><tr><td>trophyTitleDetail</td><td>字符</td><td>游戏描述</td></tr><tr><td>trophyTitleIconUrl</td><td>字符</td><td>游戏图标地址</td></tr><tr><td>trophyTitlePlatform</td><td>字符</td><td>游戏平台</td></tr><tr><td>hasTrophyGroups</td><td>布尔值</td><td>是否有多组奖杯，DLC 算不同组的奖杯</td></tr><tr><td>trophyGroupCount</td><td>数组</td><td>奖杯组总数</td></tr><tr><td>definedTrophies</td><td>json 对象</td><td>默认奖杯汇总信息</td></tr><tr><td>progress</td><td>数值</td><td>奖杯获取百分比</td></tr><tr><td>earnedTrophies</td><td>json 对象</td><td>已获取奖杯信息</td></tr><tr><td>hiddenFlag</td><td>布尔值</td><td>奖杯是否隐藏，只有获取本人奖杯列表时才能看到隐藏的游戏</td></tr><tr><td>lastUpdatedDateTime</td><td>日期对象</td><td>最后一个奖杯获取时间</td></tr></table></div><b>2.4 指定游戏的奖杯信息（与账号是否拥有该游戏无关）</b><br/><b>2.4.1 指定游戏的奖杯汇总信息</b><br/><blockquote><br/># 2.3 中获取到的游戏 npCommunicationId（宇宙机器人无线控制器指南）<br/>npCommunicationId = "NPWR20188_00"<br/>url = f"https://m.np.playstation.com/api/trophy/v1/npCommunicationIds/{npCommunicationId}/trophyGroups"<br/><br/># 如果是 ps3、ps4、psv 游戏需要加 npServiceName 参数<br/># params = {"npServiceName": "trophy"}<br/># url += "?" + "&amp;".join([f"{key}={value}" for key, value in params.items()])<br/># 1.3 及 1.4 中获取的 access_token<br/>headers = {"Authorization": f"Bearer {access_token}"}<br/>trophy_request = requests.get(url, headers=headers)<br/>print(trophy_request.json())<br/></blockquote><br/>入参说明：<br/><div style="overflow-x:auto;width: 100%;"><table cellpadding="6" cellspacing="0" class="tbl" style="background-color:#EEC"><tr><td>参数</td><td>类型</td><td>描述</td></tr><tr><td>npCommunicationId</td><td>字符</td><td>游戏的唯一 id</td></tr><tr><td>npServiceName</td><td>字符（值：trophy）</td><td>如果是 ps3、ps4、psv 游戏必须加该参数</td></tr></table></div>返回结果（宇宙机器人无线控制器指南）：<br/><blockquote><br/>{<br/>    "npServiceName": "trophy2",<br/>    "npCommunicationId": "NPWR20188_00",<br/>    "trophySetVersion": "01.40",<br/>    "trophyTitleName": "ASTRO’s PLAYROOM",<br/>    "trophyTitleIconUrl": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR20188_00/035a02db-e64f-4572-8653-4a3db37fe2f6.png",<br/>    "trophyTitlePlatform": "PS5",<br/>    "definedTrophies": {<br/>        "bronze": 31,<br/>        "silver": 14,<br/>        "gold": 5,<br/>        "platinum": 1<br/>    },<br/>    "trophyGroups": [<br/>        {<br/>            "trophyGroupId": "default",<br/>            "trophyGroupName": "ASTRO’s PLAYROOM",<br/>            "trophyGroupIconUrl": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR20188_00/035a02db-e64f-4572-8653-4a3db37fe2f6.png",<br/>            "definedTrophies": {<br/>                "bronze": 26,<br/>                "silver": 13,<br/>                "gold": 3,<br/>                "platinum": 1<br/>            }<br/>        },<br/>        {<br/>            "trophyGroupId": "001",<br/>            "trophyGroupName": "ASTRO’s PLAYROOM [ADD-ON]",<br/>            "trophyGroupIconUrl": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR20188_00/07628edd-c7e7-4762-9409-edcece03a12d.png",<br/>            "definedTrophies": {<br/>                "bronze": 1,<br/>                "silver": 0,<br/>                "gold": 2,<br/>                "platinum": 0<br/>            }<br/>        },<br/>        {<br/>            "trophyGroupId": "002",<br/>            "trophyGroupName": "ASTRO’s PLAYROOM [ADD-ON] ",<br/>            "trophyGroupIconUrl": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR20188_00/1c8dc8da-12c2-4a5a-a6f0-d89f2fd9c6c1.png",<br/>            "definedTrophies": {<br/>                "bronze": 4,<br/>                "silver": 1,<br/>                "gold": 0,<br/>                "platinum": 0<br/>            }<br/>        }<br/>    ]<br/>}<br/></blockquote><br/><div style="overflow-x:auto;width: 100%;"><table cellpadding="6" cellspacing="0" class="tbl" style="background-color:#EEC"><tr><td>字段</td><td>类型</td><td>描述</td></tr><tr><td>npServiceName</td><td>字符</td><td>游戏平台，trophy 为 PS3、PS4、PSV；trophy2 为 PS5、PC</td></tr><tr><td>npCommunicationId</td><td>字符</td><td>游戏的唯一 id</td></tr><tr><td>trophyTitleName</td><td>字符</td><td>游戏名称</td></tr><tr><td>trophyTitleDetail</td><td>字符</td><td>游戏描述</td></tr><tr><td>trophyTitleIconUrl</td><td>字符</td><td>游戏图标地址</td></tr><tr><td>trophyTitlePlatform</td><td>字符</td><td>游戏平台</td></tr><tr><td>definedTrophies</td><td>json 对象</td><td>默认奖杯汇总信息（全部包含 DLC）</td></tr><tr><td>trophyGroups</td><td>json 对象</td><td>分组奖杯汇总信息</td></tr></table></div>trophyGroups：<br/><div style="overflow-x:auto;width: 100%;"><table cellpadding="6" cellspacing="0" class="tbl" style="background-color:#EEC"><tr><td>字段</td><td>类型</td><td>描述</td></tr><tr><td>trophyGroupId</td><td>字符</td><td>奖杯组的 id</td></tr><tr><td>trophyGroupName</td><td>字符</td><td>奖杯组名称</td></tr><tr><td>trophyGroupIconUrl</td><td>字符</td><td>奖杯组图标地址</td></tr><tr><td>definedTrophies</td><td>json 对象</td><td>默认奖杯组信息</td></tr></table></div><b>2.4.2 指定游戏的奖杯具体信息</b><br/>在 2.4.1url 后加上 trophyGroupId 及"/trophies"<br/><blockquote><br/># 2.3 中获取到的游戏 npCommunicationId（宇宙机器人无线控制器指南）<br/>npCommunicationId = "NPWR20188_00"<br/><br/># 2.4.1 中的 trophyGroupId 获取本体、dlc 奖杯具体信息或 all 返回所有奖杯具体信息<br/>trophyGroupId = "all"<br/>url = f"https://m.np.playstation.com/api/trophy/v1/npCommunicationIds/{npCommunicationId}/trophyGroups/{trophyGroupId}/trophies"<br/><br/># 如果是 ps3、ps4、psv 游戏需要加 npServiceName 参数<br/># params = {"npServiceName": "trophy","limit": "", "offset": 0}<br/># url += "?" + "&amp;".join([f"{key}={value}" for key, value in params.items()])<br/># 1.3 及 1.4 中获取的 access_token<br/># headers 中增加 Accept-Language 设置请求结果的语音<br/>headers = {<br/>    "Authorization": f"Bearer {access_token}",<br/>    "Accept-Language": "zh-hans-cn",<br/>}<br/>trophy_request = requests.get(url, headers=headers)<br/>print(trophy_request.json())<br/></blockquote><br/>入参说明：<br/><div style="overflow-x:auto;width: 100%;"><table cellpadding="6" cellspacing="0" class="tbl" style="background-color:#EEC"><tr><td>参数</td><td>类型</td><td>描述</td></tr><tr><td>npCommunicationId</td><td>字符</td><td>游戏的唯一 id</td></tr><tr><td>trophyGroupId</td><td>字符（all、default、001）</td><td>奖杯组 id，all 表示所有，defalut 一般为本体</td></tr><tr><td>npServiceName</td><td>字符（值：trophy）</td><td>如果是 ps3、ps4、psv 游戏必须加该参数</td></tr><tr><td>limit</td><td>数值（最小 1，最大 400，默认所有）</td><td>限制奖杯返回的数量</td></tr></table></div><blockquote><br/>{<br/>    "trophySetVersion": "01.40",<br/>    "hasTrophyGroups": true,<br/>    "trophies": [<br/>        {<br/>            "trophyId": 0,<br/>            "trophyHidden": false,<br/>            "trophyType": "platinum",<br/>            "trophyName": "大功告成！",<br/>            "trophyDetail": "已集齐宇宙机器人无线控制器使用指南中的所有奖杯。我们下次冒险再见！",<br/>            "trophyIconUrl": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR20188_00/4e1f7ad7-5720-4b03-96a4-ecf8abb17ed8.png",<br/>            "trophyGroupId": "default"<br/>        },<br/>        {<br/>            "trophyId": 50,<br/>            "trophyHidden": true,<br/>            "trophyType": "bronze",<br/>            "trophyName": "名胜之旅",<br/>            "trophyDetail": "成功救出困在冷却泉水中的特殊机器人。",<br/>            "trophyIconUrl": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR20188_00/ba591bf0-7303-4e5b-bb92-72f5e52b16f4.png",<br/>            "trophyGroupId": "002"<br/>        }<br/>    ],<br/>    "totalItemCount": 51<br/>}<br/></blockquote><br/><div style="overflow-x:auto;width: 100%;"><table cellpadding="6" cellspacing="0" class="tbl" style="background-color:#EEC"><tr><td>字段</td><td>类型</td><td>描述</td></tr><tr><td>hasTrophyGroups</td><td>布尔值</td><td>是否存在多组奖杯</td></tr><tr><td>trophies</td><td>json 对象</td><td>奖杯信息</td></tr><tr><td>totalItemCount</td><td>数值</td><td>奖杯总数</td></tr></table></div>trophies：<br/><div style="overflow-x:auto;width: 100%;"><table cellpadding="6" cellspacing="0" class="tbl" style="background-color:#EEC"><tr><td>字段</td><td>类型</td><td>描述</td></tr><tr><td>trophyId</td><td>数值</td><td>奖杯索引</td></tr><tr><td>trophyHidden</td><td>布尔值</td><td>奖杯是否隐藏</td></tr><tr><td>trophyType</td><td>字符</td><td>奖杯类型（白金、金、银、铜）</td></tr><tr><td>trophyName</td><td>字符</td><td>奖杯名称</td></tr><tr><td>trophyDetail</td><td>字符</td><td>奖杯详细信息</td></tr><tr><td>trophyIconUrl</td><td>字符</td><td>奖杯图标地址</td></tr><tr><td>trophyGroupId</td><td>字符</td><td>所属奖杯组 id</td></tr></table></div><b>2.5 指定游戏的奖杯获取信息</b><br/><b>2.5.1 指定游戏的奖杯获取汇总信息</b><br/><blockquote><br/># 2.1 中获取的 accountId 或 me<br/>accountId = "me"<br/><br/># 2.3 中获取到的游戏 npCommunicationId（宇宙机器人无线控制器指南）<br/>npCommunicationId = "NPWR20188_00"<br/>url = f"https://m.np.playstation.com/api/trophy/v1/users/{accountId}/npCommunicationIds/{npCommunicationId}/trophyGroups"<br/><br/># 如果是 ps3、ps4、psv 游戏需要加 npServiceName 参数<br/># params = {"npServiceName": "trophy"}<br/># url += "?" + "&amp;".join([f"{key}={value}" for key, value in params.items()])<br/># 1.3 及 1.4 中获取的 access_token<br/>headers = {"Authorization": f"Bearer {access_token}"}<br/>trophy_request = requests.get(url, headers=headers)<br/>print(trophy_request.json())<br/></blockquote><br/>入参说明：<br/><div style="overflow-x:auto;width: 100%;"><table cellpadding="6" cellspacing="0" class="tbl" style="background-color:#EEC"><tr><td>参数</td><td>类型</td><td>描述</td></tr><tr><td>accountId</td><td>字符</td><td>使用 me 获取本人游戏数据，或获取制定账号数据</td></tr><tr><td>npCommunicationId</td><td>字符</td><td>游戏的唯一 id</td></tr><tr><td>npServiceName</td><td>字符（值：trophy）</td><td>如果是 ps3、ps4、psv 游戏必须加该参数</td></tr></table></div>返回结果（宇宙机器人无线控制器指南）：<br/><blockquote><br/>{<br/>    "trophySetVersion": "01.40",<br/>    "hiddenFlag": false,<br/>    "progress": 93,<br/>    "earnedTrophies": {<br/>        "bronze": 27,<br/>        "silver": 13,<br/>        "gold": 5,<br/>        "platinum": 1<br/>    },<br/>    "lastUpdatedDateTime": "2023-02-18T11:54:37Z",<br/>    "trophyGroups": [<br/>        {<br/>            "trophyGroupId": "default",<br/>            "progress": 100,<br/>            "earnedTrophies": {<br/>                "bronze": 26,<br/>                "silver": 13,<br/>                "gold": 3,<br/>                "platinum": 1<br/>            },<br/>            "lastUpdatedDateTime": "2023-02-18T11:42:16Z"<br/>        },<br/>        {<br/>            "trophyGroupId": "001",<br/>            "progress": 100,<br/>            "earnedTrophies": {<br/>                "bronze": 1,<br/>                "silver": 0,<br/>                "gold": 2,<br/>                "platinum": 0<br/>            },<br/>            "lastUpdatedDateTime": "2023-02-18T11:54:37Z"<br/>        },<br/>        {<br/>            "trophyGroupId": "002",<br/>            "progress": 0,<br/>            "earnedTrophies": {<br/>                "bronze": 0,<br/>                "silver": 0,<br/>                "gold": 0,<br/>                "platinum": 0<br/>            }<br/>        }<br/>    ]<br/>}<br/></blockquote><br/><div style="overflow-x:auto;width: 100%;"><table cellpadding="6" cellspacing="0" class="tbl" style="background-color:#EEC"><tr><td>字段</td><td>类型</td><td>描述</td></tr><tr><td>hiddenFlag</td><td>布尔值</td><td>奖杯是否隐藏，只有获取本人奖杯列表时才能看到隐藏的游戏</td></tr><tr><td>progress</td><td>数值</td><td>奖杯获取百分比</td></tr><tr><td>earnedTrophies</td><td>json 对象</td><td>已获取奖杯汇总信息</td></tr><tr><td>lastUpdatedDateTime</td><td>日期对象</td><td>最后一个奖杯获取时间</td></tr><tr><td>trophyGroups</td><td>json 对象</td><td>分组获得奖杯信息</td></tr></table></div>trophyGroups：<br/><div style="overflow-x:auto;width: 100%;"><table cellpadding="6" cellspacing="0" class="tbl" style="background-color:#EEC"><tr><td>字段</td><td>类型</td><td>描述</td></tr><tr><td>trophyGroupId</td><td>字符</td><td>奖杯组 id</td></tr><tr><td>progress</td><td>数值</td><td>奖杯组获取百分比</td></tr><tr><td>earnedTrophies</td><td>json 对象</td><td>奖杯组已获取情况</td></tr><tr><td>lastUpdatedDateTime</td><td>日期对象</td><td>该组最后一个奖杯获取时间</td></tr></table></div><b>2.5.2 指定游戏的奖杯获取具体信息</b><br/>在 2.5.1url 后加上 trophyGroupId 及"/trophies"<br/><blockquote><br/># 2.1 中获取的 accountId 或 me<br/>accountId = "me"<br/><br/># 2.3 中获取到的游戏 npCommunicationId（宇宙机器人无线控制器指南）<br/>npCommunicationId = "NPWR20188_00"<br/><br/># 2.4.1 中的 trophyGroupId 获取本体、dlc 奖杯具体信息或 all 返回所有奖杯具体信息<br/>trophyGroupId = "all"<br/>url = f"https://m.np.playstation.com/api/trophy/v1/users/{accountId}/npCommunicationIds/{npCommunicationId}/trophyGroups/{trophyGroupId}/trophies"<br/><br/># 如果是 ps3、ps4、psv 游戏需要加 npServiceName 参数<br/># params = {"npServiceName": "trophy","limit": "", "offset": 0}<br/># url += "?" + "&amp;".join([f"{key}={value}" for key, value in params.items()])<br/># 1.3 及 1.4 中获取的 access_token<br/>headers = {"Authorization": f"Bearer {access_token}"}<br/>trophy_request = requests.get(url, headers=headers)<br/>print(trophy_request.json())<br/></blockquote><br/>入参说明：<br/><div style="overflow-x:auto;width: 100%;"><table cellpadding="6" cellspacing="0" class="tbl" style="background-color:#EEC"><tr><td>参数</td><td>类型</td><td>描述</td></tr><tr><td>accountId</td><td>字符</td><td>使用 me 获取本人游戏数据，或获取制定账号数据</td></tr><tr><td>npCommunicationId</td><td>字符</td><td>游戏的唯一 id</td></tr><tr><td>trophyGroupId</td><td>字符（all、default、001）</td><td>奖杯组 id，all 表示所有，defalut 一般为本体</td></tr><tr><td>npServiceName</td><td>字符（值：trophy）</td><td>如果是 ps3、ps4、psv 游戏必须加该参数</td></tr><tr><td>limit</td><td>数值（最小 1，最大 400，默认所有）</td><td>限制奖杯返回的数量</td></tr><tr><td>offset</td><td>数值（最小 0，最大奖杯总数-1，默认 0）</td><td>奖杯数据索引，第一个游戏为 0，最后一个为奖杯总数-1</td></tr></table></div>返回结果（宇宙机器人无线控制器指南，部分省略）：<br/><blockquote><br/>{<br/>    "trophySetVersion": "01.40",<br/>    "hasTrophyGroups": true,<br/>    "lastUpdatedDateTime": "2023-02-18T11:54:37Z",<br/>    "trophies": [<br/>        {<br/>            "trophyId": 0,<br/>            "trophyHidden": false,<br/>            "earned": true,<br/>            "earnedDateTime": "2023-02-18T11:42:16Z",<br/>            "trophyType": "platinum",<br/>            "trophyRare": 0,<br/>            "trophyEarnedRate": "4.6"<br/>        },<br/>        {<br/>            "trophyId": 50,<br/>            "trophyHidden": true,<br/>            "earned": false,<br/>            "trophyType": "bronze",<br/>            "trophyRare": 0,<br/>            "trophyEarnedRate": "1.0"<br/>        }<br/>    ],<br/>    "rarestTrophies": [<br/>        {<br/>            "trophyId": 44,<br/>            "trophyHidden": true,<br/>            "earned": true,<br/>            "earnedDateTime": "2023-02-18T11:52:55Z",<br/>            "trophyType": "gold",<br/>            "trophyRare": 0,<br/>            "trophyEarnedRate": "3.8"<br/>        }<br/>    ],<br/>    "totalItemCount": 51<br/>}<br/></blockquote><br/><div style="overflow-x:auto;width: 100%;"><table cellpadding="6" cellspacing="0" class="tbl" style="background-color:#EEC"><tr><td>字段</td><td>类型</td><td>描述</td></tr><tr><td>hasTrophyGroups</td><td>布尔值</td><td>是否存在多组奖杯</td></tr><tr><td>lastUpdatedDateTime</td><td>日期对象</td><td>最后一个奖杯获取时间</td></tr><tr><td>trophies</td><td>json 对象</td><td>获得奖杯信息</td></tr><tr><td>rarestTrophies</td><td>json 对象</td><td>获得最珍贵奖杯信息</td></tr></table></div>trophies、rarestTrophies：<br/><div style="overflow-x:auto;width: 100%;"><table cellpadding="6" cellspacing="0" class="tbl" style="background-color:#EEC"><tr><td>字段</td><td>类型</td><td>描述</td></tr><tr><td>trophyId</td><td>数值</td><td>奖杯 id</td></tr><tr><td>trophyHidden</td><td>布尔值</td><td>奖杯是否隐藏</td></tr><tr><td>earned</td><td>布尔值</td><td>是否获得</td></tr><tr><td>progress</td><td>字符</td><td>对于支持追踪进度的奖杯，当前完成的步骤数（PS5 专属）</td></tr><tr><td>progressRate</td><td>数值</td><td>对于支持追踪进度的奖杯，奖杯进度百分比（PS5 专属）</td></tr><tr><td>progressedDateTime</td><td>日期对象</td><td>对于支持追踪进度的奖杯，上次更新奖杯进度的日期（PS5 专属）</td></tr><tr><td>earnedDateTime</td><td>日期对象</td><td>获得日期</td></tr><tr><td>trophyType</td><td>字符</td><td>奖杯类型</td></tr><tr><td>trophyRare</td><td>数值</td><td>稀有度（0：极为珍贵、1：非常珍贵、2：珍贵、3：一般）</td></tr><tr><td>trophyEarnedRate</td><td>数值</td><td>奖杯珍贵度百分比</td></tr></table></div><br/>参考：<a href="https://andshrew.github.io/PlayStation-Trophies/#/APIv2" target="_blank">PlayStation Trophies API</a></div></div></div>
+<h2>评论</h2><div class="post">
+<a class="l" href="https://psnine.com/psnid/incucc"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP1003/PPSA02532_00-DEATHLOOPFIA0000_2CAEB2E2E3CCD3F61A02_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    这个方式获取的奖杯数据信息，跟直接查用户有什么区别<br/><br/>P9好像是不用授权token就能查，授权查到的是跟PSApp里面一样吗？
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/incucc">incucc</a>
+                                            2024-10-12 17:42                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/zz-werke"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/UT0016/CUSA06833_00-PSWRPUP2022AVTR2_A65202D545CB658F616E_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/incucc">@incucc</a> 如果有了token，可以查其他人或自己的数据。和psapp数据是一样的。api是从app中抓包拿到了。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/zz-werke">zz-werke</a>
+                                            2024-10-13 14:33                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/abyssmoe"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP5846/CUSA19221_00-AVATAR200423KEA0_107DEB7239F33087B9CF_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    如果有需要，日后可以直接使用<a href="https://psray.net" target="_blank">psray</a>项目的api<br/>我们基于github上的一些psn-api项目，搭建一套公开的playstation api服务和网站，对于后续会对开发者免费提供<br/>遗憾的是，现在没有时间来编写api文档，并且api会根据这边需求调整返回字段和请求参数，<b><span style="color:red;">请不要用于正式的项目中</span></b><br/><br/>示例：例如需要获取个人资料，可以请求（请把最后替换成具体psnid）<br/>https://api.psray.net/profile/get/abyssmoe
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/abyssmoe">abyssmoe</a>
+                                            2024-10-14 12:16修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/coffeebean0421"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/3RD/JP00361111B20_1C653082A6513DD3473D_L.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    所以这个网站是看奖杯吗？还是干嘛的
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/coffeebean0421">coffeebean0421</a>
+                                            2024-10-14 10:39                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/ssalor_1997"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/SCEI/I0038.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    有这必要么
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/ssalor_1997">ssalor_1997</a>
+                                            2024-10-14 10:59                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/unclesev"><img height="50" src="../avatars/unclesev-1556434632-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    正好前段时间也在搞自己的奖杯页，踩了点坑，用的是这个项目 https://psn-api.achievements.app/<br/>npsso 以及获取到的 access_code 是有时效的，如果一直从这边走会要定期手动更新 npsso<br/>但是用 refresh_token 去获取 access_token 时，在满足一定条件下会自己续 refresh_token 的剩余时间，来达到完全自动化，具体可以看这个 https://psn-api.achievements.app/api-docs/authentication#exchangerefreshtokenforauthtokens<br/><br/>目前自己的奖杯页初步已经完成，主要为了能够自定义别名，同时显示别名和原名，并且可以自定义展示的奖杯组且支持排序，这样我给别人展示我某个系列的奖杯就可以直接发一个地址
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/unclesev">unclesev</a>
+                                            2024-10-14 14:06修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/sephirothwkh"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/3RD/JP04251309003_A61B859DFB311A244CAB_L.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    这个能获取游戏时长吗? 比如p9的在个人简介中输入特定字符，就可以获取，这种才方便
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/sephirothwkh">sephirothwkh</a>
+                                            2024-10-14 12:49                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/abyssmoe"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP5846/CUSA19221_00-AVATAR200423KEA0_107DEB7239F33087B9CF_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/sephirothwkh">@sephirothwkh</a> 楼主列出的几个api接口不可以。可以获取，当要用别的接口。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/abyssmoe">abyssmoe</a>
+                                            2024-10-14 13:41                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/rookie926"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/WWS_J/J0038.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    扒数据最好就别明目张胆的发了
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/rookie926">rookie926</a>
+                                            2024-10-14 13:59                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/abyssmoe"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP5846/CUSA19221_00-AVATAR200423KEA0_107DEB7239F33087B9CF_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/rookie926">@rookie926</a> 虽然索尼没有像steam那样公开数据接口，并且在这方面限制和管理比较模糊暧昧。但是开源社区的大家，还是研究了些方法获取数据，方便开发者们为玩家构建一些psn游戏相关的app或事网站服务。先不管是否用来盈利了，大家都希望为ps社区宣传，为本来就少的psn社区吸引更多的玩家。<br/>扯远一点，说真的我感觉国内ps群体的新人越来越少，只剩下老登了。去年我搬家的时候送了朋友一台ps5，然后他至今都没怎么开机过。身边的人也大多在玩手机游戏和pc游戏。希望有能力的人，给PS玩家提供更好更方便的交流地方和功能，让更多人接触入坑ps，这是我们的理想。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/abyssmoe">abyssmoe</a>
+                                            2024-10-14 14:35                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/kongou233"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0700/CUSA08526_00-PREMIUMAVATAR006_7250FF9DD16034688F22_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    上面的client_id和client_secret公开后，后来的人重新获取token，之前的不就失效了吗？
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/kongou233">kongou233</a>
+                                            2024-10-14 15:02                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/skyfantasyhong"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP9000/CUSA07350_00-AVATAR0000000001_7A2E1D30618C4FC3E084_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    获取auth_code时报错有大佬知道原因么？<br/>{<br/>    "error": "invalid_request",<br/>    "error_code": 4098,<br/>    "error_description": "Mandatory parameter 'client_id' is missing"<br/>}
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/skyfantasyhong">skyfantasyhong</a>
+                                            2024-10-14 15:31                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/left_little_fox"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/WWS_J/J2014_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/rookie926">@rookie926</a> 这是索尼公开的api接口，公开api接口就是让大家进行合理调用的。和某些用Python无视规则扒数据还是有区别的，属于api的合法扩展应用
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/left_little_fox">left_little_fox</a>
+                                            2024-10-14 15:55                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/zz-werke"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/UT0016/CUSA06833_00-PSWRPUP2022AVTR2_A65202D545CB658F616E_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/kongou233">@kongou233</a> client_id目前看是固定的参数，多年没有更新了。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/zz-werke">zz-werke</a>
+                                            2024-10-14 17:15                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/zz-werke"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/UT0016/CUSA06833_00-PSWRPUP2022AVTR2_A65202D545CB658F616E_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/abyssmoe">@abyssmoe</a> 请教下，官方有获取游戏时长的借口吗？
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/zz-werke">zz-werke</a>
+                                            2024-10-14 17:17                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/zz-werke"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/UT0016/CUSA06833_00-PSWRPUP2022AVTR2_A65202D545CB658F616E_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/left_little_fox">@left_little_fox</a> 应该也不是索尼公开的，目前看应该是从ps app应用中抓包拿到的。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/zz-werke">zz-werke</a>
+                                            2024-10-14 17:20                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/zz-werke"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/UT0016/CUSA06833_00-PSWRPUP2022AVTR2_A65202D545CB658F616E_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/skyfantasyhong">@skyfantasyhong</a> 1.1成功拿到npsso了吗，1.2中需要替换npsso变量。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/zz-werke">zz-werke</a>
+                                            2024-10-14 17:24                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/zz-werke"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/UT0016/CUSA06833_00-PSWRPUP2022AVTR2_A65202D545CB658F616E_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/unclesev">@unclesev</a> 使用refresh_token刷新access_token后也会返回refresh_token。文章只是简单写了下逻辑，具体代码需要自己构建。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/zz-werke">zz-werke</a>
+                                            2024-10-14 17:34                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/skyfantasyhong"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP9000/CUSA07350_00-AVATAR0000000001_7A2E1D30618C4FC3E084_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/zz-werke">@zz-werke</a> 拿到npsso了，也加到header里了，但是一调就报错
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/skyfantasyhong">skyfantasyhong</a>
+                                            2024-10-14 18:02                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/srvenx-07"><img height="50" src="../avatars/srvenx-07-1663817094-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/abyssmoe">@abyssmoe</a> 惭愧了，几年前在黑盒搞过主机社区，但是因为老板觉得来钱慢就不想做了。索尼也不想搞基本盘，坐吃山空可太正常了。不如说大部分人都觉得可持续发展是个笑话，而且是全方位的只考虑眼前和自己了。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/srvenx-07">srvenx-07</a>
+                                            2024-10-15 13:37                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/zz-werke"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/UT0016/CUSA06833_00-PSWRPUP2022AVTR2_A65202D545CB658F616E_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/skyfantasyhong">@skyfantasyhong</a> 是不是少了参数，我今天测试也是没问题的。看报错像是少了client_id。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/zz-werke">zz-werke</a>
+                                            2024-10-15 14:19                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/skyfantasyhong"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP9000/CUSA07350_00-AVATAR0000000001_7A2E1D30618C4FC3E084_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/zz-werke">@zz-werke</a> 但是参数都填了啊，是哪里的问题呢<br/><img class="imgclick" src="https://www.modelscope.cn/studio/flyheadko/J2Z_experience/resolve/master/data/images/38181_001.webp"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/skyfantasyhong">skyfantasyhong</a>
+                                            2024-10-15 15:14                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/nikezhang"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/WWS_J/J0037.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/skyfantasyhong">@skyfantasyhong</a> 起码参数得齐全了吧<br/>params = {<br/>    "access_type": "offline",<br/>    "client_id": "09515159-7237-4370-9b40-3806e67c0891",<br/>    "response_type": "code",<br/>    "scope": "psn:mobile.v2.core psn:clientapp",<br/>    "redirect_uri": "com.scee.psxandroid.scecompcall://redirect",<br/>}
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/nikezhang">nikezhang</a>
+                                            2024-10-15 16:07                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/abyssmoe"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP5846/CUSA19221_00-AVATAR200423KEA0_107DEB7239F33087B9CF_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/srvenx-07">@srvenx-07</a> 没，其实终究是在说漂亮话而已，现实就是费力回报少。作为独立开发者，开发的越久，越是迷茫还要不要坚持下去。要不是几位可爱的群友精神上的支持，我可能放弃了。<br/><br/>在这里谢谢他们。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/abyssmoe">abyssmoe</a>
+                                            2024-10-15 16:33修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/skyfantasyhong"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP9000/CUSA07350_00-AVATAR0000000001_7A2E1D30618C4FC3E084_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/nikezhang">@nikezhang</a> 是写全了的，只不过截图挡住了
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/skyfantasyhong">skyfantasyhong</a>
+                                            2024-10-15 16:40                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/palmsprings_"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/3RD/JP04041205012_6F201556126F88806E80_L.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/skyfantasyhong">@skyfantasyhong</a> 换postman试试，apifox可能会不好用
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/palmsprings_">palmsprings_</a>
+                                            2024-10-15 17:08                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/skyfantasyhong"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP9000/CUSA07350_00-AVATAR0000000001_7A2E1D30618C4FC3E084_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/palmsprings_">@palmsprings_</a> 请教一下，cookies的值是npsso={获取到的npsso}的格式么？
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/skyfantasyhong">skyfantasyhong</a>
+                                            2024-10-15 17:39                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/abyssmoe"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP5846/CUSA19221_00-AVATAR200423KEA0_107DEB7239F33087B9CF_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/skyfantasyhong">@skyfantasyhong</a> 当使用GET Method的时候，参数应该填写在query中。你的这张截图的请求头部对应的是http headers，query参数是http query。如果填写在请求体（body）中。不会有效的
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/abyssmoe">abyssmoe</a>
+                                            2024-10-15 19:13修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/zz-werke"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/UT0016/CUSA06833_00-PSWRPUP2022AVTR2_A65202D545CB658F616E_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/skyfantasyhong">@skyfantasyhong</a> 你如果用apifox的，这个请求响应是302没有response
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/zz-werke">zz-werke</a>
+                                            2024-10-15 20:52修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/skyfantasyhong"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP9000/CUSA07350_00-AVATAR0000000001_7A2E1D30618C4FC3E084_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/palmsprings_">@palmsprings_</a> <a href="https://psnine.com/psnid/abyssmoe">@abyssmoe</a> <a href="https://psnine.com/psnid/zz-werke">@zz-werke</a> <br/>用postman了，响应也是302了，但location里怎么感觉还是不对？求大佬赐教<br/><img class="imgclick" src="https://www.modelscope.cn/studio/flyheadko/J2Z_experience/resolve/master/data/images/38181_002.webp"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/skyfantasyhong">skyfantasyhong</a>
+                                            2024-10-16 10:33                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/palmsprings_"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/3RD/JP04041205012_6F201556126F88806E80_L.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/skyfantasyhong">@skyfantasyhong</a> 参数顺序可能不对，cccess_type client_id  redirect_uri respose_type scpoe 按照这个顺序试一下
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/palmsprings_">palmsprings_</a>
+                                            2024-10-16 11:38                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/skyfantasyhong"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP9000/CUSA07350_00-AVATAR0000000001_7A2E1D30618C4FC3E084_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/palmsprings_">@palmsprings_</a> 换顺序了，还是不行唉
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/skyfantasyhong">skyfantasyhong</a>
+                                            2024-10-16 11:59                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/zz-werke"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/UT0016/CUSA06833_00-PSWRPUP2022AVTR2_A65202D545CB658F616E_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/skyfantasyhong">@skyfantasyhong</a> 和参数顺序没关系，在postman中是能正常拿到location的，settings中有个配置Automatically follow redirects自动重定向，需要关了，默认是打开的。<br/><img class="imgclick" src="https://s2.loli.net/2024/10/16/jYkzuJVTgMQ1fS6.png"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/zz-werke">zz-werke</a>
+                                            2024-10-16 15:20修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/skyfantasyhong"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP9000/CUSA07350_00-AVATAR0000000001_7A2E1D30618C4FC3E084_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/zz-werke">@zz-werke</a> Automatically follow redirects我关了，不关都不是302而是200，现在问题就是结果拿到location了但里面的内容不对
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/skyfantasyhong">skyfantasyhong</a>
+                                            2024-10-16 15:22                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/skyfantasyhong"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP9000/CUSA07350_00-AVATAR0000000001_7A2E1D30618C4FC3E084_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/zz-werke">@zz-werke</a> 我的location里不是com.scee开头的，而是https://my.account.sony.com/sonyacct/signin开头的，不知道问题在哪
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/skyfantasyhong">skyfantasyhong</a>
+                                            2024-10-16 15:24                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/zz-werke"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/UT0016/CUSA06833_00-PSWRPUP2022AVTR2_A65202D545CB658F616E_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/skyfantasyhong">@skyfantasyhong</a> headers中加cookie了吗<br/><img class="imgclick" src="https://s2.loli.net/2024/10/16/g1rT5VF9u4JOoW2.jpg"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/zz-werke">zz-werke</a>
+                                            2024-10-16 15:41                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/skyfantasyhong"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP9000/CUSA07350_00-AVATAR0000000001_7A2E1D30618C4FC3E084_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/zz-werke">@zz-werke</a> 加cookie了，还是不行，headers我是6个hidden你是8个，跟这个有关系么？
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/skyfantasyhong">skyfantasyhong</a>
+                                            2024-10-16 16:02                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/zz-werke"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/UT0016/CUSA06833_00-PSWRPUP2022AVTR2_A65202D545CB658F616E_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/skyfantasyhong">@skyfantasyhong</a> 其他参数是postman默认的<img class="imgclick" src="https://s2.loli.net/2024/10/16/k1W6BJVdriZUvng.jpg"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/zz-werke">zz-werke</a>
+                                            2024-10-16 16:50                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/skyfantasyhong"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP9000/CUSA07350_00-AVATAR0000000001_7A2E1D30618C4FC3E084_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/zz-werke">@zz-werke</a> 完全按照这个试了还是不行，无解了
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/skyfantasyhong">skyfantasyhong</a>
+                                            2024-10-16 17:45                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/nikezhang"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/WWS_J/J0037.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/skyfantasyhong">@skyfantasyhong</a> 你看看你的帐号的隐私设置吧，那一大堆返回值里有个error_code和error_description，写的是用户没有授权，应该和你的隐私设置有关系，要不就是需要登录。<br/>另外你是直接用的人家的client_id？那肯定是不行的，你得用你自己的才行，而且，他这种方式是要你浏览器登录之后获取自己账号相关的cookie才行的，你带的cookie对吗？还得和自己的client_id匹配。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/nikezhang">nikezhang</a>
+                                            2024-10-22 00:47修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/skyfantasyhong"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP9000/CUSA07350_00-AVATAR0000000001_7A2E1D30618C4FC3E084_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/nikezhang">@nikezhang</a> 但是不知道什么隐私会影响这个接口呢，client_id是固定值所有人都是用一样的啊，就是npsso应该用自己的，而我也确实用了自己的啊
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/skyfantasyhong">skyfantasyhong</a>
+                                            2024-10-22 17:27                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/e-rubecula"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP1804/CUSA08621_00-AVATAR0000000011_9FDE50A9EA6F353F4FEF_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<img class="imgclick" src="https://s2.loli.net/2024/10/24/WLPMcNbTEGRDoaS.png"/><br/><br/>请求这个api可以拿到每个游戏的游玩时长，游戏多可以加limit和offset参数<br/>https://m.np.playstation.com/api/gamelist/v2/users/me/titles?categories=ps4_game,ps5_native_game
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/e-rubecula">e-rubecula</a>
+                                            2024-10-24 15:05                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/nikezhang"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/WWS_J/J0037.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/skyfantasyhong">@skyfantasyhong</a> 那个client_id是app的id吧，我理解成用户自己的id了，那个应该是一样的，不过错误信息里既然是提示需要登录，那应该就是和某些配置冲突了。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/nikezhang">nikezhang</a>
+                                            2024-10-30 16:59                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/nikezhang"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/WWS_J/J0037.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/skyfantasyhong">@skyfantasyhong</a> 刚才我用python试了下，没有带上cookie返回的location里就会是这样显示的，你检查下你用的工具是否正确的带上了cookie吧
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/nikezhang">nikezhang</a>
+                                            2024-10-30 18:52                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/arcangelostation"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/default/DefaultAvatar.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    我也遇到code获取不了的情况报错这个：<br/>[error] =&gt; login reguired<br/>[error _code]=&gt; 4165<br/>[error description]=&gt;User is not authenticated<br/>no captcha] =&gt; true<br/> <a href="https://psnine.com/psnid/skyfantasyhong">@skyfantasyhong</a> 您那边问题解决了吗？<br/>有没有大佬指点这个怎么解决呀？
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/arcangelostation">arcangelostation</a>
+                                            2024-11-13 14:52                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/zz-werke"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/UT0016/CUSA06833_00-PSWRPUP2022AVTR2_A65202D545CB658F616E_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/arcangelostation">@arcangelostation</a> <a href="https://psnine.com/psnid/SkyFantasyHong">@SkyFantasyHong</a> <a href="https://url35.ctfile.com/f/62328235-1432111633-1c039b" target="_blank">访问密码: psnine</a><br/>直接封装了一个应用，可以试下。使用方式：按照帖子1.1的方法获取npsso，然后在应用中输入npsso，点击【获取access_token】会返回access_token与refresh_token；access_token有时效，后续可以输入npsso与refresh_token点击【刷新access_token】来更新，有了access_token就可以参照文档获取奖杯数据。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/zz-werke">zz-werke</a>
+                                            2024-12-02 13:55修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/zz-werke"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/UT0016/CUSA06833_00-PSWRPUP2022AVTR2_A65202D545CB658F616E_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://url35.ctfile.com/f/62328235-1432111633-1c039b" target="_blank">访问密码: psnine</a><br/>使用方式：按照帖子1.1的方法获取npsso，然后在应用中输入npsso，点击【获取access_token】会返回access_token与refresh_token；access_token有时效，后续可以输入npsso与refresh_token点击【刷新access_token】来更新，有了access_token就可以参照文档获取奖杯数据。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/zz-werke">zz-werke</a>
+                                            2024-12-02 13:58修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/minegishi_minoru"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0507/CUSA03274_00-FATEEXAVATAR0002_2A53CA3CC752ABC02FA4_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/zz-werke">@zz-werke</a> 大佬分享已经失效了 能否再次分享下 感谢~
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/minegishi_minoru">minegishi_minoru</a>
+                                            03-19 18:16                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/zz-werke"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/UT0016/CUSA06833_00-PSWRPUP2022AVTR2_A65202D545CB658F616E_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/minegishi_minoru">@minegishi_minoru</a> https://url35.ctfile.com/f/62328235-1501795423-12d1c1?p=psnine
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/zz-werke">zz-werke</a>
+                                            04-28 15:50                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/alexredy8"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/WWS_J/J2064_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    1.3那个接口为啥没返回refresh_token欸
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/alexredy8">alexredy8</a>
+                                            04-29 22:58                                                                            </div>
+<!--回复结束-->
+</div>
+</div>
+</body></html>

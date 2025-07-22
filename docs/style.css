@@ -7,17 +7,24 @@
     .topic-list { list-style-type: none; padding: 0; }
     .topic-list li { background-color: #fff; border-bottom: 1px solid #e9ecef; padding: 15px 10px; display: flex; align-items: center; transition: background-color 0.2s; }
     .topic-list li:hover { background-color: #f1f3f5; }
-    .author-avatar { width: 50px; height: 50px; border-radius: 50%; margin-right: 15px; }
-    .topic-content { flex-grow: 1; }
+    .author-avatar { width: 50px; height: 50px; border-radius: 50%; margin-right: 15px; flex-shrink: 0; }
+    .topic-content { flex-grow: 1; min-width: 0; }
     .topic-title a { color: #0056b3; text-decoration: none; font-size: 1.1em; font-weight: 500; }
     .topic-title a:hover { text-decoration: underline; }
-    .topic-meta-info { color: #6c757d; font-size: 0.9em; margin-top: 5px; } .topic-meta-info span { margin-right: 10px; }
+    .topic-meta-info { color: #6c757d; font-size: 0.9em; margin-top: 5px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; } .topic-meta-info span { margin-right: 10px; }
     .reply-count { float: right; color: #007bff; background-color: #e7f5ff; padding: 2px 8px; border-radius: 10px; font-size: 0.9em; font-weight: bold; }
     footer { text-align: center; margin-top: 30px; font-size: 0.9em; color: #6c757d; }
-    .pagination { list-style: none; display: flex; justify-content: center; padding: 0; margin-top: 30px; }
-    .pagination li { margin: 0 5px; }
+    .pagination { list-style: none; display: flex; justify-content: center; flex-wrap: wrap; padding: 0; margin-top: 30px; }
+    .pagination li { margin: 5px; }
     .pagination a, .pagination span { display: block; padding: 8px 16px; border: 1px solid #dee2e6; background-color: #fff; border-radius: 5px; text-decoration: none; color: #007bff; }
     .pagination a:hover { background-color: #e9ecef; }
     .pagination .current span { background-color: #007bff; color: #fff; border-color: #007bff; }
     .pagination .disabled span { background-color: #e9ecef; color: #6c757d; border-color: #dee2e6; }
+    @media (max-width: 768px) {
+        body { padding: 10px; max-width: 100%; font-size: 14px; }
+        .author-avatar { width: 40px; height: 40px; }
+        .topic-title a { font-size: 1em; }
+        .reply-count { padding: 1px 6px; font-size: 0.8em;}
+        .pagination a, .pagination span { padding: 6px 12px; }
+    }
     

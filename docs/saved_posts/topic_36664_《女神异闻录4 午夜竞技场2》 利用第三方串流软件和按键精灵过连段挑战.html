@@ -1,0 +1,603 @@
+
+        <!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><title>《女神异闻录4 午夜竞技场2》 利用第三方串流软件和按键精灵过连段挑战</title><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="stylesheet" href="style.css"></head>
+        <body>
+            <div class="original-url-container"><p><strong>原始链接:</strong> <a href="https://psnine.com/topic/36664" target="_blank">https://psnine.com/topic/36664</a></p></div>
+            <h1>《女神异闻录4 午夜竞技场2》 利用第三方串流软件和按键精灵过连段挑战</h1><div class="main-post-container"><div class="meta">
+
+<a class="psnnode" href="https://psnine.com/psnid/satsukiye_" itemprop="author">satsukiye_</a>
+<span class="text-warning">
+2022-04-01 17:18编辑
+</span>   
+53评论
+</div><div class="content pd10" itemprop="articleBody">这个玩意其实我老早就写好了，但不知道P9允不允许讨论这个所以一直没敢发出来<img src="../emoticons\face\alu\30.gif"/>正好这几天一直有机友过不去，本着讨论分享的原则还是决定发一下，如果不合适我会联系管理员删除。这里必须用到第三方串流软件的原因是官方的串流软件只支持<img src="../emoticons\face\shoubing\1.gif"/><img src="../emoticons\face\shoubing\4.gif"/>两个按键，对于一个需要至少ABCD四个按键的游戏来说显然是不够用的，而Chiaki支持全键位映射，还可以自己改键，还是挺方便的。<br/><br/>这个脚本针对P4U2的连段奖杯，里面包括了角色<span style="color:blue;"><b>玛格丽特</b></span>连段挑战的20-25号，前面的都比较简单所以我没专门写，多试试应该怎么都能过，实在有需要可以参考我脚本的格式写写试试，也算抛砖引玉吧。<br/><div class="pd10 t3"><a class="l" href="https://psnine.com/trophy/23258022"><img class="imgbgnb" height="54" src="https://image.api.playstation.com/trophy/np/NPWR23258_00_00ABB6CCC91F643E9E02CC6197320A2AF6A7AD78D2/DCD10003B6529EB14BF390CEABB85382B7CED268.PNG" width="54"/></a><div class="ml64"><a href="https://psnine.com/trophy/23258022">尽得真传！</a><br/><span class="font12 col05">【挑战】完成任意角色的全部挑战项目</span></div></div><br/>首先需要用到的工具有：<b><span style="color:red;">Chiaki</span></b>、<b><span style="color:red;">PSN帐号id获取工具</span></b>、<b><span style="color:red;">PS5（或PS4）</span></b>以及<b><span style="color:red;">按键精灵</span></b><br/><br/>下载链接：<span class="mark">s/1KUHpXfConlY9MsUGEeYd9g#list/path=%2F</span>，提取码P4U2。包含Chiaki、PSN帐号id获取工具、按键精灵和连段脚本，请根据需要自己选择下载。<br/><br/>这里开始是Chiaki和按键精灵的部署和设置，如果已经会的话请直接跳到最下面就好。<br/><br/><b><span style="color:blue;"><span style="font-size:24px;">准备工作</span></span></b><br/>1.打开文件夹<b><span style="color:red;">Chiaki</span></b>，运行应用程序<b><span style="color:red;">Chiaki</span></b>，应该会看到这样的界面，如果有PS4或者PS5与电脑连接在同一个网络下，应该会显示出来。其中第一行是主机类型和序号，PS4就是PS4，PS5就是PS5，第二行是地址。<br/><img class="imgclick" src="https://s2.loli.net/2022/04/01/NkSGlrYWTVxzCc9.jpg"><br/>2.双击选择我们想要远程串流的主机，会弹出一个窗口如下。这里Host就是我们刚才看到的主机地址，应该是自动填入的，第二行Broadcast勾选，Console如果是PS5就选PS5，PS4请根据版本选择，现在应该都是8.0以上了所以基本上就是选第三个，剩下两个请看第三和第四步。<br/><img class="imgclick" src="https://s2.loli.net/2022/04/01/xq1y5FojJCRsZ38.jpg"><br/>3.第三行的PSN Account id，并不是我们平时登录用的账户id，需要用到刚刚下载的另一个工具，打开文件夹<b><span style="color:red;">PSN ID BASE64获取PSN代码</span></b>，里面两个程序的区别就是有没有界面而已，这里以有界面的为例，点击<b><span style="color:red;">登录PSN</span></b>，浏览器会自动打开一个骚尼的登录页面，登录后页面上只会显示一个<b><span style="color:red;">Redirect</span></b>，将当前的网址复制，放在工具上半部分的空白里，点击<b><span style="color:red;">获取PSN AccountID</span></b>，下面获取的就是我们的id，这串数字是固定的，建议存起来省得以后反复登录。<br/><img class="imgclick" src="https://s2.loli.net/2022/04/01/lsyhuLWvDn1M4CP.jpg"><br/>4.最后一行pin在ps5主机上点击 设置→系统→远程游玩，将屏幕中央的代码输入进去就是了。<br/><img class="imgclick" src="https://s2.loli.net/2022/04/01/XKSAidtqH4xrQaz.jpg"><br/>5.点击下方Register，如果全部都输对的话就能成功连接到我们的ps5了。另外用我的脚本需要和我一样的键位设置，需要点击chiaki右上角的齿轮，右边Key Settings前四个一样就可以了。Moon是<img src="../emoticons\face\shoubing\4.gif"/>、Cross是<img src="../emoticons\face\shoubing\1.gif"/>、Pyramid是<img src="../emoticons\face\shoubing\3.gif"/>、Box是<img src="../emoticons\face\shoubing\2.gif"/>。如果是PS5的话左边的Stream settings里面可以修改为1080p 60fps。左下角是已经登录的主机，想换操控账号的话需要delete删除以后重新设置一次。<br/><img class="imgclick" src="https://s2.loli.net/2022/04/01/CJxcjPKLrfAQbO2.jpg"><br/>6.接着打开<span style="color:red;"><b>按键精灵</b></span>文件夹下的<span style="color:red;"><b>按键精灵2014</b></span>，里面两个快捷方式是我自己弄的...可以删了，在打开以后的界面点击左上角的<span style="color:red;"><b>我的脚本</b></span>。<br/><img class="imgclick" src="https://s2.loli.net/2022/04/01/vZHUuQehRcN2i6G.jpg"><br/>7.接着在新打开的界面把我们刚才下载放在文件夹<span style="color:red;"><b>p4u2</b></span>下的几个脚本全部拖进来，弹出的导入工具点击<b><span style="color:red;">下一步→完成</span></b>，至此准备工作就完成了。<br/><img class="imgclick" src="https://s2.loli.net/2022/04/01/iRhQfqzMH7jLJ64.jpg"><br/><b><span style="color:blue;"><span style="font-size:24px;">实际应用</span></span></b><br/>首先打开P4U2，进到我们需要打的连段挑战里，打开串流，在默认位置站好。然后在按键精灵里<span style="color:red;"><b>只勾选指定的挑战</b></span>，接着切回Chiaki，按下F10，等待脚本自动操作就好，我设置了三秒的延迟，所以在按键精灵里先点运行再切回去也是可以的。<br/><br/>然后我特别提一嘴，因为我按键精灵平时也不怎么用，基本就是写个连发脚本挂机，格斗游戏的连段算是我第一次写，所以脚本成功率并不能做到100%，20、22、24这三个挑战可能需要反复多试几次，看运气，也欢迎有大佬优化脚本。<br/><br/>那么就这样，希望大家都能快乐打杯。利用Chiaki还可以实现同时操控两机对刷player match、挂机刷黄金竞技场经验等，基本就是连发，实现原理也比较简单，大家可以自行研究<img src="../emoticons\face\majiang\25.gif"/></img></img></img></img></img></img></img></div></div>
+            
+            <h2>评论</h2><div class="post">
+<a class="l" href="https://psnine.com/psnid/satsukiye_"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP1804/CUSA08621_00-AVATAR0000000030_11DAEB82C683EE5C8011_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/Monica_Zjl">@Monica_Zjl</a> 辛苦帅气的管理员关联一下<img src="../emoticons\face\alu\16.gif"/><br/><a href="http://psnine.com/psngame/28506" target="_blank">http://psnine.com/psngame/28506</a><br/><a href="http://psnine.com/psngame/23258" target="_blank">http://psnine.com/psngame/23258</a>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/satsukiye_">satsukiye_</a>
+                                            2022-04-01 17:19                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/forskere"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/UP8812/CUSA05210_00-AV00000000000145_FA63FF5636858C318BCB_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    肯定是可以发的，像什么最终幻想跳绳奖杯、植物大战僵尸之类的，都有人发这个。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/forskere">forskere</a>
+                                            2022-04-01 17:49修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/aikikalaskamaido"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/3RD/JP05061405D03_1ADB67C200CD560AB705_L.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    我DOA6和光明格斗的连段也是这么搞的<img src="../emoticons\face\alu\39.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/aikikalaskamaido">aikikalaskamaido</a>
+                                            2022-04-01 17:54                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/chenzhechn"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/WWS_J/J0001.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    八仙过海各显神通<img src="../emoticons\face\alu\35.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/chenzhechn">chenzhechn</a>
+                                            2022-04-01 18:43                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/fatpot1988"><img height="50" src="../avatars/fatpot1988-1556421320-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    我就想知道街霸5的挑战能不能搞
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/fatpot1988">fatpot1988</a>
+                                            2022-04-01 20:49                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/thilitii"><img height="50" src="../avatars/thilitii-1716863479-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    感觉很有用，先顶了
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/thilitii">thilitii</a>
+                                            2022-04-01 21:08                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/ikarusfly"><img height="50" src="../avatars/ikarusfly-1685265871-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    正义的玩法<img src="../emoticons\face\majiang\4.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/ikarusfly">ikarusfly</a>
+                                            2022-04-01 21:38                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/yaoshele"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/3RD/JP01061403008_636A1DD8C05EA5E0B12C_L.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<img src="../emoticons\face\majiang\41.gif"/>牛，顶一个
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/yaoshele">yaoshele</a>
+                                            2022-04-02 00:23                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/seaphi"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/UP8812/CUSA05210_00-AV00000000000084_39BAE13C572799AF7B9A_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/fatpot1988">@fatpot1988</a> 顶你 什么时候弄个街霸5串流打试炼就爽了。。。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/seaphi">seaphi</a>
+                                            2022-04-03 17:39                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/seaphi"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/UP8812/CUSA05210_00-AV00000000000084_39BAE13C572799AF7B9A_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    能搞个街霸5全试炼串流按键精灵就好了。。。国服太难了
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/seaphi">seaphi</a>
+                                            2022-04-03 17:39                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/seaphi"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/UP8812/CUSA05210_00-AV00000000000084_39BAE13C572799AF7B9A_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/fatpot1988">@fatpot1988</a> 能做的  我让朋友做过几个人的 但是 太多了 。。。。这货不愿意了 说量太大了。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/seaphi">seaphi</a>
+                                            2022-04-04 15:41                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/toriki-j"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA07195_00-P5AVATAR00000031_D1E1BC0A26CF9C18C5EF_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/satsukiye_">@satsukiye_</a>  25是不是有点问题啊<img src="../emoticons\face\majiang\14.gif"/>我看打到3876伤害，对面从天上掉下来后combo就断了，不知道思路都不会自己改脚本<img src="../emoticons\face\majiang\14.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/toriki-j">toriki-j</a>
+                                            2022-04-05 00:35修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/satsukiye_"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP1804/CUSA08621_00-AVATAR0000000030_11DAEB82C683EE5C8011_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/toriki-j">@toriki-j</a> 建议多试几次，我测试的时候25成功率还挺高的。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/satsukiye_">satsukiye_</a>
+                                            2022-04-05 00:35                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/satsukiye_"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP1804/CUSA08621_00-AVATAR0000000030_11DAEB82C683EE5C8011_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/toriki-j">@toriki-j</a> 如果一直失败的话可能是延迟问题，你确定每次都是3876以后接不上的话可以微调源代码第81行delay后面的数字。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/satsukiye_">satsukiye_</a>
+                                            2022-04-05 01:27                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/toriki-j"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA07195_00-P5AVATAR00000031_D1E1BC0A26CF9C18C5EF_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/satsukiye_">@satsukiye_</a> 感谢，我是固定死在3876那，我来改一下延迟<img src="../emoticons\face\majiang\16.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/toriki-j">toriki-j</a>
+                                            2022-04-05 12:52                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/toriki-j"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA07195_00-P5AVATAR00000031_D1E1BC0A26CF9C18C5EF_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    照抄一个玛格丽特16-19的脚本，帮助我这样的顶级搓招废物<img src="../emoticons\face\majiang\36.gif"/><br/>链接：s/1JeYwWhiZqcP-W3PcPDujjg 提取码：P4U2
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/toriki-j">toriki-j</a>
+                                            2022-04-05 16:14                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/pzj643"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA17544_00-P5RAVATAR000010C_CDAFB800B1CE7F543C4B_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/toriki-j">@toriki-j</a> 大佬为什么19最后一个招式老是来不及打出来
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/pzj643">pzj643</a>
+                                            2022-04-08 13:14修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/toriki-j"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA07195_00-P5AVATAR00000031_D1E1BC0A26CF9C18C5EF_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/pzj643">@pzj643</a> 应该是串流延迟不同的问题，你把代码里最后一招开头那个delay后面的数字进行±100以内的微调应该就行，一般来说不用改太多
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/toriki-j">toriki-j</a>
+                                            2022-04-10 01:50                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/yixiliya"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0704/CUSA02582_00-AVATAR1511N2SANA_104E924B903857DAFC63_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    我觉得挺正义的，<img src="../emoticons\face\majiang\36.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/yixiliya">yixiliya</a>
+                                            2022-04-10 02:32                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/bigbigbobo"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/3RD/JP00151010003l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    牛逼<img src="../emoticons\face\majiang\34.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/bigbigbobo">bigbigbobo</a>
+                                            2022-04-10 08:06                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/hsgj_"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP3470/PPSA14486_00-0156950234356592_44677DF667B436B0D573_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    先码了<img src="../emoticons\face\alu\35.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/hsgj_">hsgj_</a>
+                                            2022-04-10 14:48                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/wz5wz"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA11727_00-P5DAVATARPS40006_600603D7075F87D2C286_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    PS3版也能用吧<br/>谁能把全角色的都写了，让我把无印白了
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/wz5wz">wz5wz</a>
+                                            2022-04-10 17:47修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/koikoiyo"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP9002/CUSA01666_00-2018HWCHMACARONM_C2F13D0839A869A98D44_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/wz5wz">@wz5wz</a>  但凡你稍微看一下内容就知道PS3不可行
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/koikoiyo">koikoiyo</a>
+                                            2022-04-10 23:16                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/jim_12123"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0117/CUSA10522_00-LOVERAVATAR00004_5885E8A4947EBE8730A7_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    还是ps3版那会，看到雪子挑战任务里的无限アギタイン，瞬间就放弃了对本作奖杯的追求…
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/jim_12123">jim_12123</a>
+                                            2022-04-10 23:56                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/maoyalu"><img height="50" src="../avatars/maoyalu-1560869333-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<img src="../emoticons\face\alu\30.gif"/>我是不是能用这个打太鼓……
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/maoyalu">maoyalu</a>
+                                            2022-04-11 00:05                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/satsukiye_"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP1804/CUSA08621_00-AVATAR0000000030_11DAEB82C683EE5C8011_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/maoyalu">@maoyalu</a> 理论上是可以的...我最近就有个用机器视觉自动识别打音游的想法<img src="../emoticons\face\alu\30.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/satsukiye_">satsukiye_</a>
+                                            2022-04-11 01:12                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/lkaynka"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0082/CUSA33839_00-FF6AVATARASIA010_1B23580C2DF1B9BD6BD4_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/seaphi">@seaphi</a> 其实某些转接器论坛上有全套的街霸5试炼脚本，里面按键和各自间隔是有的，只不过用的是那个脚本的语言，转成按键精灵的应该不难，所以。。<img src="../emoticons\face\alu\30.gif"/><br/><a href="https://psnine.com/psnid/maoyalu">@maoyalu</a> 我逛转接器论坛看见个999combo的脚本，不过只有前半段，后半段作者藏比没发<img src="../emoticons\face\alu\30.gif"/>好奇打开瞅了一眼好家伙真就手工调整间隔延时，每个键一句码<img src="../emoticons\face\alu\17.gif"/>我本来以为是从太鼓谱站上把谱抄下来图像识别完生成的码，而且不是有挺多重复小节的吗，其实可以写个调用复用的<img src="../emoticons\face\alu\1.gif"/>所以理论上。。<img src="../emoticons\face\alu\30.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/lkaynka">lkaynka</a>
+                                            2022-04-11 01:26                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/toriki-j"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA07195_00-P5AVATAR00000031_D1E1BC0A26CF9C18C5EF_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/satsukiye_">@satsukiye_</a> 太鼓难道不是把谱面输进去就行<img src="../emoticons\face\alu\30.gif"/>视觉识别有点高端了
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/toriki-j">toriki-j</a>
+                                            2022-04-11 09:15                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/satsukiye_"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP1804/CUSA08621_00-AVATAR0000000030_11DAEB82C683EE5C8011_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/toriki-j">@toriki-j</a> 我是想拿来打djmax<img src="../emoticons\face\alu\30.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/satsukiye_">satsukiye_</a>
+                                            2022-04-11 09:22                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/toriki-j"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA07195_00-P5AVATAR00000031_D1E1BC0A26CF9C18C5EF_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/satsukiye_">@satsukiye_</a> djmax应该也能找到谱面文件吧<img src="../emoticons\face\alu\42.gif"/>我记得很久以前就有外设自动打音游，都是给输谱面文件进去的<img src="../emoticons\face\alu\34.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/toriki-j">toriki-j</a>
+                                            2022-04-11 09:46                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/maoyalu"><img height="50" src="../avatars/maoyalu-1560869333-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/lkaynka">@lkaynka</a> <img src="../emoticons\face\alu\38.gif"/>该搞起来了！
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/maoyalu">maoyalu</a>
+                                            2022-04-11 11:21                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/realcybaster"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0102/CUSA09554_00-MHWIMICONAV00009_04526DB18B0660B66CE7_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    链接打不开呐
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/realcybaster">realcybaster</a>
+                                            2022-04-11 11:34                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/nathaniel_wu"><img height="50" src="../avatars/nathaniel_wu-1676590428-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    官方串流软件也可以用类似软件的，比如最近GT7刷钱脚本最新版本用的是AutoHotKey + ViGEmBus，后者用来模拟手柄输入。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/nathaniel_wu">nathaniel_wu</a>
+                                            2022-04-11 11:42                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/seaphi"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/UP8812/CUSA05210_00-AV00000000000084_39BAE13C572799AF7B9A_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/lkaynka">@lkaynka</a> 是泰坦2的论坛吗？但是我朋友发现那个下不了。。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/seaphi">seaphi</a>
+                                            2022-04-11 11:44                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/lkaynka"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0082/CUSA33839_00-FF6AVATARASIA010_1B23580C2DF1B9BD6BD4_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/seaphi">@seaphi</a> 那个貌似要有tt2接上pc过了软件认证才能下来着。<img src="../emoticons\face\alu\8.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/lkaynka">lkaynka</a>
+                                            2022-04-11 14:09                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/aikikalaskamaido"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/3RD/JP05061405D03_1ADB67C200CD560AB705_L.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/nathaniel_wu">@nathaniel_wu</a>  GitHub搜一个叫做  DualShock4-emulator  的工具就是基于ViGEmBus的，专门用来把键盘或者其他比如XBOX手柄模拟成DS4，让官方remote play识别到，自己也能配置映射按键，不过配置时没有图形界面，要自己改ini，感觉还是chiaki配置按键简单一点。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/aikikalaskamaido">aikikalaskamaido</a>
+                                            2022-04-11 14:22                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/seaphi"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/UP8812/CUSA05210_00-AV00000000000084_39BAE13C572799AF7B9A_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/lkaynka">@lkaynka</a> 好吧
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/seaphi">seaphi</a>
+                                            2022-04-11 14:24                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/q_h0731"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0507/CUSA03274_00-FATEEXAVATAR0014_6588AC4E54ADFF81657E_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    有没有ps3的？手残
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/q_h0731">q_h0731</a>
+                                            2022-04-11 17:24                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/zhangce1993"><img height="50" src="../avatars/zhangce1993-1686404480-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    超，我前几天还在琢磨这个事儿，因为我想做一个能自动打太鼓的东西，我想了几个方案<br/>第一个最直接，用Arduino驱动几个电机去按手柄，这个原理最简单但是做起来工程有点复杂<br/>第二个把手柄拆了然后也是用Arduino去给手柄对应按键的管脚电平，但这个需要找到ds4的原理图，我简单搜了下没看见<br/>第三个就是用一个串口助手之类的东西模拟手柄，但这个得把ds4的通讯协议解出来，我寻思可以用示波器抓一下看看，但这个可行性不高<br/>按键精灵打remoteplay我也想过，不过我觉得延迟高且不稳定，打鼓不合适<br/>不知道楼上各位说的软件，能不能把pc模拟成ds4，然后有线接到ps4上去，这样就最完美了
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/zhangce1993">zhangce1993</a>
+                                            2022-04-12 15:31                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/koikoiyo"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP9002/CUSA01666_00-2018HWCHMACARONM_C2F13D0839A869A98D44_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/zhangce1993">@zhangce1993</a>  现在来说如果要实现自动打鼓，最可行的还是要用那些转换器，支持直接播放脚本的，本身有能力向PS4直接发送操作信号，不过这些东西都不便宜。<br/>其他方法问题都不少，我也曾经尝试过串流自动打鼓,高难度曲子要写脚本太长了就放弃了，换用视觉检测算法yoloV5训练了一套鼓点模型，配合py的自动操作库来操作，用速度最快但精度最低的模型（置信值通常只有0.7左右）去识别鼓点，最后识别每一帧的时间+网络延迟，实在没办法跟上高难度时的节奏<img src="../emoticons\face\majiang\41.gif"/><br/><img class="imgclick" src="https://s1.ax1x.com/2022/04/12/LnQl2q.png"><br/><br/>DS4手柄蓝牙和USB的介绍在psdev有：psdevwiki.com/ps4/DS4-BT  ，psdevwiki.com/ps4/DS4-USB ，大佬如果有成果了可以发个教程<img src="../emoticons\face\alu\35.gif"/>
+</img></div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/koikoiyo">koikoiyo</a>
+                                            2022-04-12 22:16                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/zhangce1993"><img height="50" src="../avatars/zhangce1993-1686404480-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/koikoiyo">@koikoiyo</a> 你这图好好笑连上面的魂和小咚都识别到了。机器视觉的办法我也想过，也看过几个成果，但的确效果都不理想，打鬼八肯定没戏（没错就是想解那个1w连的杯），所以我还是觉得得从手柄这边下手。你说那个我研究研究去。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/zhangce1993">zhangce1993</a>
+                                            2022-04-12 23:03                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/champasupernova"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/WWS_E/E0007.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    PS3和PSVTV都可以用支持脚本的手柄转接器
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/champasupernova">champasupernova</a>
+                                            2022-04-13 05:56                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/kkid3308"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP1804/CUSA08621_00-AVATAR0000000005_9C200B98311124FBC4F5_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    请问楼主23段一直都在3455伤害接不了倒数第三招，请问需要修改代码哪一列的延迟
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/kkid3308">kkid3308</a>
+                                            2022-05-08 16:51修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/satsukiye_"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP1804/CUSA08621_00-AVATAR0000000030_11DAEB82C683EE5C8011_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/kkid3308">@kkid3308</a> 源代码70行
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/satsukiye_">satsukiye_</a>
+                                            2022-05-09 21:22                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/kkid3308"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP1804/CUSA08621_00-AVATAR0000000005_9C200B98311124FBC4F5_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/satsukiye_">@satsukiye_</a> 十分感谢，昨晚跳杯了。虽然昨晚已经每个技能自己调试延迟弄出来了，但是还是很谢谢大佬的资源支持<img src="../emoticons\face\majiang\16.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/kkid3308">kkid3308</a>
+                                            2022-05-10 11:25                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/kkid3308"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP1804/CUSA08621_00-AVATAR0000000005_9C200B98311124FBC4F5_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    推荐可以优化下23段的第二次 下+X 和后面的指令延迟时间 ，原指令因为延迟较久，所以打太高npc容易受身就断了，我参考范本的技能衔接位置快速接上就过了
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/kkid3308">kkid3308</a>
+                                            2022-05-10 11:31                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/haihai-917"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0700/CUSA02947_00-AVATARSASUKE0000_FA077C4D9E45CF812D93_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/satsukiye_">@satsukiye_</a> 你好，为什么那个下载链接没法下了
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/haihai-917">haihai-917</a>
+                                            2022-06-19 08:05                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/yiduanzhicaizhe"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP9002/CUSA01666_00-2018HWCHMACARONM_C2F13D0839A869A98D44_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/satsukiye_">@satsukiye_</a> 25我卡死2671
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/yiduanzhicaizhe">yiduanzhicaizhe</a>
+                                            2022-08-12 16:42                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/zllgaohui"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/3RD/UP10631304001_42F80DCC36274482094F_L.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/satsukiye_">@satsukiye_</a> 谢谢分享，软件很重要
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/zllgaohui">zllgaohui</a>
+                                            2022-08-12 21:41                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/satsukiye_"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP1804/CUSA08621_00-AVATAR0000000030_11DAEB82C683EE5C8011_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/yiduanzhicaizhe">@yiduanzhicaizhe</a> 可以调整一下51行的数字
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/satsukiye_">satsukiye_</a>
+                                            2022-08-12 22:24                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/zhuang1225"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0082/CUSA11060_00-AVATAR0000000002_27F67843716344DF4FD2_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    请问按键精灵哪个程序打开?
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/zhuang1225">zhuang1225</a>
+                                            2022-10-22 23:43                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/kawaiikratos"><img height="50" src="../avatars/kawaiikratos-1603093163-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    玛格丽特挑战23第70行代码改成延迟1000左右比较合适，不然倒数第三招总搓不出来
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/kawaiikratos">kawaiikratos</a>
+                                            2024-05-02 21:01                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/puresakuzyo"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA17544_00-P5RAVATAR000007A_E5C285EFFCEA0045DEAF_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    脚本可以用，但是如果只卡最后几步感觉手操比摸延迟简单得多，
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/puresakuzyo">puresakuzyo</a>
+                                            01-12 10:57                                                                            </div>
+<!--回复结束-->
+</div>
+</div>
+        </body></html>

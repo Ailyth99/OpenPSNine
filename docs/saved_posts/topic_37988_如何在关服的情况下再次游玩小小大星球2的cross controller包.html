@@ -1,0 +1,114 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8"/><title>如何在关服的情况下再次游玩小小大星球2的cross controller包</title><meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="style.css" rel="stylesheet"/></head>
+<body>
+<div class="original-url-container"><p><strong>原始链接:</strong> <a href="https://psnine.com/topic/37988" target="_blank">https://psnine.com/topic/37988</a></p></div>
+<h1>如何在关服的情况下再次游玩小小大星球2的cross controller包</h1><div class="main-post-container"><div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/chenji802" itemprop="author">chenji802</a>
+<span class="text-warning">
+2024-06-03 20:25编辑
+</span>   
+9评论
+</div><div class="content pd10" itemprop="articleBody">众所周知小小大星球系列在2021年的一次服务器攻击后索尼关闭了除了ps4版LBP3之外的系列所有服务器（貌似现在ps4的3代服务器也关了，一直403连不上），这就导致了ps3版LBP2的一个和psv联动的叫cross controller的DLC包也无法再次游玩了，原因是这个dlc虽然使用本地网络psv遥控当第二屏幕的，但是在本地连接ps3前会去查询已经关服的lbpvita服务器是否存在，这就导致现在游玩这个dlc的时候psv端会一直提示网络错误。<br/><img class="imgclick" src="https://www.modelscope.cn/studio/flyheadko/J2Z_experience/resolve/master/data/images/37988_001.webp"/><br/>本人最近买了这个dlc后发现死活连不上差点崩溃，还好通过在psnp了解到这个dlc只是检查服务器是否存在而不用连上，可以用和ps3黑道圣徒3获取线上杯的办法来再次让psv可以使用这个dlc。方法如下：<br/>1.访问<a href="https://my.nextdns.io/" target="_blank">https://my.nextdns.io/</a>这个网站<br/>2.找到<span style="color:red;">“设置”</span>，点开后拉到页面下面找到<span style="color:red;">“修改查询结果”</span>的选项，点击下面<span style="color:red;">“添加新的修改"</span>,在域名栏输入psv lbp的服务器地址：<span style="color:blue;">lbpvita.online.scee.com</span>，然后在下面的查询结果一栏输入：<span style="color:blue;">127.0.0.1</span>。<br/><img class="imgclick" src="https://www.modelscope.cn/studio/flyheadko/J2Z_experience/resolve/master/data/images/37988_002.webp"/><br/>3.转到“安装”一栏，在这个页面<span style="color:red;">“已绑定的IP”</span>一栏里找到DNS服务器的地址，打开psv的网络设置找到你连接的wifi，点击进去详细设定，修改DNS为手动后输入上面提供DNS服务器地址，然后保存，之后打开psv的浏览器，输入<span style="color:red;">“你也可以通过调用程序更新你链接的 IP：”</span>这里显示的网页，加载完毕后会显示一个ip地址，再去这个网站网页那里点击<span style="color:red;">“已绑定的IP”</span>那里的刷新按钮，看到这里显示的IP和你psv浏览器的一致就证明你已经成功连接上了。<br/><img class="imgclick" src="https://www.modelscope.cn/studio/flyheadko/J2Z_experience/resolve/master/data/images/37988_003.webp"/><br/>4。打开游戏发现不再提示网络错误了，直接连接ps3开玩吧。<br/><img class="imgclick" src="https://www.modelscope.cn/studio/flyheadko/J2Z_experience/resolve/master/data/images/37988_004.webp"/></div></div>
+<h2>评论</h2><div class="post">
+<a class="l" href="https://psnine.com/psnid/steven-yueh"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP5846/CUSA18651_00-YSCELAVATARLISA0_7F5928A0ECAACEAF3C19_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    还能这样<img src="../emoticons\face\alu\35.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/steven-yueh">steven-yueh</a>
+                                            2024-05-31 12:21                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/longlong514"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA17544_00-P5RAVATAR000006A_C787E4AC677E22E0EAD9_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    如何在关服的情况下获得小小大星球3的几个需要联网的奖杯<img src="../emoticons\face\majiang\29.gif"/><img src="../emoticons\face\majiang\29.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/longlong514">longlong514</a>
+                                            2024-06-02 23:08                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/chenji802"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP8902/CUSA43181_00-HACHAUMAAVATAR03_ADF52E6BB93A1E236354_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/longlong514">@longlong514</a> 只能用私服了，但小小大的私服要改游戏rom里的eboot的服务器地址，这就肯定要折腾机才能搞了，不是简单通过dns重定向的事情。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/chenji802">chenji802</a>
+                                            2024-06-03 11:31                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/nikezhang"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/WWS_J/J0037.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/chenji802">@chenji802</a> 这个服务器地址不能通过改dns的方式连接到其他服务器上吗？
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/nikezhang">nikezhang</a>
+                                            2024-06-03 13:15                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/chenji802"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP8902/CUSA43181_00-HACHAUMAAVATAR03_ADF52E6BB93A1E236354_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/nikezhang">@nikezhang</a> 不能，因为这个dlc只是检查服务器存不存在而不是连接上，这种通过改dns只是骗过服务器还存在着的验证而已，大概就是ping下的意思，事实上还是在连接这个已经关闭的服务器地址，所以要是想真的连上那就得彻底改服务器地址了。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/chenji802">chenji802</a>
+                                            2024-06-03 14:16                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/squallzero3"><img height="50" src="../avatars/squallzero3-1584547771-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    厉害啦~<img src="../emoticons\face\alu\35.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/squallzero3">squallzero3</a>
+                                            2024-06-03 14:24                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/beadlezhang1983"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP9002/CUSA01666_00-2018HWCHDONUTSDO_45C0FDD32FB4530CE2F2_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    大佬，太牛了。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/beadlezhang1983">beadlezhang1983</a>
+                                            2024-06-10 11:53                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/mr_bighead_0914"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/WWS_J/J0003.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    大佬，太牛了。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/mr_bighead_0914">mr_bighead_0914</a>
+                                            2024-07-11 09:37修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/bighead_323"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/WWS_A/UP90001202LIL_5CF8D6DDAAE00751F34D_L.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    好在我20年的时候心血来潮把3和V的都100了，4版的早几个月也皮痒打100了
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/bighead_323">bighead_323</a>
+                                            2024-06-13 09:46                                                                            </div>
+<!--回复结束-->
+</div>
+</div>
+</body></html>

@@ -1,0 +1,413 @@
+
+        <!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><title>Mac OS X下在虚拟机内正常使用proxy server类软件给PS3/PS4/PS Vita下载加速的办法</title><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="stylesheet" href="style.css"></head>
+        <body>
+            <div class="original-url-container"><p><strong>原始链接:</strong> <a href="https://psnine.com/topic/23697" target="_blank">https://psnine.com/topic/23697</a></p></div>
+            <h1>Mac OS X下在虚拟机内正常使用proxy server类软件给PS3/PS4/PS Vita下载加速的办法</h1><div class="main-post-container"><div class="meta">
+
+<a class="psnnode" href="https://psnine.com/psnid/nathaniel_wu" itemprop="author">nathaniel_wu</a>
+<span class="text-warning">
+2016-02-29 22:44编辑
+</span>   
+36评论
+</div><div class="content pd10" itemprop="articleBody">一些很好用的proxy server类软件比如PSX Download Helper，PS3 Proxy等等，都只有Windows版，没有OS X版，所以Mac＋PS4的机油们会比较头痛。<img src="../emoticons\face\majiang\13.gif"/><br/>因为在虚拟机使用的网络是经过翻译的，端口未直接暴露在局域网下，即使在OS X上开Windows虚拟机使用这类软件，PS3/PS4/PS Vita也检测不到这个proxy server的存在，所以有些人就会考虑装双系统或者是找人借台Windows PC了，要么就干脆弃疗了（比如我）。<img src="../emoticons\face\majiang\40.gif"/><br/><br/>实际上我刚刚才发现，我使用的虚拟机（Parallels Desktop，相信大多数都会用这个）是有端口转发功能的！就是说，可以把虚拟机的某个网络端口固定地映射到OS X的某个网络端口，这样proxy server类软件就可以在虚拟机内使用了！白白忍受了好几年龟速的PSN下载…<img src="../emoticons\face\majiang\29.gif"/><br/><br/>具体以使用PSX Download Helper为例，其默认使用TCP端口8080，这样你就可以直接在PD的设置里将OS X的TCP端口8080映射到Windows 10虚拟机的TCP端口8080：<br/><img class="imgclick" referrerpolicy="no-referrer" src="http://ww4.sinaimg.cn/large/69e372abjw1f1fwqpzv3vj213g16ejys.jpg"><br/><br/>然后就能直接在虚拟机下正常使用PSX Download Helper了：<br/><img class="imgclick" referrerpolicy="no-referrer" src="http://ww3.sinaimg.cn/large/69e372abjw1f1fwqqhpz9j21kw17fk40.jpg"><br/><br/>就是这么简单…<br/><br/>--------------------------------------------------- 后续 ---------------------------------------------------<br/>由于PS3/PS4/PS Vita统统不支持IEEE 802.11 ac协议的无线网络，使用WiFi回传可能会很慢，建议使用网线直接连接。<br/><br/>--------------------------------------------------- 再后续 ---------------------------------------------------<br/>经大家提醒，我似乎走了不少弯路才发现解决办法<img src="../emoticons\face\majiang\13.gif"/><br/>我只能说我可能搜索技巧不足吧，你们现在提到的其它解决办法我之前搜不出来啊（with Google）…</img></img></div></div>
+            
+            <h2>评论</h2><div class="post">
+<a class="l" href="https://psnine.com/psnid/whatthetruth"><img height="50" src="../avatars/whatthetruth-1724207383-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<img src="../emoticons\face\majiang\25.gif"/>顶一下实用文。<br/>不过话说回来我刚刚还是把双系统的WIN10给卸载了。<img src="../emoticons\face\majiang\28.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/whatthetruth">whatthetruth</a>
+                                            2016-02-29 09:07                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/zouxiaomin2003"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0005/CUSA08644_00-P5RAVATAR000006A_B31296FA6F34A2940BDE_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    我是VM用的虚拟机 直接在设置里的网络适配器里把设置成wifi就行了 不要和电脑mac共享ip 就行
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/zouxiaomin2003">zouxiaomin2003</a>
+                                            2016-02-29 09:13                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/misaka10024"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/WWS_J/J0003.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    顶一下，同Mac党，不过家里PSN速度挺快
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/misaka10024">misaka10024</a>
+                                            2016-02-29 09:18                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/scgabriel"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP1804/CUSA08621_00-AVATAR0000000021_4DD200084FD8A887DC2C_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<img src="../emoticons\face\majiang\27.gif"/>支持下实用文喵<br/>不过感觉咱用了带ChinaDNS的路由器之后下载都是满速了，很久没用过这软件了<br/>其实这软件应该做一个路由器版的
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/scgabriel">scgabriel</a>
+                                            2016-02-29 09:19                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/omega_5156"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/UP4396/CUSA04449_00-AV00000000000002_2FDAB9099BDD1F930EB5_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    如果是固态硬盘的mac，建议还是不要这样用了，应为下载东西对硬盘伤害很大，尤其是固态硬盘，前两年我直接用psv下东西也挺慢的，不过最近可能是电信线路优化起作用了，20M电信下大部分东西都能保持1-2M的速度，基本告别代理软件了<img src="../emoticons\face\majiang\37.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/omega_5156">omega_5156</a>
+                                            2016-02-29 09:21                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/whatthetruth"><img height="50" src="../avatars/whatthetruth-1724207383-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/scgabriel">@scgabriel</a> <a href="https://psnine.com/psnid/omega_5156">@omega_5156</a> <img src="../emoticons\face\majiang\37.gif"/>我也感觉最近电信有优化了。。100M全默认下载不能满速但也差不多了
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/whatthetruth">whatthetruth</a>
+                                            2016-02-29 09:30                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/barneyup"><img height="50" src="../avatars/barneyup-1556419117-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    给力！！！
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/barneyup">barneyup</a>
+                                            2016-02-29 09:31                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/nathaniel_wu"><img height="50" src="../avatars/nathaniel_wu-1676590428-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/omega_5156">@omega_5156</a> 这个真没必要担心<img src="../emoticons\face\majiang\11.gif"/>，我现在这款用了两年多了，SSD写入寿命才用了11%，准备要换新的Mac了；而且SSD读取是没有寿命限制的。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/nathaniel_wu">nathaniel_wu</a>
+                                            2016-02-29 09:45修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/c4444cat"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/WWS_J/J0003.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<img src="../emoticons\face\majiang\23.gif"/>本来打算开发一个os x版的,看来不需要了<br/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/c4444cat">c4444cat</a>
+                                            2016-02-29 09:51                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/asakawa_tetsuya"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/3RD/JP01771303007_138CEE0F70CA1C1118B4_L.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/omega_5156">@omega_5156</a> 正常使用，不作为专门下载并且24x7进行下载，绝大多数固态硬盘寿命超过10年。。。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/asakawa_tetsuya">asakawa_tetsuya</a>
+                                            2016-02-29 10:19                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/dylan_gao"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/3RD/JP04251309005_1522A8123118FD2B208B_L.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    其实跨平台的话github上有个项目 <a href="https://github.com/codestation/QPSNProxy" target="_blank">QPSNProxy</a><br/>用的是QT，重新编译一下就好了，很久之前我在ubuntu上试过是可以用的，现在不知道了，项目已经不维护了
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/dylan_gao">dylan_gao</a>
+                                            2016-02-29 10:39                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/nathaniel_wu"><img height="50" src="../avatars/nathaniel_wu-1676590428-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/dylan_gao">@dylan_gao</a> 试过，build不了
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/nathaniel_wu">nathaniel_wu</a>
+                                            2016-02-29 12:57                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/smaite-hung"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0507/CUSA00893_00-AVATAR0000RYOK01_E3A1437910A0F4636319_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/omega_5156">@omega_5156</a> <img src="../emoticons\face\majiang\32.gif"/>我的air每天十几G十几G的下东西，一点压力都没有
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/smaite-hung">smaite-hung</a>
+                                            2016-02-29 13:05                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/hao-ye"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/SCEI/IP91001401PR3_107F831A6F6EB8F42F0C_L.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    我一般在 Mac 下是直接操作系统走 微辟恩，开 Charles 然后让 PS4 或者 V 走电脑代理。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/hao-ye">hao-ye</a>
+                                            2016-02-29 13:44                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/ielucidator"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/3RD/JP00311111A11_37DA5D6BCE939771ED55_L.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    感谢楼主，之前每次都是要用download helper时候把杂物堆里的笔记本翻出来。。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/ielucidator">ielucidator</a>
+                                            2016-02-29 14:08                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/dream-piggy"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/SCEI/I0002.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    用Charles不就行了…反正就是一个HTTP Proxy的软件，还分什么平台l
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/dream-piggy">dream-piggy</a>
+                                            2016-02-29 14:38                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/colin19872003"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/3RD/JP01061302025_1B736175365E1C35833B_L.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    我之前直接就是把虚拟机的网卡设成网桥模式，路由器直接给他一个ip地址，把这个ip地址输进ps4,与OSX本机系统网络设置毫无关联
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/colin19872003">colin19872003</a>
+                                            2016-02-29 14:49                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/edininja"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0005/CUSA01557_00-P5AVATAR00000012_459A9A1AFE228FB3E0C7_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    现在没必要了
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/edininja">edininja</a>
+                                            2016-02-29 14:57                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/jacl2010"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP9000/CUSA12613_00-AVA00LUDENSCHIBI_8349E7A2EBBE0C2D9433_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    我之前因为macos10不能设置热点，残忍的装了个双系统，虚拟机貌似模拟不了有线网，还是直接双系统直接
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/jacl2010">jacl2010</a>
+                                            2016-02-29 15:04                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/dylan_gao"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/3RD/JP04251309005_1522A8123118FD2B208B_L.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/nathaniel_wu">@nathaniel_wu</a> 编译错误解一下就行了 估计是QT版本问题
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/dylan_gao">dylan_gao</a>
+                                            2016-02-29 16:10修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/nathaniel_wu"><img height="50" src="../avatars/nathaniel_wu-1676590428-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/dylan_gao">@dylan_gao</a> 试过5.2.1和5.5.1，都不能编译成功，并不是找不到头文件什么的，错误提示都是程序内的写法问题，没兴趣读源码…我当然也觉得原生程序比较好，但是现在能比较容易地解决问题就可以了。<br/>如果你知道该怎么改源码，也许可以fork一个
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/nathaniel_wu">nathaniel_wu</a>
+                                            2016-02-29 16:27                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/syhily"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0704/CUSA02582_00-AVATAR1511N2REMI_8C8E0D6C6E49852B101D_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    ……同是Mac用户，因为太蛋疼，后面自己用Python撸了一个Proxy。<img src="../emoticons\face\majiang\3.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/syhily">syhily</a>
+                                            2016-02-29 18:59                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/phantomido"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0404/CUSA05163_00-MONTHLYAVATAR401_7C44399CBA38ABBDE4EC_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    不是直接选择桥接网络就行吗
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/phantomido">phantomido</a>
+                                            2016-02-29 19:00                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/alan_haha"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/WWS_J/J0026.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    你这是哪年的 PD 了，打我用的时候 PD 就已经可以把虚拟机模拟成一个独立主机了，只要填 Windows 在局域网的 IP 就好了
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/alan_haha">alan_haha</a>
+                                            2016-02-29 19:17                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/cqcookie"><img height="50" src="../avatars/cqcookie-1594185301-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    卧槽……mac+ps系的泪流满面……终于有解决方案了！
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/cqcookie">cqcookie</a>
+                                            2016-02-29 19:24                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/cunhanjp"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP3974/CUSA09340_00-AVATAR2019110601_A0A329FA439972617F41_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/syhily">@syhily</a> 球开源，有python就可以撸个给路由器用了<img src="../emoticons\face\majiang\3.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/cunhanjp">cunhanjp</a>
+                                            2016-02-29 20:58                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/xsxiong"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP9000/CUSA16972_00-AV00000000000001_3920E87A5E9B286582AC_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    我用MAC~看不懂楼主说的啥
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/xsxiong">xsxiong</a>
+                                            2016-02-29 21:17                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/syhily"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0704/CUSA02582_00-AVATAR1511N2REMI_8C8E0D6C6E49852B101D_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/cunhanjp">@cunhanjp</a> http://pan.baidu.com/s/1pJ4qi9P 结合Aria2c使用。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/syhily">syhily</a>
+                                            2016-03-01 13:35                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/cunhanjp"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP3974/CUSA09340_00-AVATAR2019110601_A0A329FA439972617F41_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/syhily">@syhily</a> 感谢，去捣鼓一下
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/cunhanjp">cunhanjp</a>
+                                            2016-03-01 14:33                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/liuhy000"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/3RD/30008.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    Mac+PS来支持下
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/liuhy000">liuhy000</a>
+                                            2016-03-01 15:10                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/guruenix"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA17932_00-JPGBVSAV00000052_4E601B28B76B934E80ED_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    100M带宽，下载速度最少5M的人表示代理都是个屁。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/guruenix">guruenix</a>
+                                            2016-03-01 15:26                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/nathaniel_wu"><img height="50" src="../avatars/nathaniel_wu-1676590428-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/guruenix">@guruenix</a> 反正我的PS3在100Mbps网络下也顶多只有1MB/s左右的下载速度，回传平均速度也才大约6MB/s，不用proxy太慢了。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/nathaniel_wu">nathaniel_wu</a>
+                                            2016-03-01 15:43                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/twmml"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/WWS_J/J0003.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    之前自己写了个半成品的半自动，<br/>换了100M之后能跑满，就懒了，但是要不停点暂停，继续来切换服务器，直到能跑满。<br/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/twmml">twmml</a>
+                                            2016-03-01 16:08                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/victor_lee_"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0036/CUSA09362_00-AVATAR18042600R6_027A40072B89D460E8E5_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    python环境下有个vitaproxy还可以用
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/victor_lee_">victor_lee_</a>
+                                            2016-03-02 09:50                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/yikkiz"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/3RD/EP43321110002_B29C1B5660154586A378_L.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    这事以前我也研究了好久，后来发现直接买个支持微辟恩或者ss的路由器直接搞掂，电脑还不用一直开着。100多块钱的事，省时省力，真没必要在这方面浪费功夫。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/yikkiz">yikkiz</a>
+                                            2016-03-02 10:06                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/menphistous"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/UT0016/CUSA06833_00-AV00000000000260_9AA6B0AFBE407132D367_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    PD不是能自动NAT么，我的装了就没管它，PDH可用
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/menphistous">menphistous</a>
+                                            2016-03-03 15:32                                                                            </div>
+<!--回复结束-->
+</div>
+</div>
+        </body></html>

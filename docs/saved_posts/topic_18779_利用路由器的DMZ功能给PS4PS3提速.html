@@ -1,0 +1,477 @@
+
+        <!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><title>利用路由器的DMZ功能给PS4/PS3提速</title><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="stylesheet" href="style.css"></head>
+        <body>
+            <div class="original-url-container"><p><strong>原始链接:</strong> <a href="https://psnine.com/topic/18779" target="_blank">https://psnine.com/topic/18779</a></p></div>
+            <h1>利用路由器的DMZ功能给PS4/PS3提速</h1><div class="main-post-container"><div class="meta">
+
+<a class="psnnode" href="https://psnine.com/psnid/wknet1988" itemprop="author">wknet1988</a>
+<span class="text-warning">
+2015-10-10 18:34编辑
+</span>   
+46评论
+</div><div class="content pd10" itemprop="articleBody">刚换了一台新的路由器,研究固件的时候,发现这台路由支持DMZ功能.熟悉网络原理的朋友应该知道,所谓DMZ就是把一台主机置于路由器网关之前.这个设计的本意是将一些低安全级别的东西放在一台主机上,方便外界访问.<br/>鉴于此,我们可以利用DMZ的这个特性,将PS4/PS3主机置于DMZ.<br/>这样的好处有2点:<br/>1.国内的网络多为小区宽带,一般接入户已经经过一重网络,将主机置于家用路由器之前,可以减少一次NAT转换,降低1个NAT级别.(NAT3--&gt;NAT2)<br/>补充一下,如果你的网络NAT级别是&gt;3的(也会显示为NAT3),此时使用DMZ只会减少一次NAT解析,并不能使网络变成NAT2.<br/>2.事实上对于家庭用户而已,将一台机器置于DMZ并不会引发安全性问题.而将PS4/PS3主机置于DMZ,则相当于电脑直接拨号上网的效果,比加上路由器访问要延迟低.并且,主机并不会脱离家庭路由器系统,依然可以享受自定义DNS,SS科学加速等功能的好处.<br/><br/>下面简要地说一下方法.<br/>1.首先确定自己的路由器支持DMZ,然后打开路由器设置界面,找到DMZ.<br/><img class="imgclick" referrerpolicy="no-referrer" src="http://ww3.sinaimg.cn/large/4594b27bjw1eww6tjwlrdj20dd0akjt0.jpg"/><br/>如图,启用DMZ,填写主机的IP地址,保存并生效.<br/>为了避免浮动IP每次需要设置,我们需要进行IP-Mac绑定.如果你已经绑定,那么无需继续操作,可以直接使用了.<br/>2.下面是IP-Mac绑定.<br/>毕竟路由器型号众多,就不一一举例了,自己找一下很快就找到了.<br/>这一台的绑定设置是在DHCP下面.<br/><img class="imgclick" referrerpolicy="no-referrer" src="http://ww3.sinaimg.cn/large/4594b27bjw1eww6u132w6j20gp0bcwfp.jpg"/><br/>按照你的路由器上的格式填写好主机的Mac地址,名称和你要分配给的内网IP.<br/>保存后,返回DMZ设置,把你刚才分配的IP地址填上.<br/>保存并生效.<br/>然后就可以愉快地玩耍了.<img src="../emoticons\face\majiang\3.gif"/></div></div>
+            
+            <h2>评论</h2><div class="post">
+<a class="l" href="https://psnine.com/psnid/kai_dvcx"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/default/DefaultAvatar.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    之前还没有国内节点的时候，是有点效果，但是用处不大。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/kai_dvcx">kai_dvcx</a>
+                                            2015-10-10 18:02修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/reborns0w0"><img height="50" src="../avatars/reborns0w0-1581055190-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    巴法洛？我也有一个，提速确实不错，特别是上行，不过联机效果还是一样的...
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/reborns0w0">reborns0w0</a>
+                                            2015-10-10 18:03                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/zhqzl0412"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA17544_00-P5RAVATAR000008A_4C50BCBACE936E58F1C6_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<img src="../emoticons\face\majiang\1.gif"/>问一下，现在哪款路由器比较好？可以刷机用SS的。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/zhqzl0412">zhqzl0412</a>
+                                            2015-10-10 18:18                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/wknet1988"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/SCEI/I0006.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/zhqzl0412">@zhqzl0412</a> 我刚换的Buffalo WZR-HP-G300NH2,感觉还不错,价格适中,信号也好,重要的是官方自带DD-WRT,而且能刷Open-WRT.另外这一款NETGEAR R6300v2也不错,也可以刷,就是价格比较贵.
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/wknet1988">wknet1988</a>
+                                            2015-10-10 18:26修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/alert_boy"><img height="50" src="../avatars/alert_boy-1556623003-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    试了一下，还是不行还是nat3…… 怎么弄都弄不好
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/alert_boy">alert_boy</a>
+                                            2015-10-10 18:25                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/wknet1988"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/SCEI/I0006.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/alert_boy">@alert_boy</a> 那很可能你的网络NAT次数已经&gt;3(也会显示为NAT3)了,DMZ只能减一,并不能一次性降到2.
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/wknet1988">wknet1988</a>
+                                            2015-10-10 18:28修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/transfomer2012"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/WWS_J/J0037.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    看上了ASUS AC68U的外观。。。想换
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/transfomer2012">transfomer2012</a>
+                                            2015-10-10 18:34                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/blood_xia"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP9000/CUSA14006_00-TLOUPIIELLIETAVA_0239162239FD2B864EEA_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    如果一直nat3.挂微辟恩吧。直接用微辟恩的nat，这样就会变成2.就没问题了。但是路由必须是dd或者op或者merlin。否则无解。<br/>还需要自己会一些Linux知识。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/blood_xia">blood_xia</a>
+                                            2015-10-10 18:43                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/shirasagi_rina"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0700/CUSA04737_00-AVATARSINON00000_DFB0D991565F8BEFB2A6_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/zhqzl0412">@zhqzl0412</a> 性价比比较高、而且手中5GHz设备多的话可以考虑R6300v2刷梅林<br/>另外还有R7000以及RT-AC68U也是可以考虑的，直接挂上SS+大陆白名单模式专治各种不服
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/shirasagi_rina">shirasagi_rina</a>
+                                            2015-10-10 19:02                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/transfomer2012"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/WWS_J/J0037.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/yumemachi">@yumemachi</a> 这款网络稳定不,会经常断网吗?
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/transfomer2012">transfomer2012</a>
+                                            2015-10-10 19:05                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/zhqzl0412"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA17544_00-P5RAVATAR000008A_4C50BCBACE936E58F1C6_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/wknet1988">@wknet1988</a> 好像不错，价格挺合适的，谢谢。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/zhqzl0412">zhqzl0412</a>
+                                            2015-10-10 19:10                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/wknet1988"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/SCEI/I0006.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/yumemachi">@yumemachi</a> 国行都卖上千了(17%增值税+17%x7%城建税?),这种东西还是买水货或者海淘比较好.而且国行一般都会有所阉割.
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/wknet1988">wknet1988</a>
+                                            2015-10-10 19:36修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/imusiyus"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/WWS_A/A0031.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/zhqzl0412">@zhqzl0412</a> 淘宝随便找个tomato路由就可以，虽然我也是用的G300NH2，但是还是建议不要入楼主说的G300NH2这款，除非你很有钻研精神搞openwrt各种调试软件包，不然随便哪个可刷tomato的路由在易用性上都比这款好，这款是几年前的旗舰，现在已经不算什么好东西了，芯片是AR7100X的，不能刷tomato不说，价格还偏贵<br/>以及作为亮点的官方ddwrt并没卵用，对SS的支持很烂还是要走脚本，差tomato太多了
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/imusiyus">imusiyus</a>
+                                            2015-10-10 19:50修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/zhqzl0412"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA17544_00-P5RAVATAR000008A_4C50BCBACE936E58F1C6_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/wknet1988">@wknet1988</a> 问一下，有没有好的支持UDP的ss供应商？想用来改善联机质量。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/zhqzl0412">zhqzl0412</a>
+                                            2015-10-10 19:55                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/zhqzl0412"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA17544_00-P5RAVATAR000008A_4C50BCBACE936E58F1C6_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/imusiyus">@imusiyus</a> 感谢，不过我只是个菜鸡，最多就折腾下手机，路由器实在是太麻烦了（之前有弄成砖）。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/zhqzl0412">zhqzl0412</a>
+                                            2015-10-10 19:57                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/wknet1988"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/SCEI/I0006.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/zhqzl0412">@zhqzl0412</a> 建议你租个虚拟服务器自己搭建一个,现在的供应商都不稳定,说不定哪天就不能用了.如果搭建有困难或是其他原因必须得找供应商的,可以到<a href="https://plus.google.com/u/0/communities/110135260775165290676" target="_blank">副本Boss处</a> (放魔法跨界技能可见) 去勾搭神秘商人.
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/wknet1988">wknet1988</a>
+                                            2015-10-10 20:23修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/shirasagi_rina"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0700/CUSA04737_00-AVATARSINON00000_DFB0D991565F8BEFB2A6_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/zhqzl0412">@zhqzl0412</a> 有，这个发邮件询问提供商是否支持UDP转发就行了；<br/><b><u>以及建议不要在公开场合谈论，好工具都是被公开宣传毁掉的。</u></b>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/shirasagi_rina">shirasagi_rina</a>
+                                            2015-10-10 20:10                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/araisyu"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/3RD/HP00821004008l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    没什么用一层NAT可以就慢了也是杞人忧天了，另外只要里的路由器支持UPnP根本不用做DMZ。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/araisyu">araisyu</a>
+                                            2015-10-10 21:12                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/fred_sanity"><img height="50" src="../avatars/fred_sanity-1556419143-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    马克西姆
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/fred_sanity">fred_sanity</a>
+                                            2015-10-10 22:23                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/rollingmydice"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0102/CUSA02102_00-AVJ0000000000007_197C77525BBE82385963_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/wknet1988">@wknet1988</a> 不能说NAT大于3显示的是3，那是NAT Type3。。。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/rollingmydice">rollingmydice</a>
+                                            2015-10-10 23:06修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/bioxcn"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/3RD/30006.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/zhqzl0412">@zhqzl0412</a> 买个极路由或者联想的newifi mini路由器，刷个极玩固件即可，自带ss和微辟恩插件
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/bioxcn">bioxcn</a>
+                                            2015-10-11 00:08                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/wknet1988"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/SCEI/I0006.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/rollingmydice">@rollingmydice</a> NAT type1是直连Internet(专线)或者通过运营商的城域网进行一次NAT转换(直连光纤)接入Internet的,NAT转换次数是0或1.NAT Type2一般是小区宽带直连,只经过一重子网,然后进入运营商的城域网分配到一个公网IP,NAT转换次数＝2.NAT Type3指的是多重子网.往往是在小区宽带基础上再次搭建形成的内网,或者是内网基础上搭建的内网,NAT转换次数≥3.<br/>而事实上,NAT Type这个概念并不属于ISO规范中的定义,根据调查发现,只有PS4/PS3主机有这个定义,所以应该是SONY公司发明的标准.经过一些信息收集和实际测试,发现NAT Type确实与网络类型有关,因而得出的上述结论.如果有一些疏漏,还请详细指明.<br/>另附:SONY官方对于NAT Type的<a href="http://manuals.playstation.net/document/en/ps4/settings/nw_test.html" target="_blank">说明</a>.
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/wknet1988">wknet1988</a>
+                                            2015-10-11 12:24修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/dream2k1v"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0082/CUSA06592_00-NIERGOTYAVATAR15_B0954B1DB5257A3A9476_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    dmz虽然一直在用，对P2P下载可能有点帮助，但其实对PSN下载联机真没什么用，只不过操作简单，改一下安慰自己罢了，DMZ是所有路由都有的基本功能，如果对PSN下载联机有作用的话早就推广开来了。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/dream2k1v">dream2k1v</a>
+                                            2015-10-11 12:44修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/yb3712590"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/UP3493/CUSA07861_00-AV00000000000111_DFD9374EC741DA5F4CCA_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    没什么效果，家用路由器客户端少，这一层nat转换的延迟可以忽略
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/yb3712590">yb3712590</a>
+                                            2015-10-11 14:49                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/transfomer2012"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/WWS_J/J0037.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/wknet1988">@wknet1988</a> 我看某宝好像卖六百多，那是亚马逊官翻的水货还是全新的水？
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/transfomer2012">transfomer2012</a>
+                                            2015-10-11 16:54                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/transfomer2012"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/WWS_J/J0037.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/yumemachi">@yumemachi</a> 日亚买的吗？5G通道不是只要设备支持就可以了吗？为什么还要破解？
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/transfomer2012">transfomer2012</a>
+                                            2015-10-11 16:56                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/scgabriel"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP1804/CUSA08621_00-AVATAR0000000021_4DD200084FD8A887DC2C_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/yumemachi">@yumemachi</a> 现在不是都使用ChinaDNS嘛…
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/scgabriel">scgabriel</a>
+                                            2015-10-11 19:50                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/scgabriel"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP1804/CUSA08621_00-AVATAR0000000021_4DD200084FD8A887DC2C_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/transfomer2012">@transfomer2012</a> 淘宝二手改好Op的路由器70多块钱吧，只有会弄对网络改善有些用处
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/scgabriel">scgabriel</a>
+                                            2015-10-11 19:52                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/aurheim"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/WWS_A/UP90001009021l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/wknet1988">@wknet1988</a> 这个其实不能提速吧...但是可以使NAT3变成２。<br/><br/>１似乎能与１ ２ ３连<br/>２能与１ ２ ３连<br/>３能与３ ２连<br/><br/>这个方法能使你NAT由３(如果是3)变成2(其实是减1)，然后就能与NAT1的联机。<br/><br/>如果我没错的话...
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/aurheim">aurheim</a>
+                                            2015-10-11 23:35                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/wknet1988"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/SCEI/I0006.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/transfomer2012">@transfomer2012</a> 这价格应该是官翻水货,全新水货大约800左右.一般国内售价减去20%(18%的税和2%的中间利润),差不多就是全新水货的价格.<br/><a href="https://psnine.com/psnid/aurheim">@aurheim</a> 这个方案对于复杂多重子网(NAT&gt;3)的用户而言,仅仅可以减少一些丢包率,而一般的多重子网(NAT=3)通过此法改变NAT为类型2,则可以有效提高联机质量.
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/wknet1988">wknet1988</a>
+                                            2015-10-12 00:27                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/transfomer2012"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/WWS_J/J0037.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/aurheim">@aurheim</a> 3应该是只能搜到12。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/transfomer2012">transfomer2012</a>
+                                            2015-10-12 01:52                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/transfomer2012"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/WWS_J/J0037.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/wknet1988">@wknet1988</a> 应该不是索尼的，emule等P2P客户端也是靠NAT界定外网内网用户，内网与内网用户之间无法分享与下载之间文件，互相搜不到。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/transfomer2012">transfomer2012</a>
+                                            2015-10-12 01:58                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/mnbjhgytr0"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0700/CUSA17351_00-7213419917578767_87E38C4B5D924C8F9E91_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    然而现在什么都没设置也能达到带宽上限
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/mnbjhgytr0">mnbjhgytr0</a>
+                                            2015-10-12 09:26                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/rollingmydice"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0102/CUSA02102_00-AVJ0000000000007_197C77525BBE82385963_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/wknet1988">@wknet1988</a> 我的意思就是NAT大于2的时候NAT TYPE就是3。SONY的TYPE最多到3，就这么简单。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/rollingmydice">rollingmydice</a>
+                                            2015-10-12 10:19                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/resty-daze"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/WWS_J/J0003.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/wknet1988">@wknet1988</a> NAT Type这个应该是有的，只是我不确定一般叫不叫Type 1 2 3之类的。RFC 5780就是讲怎么检测NAT类型的
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/resty-daze">resty-daze</a>
+                                            2015-10-12 10:24                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/wknet1988"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/SCEI/I0006.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/resty-daze">@resty-daze</a> NAT类型和NAT Type是两回事.ISO标准中的NAT类型主要分为锥型和对等型,是解析方式的不同.而SONY的NAT Type则与网络NAT转换次数有关.<br/><a href="https://psnine.com/psnid/transfomer2012">@transfomer2012</a> 那emule这个NAT检测方式应该与SONY是类似的,通过NAT转换次数判断用户的网络层级.
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/wknet1988">wknet1988</a>
+                                            2015-10-13 01:36修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/vempx_hk"><img height="50" src="../avatars/vempx_hk-1556637192-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    内网用户的限制在于，对于外网用户，内网用户的路由器相当于一道天然防火墙，外网用户是无法透过防火墙去直接访问内网的某个机器的<br/>解决办法：<br/>1、路由器开DMZ，指向内网某个IP，但这就相当于把内网的这个IP完全暴露在公网上，安全性有问题<br/>2、端口映射、这个需要知道内网IP里的某个应用具体使用什么端口，灵活性不高<br/>3、UPNP，这个就简单了，路由器会自动为内网的某个IP里的应用映射相应的端口<br/><br/>楼主说的提速，我个人理解有两层意思<br/>1、提高从PSN下载游戏或者其他内容的速度，这个和NAT Type没有关系，纯粹取决于你的链路质量。想要提高这个速度，最好的办法是找对CDN，可以用dnsmasq手动指定解析。然而在目前国内已经有PSN的CDN的前提下，本地ISP提供的DNS解析或者用公共DNS比如阿里DNS，114DNS一般都能够解析到和自己的线路相性最好的CDN，然而也有例外。<br/>2、提高游戏联机的速度，这个就不好说了，有些游戏的联机机制可能需要NAT Type至少为2，否则速度大打折扣，有些游戏联机可能就完全不受影响，情况很复杂。还可能某些联机是C/S机制的，然而S在国外你怎么着也快不了，那就挂代理吧。<br/><br/><a href="https://psnine.com/psnid/wknet1988">@wknet1988</a> 是的，严格意义上来说，我们家用路由器的NAT其实是锥形的，而且其实是PAT。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/vempx_hk">vempx_hk</a>
+                                            2015-10-13 10:35修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/resty-daze"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/WWS_J/J0003.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/wknet1988">@wknet1988</a> 我还以为那个1 2 3就是这个类型呢，潜意识里以为联机只和类型有关而转了几次无所谓
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/resty-daze">resty-daze</a>
+                                            2015-10-13 11:14                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/wknet1988"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/SCEI/I0006.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/vempx_hk">@vempx_hk</a> 其实这个方法结合DNSMasq还是很不错的,我自己就是这样设置的.选DNS最好自己实际测试一下,一般选一个和自己距离较近,且属于同一运营商网络的DNS为好.<br/>对于单独的游戏联机优化,我的建议是先用PC作为PS4/PS3主机的代理,然后在PC端使用类似Wireshark这样的程序进行网络监听,截取到联机游戏的URL,然后通过IP数据库查询到URL的对应IP,在DNSMasq里面设置规则.<br/><a href="https://psnine.com/psnid/resty-daze">@resty-daze</a> 都有一定的关系,但是这个主要是和网络的拓扑结构有关,网络拓扑结构也直接影响到NAT次数.除此之外,联机最重要的就是连线的稳定性和带宽大小.
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/wknet1988">wknet1988</a>
+                                            2015-10-14 00:13                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/rolan_stunkart"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA07195_00-P5AVATAR00000013_4231DDB9D41749B5B8A0_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    我个人觉得dmz和速度没什么关系 是改善联机的 弄了dmz后我可以和以前不能联机的朋友联上机了……所以dmz大法好
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/rolan_stunkart">rolan_stunkart</a>
+                                            2015-10-14 11:11                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/bsdlxypsy"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/3RD/EP41081505153_1594C40274C9FF00B336_L.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    我的KZM也是用了这个办法才能联机的。虽然依然不咋地，刷了奖杯完事。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/bsdlxypsy">bsdlxypsy</a>
+                                            2015-10-14 11:14                                                                            </div>
+<!--回复结束-->
+</div>
+</div>
+        </body></html>

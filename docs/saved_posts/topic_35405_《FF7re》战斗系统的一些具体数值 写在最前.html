@@ -1,0 +1,367 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8"/><title>《FF7re》战斗系统的一些具体数值 写在最前</title><meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="style.css" rel="stylesheet"/></head>
+<body>
+<div class="original-url-container"><p><strong>原始链接:</strong> <a href="https://psnine.com/topic/35405" target="_blank">https://psnine.com/topic/35405</a></p></div>
+<h1>《FF7re》战斗系统的一些具体数值 写在最前</h1><div class="main-post-container"><div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/wiixbox_77" itemprop="author">wiixbox_77</a>
+<span class="text-warning">
+2020-05-27 13:49编辑
+</span>   
+32评论
+</div><div class="post-page-content"><h3 class="page-title">写在最前</h3><div class="content pd10" itemprop="articleBody"><span style="font-size:18px;">写在最前</span><br/><b><span style="color:red;">本文转载自Satge1st论坛用户“一百年不动摇”</span></b><br/><a href="https://bbs.saraba1st.com/2b/thread-1933780-1-1.html" target="_blank">https://bbs.saraba1st.com/2b/thread-1933780-1-1.html</a><br/>除最后一节，仅对原文一些屏蔽字略作处理，原帖后续楼层有些许追加数据，感兴趣可去原帖查看。<br/>因没有账号，无法联系原作者，如有侵权，请联系本人删除。<br/></div></div><div class="post-page-content"><h3 class="page-title">前言</h3><div class="content pd10" itemprop="articleBody"><span style="font-size:18px;">前言</span><br/>    感谢SE社为我带来了如此美好的两周时光。<img src="../emoticons\face\majiang\17.gif"/><br/>    玩之前没想到除了全程蒂法演出prpr外这次的战斗系统也是个十足的亮点。虽然本作可以拿来充分应用整套系统的战斗挑战内容偏少外加时不时的给人一种在为后面克制实力的阉割感（告诉你最多可以叠4个却全程只有俩的魔幻<img src="../emoticons\face\majiang\15.gif"/>），但各方面的成熟度我个人还是很满意的，也不禁让人期待续作和本作往后可能会出的战斗模拟器dlc(?)。<br/>    下面是我在通hard的时候自己做测试得出的一些战斗系统相关的具体数值信息。日系作品老传统了，技能性能描述跟做中餐一样只有“少许”、“大量”，想知道细节的人除了入官方攻略本就只好自己亲测。像伤害公式这种比较核心的就不提了，游戏帮助连暴击增伤比率都不说清，害我normal时体感以为影响很大（以为像原作一样伤害翻倍），给克劳德后期全程带双运气...后来验证暴击仅增伤20%之后就老老实实堆HP提升了......本作的伤害公式倒是出乎意料的单纯，就是非常直接的（攻击-防御）* 威力系数，连个常数调整一类的都没有，数值平衡却整体挺稳定，可能是靠的本作战斗魔晶石/配件等自定义部分十分有限，而且攻击/防御这些关键数值很大部分来自不可逆的角色属性自然成长，武器贡献比较低，留给玩家的空间不大。<br/>    或许因为本作的实验环境(?)相当舒适（有可以捕捉高速动作的自带子弹时间、剔除队友干扰的青蛙戒指、有一定自由挑选对手空间的战斗模拟器），最后整理出来的东西比想象中的多得多...比较琐碎也比较杂乱无章，希望各位能看的明白。另外有关这些内容的官方准确情报或许不期就会有U本相关页面的扫图供大家直接参考了，权当在这之前的兴趣讨论，聊胜于无。总之希望能为对这种细节方面感兴趣的朋友起到一点帮助~<img src="../emoticons\face\majiang\32.gif"/><br/><br/><br/></div></div><div class="post-page-content"><h3 class="page-title">有关回复类魔法和一些回复相关机制</h3><div class="content pd10" itemprop="articleBody"><span style="font-size:18px;">有关回复类魔法和一些回复相关机制</span><br/>- 回复魔法效果：魔法攻击力*系数，小至大回复系数分别为7、13、24，回复数值是固定的，大回复mp性价比最高，中回复最低<br/>- 渐愈一开始回10%，每两秒回1%，一共180秒，总计回复10%+90%，跟魔攻无关<br/>- 小复活回复40%对象的hp，大复活100%，均跟魔攻无关<br/>- 箱子回复10%的mp，四舍五入<br/>- Mp值会以每20秒+1的速度自然回复，不受角色的mp最大值影响。每20秒一次的回复判定是从战斗开始就会启动，而不是从使用mp开始。所以如果角色在进入战斗后第19秒使用了mp，那该角色在1秒之后就能回复1mp。相反，如果在第21秒使用，就得再等19秒到第二个20秒判定。这个20秒一次的判定不受大部分情况影响（包括且不限于使用技能/被打/进入睡眠等各种负面状态），所以相当稳定，三名角色通常会在同一个时间点回复1mp（除非谁有mp自然回复加速的武器技能）。目前所知唯二种会中断这一计时的情况是进入战斗不能状态和进入蛙化状态，届时mp自然回复计时会中断，直到恢复正常状态后才会重新启动（如果发生了这种情况就可以看到三名角色的mp回复时机不再完全同步）。<br/>- Mp自然回复加速的武器技能能按技能所述比例（10%或者50%）减少这个回复计时周期，也就是分别18秒和10秒回复1mp，后者在持久战效果相当明显。无关紧要但比较奇怪的是有了这技能进入战斗后的首次计时会稍微跟20秒普通状态有些不同步，比如10秒一次进入战斗后第一次回复可能在第8.5秒，然后第二次在第18.5秒，和其他人的第20秒会有一个小区间<br/>- 武器技能中的绝命回生每击倒一个敌人回复5%总hp<br/>- 趁敌之危的效果是用固有攻击击中处于力竭状态的敌人可以回复等同所造成伤害5%的hp<br/>- 吸收伤害的效果是可以回复一次所受到实际伤害占自己总hp量的%除以10再向下取正的mp（比如被打了一下掉了22%的血，那就回复2点mp），必须得是单发伤害（比如如果是10连发，每发只打掉9%的hp那就一点mp也不回复），最大回复量是9（就算被一发秒掉也是9），血量就算不够也按计算值回复（比如只剩1hp的情况下中了一个百万火光损失&gt;100%hp的血量，仍然回复9）<br/><br/><br/></div></div><div class="post-page-content"><h3 class="page-title">有关一些全局参数和系统细节</h3><div class="content pd10" itemprop="articleBody"><span style="font-size:18px;">有关一些全局参数和系统细节</span><br/>- 暴击伤害增加20%，只有我方能暴击<br/>- 非常粗略的估算，基础暴击率%可能是运气/5<br/>- 武器技能里面的暴击伤害增加和默认暴击倍率是乘法叠加，克劳德以外三人各有一把武器带1.2倍暴击增伤和默认1.2倍叠加最后为1.44倍。克劳德的狼牙棒武器带1.5倍倍率，最终暴击倍率高达1.8倍，对伤害提升效果非常大<br/>- 武器技能里的暴击率增加貌似不是加法叠加（至少危机时增加暴击率这个肯定不是加法叠加，因为武器技能里的危机增加暴击率可以有100%，但是实际上暴击率并不会是100%），应该是对根据运气得出的基础暴击率之上的乘法叠加（比如角色暴击率20%，常态暴击率+10%就是22%，危机时再+100%就是暴击率44%）<br/>- 防御是照一定倍率减轻所受伤害，貌似主要分为减少60%、50%、40%三种（可能还有其他种类，但这三种应该比较常见），貌似分别适用于“轻攻击”（例如警备兵的射击、踹脚、拐棍几种攻击）、“中攻击”和“重攻击”（例如警备兵的手雷），貌似区分三种的方法是看防御住该攻击后会造成角色多大的硬直。完全不会就是轻攻击，小硬直（以克劳德为例表现出来的样子就是会被攻击晃到一些，但是双手仍然紧握剑柄）就是中攻击，大硬直（以克劳德为例就是被逼退一段距离并且只有左手还在剑柄上，右手被逼松开）就算重攻击<br/>- 上述轻中重类型攻击应该也决定了哪些攻击能打断我方角色们的动作，类似魂系列的攻击冲击力判定。使用不同技能时也有不同等级的霸体能应对不同等级的冲击力。<br/>- 加强防御魔晶石满级效果能以加法制再增添25%的减轻比率，也就是分别提高到85%、75%和65%的减轻率，效果相当大<br/>- 克劳德勇猛模式的普通反击对轻中重三种攻击的防御减轻率分别为80%、70%、60%，也就是要优于一般无魔晶石防御（当然有很多攻击是反击不能应对的，而且反击的防御倍率只能应用于敌人整套攻击的第一下），但是略逊于加强防御后的防御<br/>- 克劳德反击架势能对所有攻击都保持80%的减轻率，也就是除了加强防御防轻攻击时的85%，其他情况都能做到最佳减伤（仅第一下），而且反击架势有效判定貌似和普通防御一样？除了投技、召唤兽终结技、少数防御不能技（比如巴哈姆特的重炮强击），都能成功发动反击架势<br/>- 加强防御魔晶石不会影响反击和反击架势的防御倍率，也不会提高反击成功后获取的atb<br/>- 部分武器带的防御加强效果（物理/魔法减伤10%）会和已有的防御效果乘法叠加（比如加强防御后轻攻击减伤率85%，只剩15%伤害，再配上武器技能最后就只剩13.5%伤害），武器技能的这个效果同样只适用于防御，对反击无效。<br/>- 铁壁使用过程中的防御倍率和普通防御是一样的，加强防御也正常适用<br/>- 幻象持续时间600秒（正常战斗很少会超过这么久），中途角色若是进入战斗不能状态也会提前结束，而且该场战斗无法再次进入幻象状态<br/>- 选择指令时（wait mode）时间放慢整100倍<br/>- 一般情况Easy难度的敌人hp是normal的大约55%，hard是normal的190%，但有很多例外。不同难度敌人攻防能力也会改变（防御力变化相对不大，normal和easy的敌人防御力相同）<br/>- 放limit技的时候免疫异常（会有判定但是会显示no effect），攻击伤害照常<br/>- 鬼魂类敌人可以拿回复系魔法和复活进行攻击，复活有即死效果（有些免疫）。回复魔法伤害系数和回复效果一样，小中大分别7/13/24，复活是比例伤害（如果即死判定没过的话），小复活40%（注意可能有抗性），大复活应该是100%（一次性最大伤害仍然限制在9999），以上伤害能享受到力竭加成，渐愈是10%比例伤害外加持续180秒的每两秒0.1%hp伤害，以上效果均为固定值（不会像一般攻击一样有浮动值）<br/>- 敌人的弱抗性=该属性伤害减半；强抗性=效果仅为10%；弱点=效果翻倍。一些抗性可以叠加，比如利维坦即对魔法整体有弱抗性也对火有强抗性，那火魔法的最终效果仅为5%，而雷是弱点，翻倍和减半效果抵消，雷魔法最终效果为正常100%（伤害显示上既不会有weak也不会有reduce）。敌人持有的负面状态抗性比较无所谓，弱抗性指该状态只能生效两次（无抗性同样的负面状态对同样的敌人能生效三次，效果递减），强抗性只能生效一次，但是效果时间仍然会是从最长的算起，由于后面几次生效时间本来就非常短，所以敌人的负面状态抗性作用很有限。负面状态弱点效果是什么不太确定，整个游戏里唯一一个有弱点负面状态的敌人貌似是第二次打得路德（弱中毒），但是对他使用中毒造成的无属性基本伤害和毒伤都没有任何改变，照抗性的逻辑来看或许是能对路德使用四次中毒？但是常规手段应该无法验证，因为三次毒完成后就最少能造成45%的伤害，而路德一出场就只有半血，故无法测试第四次毒是否有效<br/>- 不同属性的魔法基础伤害力是一样的（小中大系数分别为5、7.8、10），主要区别在于力竭伤害较为不同。以小魔法为例，雷电为最低者，火和风效果是电的2倍，冰是电的3倍。同时，冰和风会有两次攻击判定，第一次虽然不会有伤害但是有一定的冲击力，有可能把敌人打出硬直甚至失衡heat，也就是能让魔法力竭伤害翻4倍，也就是说小冰最多一次能造成12倍于小电的力竭伤害。<br/>- 力竭槽是一个单独的系统，和攻击力无关，每招攻击有个单独的力竭值，积满对方特定上限总值的力竭槽后就会造成力竭。比如对方力竭槽总额20，一拳普通攻击造成1力竭（大部分初段普攻都是1），那就是20拳后力竭。失衡/出现heat时不同技能造成的力竭效果会有不同程度的提高（普攻貌似一般是变2倍，魔法会变4倍）。一般不是专门用来造成力竭的技能力竭值会很低比如只有1（像克劳德的无尽终结只有0），但是攻击力再低的肉搏攻击一般还是会有1，所以像攻击次数比较多单发攻击比较低的招式（比如蒂法的增驱九连击）会具备不错的力竭制造能力。另外弱点/抗性不影响力竭槽积累（但有很多特定情况）<br/>- 力竭倍率初始160%，蒂法强击+5%，爆裂掌+25%，掌掴快攻一下+5%（共4下），正拳+30%，爱丽丝审判光线一下攻击判定+2%（最多10下）<br/><br/><br/></div></div><div class="post-page-content"><h3 class="page-title">有关一些配件</h3><div class="content pd10" itemprop="articleBody"><span style="font-size:18px;">有关一些配件</span><br/>- 新月护身符减少非主控角色20%伤害<br/>- 塔罗牌和魔法戒指分别延长弱化魔法和强化魔法持续时间25%，可以和武器技能的10%加法叠加（到35%）<br/>- 神奇水晶缩短异常状态持续时间25%，同样可以和相关武器技能5%叠加<br/>- 救赎徽章增加危机时（hp&lt;25%）受到回复效果25%，同样可以和武器的50%叠加（75%）<br/>- 疗愈项链提高所有回复行动（回复系魔法、回复系技能、limit、道具）效果20%，就算是比例回复也会得到相应提高，比如小复活就能从40%变为48%<br/>- 疾风领巾见下面有关atb一项<br/>- 幻兽护符提高召唤兽伤害10%...效果相当有限<br/><br/><br/></div></div><div class="post-page-content"><h3 class="page-title">有关状态</h3><div class="content pd10" itemprop="articleBody"><span style="font-size:18px;">有关状态</span><br/>- 对敌人施加同样的负面持续状态会随着次数逐渐减少持续时间，同一状态最多只能施加三次，超过三次敌人会变免疫（玩家可没这么好混）。在敌人已经处于一种负面状态之时再次施加同一状态会是no effect，不会覆盖/更新时间。敌人对我方用负面状态可以更新。正面状态可以更新。<br/>- 正面状态魔法持续时间：渐愈180秒，免疫100秒，护盾60秒，急速100秒，星辰守护80秒<br/>- 负面状态魔法持续时间：毒180/117/54秒，催眠40/26/12秒，沉默40/26/12秒，狂暴30/19.5/9秒，缓慢40/26/12秒，停止10/6.5/3秒<br/>- 以上正面和负面均为我方使用魔法时的效果，敌人使用的状态魔法持续时间效果各有不同<br/>- 对敌人使用中毒不分魔法等级持续时间和毒伤效果都一样（每秒0.15%hp，179/116/53下）<br/>- 己方中毒持续时间同样3分钟（不确定是否不同敌人造成的毒不一样，目前看应该是一样的），但是伤害为每秒0.8%hp（同样不确定是否所有敌人都一样）<br/>- 中毒是死不了人的，会掉到最后1hp（虽然毒伤仍然会一直跳），这点对敌我双方都通用<br/>- 蛙化持续15秒，基础能力值貌似不会降（攻防和敏捷照旧），但是只能使用威力系数很低的攻击方式，另外所有非状态类强化都会解除（比如蒂法的秘技和爱丽丝的魔法使徒），mp自然回复也会中断<br/>- 武器的异常抗性减少异常状态持续时间相应比例，比如有5%异抗蛙化就是14.3秒<br/>- 狂暴状态造成和所受物理兼魔法伤害+30%，敌我一样。所有伤害都适用，效果相当强。<br/>- 悲伤状态减少所受伤害10%，limit积攒量影响不明<br/>- 愤怒状态提高所受伤害50%，limit积攒量影响不明<br/><br/><br/></div></div><div class="post-page-content"><h3 class="page-title">有关limit槽积累</h3><div class="content pd10" itemprop="articleBody"><span style="font-size:18px;">有关limit槽积累</span><br/>- 带诸神黄昏1级limit需要100秒攒满，使用幻象后再次攒满需要50秒；2级limit需要135秒攒满，幻象85秒。貌似使用幻象会固定剩余50秒的limit量。<br/>- Limit值增加量貌似主要与一次攻击造成的“原始”伤害占被攻击角色的总hp的比例相关（这里“原始”指未防御/反击状态时的全额伤害，不论防御与否一招攻击造成的limit增加量是不变的，鼓励防御承受大招）。也就是说提高角色的hp量和防御力会让limit积累变得相应更慢（护盾等防御魔法也会减少limit获得）。在特定控制环境情况下（第四章hard训练场炮台）能测试出来大约需要300%的hp损耗量可以充满一级limit，大约400%hp损耗量可以充满二级（与诸神黄昏100:135一致）。但是在实战中检验（站着让hard巴哈姆特白打）貌似一级只需要220%左右，二级300%（比例倒是同样与诸神黄昏一致）。待进一步观察。<br/>- 怒气传导器和魔法齿轮大致上效果约为触发一次=2秒单位诸神黄昏能提供的limit（换句话说就是大约2%一级limit，或1.5%二级limit）。魔法齿轮貌似跟实际使用的mp消耗量也有一定正相关，但不是很显著，用一次12mp的大回复只比一次4mp的小回复多出约1/3的提升量。怒气传导器和mp消耗无关但和atb消费量有关（一次消耗两格等同于两次一格），一格atb带来的limit提升量基本与魔法齿轮一次4mp小回复相同。待进一步验证。<br/>- 将敌人力竭的角色limit槽会一下增加大约34秒单位，也就是说一级limit槽力竭三个敌人就能直接攒满，二级limit四个<br/>- 电脑控制角色使用的普通攻击无法造成任何力竭槽伤害，必须得手控电脑角色使用技能才有可能让电脑角色力竭敌人<br/><br/><br/></div></div><div class="post-page-content"><h3 class="page-title">有关人物技能</h3><div class="content pd10" itemprop="articleBody"><span style="font-size:18px;">有关人物技能</span><br/>- 蒂法的增驱可以强化任何紧接着增驱之后的攻击（所有技能/固有攻击/攻击魔法/limit）伤害<span style="color:red;"><b>67%</b></span>（整套技能，不光是紧接着的第一下）。对回复魔法效果/强化/弱化状态魔法持续时间无效。因为对limit也有效，所以作用可以相当大<br/>- 斗气幻光球共持续5秒，每0.5秒一次攻击判定，最大10次<br/>- 一级秘技持续120秒，二级秘技持续90秒，均不受武器的强化状态时间延长加成影响<br/>- 高速连斩打中三个不一样的敌人的话第二下是第一下1.1，第三下是第一下1.4。如果只打一个人第二下是第一下0.6，第三下是第一下0.15<br/>- 普攻是每0.1秒一发，满腔怒火是每0.066秒一发<br/>- 巴雷特普攻是以五发为单位的连射，摁住攻击可以最多持续四回，共20发，每个第五发的攻击力是前四发的150%，另外一套攻击在收尾时会“漏出来一发”作为额外的一发，所以如果仅进行一回五连射攻击（轻按一下方块）那实际上会有六发。如果四回五连射（按住方块到最后）那总计会有21发。另外成功完成四回五连射最后会追加一发**。大约是**的20倍伤害，等于占了整个全套连射攻击的约一半伤害贡献<br/>-巴雷特普攻最后的装弹动作可以取消到补充能量（即最后一发大威力子弹打完就可以按<img src="../emoticons\face\shoubing\3.gif"/>）<br/>- 巴雷特的近战武器防御时无法移动，但启动时会有一个非常弱的攻击判定能恢复一点点atb（具体见下面atb相关）<br/>- 坚忍不拔持续时间90秒，效果是承受伤害降为70%，而且可以和护盾魔法叠加，同时可以免疫轻攻击的冲击力。对所有伤害都有效，很适合用来扛召唤兽终结技（配上魔盾百万火光也就4000左右伤害）<br/>- 雪崩精神持续120秒，过程期间队友受到伤害将从巴雷特的hp扣掉伤害值的70%然后转移到受创队友身上（效果上有点像小回复，会有一点时间差），比如队友损1000，巴雷特会同时损失700，然后等回复效果到了队友身上队友回复700。巴雷特hp最低到1。<br/>- 巴雷特猛烈枪击自然填充需时30秒，近战武器的撞击填充需时15秒，手动填充一次（包括普通充填/普攻取消充填/能量上勾拳成功击中敌人充填）减少7秒（猛烈强击和撞击均适用）<br/>- 爱丽丝吸魔一次回复最大mp的3%，四舍五入，不论对什么敌人都一样（不过对鬼魂类会有反效果），可无限吸取，如果被使用吸魔的敌人处于力竭状态，则效果翻五倍至15%，四舍五入<br/>- 圣魔法阵的第二次魔法伤害和力竭减半<br/>- 审判光线每0.2秒一次攻击判定，最多10次<br/>- 爱丽丝一级limit治愈春风回复50%hp，和魔攻无关<br/>- 爱丽丝普攻能打复数，自动判断，风暴不行。爱丽丝在近距离放普攻时挥舞中的法杖有伤害极低的攻击判定（貌似物理，应该是爱丽丝的物攻唯一能派用场的地方），普攻第一下最多能附三下<br/>- 魔法使徒常态下每三秒1发一级攻击（白子弹），不受普攻影响，放技能时暂停；使用不同技能会触发不同数量的二级攻击（红子弹，单发伤害是一级的双倍）：吸魔3发，圣洁之力1发，审判光线6发，一级魔法1发，二级魔法3发，三级魔法4发<br/>- 圣魔法阵和激励魔法阵各自只能同时存在一个，花之盾可以同时存在三个（叠不了九层盾就是了）<br/>- 圣魔法阵持续时间180秒，激励魔法阵240秒，花之盾120秒，魔法使徒持续240秒，均不受武器的强化状态时间延长加成影响<br/>- 气卦如果连续使用可以让两次效果都按第一次的当前血量计算回复量，也就是说能回80%损失hp<br/>- 祈祷满级回复系数为8，关联魔攻，但是会像攻击伤害一样有一定浮动<br/>- 冰冻气场一秒一次伤害，60秒持续，有点像巴哈姆特的气场<br/>- 臭气同时施展中毒、沉默、睡眠，效果同一般魔法一样，但不是必中，没有直接伤害<br/>- 吸收灵气持续10秒，每2秒一次伤害判定，最多5次，吸收范围内所造成伤害的30%回复hp<br/>- 每个角色的移动速度有较大差别，很粗略的测算，跑同样的距离克劳德和爱丽丝为7.2秒，蒂法为6.5秒（大约克劳德的90%所需时间），巴雷特为9.3秒（大约克劳德的130%）。回避能力也大约呈类似比例不同。<br/><br/><br/></div></div><div class="post-page-content"><h3 class="page-title">有关伤害计算和技能威力系数</h3><div class="content pd10" itemprop="articleBody"><span style="font-size:18px;">有关伤害计算和技能威力系数</span><br/>- 伤害 = (物攻/魔攻 - 物防/魔防 + 0.5) * 威力系数/50 * 其他伤害系数 * 加减5%左右的随机系数，向上取整<br/>- 很人为的给威力系数除了个50是为了对上攻略本写的威力系数数字（参考自一张U本的样本图）<br/>- 物攻/魔攻 = 基础力量/魔力*(1+配件补正%+魔石补正之和%)+武器补正，向上取整（小数点后部分仍然保留，一些计算中会用到）<br/>- Hard难度下貌似大部分敌人物防/魔防在100-200区间，比如巴哈姆特（单独召唤兽版）防御力大约为175。貌似大部分敌人的物防都是等同于魔防（同样他们的魔攻也等同于物攻），除了少部分明显是设计成偏向某一类的（比如壮汉强盗就有高物防但低魔防）。<br/>- 以下是实测出来的我方人物各种攻击的威力系数，误差应该在加减5%左右...<br/><img class="imgclick" src="https://img.saraba1st.com/forum/202005/10/110149sff3a0x8w0amjcda.png"/><br/><br/>- 举个伤害计算的例子，战斗模拟器中的Normal鱼人王子防御在约73，此时一个250物攻的克劳德使用英勇斩击的伤害约为(250-73+0.5)*400/50=1420上下5%左右。不考虑其他系数。<br/>- 有关敌我双方的攻防能力值上限：整体来看，我方的攻击力最大值被限制在比较低的程度，由于本作能直接增加攻击力的装备少之又少，我方攻击/魔攻最大值基本也就在400/500出头的程度。而敌人的基础攻击力基本全面高于我方（比如N魅影魔攻有678，H魅影魔攻有1020，甩出我方能力几条街）。平衡的地方在于敌方技能的威力系数通常较低，我方则较高。这在“攻击-防御”伤害计算体制下意味着首先我方很难实现防御&gt;攻击将敌人伤害降为接近0的程度，这种情况只有可能在normal及以下难度发生，hard里面就算是最弱的警备兵也有大约295的攻击力（290攻击力的我方巴哈姆特泪目），仍然较高于我方能堆出来的最高防御力（约240）。可以看出我方的防御力其实比较无关紧要，减伤主要得通过一些倍率减轻方式而不是堆防御。其次，我方武器攻击力在终盘尽可能往高了选其实能起到比字面比例提高要更大的效果。比如，终盘由于等级提高基础力量值变高后武器提供的额外攻击力形似不是很显著（比如力量100就是基础攻击力200，两把武器一把+60一把+70最后的总攻击力差别仅270/260=103.8%。但是在我方基础攻防整体较敌人能力值低的情况下来看，hard 敌人有可能出现防御力高达近200的个体（比如H魅影双防190），此时两把武器的实际有效攻击力差其实为70/60=116.7%，增加的10攻提供的边际效益还是较为显著的。<br/><br/><br/></div></div><div class="post-page-content"><h3 class="page-title">有关ATB</h3><div class="content pd10" itemprop="articleBody"><span style="font-size:18px;">有关ATB</span><br/>（大部分内容参考自攻略本的一张很模糊的样本图，不一定看的准）<br/>- ATB槽的总量为2000单位，一格atb就是1000，在发动幻象的情况下atb总量还是保留2000，但是相应的每格atb的所需量短了（分别为700/650/650），等于同样的行动只需约2/3的atb就可执行。<br/>- 敏捷对atb自然回复速度的影响见下（每一格atb），误差在加减0.005秒（因为是在1/100等待模式测得）：<br/>45敏捷，13.85秒<br/>50敏捷，13.745秒<br/>50敏捷+急速，9.825秒<br/>50敏捷+急速+幻象，6.385秒<br/>55敏捷，13.66秒<br/>55敏捷+急速，9.765秒<br/>65敏捷，13.525秒<br/>65敏捷+急速，9.665秒<br/>80敏捷，13.365秒<br/>80敏捷+急速，9.545秒<br/>- 可见敏捷的作用非常有限，如果敏捷值的作用仅限于此的话感觉完全没有追求其的必要<br/>- 电脑控制时角色atb自然累计速度为手控时的35%，非常慢，也就是说电脑控制角色得大约30-40秒左右才能自己攒满一格atb，进行攻击时获得的额外atb貌似也会减少（应该也是降到35%），不过电脑控制的角色在防御时貌似速度不会减慢（不像手控角色防御的话会大幅减缓自然atb增长速度至1/10）<br/>- 除了特定技能，只有角色的普通攻击（方块）和固有攻击（三角）具备在击中敌人时（就算因为护罩造成不了伤害也没事）补充atb的效果。前者小效果，后者大效果。而且这两种攻击进行时不会影响atb自然积累。技能攻击释放期间则会完全暂停atb自然积累，击中敌人也不会产生任何额外atb。被敌人攻击打中不会影响atb，既不会暂停也不会加速，束缚/倒地会暂停，进行回避动作时也会暂停，防御/反击时atb自然积累会显著放缓（降为平时的10%），但是防御/反击成功会大幅增加。用固有攻击击中力竭中的敌人时产生的atb量会增加（应该是多一倍），普通攻击atb增加量不受力竭影响。<br/>- 急速增快atb自然增加速度到1.4倍，缓慢减慢到0.6倍。<br/>- 防御住敌人的攻击貌似会根据不同的敌人攻击类型回复25-300atb<br/>- 进入一场战斗角色会随机以0~500atb的状态开局，如果装备了疾风领巾则会固定以500atb开战<br/>- 如果配备了先发制人魔晶石，1级开局时atb将为750~1000，2级1000~1250，3级1250~2000<br/>- 疾风领巾如果和先发制人搭配使用的话，1级开局atb固定1000，2级固定1250，3级1750~2000<br/>- “ATB提升”魔晶石效果是将敌人力竭后根据魔晶石等级提升atb，分别为400/650/900<br/>- “ATB连结”魔晶石是连续使用两次指令后提升两名队友的atb400/500/600<br/>- “招式高手”触发需要使用三种不同类型的指令后，atb提升效果为400/650/900<br/>- 每个角色都有一个专属能够回复atb的相关技能。蒂法就是很明显的后翻踢（击中后回复700atb）。克劳德则是无序猛击，在进攻模式用这招击中敌人可以回复500，在勇猛模式击中每一击可以回复100，一共2击，可见前者更适合用来回复atb（相应的是招数威力系数则是后者模式要更高）。巴雷特没有直接的技能回复，但是在巴雷特使用近战武器时进入防御时周围会有个喷气效果附带轻微伤害的攻击判定，这一下击中的话会回复25atb（这招不管是伤害还是atb回复效果都是惊人的低...作用极其小...感觉可能是这里数值写错了回复量少了个0）。爱丽丝的激励魔法阵可以对在魔法阵里消耗atb的队友从自己身上转移对方消耗的atb格数*500的atb（一般人都是一次消耗一格，所以爱丽丝一次转移500，但是巴雷特平时一次消耗两格就会转1000，而如果是幻象状态下一次消耗三格就会转1500），前提当然是爱丽丝自己得有足够atb（类似atb版的雪崩精神），如果不够的话会转移余下所有atb，另外激励魔法阵发动的一刻爱丽丝自己也会回复1000atb（等于技能的实际atb消耗量不是2000而是1000）。<br/>- 蒂法秘技解放后的爆裂掌和掌掴快攻虽然使用方式是固有攻击，但是性质上貌似更接近普通攻击，具备以下特征：使用时自然atb累计不会暂停，击中敌人后产生的额外atb相对微量（每一下只有和普攻一拳类似甚至更少程度），而且力竭后击中敌人的atb产生量不会翻倍。<br/><br/><br/></div></div><div class="post-page-content"><h3 class="page-title">有关召唤兽</h3><div class="content pd10" itemprop="articleBody"><span style="font-size:18px;">有关召唤兽</span><br/>- 召唤兽召唤槽出现貌似主要跟造成的伤害（不一定非得力竭敌人，举例的话貌似用蒂法让一个敌人中一次毒+增驱+海豚疾风就必会出现召唤槽）和己方角色是否进入危机有关。红血（&lt;25%）一般就会直接出现该角色所属的召唤兽召唤槽，其他人的召唤兽则仍然不能召唤（除非现在打的就是红血角色拥有的召唤兽，貌似游戏不能用同样的召唤兽打召唤兽，这种情况貌似会自动转成队友的召唤兽。还有一种可能是原本红血的队友战斗不能了，但是召唤槽仍然满了，那也改成队友的召唤兽）。竞技场/模拟战连续战斗时貌似对召唤兽使用有限制？好像第一场用过之后之后几场就算进入红血也无法出现召唤槽了。可能一场连续战斗每个人的召唤兽只能使用一次？待确认<br/>- 召唤兽作为独立存在的帮手有自己独立的能力值，不管是普攻/技能/终结技均和召唤者本人的能力值无关（幻兽护符除外）（可能跟等级有关系？需要重开一个档确认）。<br/>- 召唤兽的基础攻击力其实不是很高，但是终结技的威力系数很高（比如巴哈姆特的攻击力仅大约290，但是百万闪光的伤害系数约为43）。由于伤害公示是攻击-防御制式，所以在hard难度敌人防御力锐升后面对一些防御力比较高的敌人召唤兽的攻击力会显得非常低下（有些敌人防御超200，那就算是百万闪光也就大约(290-200)*43=3870的伤害）<br/>- 召唤兽有些地方像敌方角色，比如不会暴击<br/>- 召唤槽出现后积累满需要20秒，中途貌似做什么都不会干涉这个过程<br/>- 召唤后召唤兽持续时间为60秒，如果在持续时间结束紧之前下达了手动指令，召唤兽会完成指令之后再终结<br/>- 如果结束时场上没有可以攻击的敌人（比如鬼魂类消失掉），召唤兽会滞留在原地待着不动一直等到对方现身之后再发动终结技，所以是不会打空的（但是还是有可能打到护罩上面）<br/>- 召唤者在召唤期间进入战斗不能的话召唤兽将直接发动终结技<br/>- 一开战就自曝挂掉貌似也能直接蹦出召唤槽<br/>- 召唤兽自己行动时执行的攻击指令非常弱，基本没有任何价值，耗费atb的技能威力系数也不算特别高，但遇到属性相克的敌人还堪一用<br/>- 几个比较常用的召唤兽测出来的能力值（伤害计算请参见伤害公式一栏）：<br/>- 巴哈姆特，物攻魔攻约290，气场发动后的加强版炼狱威力系数70*n发，加强版重炮强击威力系数470*2（炼狱多发制更适合打大型boss，后者打高机动或小型），百万火光2150<br/>- 利维坦，物攻魔攻约245，水柱和水花浪潮（基本用前者就够了）威力系数620，大海啸2100<br/>- 伊弗利特，物攻魔攻300，火光爆发820，艳红俯冲620，地狱火焰1600<br/><br/><br/></div></div><div class="post-page-content"><h3 class="page-title">其他比较无关紧要的和杂谈</h3><div class="content pd10" itemprop="articleBody"><span style="font-size:18px;">其他比较无关紧要的和杂谈</span><br/>- 有关警备兵的一个小细节：会有换弹夹动作。而且不是纯摆设卖玩家破绽。一个弹夹确实有30发子弹，也有相应的装弹机制。消耗弹药的攻击有普攻三连发和技能“机关枪”九连发。如果放九连发过程中残弹不够，技能就会中断然后换好弹夹才能射完。也有较小概率在30发用尽之前就换弹夹<br/>- 巴雷特零距离射击设置的定时炸弹在敌人被停时的时候是不会倒计时爆炸的<br/>- 巴雷特装备近战武器时很奇怪的会减少蛙化时大约1/3的物理攻击伤害。只影响物理攻击（蛙击和蛙踢）不影响魔法（蛙泡）攻击。已验证克劳德装备任何武器都不会造成同样的变化。不知原因为何。猜测可能是巴雷特原本近战武器的威力系数过高，后来给加了一个额外的2/3补正，结果影响到了蛙化？<br/>- 巴雷特满腔怒火总攻击次数：一级31发，二级46发，三级46发（威力增强），具体组成为：24-36发低伤害（一级为24发，二三级为36发）和7-10发高伤害（一级为7发，二三级为10发），低伤害所有等级威力均一样，高伤害威力根据等级会依次加强（一级一发高伤害为一发低伤害的140%，二级高伤害为一级高伤害的300%，三级高伤害再升至二级高伤害的200%），这两种子弹的使用节奏为：“一高五低一高五低一高两低”这么15发为一个单位，一级会循环2回（共30发），二三级3回（共45发），在最后会追加一发高伤害结尾。<br/>- 武器性能对比表：<br/><img class="imgclick" src="https://img.saraba1st.com/forum/202005/10/105853cgx7lf117ln5fl7g.png"/><br/><br/></div></div><div class="post-page-content"><h3 class="page-title">最终战同伴出场顺序（慎入，剧透）</h3><div class="content pd10" itemprop="articleBody"><span style="font-size:18px;">最终战同伴出场顺序（慎入，剧透）</span><br/>    话说都看这个贴了，会有剧透吗？<br/>    萨菲罗斯战的出场顺序简单的说就是按积分决定出场顺序，哪个角色用的多，积分会相应提高。（我是Tifa、巴雷特出场，嫂子只走了个过场<img src="../emoticons\face\majiang\29.gif"/>）不太懂日文，哪位能看懂可以帮着翻译一下不？<br/><img class="imgclick" src="https://www.modelscope.cn/studio/flyheadko/J2Z_experience/resolve/master/data/images/35405_001.webp"/></div></div></div>
+<h2>评论</h2><div class="post">
+<a class="l" href="https://psnine.com/psnid/nevereogh"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0797/CUSA13427_00-AV00000000000003_EBD3AB42FC2CC63612B9_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    等有空仔细看看，希望对攻略Hard难度有帮助<img src="../emoticons\face\majiang\14.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/nevereogh">nevereogh</a>
+                                            2020-05-26 23:51                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/thymol1996"><img height="50" src="../avatars/thymol1996-1577274917-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<img src="../emoticons\face\alu\38.gif"/>先顶再看
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/thymol1996">thymol1996</a>
+                                            2020-05-26 23:57                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/wiixbox_77"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP9000/CUSA07413_00-AVATAR0000000019_C1CC0A87E5461586C6C7_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/nevereogh">@nevereogh</a> 用好tifa，hard不怕。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/wiixbox_77">wiixbox_77</a>
+                                            2020-05-27 00:02                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/lcctvgame"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0082/CUSA16170_00-AV00000000000003_7C15DE2B12384E5A50F0_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    楼主真爱！佩服佩服！<img src="../emoticons\face\majiang\41.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/lcctvgame">lcctvgame</a>
+                                            2020-05-27 00:48                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/nathaniel_wu"><img height="50" src="../avatars/nathaniel_wu-1676590428-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    你这样无授权转载不太好吧，S1注册又没有什么门槛
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/nathaniel_wu">nathaniel_wu</a>
+                                            2020-05-27 02:04修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/wiedzzmin"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0031/CUSA01054_00-AVATAR1505NEP020_8F9F8D5DDAC22DB4414A_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    s1现在注册好像要5块钱？我帐号都是好多年前注册的，现在不知道了。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/wiedzzmin">wiedzzmin</a>
+                                            2020-05-27 03:21                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/wiixbox_77"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP9000/CUSA07413_00-AVATAR0000000019_C1CC0A87E5461586C6C7_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/nathaniel_wu">@nathaniel_wu</a> 是的，第一时间注册，发现要5块钱买邀请码，平时不去那个论坛，买邀请码十分鸡肋。<br/><br/><a href="https://psnine.com/psnid/lcctvgame">@lcctvgame</a> 我是转载的，原作者写的很详细，就搬了过来<img src="../emoticons\face\majiang\28.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/wiixbox_77">wiixbox_77</a>
+                                            2020-05-27 07:10                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/nathaniel_wu"><img height="50" src="../avatars/nathaniel_wu-1676590428-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/wiixbox_77">@wiixbox_77</a> 居然加限制了，还要真金白银<img src="../emoticons\face\alu\5.gif"/>我注册很久了所以不知道
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/nathaniel_wu">nathaniel_wu</a>
+                                            2020-05-27 07:19                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/wiixbox_77"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP9000/CUSA07413_00-AVATAR0000000019_C1CC0A87E5461586C6C7_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/nathaniel_wu">@nathaniel_wu</a> 关键也是全文原作者都没提禁止转载或者转载需授权，许是忘了，许是不在意，索性先转过来再说。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/wiixbox_77">wiixbox_77</a>
+                                            2020-05-27 07:42                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/wing_zero1991"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0425/CUSA11911_00-AVATAR180920FIE0_862525D3C9DF204741ED_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    所以说这一作的召唤兽感觉也就一周目低难度用用玩，HARD真心有点鸡肋<br/>打H地狱屋的时候召了个巴哈，终结技也是等它无敌模式解除后才发出来，7000伤害聊胜于无吧……
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/wing_zero1991">wing_zero1991</a>
+                                            2020-05-27 08:29                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/shefan_0723chn"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP9000/PPSA21559_00-AVATAR0000000003_E9863C769A9AD6CFB302_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/wing_zero1991">@wing_zero1991</a> 卡邦库尔挺实用的<img src="../emoticons\face\alu\30.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/shefan_0723chn">shefan_0723chn</a>
+                                            2020-05-27 08:53                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/szn-ok-168"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA17544_00-P5RAVATAR000007C_8F3E669B8A9F74C1F0DC_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    幻想不懂是怎么个厉害法
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/szn-ok-168">szn-ok-168</a>
+                                            2020-05-27 08:56                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/wiixbox_77"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP9000/CUSA07413_00-AVATAR0000000019_C1CC0A87E5461586C6C7_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/szn-ok-168">@szn-ok-168</a> 没咋用过幻象，配合诸神黄昏开场幻象，tifa开加速，操作好的话能打出及其华丽和爆表的伤害。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/wiixbox_77">wiixbox_77</a>
+                                            2020-05-27 09:27                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/ms-caroldanvers"><img height="50" src="../avatars/ms-caroldanvers-1708941918-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    召唤兽从来就没用过<img src="../emoticons\face\alu\17.gif"/>打上头了就没想起来用
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/ms-caroldanvers">ms-caroldanvers</a>
+                                            2020-05-27 09:33                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/wiixbox_77"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP9000/CUSA07413_00-AVATAR0000000019_C1CC0A87E5461586C6C7_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/ms-caroldanvers">@ms-caroldanvers</a> 除了卡邦库尔，其他召唤兽基本没啥用。<br/>Ps.SE的特典还是一如既往的鸡肋。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/wiixbox_77">wiixbox_77</a>
+                                            2020-05-27 09:53                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/wiixbox_77"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP9000/CUSA07413_00-AVATAR0000000019_C1CC0A87E5461586C6C7_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/mechille">@mechille</a> 翻遍了各处也没找到加标签的地方，能请站长给帖子加个标签做个关联吗？
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/wiixbox_77">wiixbox_77</a>
+                                            2020-05-27 10:00                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/kelhip"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0106/CUSA16157_00-NIOH2PRE01AVA002_6CFE1EE05FD1CB98BE50_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    有关警备兵的一个小细节：会有换弹夹动作。而且不是纯摆设卖玩家破绽。一个弹夹确实有30发子弹，也有相应的装弹机制。消耗弹药的攻击有普攻三连发和技能“机关枪”九连发。如果放九连发过程中残弹不够，技能就会中断然后换好弹夹才能射完。也有较小概率在30发用尽之前就换弹夹<br/><br/>这个真是惊到...
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/kelhip">kelhip</a>
+                                            2020-05-27 10:01                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/wiixbox_77"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP9000/CUSA07413_00-AVATAR0000000019_C1CC0A87E5461586C6C7_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/kelhip">@kelhip</a> 这回se难得良心一回，各种细节数不胜数，要是有类似血宫让Tifa多出战，还能更香<img src="../emoticons\face\majiang\25.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/wiixbox_77">wiixbox_77</a>
+                                            2020-05-27 10:06                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/ms-caroldanvers"><img height="50" src="../avatars/ms-caroldanvers-1708941918-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/wiixbox_77">@wiixbox_77</a> 好像没有卡邦库尔这个召唤兽，哪来的，需要什么任务吗
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/ms-caroldanvers">ms-caroldanvers</a>
+                                            2020-05-27 10:30                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/wiixbox_77"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP9000/CUSA07413_00-AVATAR0000000019_C1CC0A87E5461586C6C7_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/ms-caroldanvers">@ms-caroldanvers</a> 数字豪华版...<img src="../emoticons\face\majiang\29.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/wiixbox_77">wiixbox_77</a>
+                                            2020-05-27 10:39                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/kelhip"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0106/CUSA16157_00-NIOH2PRE01AVA002_6CFE1EE05FD1CB98BE50_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/ms-caroldanvers">@ms-caroldanvers</a> 豪华版送的<img src="../emoticons\face\majiang\41.gif"/><br/>效果是离场的时候大招全员回满血<br/>以及召唤兽在场期间团灭的话，全员送一次半血春哥
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/kelhip">kelhip</a>
+                                            2020-05-27 10:39                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/ms-caroldanvers"><img height="50" src="../avatars/ms-caroldanvers-1708941918-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/wiixbox_77">@wiixbox_77</a> 没有豪华版<img src="../emoticons\face\alu\13.gif"/>感觉有了也会忘记用<img src="../emoticons\face\alu\15.gif"/>实际上说了这么多不如石头练练满，这个才是最主要的，其它都是虚的<img src="../emoticons\face\alu\43.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/ms-caroldanvers">ms-caroldanvers</a>
+                                            2020-05-27 10:48                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/wiixbox_77"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP9000/CUSA07413_00-AVATAR0000000019_C1CC0A87E5461586C6C7_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/ms-caroldanvers">@ms-caroldanvers</a> 当初只记得有人分享在地下斗技场刷满魔晶石，结果忘记了通关能选章，并且不知道通关后AP倍率奖励，我在初到14章的时候就把魔晶石练得差不多了<img src="../emoticons\face\majiang\29.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/wiixbox_77">wiixbox_77</a>
+                                            2020-05-27 11:04                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/wushuo25"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA14326_00-AVATAR0000000012_2244C6FEF994572ABA08_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    最后一页那个萨菲罗斯站出场顺序取决于菲拉战的行动，我直接复制楼座B站视频下的评论过来<br/><a href="https://www.bilibili.com/video/BV1ff4y117e9" target="_blank">https://www.bilibili.com/video/BV1ff4y117e9</a><br/>萨菲罗斯战第二阶段和第三阶段上场的队友是谁，取决于菲拉战各角色的行动。<br/>每个角色的行动都隐藏了一个点数系统，而点数的多少就是决定上场先后顺序。<br/>1.使用魔法 技能 道具时：巴雷特：24点 蒂法：20点 爱丽丝：44点<br/>2.使用极限技：巴雷特：120点 蒂法：100点 爱丽丝：220点<br/>3.将三妈宝任意一只打空血进入BURST：巴雷特：120点 蒂法：100点 爱丽丝：220点<br/>4.巴哈姆特和菲拉本体的击破：巴雷特：无 蒂法：250点 爱丽丝：550点
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/wushuo25">wushuo25</a>
+                                            2020-05-27 13:58                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/wiixbox_77"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP9000/CUSA07413_00-AVATAR0000000019_C1CC0A87E5461586C6C7_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/wushuo25">@wushuo25</a> 有劳了，这下资料更丰富了
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/wiixbox_77">wiixbox_77</a>
+                                            2020-05-27 14:44                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/kelhip"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0106/CUSA16157_00-NIOH2PRE01AVA002_6CFE1EE05FD1CB98BE50_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/wushuo25">@wushuo25</a> ？换句话说爱丽丝必在场，蒂法巴雷特二选一？（而且似乎要打得非常久才能触发巴雷特进场而不是蒂法）<br/>嗯，阴谋论开启……
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/kelhip">kelhip</a>
+                                            2020-05-27 14:54                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/acg19940506"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/EP8943/CUSA06594_00-AV00000000000165_1660263CE41CC40E6C74_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/kelhip">@kelhip</a> 3个人四种选项，当然艾瑞丝的权重比较大就是了
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/acg19940506">acg19940506</a>
+                                            2020-05-27 16:18                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/lolling_chris"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/UT0016/CUSA06833_00-AV00000000000271_9DB0ABE074141DFDB012_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    真爱，太牛逼了<br/>这种你都测了吗。。<br/>- 选择指令时（wait mode）时间放慢整100倍
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/lolling_chris">lolling_chris</a>
+                                            2020-05-27 17:01                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/kelhip"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0106/CUSA16157_00-NIOH2PRE01AVA002_6CFE1EE05FD1CB98BE50_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/acg19940506">@acg19940506</a> 按他这个点数系统，爱丽丝必然出场且最先出场...因为不管做什么爱丽丝的点数都是最高的
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/kelhip">kelhip</a>
+                                            2020-05-27 17:16                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/acg19940506"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/EP8943/CUSA06594_00-AV00000000000165_1660263CE41CC40E6C74_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/kelhip">@kelhip</a> 你要明白这个点数是按次计算的，发动一次技能加多少点
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/acg19940506">acg19940506</a>
+                                            2020-05-27 17:26                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/wiixbox_77"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP9000/CUSA07413_00-AVATAR0000000019_C1CC0A87E5461586C6C7_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/lolling_chris">@lolling_chris</a> 这种测起来也不麻烦吧，找个有倒计时的场景，掐个秒表对一下就清楚了
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/wiixbox_77">wiixbox_77</a>
+                                            2020-05-27 17:40                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/kelhip"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0106/CUSA16157_00-NIOH2PRE01AVA002_6CFE1EE05FD1CB98BE50_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/acg19940506">@acg19940506</a> <img src="../emoticons\face\majiang\41.gif"/>噢我明白你的意思了，是我之前理解错了
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/kelhip">kelhip</a>
+                                            2020-05-27 19:01                                                                            </div>
+<!--回复结束-->
+</div>
+</div>
+</body></html>

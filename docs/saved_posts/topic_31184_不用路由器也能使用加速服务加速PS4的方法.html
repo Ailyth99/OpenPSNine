@@ -1,0 +1,503 @@
+
+        <!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><title>不用路由器也能使用加速服务加速PS4的方法</title><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="stylesheet" href="style.css"></head>
+        <body>
+            <div class="original-url-container"><p><strong>原始链接:</strong> <a href="https://psnine.com/topic/31184" target="_blank">https://psnine.com/topic/31184</a></p></div>
+            <h1>不用路由器也能使用加速服务加速PS4的方法</h1><div class="main-post-container"><div class="meta">
+
+<a class="psnnode" href="https://psnine.com/psnid/picayunesky_19" itemprop="author">picayunesky_19</a>
+<span class="text-warning">
+2017-04-14 08:58编辑
+</span>   
+44评论
+</div><div class="content pd10" itemprop="articleBody">需要用到<br/><a href="http://www.vmware.com/products/player/playerpro-evaluation.html" target="_blank">vmware player</a><br/><a href="http://koolshare.cn/thread-64061-1-1.html" target="_blank">lede-x64</a><br/>下载好固件 转换一下先<br/>gunzip 固件名.img.gz<br/>qemu-img convert -f raw -O vmdk 固件名.img 随便命名.vmdk<br/>用vm安装lede，系统版本linux其他2.6x ...我提供一个安装好的克隆 http://pan.baidu.com/s/1dEWHEu9 密码: j2wh 解压密码：p9<br/>安装完成后删除硬盘 光驱 USB 打印等不必要的服务，只留一个网卡设置为桥接模式，添加一个新硬盘载入上面.vmdk文件<br/>开机进入系统 用vi /etc/config/network 编辑里的lan ip跟你一个网段（上下左右移动光标 i键插入 修改好之后按ESC输出:wq保存退出）且没有被局域网设备占用的地址。<br/>如果是自己安装的上面修改的时候就只有一个ip地址（我发的克隆已经配置好网络 ip 网关 掩码 广播地址，在编辑/etc/config/network的时候一并全改好吧）<br/>重启网络 service network restart<br/>电脑访问你设置好的ip默认root密码koolshare 我的克隆改成了123321<br/>登录后 网络-接口-修改 设置好网络路由器就可以上网了<br/>在VPN选项卡的第一个就是加速设置 <br/>模式一定要设置游戏模式才能转发UDP 这点跟梅林一样 而padavan是一个总开关。<br/><br/>使用方法 就只需要把网关和DNS设置为vm虚拟机的IP就可以了。<br/><br/>效果我试了一下跟路由器没什么区别，不过我电脑是闲置状态。</div></div>
+            
+            <h2>评论</h2><div class="post">
+<a class="l" href="https://psnine.com/psnid/ziqingmoyi"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA14326_00-AVATAR0000000009_B19CF6DF2D2A716CA320_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<img src="../emoticons\face\alu\39.gif"/>我没看懂，但还是先mark下。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/ziqingmoyi">ziqingmoyi</a>
+                                            2017-04-14 00:10                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/mono842"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0005/CUSA01557_00-P5AVATAR00000022_7838246AF740455EEC08_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    厉害了P少
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/mono842">mono842</a>
+                                            2017-04-14 00:10                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/kennyho517"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/UP4396/CUSA04449_00-AV00000000000073_E0AAF084A5159BF583AD_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    看似有些难度
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/kennyho517">kennyho517</a>
+                                            2017-04-14 00:11                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/xian7105"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/WWS_J/J0003.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    实际上就是拿虚拟机做成了路由？
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/xian7105">xian7105</a>
+                                            2017-04-14 00:14                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/baozi_233"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/EP4497/CUSA08234_00-AV00000000000001_FA4A2ABED732FE998890_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<img src="../emoticons\face\majiang\33.gif"/>好东西 不过看不懂 先mark
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/baozi_233">baozi_233</a>
+                                            2017-04-14 00:16                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/xian7105"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/WWS_J/J0003.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    解压密码是多少
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/xian7105">xian7105</a>
+                                            2017-04-14 00:17                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/picayunesky_19"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/3RD/JP01061506004_37021BB8B18D44FE47F0_L.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/xian7105">@xian7105</a> p9
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/picayunesky_19">picayunesky_19</a>
+                                            2017-04-14 00:18                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/wangding123"><img height="50" src="../avatars/wangding123-1588852704-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    如果成了真的感觉会很有用！战略性马克
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/wangding123">wangding123</a>
+                                            2017-04-14 00:46                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/hungry557"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP9008/CUSA03605_00-PREMIUMAVATAR001_5A153A5D0FBE05DA197E_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    战略性mark+1
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/hungry557">hungry557</a>
+                                            2017-04-14 00:51                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/lv-devil7"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/3RD/JP01021011001l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    就是用虚拟机做路由器的意思吧<img src="../emoticons\face\alu\35.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/lv-devil7">lv-devil7</a>
+                                            2017-04-14 00:53                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/altyu"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0700/CUSA11685_00-JUMP50THANNIVA03_0497A200D2BF2360F399_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    软路由……弄个树莓派刷也行啊
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/altyu">altyu</a>
+                                            2017-04-14 01:01                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/qq974113548"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0106/CUSA04010_00-AVATAR0001605000_2E652BCA3134B9E45528_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    其实就是软路由，不过不如花点小钱买个路由器实在。<img src="../emoticons\face\majiang\41.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/qq974113548">qq974113548</a>
+                                            2017-04-14 01:03                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/ggsimidar"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0507/CUSA04966_00-AVATAR0000000005_11CF95E2BBE0F1E6A55B_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    直接在代理上允许局域网连接代理服务器，或者干脆共享网络，比开虚拟机省事吧
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/ggsimidar">ggsimidar</a>
+                                            2017-04-14 01:04                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/picayunesky_19"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/3RD/JP01061506004_37021BB8B18D44FE47F0_L.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/ggsimidar">@ggsimidar</a> 那样不支持udp转发<br/><br/><a href="https://psnine.com/psnid/qq974113548">@qq974113548</a> 折腾一下嘛<img src="../emoticons\face\majiang\41.gif"/><br/><br/><a href="https://psnine.com/psnid/altyu">@altyu</a> <a href="https://psnine.com/psnid/lv-devil7">@lv-devil7</a> 对
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/picayunesky_19">picayunesky_19</a>
+                                            2017-04-14 01:24                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/conanedogawa4869"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/UP1018/CUSA00133_00-AV00000000000014_2248BCB6ED556A2A734F_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    虚拟机软路由，感觉很好的思路，对于资金上捉襟见肘党来说是个好事情，可以拿出更多预算砸在网络运营商质量上<img src="../emoticons\face\alu\43.gif"/><br/><br/><a href="https://psnine.com/psnid/ggsimidar">@ggsimidar</a> 这个得看代理能否支援了，目前P9提供的那种就无法在共享层面上支援全局代理，比如PS4联机常用的UDP就无法转发，必须用软路由加以转发
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/conanedogawa4869">conanedogawa4869</a>
+                                            2017-04-14 01:25                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/shurougax"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0700/CUSA09843_00-SC6AVATAR0000002_EFCAF4CB6138D917588B_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<img src="../emoticons\face\majiang\3.gif"/>我直接电脑双网卡 然后桥接 在电脑上开SS 搞定……
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/shurougax">shurougax</a>
+                                            2017-04-14 02:07                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/gundamhpf2"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP1804/CUSA08621_00-AVATAR0000000021_4DD200084FD8A887DC2C_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<img class="imgclick" referrerpolicy="no-referrer" src="http://ww4.sinaimg.cn/large/bfae17b6gy1fellktbpjpg206y06ye81.jpg"/><br/>dalao们懂的都好多.....
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/gundamhpf2">gundamhpf2</a>
+                                            2017-04-14 02:09修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/yoxi-reborn"><img height="50" src="../avatars/yoxi-reborn-1680538867-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    我现在也是用的软路由 还装了nas<br/>主路由kuai做流控分流三个wan可以电信移动联通三网合一达300M 次路由就是LZ这个用来挂ss <br/>设置ps4ip走3wan，电信或联通（看对ss的ping）走次路由的网关走ss，后来ps4网关dns改成次路由<br/>这样就可以下载走全网速 玩游戏走ss
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/yoxi-reborn">yoxi-reborn</a>
+                                            2017-04-14 12:00修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/maik4ever"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0102/CUSA06605_00-PREMIUMAVATAR025_129763D4D4D992E50DB1_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    看不懂，还是回复一下表示我看过了
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/maik4ever">maik4ever</a>
+                                            2017-04-14 07:00                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/lamiaruri"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP9000/CUSA00547_00-AVATAR0000000002_6B9333C319DB9DD9FB8B_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    花大钱省小钱，这帐算的。电脑的电费比智能路由高的多了，省下的电费买个路由多好，用起来也方便
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/lamiaruri">lamiaruri</a>
+                                            2017-04-14 07:20                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/zyt133123132"><img height="50" src="../avatars/zyt133123132-1556541506-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<img src="../emoticons\face\alu\10.gif"/>干的漂亮，对于我这种只是偶尔联机的人，软路由刚刚好<img src="../emoticons\face\alu\43.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/zyt133123132">zyt133123132</a>
+                                            2017-04-14 07:23                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/luoxiaoxi"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/UP3493/CUSA07861_00-AV00000000000111_DFD9374EC741DA5F4CCA_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    。。。。点进来一看是软路由。。。<img src="../emoticons\face\alu\18.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/luoxiaoxi">luoxiaoxi</a>
+                                            2017-04-14 07:25                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/applicationalc"><img height="50" src="../avatars/applicationalc-1560088949-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    话说楼主，软路由，校园网可以用吗？在宿舍肯定刷不了梅林固件，刷ss代理啥的
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/applicationalc">applicationalc</a>
+                                            2017-04-14 07:44                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/ptzmelkor"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP9002/CUSA09076_00-NIERBON000000006_A481B0473E1A86E9C66C_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    我个人用了一块古老的树莓派做了一个类似的东西，虚拟机是个好东西，我就是懒得开完电脑就写到板子去了
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/ptzmelkor">ptzmelkor</a>
+                                            2017-04-14 07:44                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/hoveribes"><img height="50" src="../avatars/hoveribes-1571289188-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    已有路由器了，就不尝试了<img src="../emoticons\face\alu\37.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/hoveribes">hoveribes</a>
+                                            2017-04-14 07:52                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/jameslewisliu"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA05030_00-PREMIUMAVATAR008_E824AA9336C9AB37ED7F_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<img src="../emoticons\face\alu\42.gif"/>lede不是OpenWrt么……<br/><img src="../emoticons\face\alu\42.gif"/>你这样相当于搭软路由啊……<br/>而且像我们校园网用户虚拟机开不了网络的还是拿SS/SSR做代理服务器吧<img src="../emoticons\face\alu\13.gif"/><br/><img class="imgclick" referrerpolicy="no-referrer" src="http://ww4.sinaimg.cn/large/bfae17b6gy1feftcfbz61j20vd0ku3yy.jpg">
+</img></div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/jameslewisliu">jameslewisliu</a>
+                                            2017-04-14 07:53                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/jameslewisliu"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA05030_00-PREMIUMAVATAR008_E824AA9336C9AB37ED7F_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/yoxi-reborn">@yoxi-reborn</a> <img src="../emoticons\face\alu\42.gif"/>你这是三网多拨再加负载均衡么<img src="../emoticons\face\alu\6.gif"/>……
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/jameslewisliu">jameslewisliu</a>
+                                            2017-04-14 07:55                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/picayunesky_19"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/3RD/JP01061506004_37021BB8B18D44FE47F0_L.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/applicationalc">@applicationalc</a> 校园网总类挺多的 不敢说<img src="../emoticons\face\alu\6.gif"/><br/><br/><a href="https://psnine.com/psnid/jameslewisliu">@jameslewisliu</a> 对呀<img src="../emoticons\face\alu\30.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/picayunesky_19">picayunesky_19</a>
+                                            2017-04-14 07:59                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/noire0210"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0031/CUSA01054_00-AVATAR1505NEP002_07F8818AE6B09BEC3818_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/applicationalc">@applicationalc</a> 一个路由器过校园认证（比如锐捷）再接一个代理
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/noire0210">noire0210</a>
+                                            2017-04-14 08:10                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/stanjia"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/WWS_J/J2088_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    缺点是要开一台机器。 如果是树派，那耗电会小很多。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/stanjia">stanjia</a>
+                                            2017-04-14 08:24                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/dominic4527"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP9000/CUSA12613_00-AVA00LUDENSCHIBI_8349E7A2EBBE0C2D9433_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    国产有个香蕉派，4网口，可以做软路由了
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/dominic4527">dominic4527</a>
+                                            2017-04-14 08:36                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/orochihk"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP9000/CUSA00912_00-PREMIUMAVATAR002_340062BC52B47674C6CE_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    在pc上开ssr，然后开本地代理就行了
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/orochihk">orochihk</a>
+                                            2017-04-14 08:59                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/sujiner"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP9002/CUSA10625_00-NEIRMCAV2B000001_3FF151024DE34FC3CDC2_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    路由器全局SS的我。。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/sujiner">sujiner</a>
+                                            2017-04-14 09:03                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/gopcboy"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/3RD/30003.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/jameslewisliu">@jameslewisliu</a> 请教，这个对ps4联机有用么？我就是学校的锐捷+360 wifi共享给ps4，结果死活无法联机，家里是老毛子固件+ss流畅的一笔，但是我大部分时间还是在学校啊，请教你的具体设置，谢谢大佬先！
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/gopcboy">gopcboy</a>
+                                            2017-04-14 10:13                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/tilerphy"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP2374/CUSA12786_00-PREMIUMAVATAR004_A817A81FE57B060966E8_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/gundamhpf2">@gundamhpf2</a> 我来盗个图
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/tilerphy">tilerphy</a>
+                                            2017-04-14 10:35修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/wdogew"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0425/CUSA11911_00-AVATAR180920DUBA_000E9E9231062D07E85B_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    涉及到udp，应该就要涉及到在路由器上的修改吧（dmz和upnp的开启<br/>楼主已经做过这方面的修改了吗？<br/>还是不用这两个功能就可以了？
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/wdogew">wdogew</a>
+                                            2017-04-14 13:14                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/picayunesky_19"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/3RD/JP01061506004_37021BB8B18D44FE47F0_L.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/wdogew">@wdogew</a> upnp默认就是开的 dmz不用开的
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/picayunesky_19">picayunesky_19</a>
+                                            2017-04-14 14:28                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/k_in_kiseki-2012"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP9000/CUSA07183_00-AVATAR0000000013_8E426AF228CFB3B19467_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    感觉没看懂<img src="../emoticons\face\alu\7.gif"/>是说在电脑上模拟路由功能？
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/k_in_kiseki-2012">k_in_kiseki-2012</a>
+                                            2017-04-14 20:10                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/xian7105"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/WWS_J/J0003.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    卡在booting LEDE上  半天没反应<br/>虚拟机用了32位的缘故 去BIOS开了VT-X就好了
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/xian7105">xian7105</a>
+                                            2017-04-14 21:37修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/wangding123"><img height="50" src="../avatars/wangding123-1588852704-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    vm设置好了，第一次电脑输入ip地址能访问到lede的设置页面，但弄完不能加速，发现ip弄错了，第二次直接电脑访问不了设置的ip地址了。。是校园网锁了的节奏麽<img src="../emoticons\face\majiang\40.gif"/>同一个网段不同地址试了好几次都进不去，明明之前输错的那个都能进，求解
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/wangding123">wangding123</a>
+                                            2017-04-16 01:04                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/picayunesky_19"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/3RD/JP01061506004_37021BB8B18D44FE47F0_L.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/wangding123">@wangding123</a> 锐捷认证的？锐捷认证的估计不行。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/picayunesky_19">picayunesky_19</a>
+                                            2017-04-16 08:58                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/wangding123"><img height="50" src="../avatars/wangding123-1588852704-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/picayunesky_19">@picayunesky_19</a> 看了一下真的是锐捷orz，无解了，不过我看其他有些寝室路由器能装，以为这软路由也能弄来着
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/wangding123">wangding123</a>
+                                            2017-04-16 13:09                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/w360j"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/UP2135/CUSA04242_00-AV00000000000050_19A9B4879E497CA3FAED_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    我在学校用电信校园网+wifi共享大师也不能联机，但是用win10自带热点就行……不知道是什么操作
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/w360j">w360j</a>
+                                            2017-07-06 08:40                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/yabaimayor"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP9000/CUSA12613_00-DSAV000EXCITEDBB_E9F14C80B3D339041CD1_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    大神，有几个问题想问下，现在我用你配置好的虚拟机（lede路由器）成功连上网络和代理了，但是具体的IP参数和PS4设置IP参数不太清楚，能给个例子吗？或者指导下。目前我的参数是，<br/>TP的路由器是192.168.1.1，<br/>ps4是192.168.1.4.<br/>LEDE中我设置的参数是<br/>IPv4地址 192.168.1.2<br/>IPv4子网掩码 255.255.255.0<br/>IPv4网关 192.168.1.1<br/>IPv4广播 192.168.1.255<br/>使用自定义的DNS服务器 192.168.1.1<br/>然而，在VM虚拟网卡地址有两个 192.168.197.1和192.168.254.1<br/>请问，我在PS4中应该设置哪个IP？是ps4的网关和DNS设置成同一个吗？
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/yabaimayor">yabaimayor</a>
+                                            2017-08-18 19:39                                                                            </div>
+<!--回复结束-->
+</div>
+</div>
+        </body></html>

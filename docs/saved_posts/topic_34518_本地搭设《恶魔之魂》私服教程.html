@@ -1,0 +1,1360 @@
+
+        <!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><title>本地搭设《恶魔之魂》私服教程</title><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="stylesheet" href="style.css"></head>
+        <body>
+            <div class="original-url-container"><p><strong>原始链接:</strong> <a href="https://psnine.com/topic/34518" target="_blank">https://psnine.com/topic/34518</a></p></div>
+            <h1>本地搭设《恶魔之魂》私服教程</h1><div class="main-post-container"><div class="meta">
+
+<a class="psnnode" href="https://psnine.com/psnid/jhzthpp" itemprop="author">jhzthpp</a>
+<span class="text-warning">
+2019-02-20 18:54编辑
+</span>   
+121评论
+</div><div class="content pd10" itemprop="articleBody">本<b><span style="color:red;">教程</span></b>适用于有<span style="color:orange;">双机</span>的朋友，可以用电脑做私服给<span style="color:orange;">局域网</span>内的PS3用<br/><span style="color:orange;">公网需要考虑路由器，防火墙，很多配置，还需要有公网IP，本教程不涉及</span><br/>首先要感谢油腻腻（destinybo14）教窝怎么搭私服，这个方法是他从外站看到这个研究出来<img src="../emoticons\face\alu\15.gif"/><br/>同时油腻腻也租了阿里云服务器来<b><span style="color:red;">临时</span></b>搭了个恶魂<span style="color:orange;">公网</span>服务器，把PS3的DNS地址改成47.244.4.188即可<br/><span style="color:red;">这个服务器搭建和测试都是油腻控来做的，窝只是搬运工，感谢destinybo14</span><br/>---------------------------------------------------------------------------------------------------<br/>使用私服之前可以先下载<a href="https://pan.baidu.com/s/1nf4lQSnUT_Xyqvyb9yKXVA" target="_blank">这个</a><br/>然后安装python-2.7.16rc1和VCForPython27<br/>之后以管理员身份运行CMD指令输入pip install pycrypto<br/>编辑desse-master里的remote.conf（设置DNS地址）记得关掉电脑防火墙<br/>然后把remote.conf放到FakeDns-master下，同时在FakeDns-master目录下执行Python fakedns.py -c remote.conf指令<br/>接着编辑desse-master里的info.ss（设置服务器地址）<br/>然后在desse-master下创建db文件夹<br/>最后在desse-master目录下执行python emulator.py指令<br/>最终打开2个CMD窗口，一个是DNS服务器窗口，一个是恶魂服务器窗口<br/><br/>PS:自搭服务器的话，DNS地址和服务器地址都用自己电脑IP地址替代，PS3里DNS地址改成电脑IP地址<br/>外站私服发布<a href="https://github.com/ymgve/desse" target="_blank">网址</a></div></div>
+            
+            <h2>评论</h2><div class="post">
+<a class="l" href="https://psnine.com/psnid/sumky"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/3RD/EP43121402024_1541D82B32444CF50F30_L.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    同理是不是关服的游戏都有可能可以联机？<img src="../emoticons\face\alu\15.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/sumky">sumky</a>
+                                            2019-02-17 22:32                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/lzzm_hk"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/UT0016/CUSA06833_00-ASTROBOTAVATAR01_3AB882C566F341869DE2_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/sumky">@sumky</a> 我感觉也是这样的，那样很多关服的游戏岂不是都能跳杯了。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/lzzm_hk">lzzm_hk</a>
+                                            2019-02-17 22:34                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/betrayal133"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/WWS_E/EP90001307B04_A7E93DE889D8110BE1DB_L.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    GT5：嗯？
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/betrayal133">betrayal133</a>
+                                            2019-02-17 22:39                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/minnaha"><img height="50" src="../avatars/minnaha-1556240375-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<img src="../emoticons\face\alu\5.gif"/>感谢赐我全套石头，让我又产生了能白恶魂的幻觉
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/minnaha">minnaha</a>
+                                            2019-02-17 22:40                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/futexlocker"><img height="50" src="../avatars/futexlocker-1587166168-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/sumky">@sumky</a> 想多了，你得有人家具体游戏的服务端程序才行。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/futexlocker">futexlocker</a>
+                                            2019-02-17 22:47修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/gtx990m-"><img height="50" src="../avatars/gtx990m--1555493245-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<img src="../emoticons\face\majiang\32.gif"/>仔细想了想二周目刷怪的时候，一脚把怪踹坑里死了。。。没跳杯，不打三周目了！
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/gtx990m-">gtx990m-</a>
+                                            2019-02-17 22:55                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/zermanni"><img height="50" src="../avatars/zermanni-1572093565-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    只要能解包，搞清楚它的网络协议，其实是可以自己写个服务器的<img src="../emoticons\face\alu\39.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/zermanni">zermanni</a>
+                                            2019-02-17 23:38                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/aokoalice"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/UP4312/CUSA02383_00-AV00000000000058_14C0D76245873C7D421F_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    谢谢大佬！！刚用py交易完成了全部锻造武器的奖杯，开心！真的是太感谢啦<img src="../emoticons\face\alu\10.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/aokoalice">aokoalice</a>
+                                            2019-02-18 03:34                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/rrobinvip"><img height="50" src="../avatars/rrobinvip-1558063750-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    太强了，先收藏了
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/rrobinvip">rrobinvip</a>
+                                            2019-02-18 04:49                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/kenshin_yy"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0425/CUSA11905_00-AVATAR180302REA1_E6813E032FE7C6742BAD_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/aokoalice">@aokoalice</a> 不用再自己刷了可以交易了？
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/kenshin_yy">kenshin_yy</a>
+                                            2019-02-18 07:13                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/ff-x-p"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP9008/CUSA03605_00-LETPLAYAVLNY0006_74509C9CA0EFBBA2A7DC_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    这个nb了，大佬厉害吖！
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/ff-x-p">ff-x-p</a>
+                                            2019-02-18 07:32                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/wasaminchuri"><img height="50" src="../avatars/wasaminchuri-1681499787-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    真的牛批<img src="../emoticons\face\alu\43.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/wasaminchuri">wasaminchuri</a>
+                                            2019-02-18 08:34                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/joker8023-ch"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0082/CUSA06592_00-NIERGOTYAVATAR09_44D2085F24EA5433A4D2_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<b>砍骷髅，砍骷髅，砍骷髅...</b><img src="../emoticons\face\majiang\33.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/joker8023-ch">joker8023-ch</a>
+                                            2019-02-18 09:02                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/chenzhechn"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/WWS_J/J0001.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    牛逼<img src="../emoticons\face\majiang\41.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/chenzhechn">chenzhechn</a>
+                                            2019-02-18 09:06                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/nicolas_mai"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/WWS_A/A2105_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    对新人来说，隐晦的故事 + 世界、个人黑白实在是难以理解。<br/>还是玩个黑魂来得容易些，砍就完事了。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/nicolas_mai">nicolas_mai</a>
+                                            2019-02-18 09:08                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/light_lee_moon"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0700/CUSA11685_00-JUMP50THANNIVA03_0497A200D2BF2360F399_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    感谢大佬，太及时了，顺便求大佬丢个友人戒指<img src="../emoticons\face\alu\39.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/light_lee_moon">light_lee_moon</a>
+                                            2019-02-18 09:09                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/light_lee_moon"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0700/CUSA11685_00-JUMP50THANNIVA03_0497A200D2BF2360F399_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    又卡重复了
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/light_lee_moon">light_lee_moon</a>
+                                            2019-02-18 09:09修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/jhzthpp"><img height="50" src="../avatars/jhzthpp-1556449075-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/light_lee_moon">@light_lee_moon</a> 晚上的吧，我今天大概7点之前到家
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/jhzthpp">jhzthpp</a>
+                                            2019-02-18 09:22                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/twilightholic"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0102/CUSA09554_00-AV00000000000020_1C90A2C2927EE520142D_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<img src="../emoticons\face\majiang\41.gif"/>我还少块完美刃石白金
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/twilightholic">twilightholic</a>
+                                            2019-02-18 09:28                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/jhzthpp"><img height="50" src="../avatars/jhzthpp-1556449075-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/twilightholic">@twilightholic</a> 晚上跟light_lee_moon一起吧
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/jhzthpp">jhzthpp</a>
+                                            2019-02-18 09:55                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/light_lee_moon"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0700/CUSA11685_00-JUMP50THANNIVA03_0497A200D2BF2360F399_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/jhzthpp">@jhzthpp</a> 谢谢大佬了
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/light_lee_moon">light_lee_moon</a>
+                                            2019-02-18 09:57                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/pumpkissster"><img height="50" src="../avatars/pumpkissster-1556439446-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<img src="../emoticons\face\majiang\33.gif"/>真的嗎 馬上吧ps3搬出來開坑（教程有点看不懂 晚上回去研究一下...
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/pumpkissster">pumpkissster</a>
+                                            2019-02-18 11:09修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/k_in_kiseki-2012"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP9000/CUSA07183_00-AVATAR0000000013_8E426AF228CFB3B19467_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/kenshin_yy">@kenshin_yy</a> yy你黑魂还没开坑就想着恶魂啊<img src="../emoticons\face\alu\42.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/k_in_kiseki-2012">k_in_kiseki-2012</a>
+                                            2019-02-18 12:31                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/print-bug"><img height="50" src="../avatars/print-bug-1601306287-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<img src="../emoticons\face\majiang\41.gif"/>吱茨 老铁加油
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/print-bug">print-bug</a>
+                                            2019-02-18 13:00                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/destinybo14"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/3RD/JP05071403F10_F258FC6D00D821B7B267_L.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    指令打错了应该是Python fakedns.py -c remote.conf
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/destinybo14">destinybo14</a>
+                                            2019-02-18 14:01                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/lovehunter9"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/3RD/JP01061302049_3C26BF5BC43A69364E44_L.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    小声问一嘴，网上有恶魔之魂不联网就能白金的攻略是不是真的？
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/lovehunter9">lovehunter9</a>
+                                            2019-02-18 14:13                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/jhzthpp"><img height="50" src="../avatars/jhzthpp-1556449075-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/destinybo14">@destinybo14</a> 吼，谢谢油腻腻指导惹<img src="../emoticons\face\alu\35.gif"/><br/><a href="https://psnine.com/psnid/print-bug">@print-bug</a> <img src="../emoticons\face\alu\35.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/jhzthpp">jhzthpp</a>
+                                            2019-02-18 15:29修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/followallen414"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0101/CUSA01099_00-AVATAR1511000001_0E7DB844418754C8A501_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    有没有黄王头冠呀？
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/followallen414">followallen414</a>
+                                            2019-02-18 15:12                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/evangelineh"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/3RD/UP10631011005l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    我的恶魂堆积一万年了<img src="../emoticons\face\alu\17.gif"/>三魂合集也堆着没开坑
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/evangelineh">evangelineh</a>
+                                            2019-02-18 15:15                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/lzzm_hk"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/UT0016/CUSA06833_00-ASTROBOTAVATAR01_3AB882C566F341869DE2_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/lovehunter9">@lovehunter9</a> 完全可以啊，只不过联网简单些。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/lzzm_hk">lzzm_hk</a>
+                                            2019-02-18 15:15                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/light_lee_moon"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0700/CUSA11685_00-JUMP50THANNIVA03_0497A200D2BF2360F399_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/lovehunter9">@lovehunter9</a> 严格按照白金单机流程来，完全可以。像我这种开始瞎玩的就gg了<img src="../emoticons\face\alu\39.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/light_lee_moon">light_lee_moon</a>
+                                            2019-02-18 15:36                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/parry555"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/UT0016/CUSA06833_00-PSTRNMNTBUGWHITE_0D0CCCA520B2261112E9_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    纯粹刃石，不是靠大佬给我还真白不了。。。。刷了20个小时没刷到。。。说好的0.3%的掉率。。。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/parry555">parry555</a>
+                                            2019-02-18 16:04                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/jhzthpp"><img height="50" src="../avatars/jhzthpp-1556449075-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/followallen414">@followallen414</a> 没呢<br/><a href="https://psnine.com/psnid/parry555">@parry555</a> 千分之五的掉率 窝曾经刷了一星期
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/jhzthpp">jhzthpp</a>
+                                            2019-02-18 16:32                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/aokoalice"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/UP4312/CUSA02383_00-AV00000000000058_14C0D76245873C7D421F_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/kenshin_yy">@kenshin_yy</a> 可以啊，我是入侵然后再让别人扔武器给我的，连跳十几个杯好爽啊<img src="../emoticons\face\alu\19.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/aokoalice">aokoalice</a>
+                                            2019-02-18 18:29                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/s_misaka_mikoto"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP9008/CUSA03605_00-GENSHINNINGGUANG_04DAD81C2AA8DF85D55C_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    恶魂联机有等级和周目限制么？
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/s_misaka_mikoto">s_misaka_mikoto</a>
+                                            2019-02-18 21:44                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/haz120102"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0082/CUSA11060_00-AVATAR0000000007_6F9BF5B2F8E6DEF78C7B_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<img src="../emoticons\face\alu\35.gif"/>大佬厉害了
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/haz120102">haz120102</a>
+                                            2019-02-18 21:50                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/jhzthpp"><img height="50" src="../avatars/jhzthpp-1556449075-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/s_misaka_mikoto">@s_misaka_mikoto</a> 有等级限制，周目没有限制，双方大概符合等级等于对方等级除以10之后再加减10的范围（取整），比如19级的人，大概能和8到30级的人联机<br/><a href="https://psnine.com/psnid/haz120102">@haz120102</a> <img src="../emoticons\face\alu\35.gif"/><br/><a href="https://psnine.com/psnid/chenzhechn">@chenzhechn</a> 等吉吉大佬来香一发der<img src="../emoticons\face\alu\35.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/jhzthpp">jhzthpp</a>
+                                            2019-02-18 22:01修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/s_misaka_mikoto"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP9008/CUSA03605_00-GENSHINNINGGUANG_04DAD81C2AA8DF85D55C_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/jhzthpp">@jhzthpp</a> 幻想破灭，不能py了<img src="../emoticons\face\alu\13.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/s_misaka_mikoto">s_misaka_mikoto</a>
+                                            2019-02-18 22:02                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/light_lee_moon"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0700/CUSA11685_00-JUMP50THANNIVA03_0497A200D2BF2360F399_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/jhzthpp">@jhzthpp</a> 大佬可以联机了嘛?我大概175级
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/light_lee_moon">light_lee_moon</a>
+                                            2019-02-18 22:04                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/wangbinwei"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/3RD/HP00821004004l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    刷了三套恶魔之魂，都是纯手动刷的，掉率还行，纯粹刃石一定要纯黑状态刷。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/wangbinwei">wangbinwei</a>
+                                            2019-02-18 22:08                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/light_lee_moon"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0700/CUSA11685_00-JUMP50THANNIVA03_0497A200D2BF2360F399_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/s_misaka_mikoto">@s_misaka_mikoto</a> 大佬多少级<img src="../emoticons\face\alu\38.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/light_lee_moon">light_lee_moon</a>
+                                            2019-02-18 22:08                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/s_misaka_mikoto"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP9008/CUSA03605_00-GENSHINNINGGUANG_04DAD81C2AA8DF85D55C_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/light_lee_moon">@light_lee_moon</a> 我一个朋友3版本白金了，我还没开坑，想着没等级限制可以搞一波<img src="../emoticons\face\alu\30.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/s_misaka_mikoto">s_misaka_mikoto</a>
+                                            2019-02-18 22:10                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/jhzthpp"><img height="50" src="../avatars/jhzthpp-1556449075-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/light_lee_moon">@light_lee_moon</a> 我1级，你要不建个小号打完1-1来联机 我把全戒指扔给你
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/jhzthpp">jhzthpp</a>
+                                            2019-02-18 22:10                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/light_lee_moon"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0700/CUSA11685_00-JUMP50THANNIVA03_0497A200D2BF2360F399_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/jhzthpp">@jhzthpp</a> 好的，我立刻建立小号
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/light_lee_moon">light_lee_moon</a>
+                                            2019-02-18 22:16                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/s_misaka_mikoto"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP9008/CUSA03605_00-GENSHINNINGGUANG_04DAD81C2AA8DF85D55C_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/jhzthpp">@jhzthpp</a> 大佬1级是怎么做到的，能把东西给小号吗
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/s_misaka_mikoto">s_misaka_mikoto</a>
+                                            2019-02-18 22:39                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/light_lee_moon"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0700/CUSA11685_00-JUMP50THANNIVA03_0497A200D2BF2360F399_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/jhzthpp">@jhzthpp</a> 我好了，加朋友好友了
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/light_lee_moon">light_lee_moon</a>
+                                            2019-02-18 22:43                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/jhzthpp"><img height="50" src="../avatars/jhzthpp-1556449075-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/s_misaka_mikoto">@s_misaka_mikoto</a> 我1级白金的， 你好了说一声 肉身去石牙坑道等我就行了 窝PS3好友满了。。。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/jhzthpp">jhzthpp</a>
+                                            2019-02-18 22:48修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/light_lee_moon"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0700/CUSA11685_00-JUMP50THANNIVA03_0497A200D2BF2360F399_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/jhzthpp">@jhzthpp</a> 我好了，在1-1那等你嘛?我只打了1-1关……dns输入的就是上面那个
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/light_lee_moon">light_lee_moon</a>
+                                            2019-02-18 22:50修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/jhzthpp"><img height="50" src="../avatars/jhzthpp-1556449075-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/light_lee_moon">@light_lee_moon</a> 打完法拉克斯才能联机，石牙坑道是2-1,DNS 120.78.129.130
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/jhzthpp">jhzthpp</a>
+                                            2019-02-18 22:52修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/kqq_chiya"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA07195_00-P5AVATAR00000040_E89C122F34DB2B621DDE_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/lovehunter9">@lovehunter9</a> 可以，我就是离线白的
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/kqq_chiya">kqq_chiya</a>
+                                            2019-02-18 22:56                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/s_misaka_mikoto"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP9008/CUSA03605_00-GENSHINNINGGUANG_04DAD81C2AA8DF85D55C_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/jhzthpp">@jhzthpp</a> 大佬等我，马上来<img src="../emoticons\face\alu\10.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/s_misaka_mikoto">s_misaka_mikoto</a>
+                                            2019-02-18 23:01                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/s_misaka_mikoto"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP9008/CUSA03605_00-GENSHINNINGGUANG_04DAD81C2AA8DF85D55C_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/jhzthpp">@jhzthpp</a> 我这个号14级，不知道行不行<img src="../emoticons\face\alu\30.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/s_misaka_mikoto">s_misaka_mikoto</a>
+                                            2019-02-18 23:08                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/jhzthpp"><img height="50" src="../avatars/jhzthpp-1556449075-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/s_misaka_mikoto">@s_misaka_mikoto</a> 你这是欧版，窝现在仍不了 窝英服号给2个朋友绑定了<br/>恶魂联机分版本的，美版只能和美版联机，欧版只能和欧版联机<br/>亚洲版（包括日版）只能和日版联机
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/jhzthpp">jhzthpp</a>
+                                            2019-02-18 23:19修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/s_misaka_mikoto"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP9008/CUSA03605_00-GENSHINNINGGUANG_04DAD81C2AA8DF85D55C_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/jhzthpp">@jhzthpp</a> 还分版本的吗<img src="../emoticons\face\alu\31.gif"/>扔不了就算了，谢谢大佬了
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/s_misaka_mikoto">s_misaka_mikoto</a>
+                                            2019-02-18 23:18                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/light_lee_moon"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0700/CUSA11685_00-JUMP50THANNIVA03_0497A200D2BF2360F399_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    谢谢因主的帮助，太感谢了，终于白金了
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/light_lee_moon">light_lee_moon</a>
+                                            2019-02-18 23:58                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/cowboy_jojo"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0404/CUSA04954_00-AVATAR1603000013_FAF0BBFE73F8571994F7_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/s_misaka_mikoto">@s_misaka_mikoto</a> 大佬欧版是数字版还是实体盘？我正准备白欧版呢
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/cowboy_jojo">cowboy_jojo</a>
+                                            2019-02-19 00:33                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/s_misaka_mikoto"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP9008/CUSA03605_00-GENSHINNINGGUANG_04DAD81C2AA8DF85D55C_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/cowboy_jojo">@cowboy_jojo</a> 数字<img src="../emoticons\face\alu\15.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/s_misaka_mikoto">s_misaka_mikoto</a>
+                                            2019-02-19 00:40                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/kenshin_yy"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0425/CUSA11905_00-AVATAR180302REA1_E6813E032FE7C6742BAD_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/k_in_kiseki-2012">@k_in_kiseki-2012</a> 这件未雨绸缪，预约好，下半年再战
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/kenshin_yy">kenshin_yy</a>
+                                            2019-02-19 07:24                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/pony2005"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/SCEI/I0009.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    这游戏可以纯单机白金，我就是纯单机断网白金的，当时服务器还没关，为了辛苦打的世界黑白不被服务器刷掉，全程断网，最后刃石打了两个多小时的骷髅就出了
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/pony2005">pony2005</a>
+                                            2019-02-19 07:45                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/luyuan9527"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0700/CUSA08526_00-PREMIUMAVATAR009_4512B28AD06DAE8155A2_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/jhzthpp">@jhzthpp</a> 大佬，晚上能py戒指和武器奖杯吗？港版萌新开坑，完全搞不懂黑白设定<img src="../emoticons\face\alu\15.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/luyuan9527">luyuan9527</a>
+                                            2019-02-19 17:11                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/lingjun008"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA07195_00-P5AVATAR00000012_E1C21504C8B2F2F617C8_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/jhzthpp">@jhzthpp</a> <a href="https://psnine.com/psnid/luyuan9527">@luyuan9527</a> 晚上也可以带上我一起吗？
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/lingjun008">lingjun008</a>
+                                            2019-02-19 18:38                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/jhzthpp"><img height="50" src="../avatars/jhzthpp-1556449075-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/lingjun008">@lingjun008</a> <a href="https://psnine.com/psnid/luyuan9527">@luyuan9527</a> 扔不了了 昨天刚扔完，存档现在不能还原
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/jhzthpp">jhzthpp</a>
+                                            2019-02-19 18:42修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/lingjun008"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA07195_00-P5AVATAR00000012_E1C21504C8B2F2F617C8_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/jhzthpp">@jhzthpp</a> 是不是要等一天后才能恢复存档？<img src="../emoticons\face\alu\10.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/lingjun008">lingjun008</a>
+                                            2019-02-19 18:50                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/light_lee_moon"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0700/CUSA11685_00-JUMP50THANNIVA03_0497A200D2BF2360F399_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/lingjun008">@lingjun008</a> 恶魔之魂存档ps＋里，隔24小时才能下载一次
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/light_lee_moon">light_lee_moon</a>
+                                            2019-02-19 20:56                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/lingjun008"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA07195_00-P5AVATAR00000012_E1C21504C8B2F2F617C8_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/light_lee_moon">@light_lee_moon</a> 兄弟今晚方便扔下吗？存个档先？我正在开小号打1-1
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/lingjun008">lingjun008</a>
+                                            2019-02-19 21:19                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/lingjun008"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA07195_00-P5AVATAR00000012_E1C21504C8B2F2F617C8_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/light_lee_moon">@light_lee_moon</a> <a href="https://psnine.com/psnid/jhzthpp">@jhzthpp</a> 两位兄弟昨晚是在哪里连机的？打完法拉克斯是不是就可以了？还是需要继续把大骑士打掉然后到石牙坑道吗？
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/lingjun008">lingjun008</a>
+                                            2019-02-19 22:02                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/luyuan9527"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0700/CUSA08526_00-PREMIUMAVATAR009_4512B28AD06DAE8155A2_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/lingjun008">@lingjun008</a> 大兄弟，等你白金了带我一下可好<img src="../emoticons\face\alu\10.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/luyuan9527">luyuan9527</a>
+                                            2019-02-19 22:06                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/lingjun008"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA07195_00-P5AVATAR00000012_E1C21504C8B2F2F617C8_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/luyuan9527">@luyuan9527</a> 嗯，没问题，兄弟你也先把1-1关通了
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/lingjun008">lingjun008</a>
+                                            2019-02-19 22:15                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/luyuan9527"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0700/CUSA08526_00-PREMIUMAVATAR009_4512B28AD06DAE8155A2_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/lingjun008">@lingjun008</a> 好滴，我马上开小号哈<img src="../emoticons\face\alu\35.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/luyuan9527">luyuan9527</a>
+                                            2019-02-19 22:18                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/lingjun008"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA07195_00-P5AVATAR00000012_E1C21504C8B2F2F617C8_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/light_lee_moon">@light_lee_moon</a> <a href="https://psnine.com/psnid/jhzthpp">@jhzthpp</a> 我已经可以到石牙坑道了，6级，能预约下两位大佬明晚扔下戒指和武器，或者稀有的石头吗？先谢过啦<img src="../emoticons\face\alu\15.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/lingjun008">lingjun008</a>
+                                            2019-02-19 22:21                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/light_lee_moon"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0700/CUSA11685_00-JUMP50THANNIVA03_0497A200D2BF2360F399_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/lingjun008">@lingjun008</a> 今晚过节可能不行 后天可以帮兄弟
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/light_lee_moon">light_lee_moon</a>
+                                            2019-02-19 22:30                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/lingjun008"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA07195_00-P5AVATAR00000012_E1C21504C8B2F2F617C8_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/light_lee_moon">@light_lee_moon</a> 好嘞，先谢谢了
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/lingjun008">lingjun008</a>
+                                            2019-02-19 22:38                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/pumpkissster"><img height="50" src="../avatars/pumpkissster-1556439446-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/light_lee_moon">@light_lee_moon</a> 大佬我也想求個預約<img src="../emoticons\face\alu\13.gif"/>我今天馬上開坑！
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/pumpkissster">pumpkissster</a>
+                                            2019-02-20 10:03                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/light_lee_moon"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0700/CUSA11685_00-JUMP50THANNIVA03_0497A200D2BF2360F399_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/lingjun008">@lingjun008</a> 我那个1级号只有全戒指，其他的都是自己刷的，刃石我一个小时就出了<img src="../emoticons\face\alu\39.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/light_lee_moon">light_lee_moon</a>
+                                            2019-02-20 10:10                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/lingjun008"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA07195_00-P5AVATAR00000012_E1C21504C8B2F2F617C8_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/light_lee_moon">@light_lee_moon</a> 我全戒指也需要的，1级号扔全戒指。刃石可以大号扔一下吗？我大号216级，刷了无数日夜，就是不出啊<img src="../emoticons\face\alu\39.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/lingjun008">lingjun008</a>
+                                            2019-02-20 10:22                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/wu6_114477786"><img height="50" src="../avatars/wu6_114477786-1655699507-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<img src="../emoticons\face\alu\31.gif"/><img src="../emoticons\face\alu\31.gif"/>我那时候从朋友那借的恶魔之魂，石头全靠自己打，最后还丢了一份全石头给一个朋友！！<img src="../emoticons\face\alu\39.gif"/><img src="../emoticons\face\alu\39.gif"/><br/><br/>刃石刷了1个半小时就出了，运气挺好！<img src="../emoticons\face\alu\39.gif"/><img src="../emoticons\face\alu\39.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/wu6_114477786">wu6_114477786</a>
+                                            2019-02-20 11:19修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/jhzthpp"><img height="50" src="../avatars/jhzthpp-1556449075-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/lingjun008">@lingjun008</a> 不好意思，我这几天要给朋友扔的，预约了好多
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/jhzthpp">jhzthpp</a>
+                                            2019-02-20 11:40                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/lingjun008"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA07195_00-P5AVATAR00000012_E1C21504C8B2F2F617C8_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/jhzthpp">@jhzthpp</a> 没关系，你先照顾其他朋友，我预约了light_lee_moon，等有了以后我也可以帮助其他有需要的朋友 <img src="../emoticons\face\alu\1.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/lingjun008">lingjun008</a>
+                                            2019-02-20 18:46                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/qjs1994"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0425/CUSA11911_00-AVATAR180920ARIA_29C52C3FB6838BA254D3_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/jhzthpp">@jhzthpp</a> 大佬为什么我安装了前两个包 在之后以管理员身份运行CMD指令输入pip install pycrypto这步提示说pip不是内部或外部指令  我电脑只有一个c盘
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/qjs1994">qjs1994</a>
+                                            2019-02-21 12:12                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/ag774433"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP9002/CUSA09076_00-NIERBON000000006_A481B0473E1A86E9C66C_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    大概是安装时没有选加入path
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/ag774433">ag774433</a>
+                                            2019-02-21 12:41                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/qjs1994"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0425/CUSA11911_00-AVATAR180920ARIA_29C52C3FB6838BA254D3_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/ag774433">@ag774433</a> 感谢,好了，另外请问如果只是交易的话是不是不用我自己本地搭私服 ps3改dns就行了？
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/qjs1994">qjs1994</a>
+                                            2019-02-21 13:17                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/jhzthpp"><img height="50" src="../avatars/jhzthpp-1556449075-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/qjs1994">@qjs1994</a> 安装的时候要安装所有插件，具体教程压缩包里也有<br/>最后2步打开的执行Python fakedns.py -c remote.conf指令的和执行python emulator.py指令的CMD不要关<br/>把PS3 DNS地址改成之前设置的DNS地址就行了（一般设置成自己电脑的IP地址就行）
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/jhzthpp">jhzthpp</a>
+                                            2019-02-21 13:21                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/otboibtio"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/3RD/JP01021107003_C121AD9270B6124561A5_L.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    高端帖，顶了。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/otboibtio">otboibtio</a>
+                                            2019-02-21 14:27                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/qjs1994"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0425/CUSA11911_00-AVATAR180920ARIA_29C52C3FB6838BA254D3_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/light_lee_moon">@light_lee_moon</a> <a href="https://psnine.com/psnid/lingjun008">@lingjun008</a> <img src="../emoticons\face\alu\15.gif"/>大佬们什么时候有空交易一波 今天游戏和ps3到了可以补恶魂了，不知道小号能不能给石头
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/qjs1994">qjs1994</a>
+                                            2019-02-21 15:19                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/light_lee_moon"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0700/CUSA11685_00-JUMP50THANNIVA03_0497A200D2BF2360F399_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/lingjun008">@lingjun008</a> 大号我170多级，看看能不能扔刃石
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/light_lee_moon">light_lee_moon</a>
+                                            2019-02-21 17:14                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/light_lee_moon"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0700/CUSA11685_00-JUMP50THANNIVA03_0497A200D2BF2360F399_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/lingjun008">@lingjun008</a> 大号我170多级，看看能不能扔刃石
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/light_lee_moon">light_lee_moon</a>
+                                            2019-02-21 17:14                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/light_lee_moon"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0700/CUSA11685_00-JUMP50THANNIVA03_0497A200D2BF2360F399_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/lingjun008">@lingjun008</a> 大号我170多级，看看能不能扔刃石
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/light_lee_moon">light_lee_moon</a>
+                                            2019-02-21 17:14                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/jhzthpp"><img height="50" src="../avatars/jhzthpp-1556449075-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/otboibtio">@otboibtio</a> O大开坑吗<img src="../emoticons\face\alu\11.gif"/><br/><a href="https://psnine.com/psnid/lingjun008">@lingjun008</a> 不急的话可以等到周日 你建个1级号 窝给你扔一套东西 然后接力  你再给下个萌新扔 萌新再给萌新扔这样  之后窝就不管了<img src="../emoticons\face\alu\5.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/jhzthpp">jhzthpp</a>
+                                            2019-02-21 17:44                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/luyuan9527"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0700/CUSA08526_00-PREMIUMAVATAR009_4512B28AD06DAE8155A2_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/jhzthpp">@jhzthpp</a> 老哥，我1级小号，已经打完1-1了，肉身存档在石牙坑道，啥时有空<img src="../emoticons\face\alu\15.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/luyuan9527">luyuan9527</a>
+                                            2019-02-21 18:31                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/lingjun008"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA07195_00-P5AVATAR00000012_E1C21504C8B2F2F617C8_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/light_lee_moon">@light_lee_moon</a> 好的，兄弟今晚几点有空啊？我随时可以
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/lingjun008">lingjun008</a>
+                                            2019-02-21 18:34                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/loneplayes"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/3RD/HP00821004004l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<img src="../emoticons\face\majiang\12.gif"/>这么拼的么...不如你们把PSN号发来我过过机子你们就有恶魂的白金啦
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/loneplayes">loneplayes</a>
+                                            2019-02-21 18:49                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/jhzthpp"><img height="50" src="../avatars/jhzthpp-1556449075-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/luyuan9527">@luyuan9527</a> 周日 只能给一个人扔 捡到的记得给下个人扔  我就扔这一次了
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/jhzthpp">jhzthpp</a>
+                                            2019-02-21 20:21修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/lingjun008"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA07195_00-P5AVATAR00000012_E1C21504C8B2F2F617C8_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/luyuan9527">@luyuan9527</a> 我们捡到了可以互相扔一下
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/lingjun008">lingjun008</a>
+                                            2019-02-21 20:29                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/luyuan9527"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0700/CUSA08526_00-PREMIUMAVATAR009_4512B28AD06DAE8155A2_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/lingjun008">@lingjun008</a> 机智<img src="../emoticons\face\alu\35.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/luyuan9527">luyuan9527</a>
+                                            2019-02-21 20:32                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/luyuan9527"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0700/CUSA08526_00-PREMIUMAVATAR009_4512B28AD06DAE8155A2_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/jhzthpp">@jhzthpp</a> 好的，先多谢啦<img src="../emoticons\face\alu\10.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/luyuan9527">luyuan9527</a>
+                                            2019-02-21 20:33                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/fs-82420"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA14833_00-CFBAVATAR0000008_5A6176014282F2A1F8B8_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    有没有大佬有3版本的纯粹刃石？<img src="../emoticons\face\majiang\8.gif"/>求~可有偿！！！
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/fs-82420">fs-82420</a>
+                                            2019-02-21 23:10                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/light_lee_moon"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0700/CUSA11685_00-JUMP50THANNIVA03_0497A200D2BF2360F399_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/lingjun008">@lingjun008</a> 刚刚到家，不好意思了，兄弟。现在可以了，来2-1坑道那
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/light_lee_moon">light_lee_moon</a>
+                                            2019-02-22 00:00                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/colmeluna_hk"><img height="50" src="../avatars/colmeluna_hk-1589751251-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    感谢<br/><img src="../emoticons\face\majiang\8.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/colmeluna_hk">colmeluna_hk</a>
+                                            2019-02-22 07:50                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/jhzthpp"><img height="50" src="../avatars/jhzthpp-1556449075-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/fs-82420">@fs-82420</a> 你这恶魂奖杯进度应该是真的喜欢恶魂，我可以仍，不需要补偿，不过要等下星期，另外现在我欧服号给朋友绑着，暂时仍不了欧版的<br/>你可以先准备一下，测试下能不能连上私服，三个版本都建个小号，打完法拉克斯别升级，肉身去石牙坑道，我仍把武器你捡了就能跳需要纯粹刃石的杯
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/jhzthpp">jhzthpp</a>
+                                            2019-02-22 11:09修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/fs-82420"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA14833_00-CFBAVATAR0000008_5A6176014282F2A1F8B8_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/jhzthpp">@jhzthpp</a> 谢谢大佬！这就准备！
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/fs-82420">fs-82420</a>
+                                            2019-02-22 12:34修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/fs-82420"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA14833_00-CFBAVATAR0000008_5A6176014282F2A1F8B8_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/jhzthpp">@jhzthpp</a> 谢谢大佬！这就准备！
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/fs-82420">fs-82420</a>
+                                            2019-02-22 11:27                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/fs-82420"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA14833_00-CFBAVATAR0000008_5A6176014282F2A1F8B8_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/jhzthpp">@jhzthpp</a> 大佬 我准备完了不过有俩问题 我是dns47.244.4.188才能上私服 然后新建的角色都是4级 没问题吧
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/fs-82420">fs-82420</a>
+                                            2019-02-22 14:07                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/jhzthpp"><img height="50" src="../avatars/jhzthpp-1556449075-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/fs-82420">@fs-82420</a> 肉身去坑道就行，低于10级，下周窝给朋友都扔完再给你扔
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/jhzthpp">jhzthpp</a>
+                                            2019-02-22 18:51                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/fs-82420"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA14833_00-CFBAVATAR0000008_5A6176014282F2A1F8B8_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/jhzthpp">@jhzthpp</a> ok 知道了 大佬何时有空留言告诉我 坑道恭候<img src="../emoticons\face\alu\15.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/fs-82420">fs-82420</a>
+                                            2019-02-22 19:12                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/lingjun008"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA07195_00-P5AVATAR00000012_E1C21504C8B2F2F617C8_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/jhzthpp">@jhzthpp</a> 大佬，明天大概什么时候有空？之前约好周日扔一下，然后我也可以往下传<img src="../emoticons\face\alu\1.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/lingjun008">lingjun008</a>
+                                            2019-02-23 19:03                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/jhzthpp"><img height="50" src="../avatars/jhzthpp-1556449075-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/lingjun008">@lingjun008</a> 明儿下午或者晚上吧，我今天下午刚给朋友扔完，加窝PSN
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/jhzthpp">jhzthpp</a>
+                                            2019-02-23 21:08                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/lingjun008"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA07195_00-P5AVATAR00000012_E1C21504C8B2F2F617C8_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/jhzthpp">@jhzthpp</a> 好，已经发加好友申请了
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/lingjun008">lingjun008</a>
+                                            2019-02-23 21:54                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/lingjun008"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA07195_00-P5AVATAR00000012_E1C21504C8B2F2F617C8_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/luyuan9527">@luyuan9527</a> 兄弟，我这边全了，你加我下psn，回头我扔给你
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/lingjun008">lingjun008</a>
+                                            2019-02-24 16:57                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/luyuan9527"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0700/CUSA08526_00-PREMIUMAVATAR009_4512B28AD06DAE8155A2_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/lingjun008">@lingjun008</a> 来了来了<img src="../emoticons\face\alu\15.gif"/>好友已加，大兄弟今晚几点有空呀<img src="../emoticons\face\alu\35.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/luyuan9527">luyuan9527</a>
+                                            2019-02-24 17:33                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/fs-82420"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA14833_00-CFBAVATAR0000008_5A6176014282F2A1F8B8_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/jhzthpp">@jhzthpp</a> 大佬别忘了我啊<img src="../emoticons\face\alu\13.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/fs-82420">fs-82420</a>
+                                            2019-02-26 11:03                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/jhzthpp"><img height="50" src="../avatars/jhzthpp-1556449075-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/fs-82420">@fs-82420</a> 没忘，加窝PSN 晚上说
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/jhzthpp">jhzthpp</a>
+                                            2019-02-26 11:06                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/mercer_y"><img height="50" src="../avatars/mercer_y-1602147973-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    今天有个恶魂重制的小道消息<img src="../emoticons\face\alu\5.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/mercer_y">mercer_y</a>
+                                            2019-02-26 11:30                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/fs-82420"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA14833_00-CFBAVATAR0000008_5A6176014282F2A1F8B8_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/jhzthpp">@jhzthpp</a> 已加 静候佳音<img src="../emoticons\face\alu\15.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/fs-82420">fs-82420</a>
+                                            2019-02-26 11:44                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/qjs1994"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0425/CUSA11911_00-AVATAR180920ARIA_29C52C3FB6838BA254D3_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/mercer_y">@mercer_y</a> <img src="../emoticons\face\alu\5.gif"/>我才买了ps3把恶魂白了
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/qjs1994">qjs1994</a>
+                                            2019-02-26 12:44                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/jhzthpp"><img height="50" src="../avatars/jhzthpp-1556449075-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/mercer_y">@mercer_y</a> 不知道是不是真的能出呢<br/><a href="https://psnine.com/psnid/qjs1994">@qjs1994</a> 恭喜
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/jhzthpp">jhzthpp</a>
+                                            2019-02-26 13:20                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/mercer_y"><img height="50" src="../avatars/mercer_y-1602147973-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/qjs1994">@qjs1994</a> 恭喜<img src="../emoticons\face\alu\5.gif"/>没事，出了肯定是新奖杯，不亏
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/mercer_y">mercer_y</a>
+                                            2019-02-26 19:14                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/miyazakisoul"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA17544_00-P5RAVATAR000007A_E5C285EFFCEA0045DEAF_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    不懂帮顶<img src="../emoticons\face\majiang\41.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/miyazakisoul">miyazakisoul</a>
+                                            2019-02-26 20:29                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/fs-82420"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA14833_00-CFBAVATAR0000008_5A6176014282F2A1F8B8_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/jhzthpp">@jhzthpp</a> 感谢大佬帮扔~~~<img src="../emoticons\face\alu\9.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/fs-82420">fs-82420</a>
+                                            2019-02-26 21:33                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/cicii0802"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0082/CUSA09575_00-AVATAR0000000001_172ABE19567CCBFE6BC3_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/jhzthpp">@jhzthpp</a> 大佬，还有机会丢武器和戒指吗？
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/cicii0802">cicii0802</a>
+                                            2019-05-23 08:53                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/brother_3dm"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/UP1018/CUSA12824_00-HWLAVATAR0000002_E3EDADF7AEF3B3DCCC7B_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    大佬这个DNS又挂了吗<img src="../emoticons\face\alu\5.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/brother_3dm">brother_3dm</a>
+                                            2020-01-20 22:07                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/superstarkk"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/UT0016/CUSA06833_00-AM2RCRAAVATAR000_0DFA30E5F80240ABA9BD_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/jhzthpp">@jhzthpp</a> 你好 问下 改DNS是该上行还是全改
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/superstarkk">superstarkk</a>
+                                            2020-06-13 11:35                                                                            </div>
+<!--回复结束-->
+</div>
+</div>
+        </body></html>

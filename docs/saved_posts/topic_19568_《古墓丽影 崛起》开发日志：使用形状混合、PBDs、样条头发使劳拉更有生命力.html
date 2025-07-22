@@ -1,0 +1,114 @@
+
+        <!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><title>《古墓丽影 崛起》开发日志：使用形状混合、PBDs、样条头发使劳拉更有生命力</title><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="stylesheet" href="style.css"></head>
+        <body>
+            <div class="original-url-container"><p><strong>原始链接:</strong> <a href="https://psnine.com/topic/19568" target="_blank">https://psnine.com/topic/19568</a></p></div>
+            <h1>《古墓丽影 崛起》开发日志：使用形状混合、PBDs、样条头发使劳拉更有生命力</h1><div class="main-post-container"><div class="meta">
+
+<a class="psnnode" href="https://psnine.com/psnid/vgtimes" itemprop="author">vgtimes</a>
+<span class="text-warning">
+2015-10-29 11:21编辑
+</span>   
+9评论
+</div><div class="content pd10" itemprop="articleBody">在《古墓丽影 崛起 | Rise of the Tomb Raider》中的脸部动画使用了最新的形状混合技术（Blend Shape Technology）。有了这个系统，我们能够捕捉到演员演出的每一个细微之处，使我们的角色更有生命力。<br/><br/>在过去，人脸动画都是依赖推动系统中骨骼的网格制作。更复杂的脸部，就需要更多的骨骼才能达到预期的结果。整个骨架往往会变得非常大而复杂。<br/><br/>随着形状混合技术的出现，我们已不再需要以推动骨骼来制作了。劳拉的脸部表情被分成许多细微的外观在动画中组成并达到非常逼真的表现。劳拉本身就使用了超过一百个不同的外观以确定她的脸部动作。透过这个系统，我们甚至能够表现出她的脸颊和额头这般最微小的细节。就连劳拉的眼皮也能随着她的目光环顾四周。<br/><br/><img class="imgclick" referrerpolicy="no-referrer" src="http://ww4.sinaimg.cn/large/43823ba4gw1exhu6388lpj20yw0xkgps.jpg"/><br/><br/>还有个方法，我们透过纹路贴图（Wrinkle Maps）来提升形状混合。这些特定的纹路贴图是敷在脸上的某些区域，以得到在皮肤表面的变化。也可以製作出随着血液流动产生的变化（发红）。<br/><br/><img class="imgclick" referrerpolicy="no-referrer" src="http://ww3.sinaimg.cn/large/43823ba4gw1exhu63qqkdj20fm0izq3y.jpg"/><br/><br/><br/><span class="tit4" style="color:#a10000">姿势基础变化器（Pose-Based Deformers）</span><br/><br/>姿势基础变化器（Pose-Based Deformers，以下简称 PBDs）是用来矫正身体上不能单独实现的骨骼动作。这可以用来修复任何已经拉伸的动作，也可以用来呈现肌肉的弯曲。甚至是服装上的褶皱能够随着角色的动作改变。<br/><br/><img class="imgclick" referrerpolicy="no-referrer" src="http://ww2.sinaimg.cn/large/43823ba4gw1exhu644r2aj20kt0a8q4z.jpg"/><br/><img class="imgclick" referrerpolicy="no-referrer" src="http://ww2.sinaimg.cn/large/43823ba4gw1exhu64ie95j20cr0ebq3h.jpg"/><br/><br/>通常 PBDs 会搭配纹路贴图使用以更加强表面的变化。以扫描或高解析度凋塑的方式来产生纹路贴图。<br/><br/><img class="imgclick" referrerpolicy="no-referrer" src="http://ww2.sinaimg.cn/large/43823ba4gw1exhu659plsj20od0e7q60.jpg"/><br/><img class="imgclick" referrerpolicy="no-referrer" src="http://ww4.sinaimg.cn/large/43823ba4gw1exhu65qfbaj20c70e4aad.jpg"/><br/><br/><br/><span class="tit4" style="color:#a10000">样条头发（Spline Hair）</span><br/><br/>在电玩中劳拉算是非常独特的。电玩中的头发通常是藉由多边形阿尔法卡（polygonal alpha cards ）的配置来模拟大量头发的方式。劳拉则是确实制作的条条分明，超过 30000 条的头发。而整串的主链（master strands）可以控制旋转。移动主链能使个别毛发自然地在游戏中做出物理反应。<br/><br/>劳拉的头发会依照剧情发展在不同情况下有不同的反应。例如，她的头发变湿的时候会显得更加僵硬和沉重，在水下时就会漂浮，当她跑部时马尾也会随之摆动。此呈现头发反应动作的方式非常贴近现实生活中所看到的。<br/><br/><img class="imgclick" referrerpolicy="no-referrer" src="http://ww4.sinaimg.cn/large/43823ba4gw1exhu66ingnj20n60lndn4.jpg"/><br/><br/>《古墓丽影 崛起》将于 2015 年 11 月 10 日在 Xbox One / Xbox 360 上先行推出，PS4 / PC 版则预定于 2016 年发售。<br/><br/><a href="http://tombraider.tumblr.com/post/131592399635/dev-blog-bringing-lara-to-life-with-blendshapes" target="_blank">原文</a> 由《古墓丽影 崛起》首席角色设计师 Kam Yu 撰写 | 翻译.静寂の夜空</div></div>
+            
+            <h2>评论</h2><div class="post">
+<a class="l" href="https://psnine.com/psnid/eric_cartmanbrah"><img height="50" src="../avatars/eric_cartmanbrah-1556436998-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    不愧是海飞丝<img src="../emoticons\face\majiang\2.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/eric_cartmanbrah">eric_cartmanbrah</a>
+                                            2015-10-29 11:31                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/mono842"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0005/CUSA01557_00-P5AVATAR00000022_7838246AF740455EEC08_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    别吹了，还不是要出360版
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/mono842">mono842</a>
+                                            2015-10-29 11:37                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/rathinhoz17"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP9000/CUSA03667_00-PREMIUMAVATAR032_C5676FBE6B6948150EE7_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    非一般的柔顺
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/rathinhoz17">rathinhoz17</a>
+                                            2015-10-29 12:27                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/ravenchamber"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP9000/CUSA12613_00-DSAV00000ANGRYBB_7EE69D956CE944915C49_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    于是便诞生了海飞丝2.0
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/ravenchamber">ravenchamber</a>
+                                            2015-10-29 13:03                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/pooleyan"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/WWS_J/J0001.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    别出现9代开始倒吊着，那违反重力定律诡异的头发就行了
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/pooleyan">pooleyan</a>
+                                            2015-10-29 15:23                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/hyevadna"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0507/CUSA04966_00-AVATAR0000000012_D1C2518AA4A68E1E70FE_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    技术越来越好，劳拉小妹也变大妈了 。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/hyevadna">hyevadna</a>
+                                            2015-10-29 16:11                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/mogennju"><img height="50" src="../avatars/mogennju-1556511522-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    第二张真的有点大妈<img src="../emoticons\face\majiang\12.gif"/><img src="../emoticons\face\majiang\23.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/mogennju">mogennju</a>
+                                            2015-10-29 19:49                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/jeuz-ky"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0700/CUSA17351_00-9297436113735000_3BB6D865D48BD88BFE4C_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    比成龙都要纠结头发…
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/jeuz-ky">jeuz-ky</a>
+                                            2015-10-29 20:37                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/qq1137167425"><img height="50" src="../avatars/qq1137167425-1556457313-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    用了霸王<img src="../emoticons\face\majiang\23.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/qq1137167425">qq1137167425</a>
+                                            2015-10-30 10:18                                                                            </div>
+<!--回复结束-->
+</div>
+</div>
+        </body></html>

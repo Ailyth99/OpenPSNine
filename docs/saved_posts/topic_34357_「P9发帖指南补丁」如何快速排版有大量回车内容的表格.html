@@ -1,0 +1,192 @@
+
+        <!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><title>「P9发帖指南补丁」如何快速排版有大量回车内容的表格</title><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="stylesheet" href="style.css"></head>
+        <body>
+            <div class="original-url-container"><p><strong>原始链接:</strong> <a href="https://psnine.com/topic/34357" target="_blank">https://psnine.com/topic/34357</a></p></div>
+            <h1>「P9发帖指南补丁」如何快速排版有大量回车内容的表格</h1><div class="main-post-container"><div class="meta">
+
+<a class="psnnode" href="https://psnine.com/psnid/azbycx4111" itemprop="author">azbycx4111</a>
+<span class="text-warning">
+2018-12-13 01:53编辑
+</span>   
+16评论
+</div><div class="content pd10" itemprop="articleBody">P9发简易表格的指南站长很早之前就发过：<a href="http://d7vg.com/topic/10422?page=2" target="_blank">http://d7vg.com/topic/10422?page=2</a><br/>不过由于P9的表格排版是依据换行来做的，因此最后CSV粘贴法在碰上本身文本内有大量回车的表格后就歇菜了，具体表现可以看图：<br/>期望：<br/><img class="imgclick" referrerpolicy="no-referrer" src="https://wx3.sinaimg.cn/large/a21f4811ly1fy4g7jmu9wj219x0mf43d.jpg"/><br/>实际渲染结果：（直接导出成CSV并复制上来的结果）<br/><img class="imgclick" referrerpolicy="no-referrer" src="https://wx1.sinaimg.cn/large/a21f4811ly1fy4g7uzyw6j20xn0lcwgp.jpg"/><br/>这个排版想要改起来就让人很头大了，更不用说如果本身就是几十甚至上百行的表格的话，简直让人抓狂。<br/>好在仔细研究了下后我发现了一个相对比较方便的排版方法，所以这里贴一下，万一各位以后也遇到这种问题的时候可以参考下。<br/><b><span style="color:blue;">本文下面所有的“【】”请自行替换成“[]”</span></b><br/><br/><blockquote><br/>原理：<br/>出现上面这种情况是因为P9的表格排版一行是依据回车换行键来做判断的，所以本身自带了换行后就会让P9的表格渲染程序判断失误，将本来不该换行的内容也换行了。而如果直接全文替换回车为【br】的话则会让整个CSV都失去了作用无法作为表格使用。<br/><br/>解决方案：<br/><b>先利用特殊文本标记将每行的首文本标记下来后，将全文回车替换成【br】，然后再全文替换之前的标记文本为回车，即可完美解决。</b><br/><br/>需要用到的软件：<br/>Notepad++、EmEditor等高级文本编辑器（反正记事本干不了这活）。本文以EmEditor为例来讲解。<br/></blockquote><br/><br/>具体的操作手法：<br/>1.首先需要在Excel表格里将首列的所有文本前面都添加上标记文本。这个<b>选择自己表格内没出现过的任意文本</b>即可，比如我这里用的是“++”。<br/><blockquote><br/>在首列左边新建一列，让原先的A列变成B列。然后在A1格子的内容输入函数“ <span style="color:red;">="++"&amp;b1</span> ”（有些Excel软件可能需要将“b”大写），然后回车，你会看到A1的内容变成我们需要的带了“++”标记的文本。接着鼠标放A1右下角变成+号后一路拖着往下拉把A列全部内容都变成“++B列”的方式。<br/>做了个简易的步骤图，没看懂这步操作的可以看下：<br/><a href="https://wx4.sinaimg.cn/large/a21f4811ly1fy4h6a4eeug21es0q2dnf.gif" target="_blank">https://wx4.sinaimg.cn/large/a21f4811ly1fy4h6a4eeug21es0q2dnf.gif</a><br/></blockquote><br/><br/>2.全选A列，复制，并在A列基础上“选择性粘贴”，保留文本和格式。这么做的目的是为了将A列和B列的引用关系去掉，否则无法删除B列。<br/><br/>3.A列粘贴完成后删除不带“++”的B列，并导出成CSV。注意的是导出选项里最好选择UTF8并且将“字符串分隔符”改成空格（一般默认是双引号，影响后面表格的美观程度）。<br/><img class="imgclick" referrerpolicy="no-referrer" src="https://wx2.sinaimg.cn/large/a21f4811ly1fy4hb0ncypj20eg091q3a.jpg"/><br/><br/>4.用前面提到的高级文本编辑器打开CSV文件，并"查找与替换"：查找“<span style="color:red;">\n\r</span>”替换成“<span style="color:red;">【br】</span>”,选择“替换全部”。（需要注意的是部分文本编辑器可能要在查找的选项里勾选“使用转义符”之类的选项，否则无法查找到。）<br/><img class="imgclick" referrerpolicy="no-referrer" src="https://wx2.sinaimg.cn/large/a21f4811ly1fy4he13gukj21b50qnn6p.jpg"/><br/><br/>5.再一次查找替换，将我们的标记符号全部改成"<span style="color:red;">\n\r</span>"<br/><img class="imgclick" referrerpolicy="no-referrer" src="https://wx2.sinaimg.cn/large/a21f4811ly1fy4hfyq9l9j21au0rjwmy.jpg"/><br/><br/>6.将CSV内容复制到P9文本框来就发现排版完美啦。文中的例子成品结果可以点这：<br/><a href="https://psnine.com/topic/34356?page=2" target="_blank">https://psnine.com/topic/34356?page=2</a><br/><br/><br/></div></div>
+            
+            <h2>评论</h2><div class="post">
+<a class="l" href="https://psnine.com/psnid/print-bug"><img height="50" src="../avatars/print-bug-1601306287-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<img src="../emoticons\face\alu\35.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/print-bug">print-bug</a>
+                                            2018-12-13 06:50                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/wty331"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/UT0016/CUSA06833_00-PSWRAPUP2023AVT2_BF83A8902A1BEC669D3D_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    实用贴 顶大佬
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/wty331">wty331</a>
+                                            2018-12-13 07:10                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/hhhakumo"><img height="50" src="../avatars/hhhakumo-1711936219-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    好东西，顶加收藏！！<img src="../emoticons\face\alu\35.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/hhhakumo">hhhakumo</a>
+                                            2018-12-13 13:00                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/eklesdeeny03"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP9002/CUSA09076_00-NIERBON000000002_A184BF387496B14E3FE3_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    不明菊里<img src="../emoticons\face\alu\35.gif"/><img src="../emoticons\face\alu\35.gif"/><img src="../emoticons\face\alu\35.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/eklesdeeny03">eklesdeeny03</a>
+                                            2018-12-13 13:05                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/cobray-gxy888"><img height="50" src="../avatars/cobray-gxy888-1697262069-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    我当时写奶子迷宫的时候就是用的XSL表格写的 有好心人告诉我导出CSV格式的复制到P9 效果超赞<img src="../emoticons\face\majiang\4.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/cobray-gxy888">cobray-gxy888</a>
+                                            2018-12-13 13:07                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/zhangjiaqi1992"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/default/DefaultAvatar.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    感谢楼主！
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/zhangjiaqi1992">zhangjiaqi1992</a>
+                                            2018-12-13 13:11                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/azbycx4111"><img height="50" src="../avatars/azbycx4111-1559140547-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/cobray-gxy888">@cobray-gxy888</a> 是的，我这个算是进阶版。主要有些表格本身内容就有换行的话直接复制出来的CSV不好排版
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/azbycx4111">azbycx4111</a>
+                                            2018-12-13 15:52                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/yaoshele"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/3RD/JP01061403008_636A1DD8C05EA5E0B12C_L.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<img src="../emoticons\face\majiang\41.gif"/>萌新看不懂
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/yaoshele">yaoshele</a>
+                                            2018-12-13 15:55                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/baoooooo2b2b"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/3RD/30000.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    直接用word打开csv的话，单元格内的回车不会被开启通配符时的^13识别，但是会被未开启通配符时的^p识别。而两者都能识别换列的回车。<br/>因此，导出CSV，用word打开后：<br/>开启通配符，^13替换成标记符（只有换列的回车被替换）<br/>关闭通配符，^p替换成【br】（只有单元格内回车被替换）<br/>关闭通配符，标记符替换成^p（恢复换列的回车）<br/>能省下前两步XD<br/>不过就是默认下，存在单元格内回车的单元格，会被“”框起来，得像lz那样改掉，或者另外替换掉。<br/>最好是能知道单元格内的回车对应的通配符是哪个，然后直接替换成【br】就是<img src="../emoticons\face\alu\9.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/baoooooo2b2b">baoooooo2b2b</a>
+                                            2018-12-15 04:26修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/azbycx4111"><img height="50" src="../avatars/azbycx4111-1559140547-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/baoooooo2b2b">@baoooooo2b2b</a> word用的不多还真是不清楚这种通配符的规律。。看了下感觉是word自成体系的一种通配符系统？
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/azbycx4111">azbycx4111</a>
+                                            2018-12-17 20:57                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/peiyitai-"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/UP4791/CUSA12243_00-AV00000000000003_FE09603EAFCDA472322D_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    请问怎么发图片？？
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/peiyitai-">peiyitai-</a>
+                                            2018-12-19 07:58                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/azbycx4111"><img height="50" src="../avatars/azbycx4111-1559140547-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/peiyitai-">@peiyitai-</a> 先扔第三方图床(我习惯用微博)然后复制链接过来<br/>【img】图片链接【/img】
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/azbycx4111">azbycx4111</a>
+                                            2018-12-19 08:10                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/zhk8693"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0102/CUSA06605_00-PREMIUMAVATAR022_439FBB988E6C7C58B110_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    这种技术贴应该永久置顶
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/zhk8693">zhk8693</a>
+                                            2018-12-19 09:09                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/peiyitai-"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/UP4791/CUSA12243_00-AV00000000000003_FE09603EAFCDA472322D_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/azbycx4111">@azbycx4111</a> 图片链接是指网址吗？
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/peiyitai-">peiyitai-</a>
+                                            2018-12-20 21:30                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/azbycx4111"><img height="50" src="../avatars/azbycx4111-1559140547-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/peiyitai-">@peiyitai-</a> 就是你图片的外链地址。直接打开链接就是图片的那种
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/azbycx4111">azbycx4111</a>
+                                            2018-12-20 22:12                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/qjs1994"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0425/CUSA11911_00-AVATAR180920ARIA_29C52C3FB6838BA254D3_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<b>鹅</b>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/qjs1994">qjs1994</a>
+                                            2019-03-15 02:00                                                                            </div>
+<!--回复结束-->
+</div>
+</div>
+        </body></html>

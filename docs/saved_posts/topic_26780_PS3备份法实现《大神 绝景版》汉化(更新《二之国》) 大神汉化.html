@@ -1,0 +1,2280 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8"/><title>PS3备份法实现《大神 绝景版》汉化(更新《二之国》) 大神汉化</title><meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="style.css" rel="stylesheet"/></head>
+<body>
+<div class="original-url-container"><p><strong>原始链接:</strong> <a href="https://psnine.com/topic/26780" target="_blank">https://psnine.com/topic/26780</a></p></div>
+<h1>PS3备份法实现《大神 绝景版》汉化(更新《二之国》) 大神汉化</h1><div class="main-post-container"><div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/bruis_x" itemprop="author">bruis_x</a>
+<span class="text-warning">
+2017-04-07 14:51编辑
+</span>   
+203评论
+</div><div class="post-page-content"><h3 class="page-title">大神汉化</h3><div class="content pd10" itemprop="articleBody"><span style="font-size:18px;">大神汉化</span><br/>简介：此游戏的汉化未触及修改eboot启动文件，相当于用汉化后的文件替换了从psn商店下载或实体盘安装后的游戏资料，     但是启动授权仍然是正版，因此对于游戏过程、奖杯获得无不良影响<br/><br/><br/>A9教程原贴<br/><a href="http://bbs.a9vg.com/thread-1510729-1-1.html" target="_blank">http://bbs.a9vg.com/thread-1510729-1-1.html</a><br/><a href="http://bbs.a9vg.com/thread-4456986-1-1.html" target="_blank">http://bbs.a9vg.com/thread-4456986-1-1.html</a><br/><br/><br/>事前准备<br/>1.PS3一台（测试系统为4.80）<br/>2.PS3《大神 绝景版》实体盘或者下载版<br/>3.汉化文件下载：<a href="http://pan.baidu.com/s/1eQcPmKi" target="_blank">http://pan.baidu.com/s/1eQcPmKi</a><br/> （下载里面的Okami_HD文件夹里的7个压缩包，ps2、wii和ode的那些不用管）<br/>4.pkg解包工具pkgview：<a href="http://vdisk.weibo.com/s/C4OFnJSTXliWs" target="_blank">http://vdisk.weibo.com/s/C4OFnJSTXliWs</a><br/>5.备份注射工具TrueAncestor BACKUP Injector：<a href="http://vdisk.weibo.com/s/C4OFnJSTQTUVo" target="_blank">http://vdisk.weibo.com/s/C4OFnJSTQTUVo</a><br/>6.硬盘分区工具DiskGenius，自行百度下载地址（可能会用到）<br/>7.大容量FAT32移动硬盘一个（必须）<br/>8.pss下载助手（下载版需要）<br/><br/><br/>第一步：清理PS3内容<br/>由于备份和还原数据比较费时间，建议大家先将PS3上的数据进行清理，主要包括已获取的奖杯、已有存档、下载版游戏、其他图片及影音资料。<br/>奖杯不会被备份，因此需要先同步至PSN，之后再同步回来；<br/>存档在“游戏——保存资料管理（PS3）”里全部复制到云端或移动硬盘，有备无患；<br/>下载版游戏请提前删除，大神的安装文件也不需要留；<br/>某些游戏的安装文件也可以删除，在“游戏资料管理”里找到比较大的文件；<br/>清理完后大家需要备份的资料应该也比较小了，我是有500M的资料；<br/>怕麻烦的也可以直接选择快速格式化PS3。<br/><br/>第二步：准备移动硬盘<br/>按理说这步骤应该很简单，我却在这卡了快两天……<br/>简单来说一句话，使用2.5寸移动硬盘，不要使用U盘或者3.5寸移动硬盘（应该很少有人会像我一样留着这个大疙瘩吧……）<br/>由于PS3只支持FAT32格式的硬盘读取，因此需要将常用的NTFS转换一下。<br/>Windows的格式化后选择FAT32格式的操作不支持32G以上的移动硬盘，因此找个分区软件吧，上面提到的DG是个不错的选择。<br/>顺带提一句，DG可以在移动硬盘的剩余容量里新建一个FAT32格式的分区，不需要全盘格式化，保险起见可以留大一点的空间。<br/><br/>第三步：备份PS3数据<br/>“设定——主机设定——备份工具——备份——选择保存位置”，一直操作下来就可以了，我备份15G的内容花了一个小时左右，供参考。<br/>最终得到的是一个E:\PS3\EXPORT\BACKUP\201606141652，类似这样的文件夹。<br/><br/>第四步：准备汉化文件<br/>汉化文件请提前下载后，7个压缩包解压后得到JP9000-BLJM60467_00-OKAMI_HD_CHT_100.PKG的文件；<br/>使用 PkgView1.3 解包pkg文件，具体步骤为双击Pkgview.exe，选择pkg文件，在最上层的BLJM60457的文件夹上选择右键解压<br/><img class="imgclick" referrerpolicy="no-referrer" src="http://ww3.sinaimg.cn/large/6e73f691gw1f4uzh8c4toj20ng0dyack.jpg"/><br/>最后得到BLJM60457的文件夹，解压成功。<br/><img class="imgclick" referrerpolicy="no-referrer" src="http://ww3.sinaimg.cn/large/6e73f691gw1f4uzjafe2bj20mw09fmyr.jpg"/><br/><br/>第五步：注射汉化文件到备份<br/>双击运行注射工具TrueAncestor_BACKUP_Injector_v1.70内的injector.exe，再退出，会生成一系列文件夹如下：<br/><img class="imgclick" referrerpolicy="no-referrer" src="http://ww4.sinaimg.cn/large/6e73f691gw1f4uzlm0wsej20n20bgtav.jpg"/><br/>将第三步得到的备份文件夹放到backup目录，汉化游戏放到game目录；<br/>再次运行injector.exe，如下图，是一个类似cmd的界面，操作分4步<br/><br/>1.选择备份文件夹<br/>key一个1然后回车<br/><img class="imgclick" referrerpolicy="no-referrer" src="http://ww2.sinaimg.cn/large/6e73f691gw1f4uzqoymdij20id0h7tix.jpg"/><br/>会自动选择刚刚放进去的备份文件夹，再key一个1然后回车确认<br/><img class="imgclick" referrerpolicy="no-referrer" src="http://ww4.sinaimg.cn/large/6e73f691gw1f4uzqpohyhj20id0h7tda.jpg"/><br/>成功，按任意键返回进入下一步<br/><br/>2.选择备份用户<br/>key一个2然后回车<br/><img class="imgclick" referrerpolicy="no-referrer" src="http://ww3.sinaimg.cn/large/6e73f691gw1f4uzqqbhq0j20id0h7k1o.jpg"/><br/>会列出你的账户，我有港日两个服的账号，对应PS3上有两个账户，不过实测没有影响，key一个1然后回车<br/><img class="imgclick" referrerpolicy="no-referrer" src="http://ww3.sinaimg.cn/mw690/6e73f691gw1f4uzqr7vz8j20id0h778a.jpg"/><br/>成功，按任意键返回进入下一步<br/><br/>3.选择游戏<br/>key一个3然后回车<br/><img class="imgclick" referrerpolicy="no-referrer" src="http://ww3.sinaimg.cn/large/6e73f691gw1f4uzqybgejj20id0h7k1o.jpg"/><br/>key一个1然后回车<br/><img class="imgclick" referrerpolicy="no-referrer" src="http://ww4.sinaimg.cn/large/6e73f691gw1f4uzqysoc0j20id0h7wif.jpg"/><br/>成功，按任意键返回进入下一步<br/><br/><br/>4.开始注射<br/>按B键返回主菜单，key一个S开始注射<br/><br/>之后开始等待，大概十几分钟吧，显示完成后就可以退出了，在output文件夹下找到新的备份文件，比原来的要大6个G，<br/>把这个文件夹复制回E:\PS3\EXPORT\BACKUP下面就可以了（空间不够的话原先的备份文件可以删了）。<br/><br/>第六步：备份还原<br/>将移动硬盘插入PS3，选择备份还原，还原的速度比备份要快，我花了大概半个小时。<br/><br/>之后将系统语言调整为日本语，进入游戏，大功告成！<br/><img class="imgclick" referrerpolicy="no-referrer" src="http://ww3.sinaimg.cn/large/6e73f691gw1f4v05prexqj21kw16onnv.jpg"/><br/><br/><br/><br/>由于我是用的实体版操作成功，下载版的话只多一个步骤，即用pss助手将下载版的PKG文件弄到PC上，然后进行汉化文件的替换。<br/>PC上使用 PkgView1.3 解包第1步中下载的pkg，然后将 NPHB00495\USRDIR\data 文件夹下的两个文件 wolves.cpk和wolves.fst（两个文件共6.16GB） 替换为汉化版的 wolves.cpk和wolves.fst（两个文件共6.26GB），然后用记事本打开文件 NPHB00495\USRDIR\bootinfo.txt 将里面的 region = na 改为 region = jp 并保存。<br/><br/><br/>注意：汉化版可能出现的BUG<br/><br/>在终盘方舟内如果按照八歧大蛇&gt;赤铠的顺序攻略，会在进入赤铠时无限loading，但这是完全可以回避的。先打最中间的赤铠就搞定了。根据破解君查看游戏后台进程的情况来看，这个问题是官方版本来就存在的，在攻打八歧大蛇后有一部分内存没有释放，但官方版内存资源不像汉化版这么紧张，所以没有出现问题，但到了汉化版这个问题就凸显出来了。不过这个问题我在rebug4.30.1下测试并未出现<br/><br/>最后几个攻略送上，希望对大家有帮助：<br/><br/>[文史]大神 剧情全译攻略<a href="http://bbs.a9vg.com/thread-521010-1-1.html" target="_blank">http://bbs.a9vg.com/thread-521010-1-1.html</a><br/>[攻略补完]收集与要素——◆妖怪牙◆基础能力◆二周目要素◆天道绘卷◆动物图鉴◆鱼<a href="http://bbs.a9vg.com/thread-638922-1-1.html" target="_blank">http://bbs.a9vg.com/thread-638922-1-1.html</a><br/>大神鱼图鉴中文（汉化）+日文+英文全名称攻略<a href="http://bbs.a9vg.com/thread-3448666-1-1.html" target="_blank">http://bbs.a9vg.com/thread-3448666-1-1.html</a><br/>UCG大神绝景版攻略<a href="http://pan.baidu.com/s/1c1Y5j1Y" target="_blank">http://pan.baidu.com/s/1c1Y5j1Y</a><br/><br/><br/></div></div><div class="post-page-content"><h3 class="page-title">二之国汉化</h3><div class="content pd10" itemprop="articleBody"><span style="font-size:18px;">二之国汉化</span><br/><br/>经<a href="https://psnine.com/psnid/cappu2345">@cappu2345</a> 试验成功，日服二之国下载版也可以用同样的方法汉化成功<br/><br/>PKG下载：<br/><a href="http://zeus.dl.playstation.net/cdn/JP0720/NPJB00238_00/EOVcdnvsoijEIWxwvfIbzZFbpuatXUNRvMxrxzXYjFrYxngUmyubroxLqyBKbxqQKEuGuRUvIEBPBWRPDDchSmWGyzSrAqodtdtNy.pkg?product=008E&amp;country=jp&amp;downloadId=d330064d&amp;q=28a8600ae5b4c296d5b8e9bc1575c88d5f3d87284051bd4b37d9cfa041176188&amp;serverIpAddr=221.179.217.160&amp;downloadType=bg" target="_blank">http://zeus.dl.playstation.net/cdn/JP0720/NPJB00238_00/EOVcdnvsoijEIWxwvfIbzZFbpuatXUNRvMxrxzXYjFrYxngUmyubroxLqyBKbxqQKEuGuRUvIEBPBWRPDDchSmWGyzSrAqodtdtNy.pkg?product=008E&amp;country=jp&amp;downloadId=d330064d&amp;q=28a8600ae5b4c296d5b8e9bc1575c88d5f3d87284051bd4b37d9cfa041176188&amp;serverIpAddr=221.179.217.160&amp;downloadType=bg</a><br/><br/>汉化补丁：<br/><a href="http://www.pujia8.com/library/2959/" target="_blank">http://www.pujia8.com/library/2959/</a><br/><br/>18个G的是游戏本体，汉化补丁只是个替换包，要把里面USRDIR文件夹下的文件扔到原版游戏目录下替换同名文件<br/><br/><img class="imgclick" referrerpolicy="no-referrer" src="http://ww1.sinaimg.cn/large/6e73f691gw1f8ikfn3yh0j21kw16o149.jpg"/><br/><img class="imgclick" referrerpolicy="no-referrer" src="http://ww2.sinaimg.cn/large/6e73f691gw1f8ikfo7624j21kw16o154.jpg"/><br/><br/>更新二之国汉化试验结果<br/></div></div></div>
+<h2>评论</h2><div class="post">
+<a class="l" href="https://psnine.com/psnid/bruis_x"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/SCEI/I0011.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    最近在开2OG的坑，对着汉化文本一行行地看有够累的<br/><br/><img class="imgclick" referrerpolicy="no-referrer" src="http://ww3.sinaimg.cn/mw690/6e73f691gw1f4v0q9u066j21kw16odzu.jpg"/><br/><br/>不过以后应该还好了，中文越来越多，不错
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/bruis_x">bruis_x</a>
+                                            2016-06-14 20:23                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/bruis_x"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/SCEI/I0011.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/nierqing">@nierqing</a> 参考这个吧
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/bruis_x">bruis_x</a>
+                                            2016-06-14 20:33                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/cbyx8995"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/WWS_J/J0026.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    看哭了，对我这种人来说好复杂。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/cbyx8995">cbyx8995</a>
+                                            2016-06-14 20:36                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/bruis_x"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/SCEI/I0011.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/cbyx8995">@cbyx8995</a> <img src="../emoticons\face\majiang\9.gif"/>只是详细一些而已，每一步认真看下来应该很好操作的<br/><br/>话说管理员怎么召唤？我编辑帖子的时候忘记加上《大神》的游戏标签了
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/bruis_x">bruis_x</a>
+                                            2016-06-14 20:43                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/johnsonterry"><img height="50" src="../avatars/johnsonterry-1557450105-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<img src="../emoticons\face\majiang\13.gif"/><img src="../emoticons\face\majiang\13.gif"/><img src="../emoticons\face\majiang\13.gif"/>也就是说有汉化文本的ps3游戏都能这么弄了？同好们做了混沌之子的。。。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/johnsonterry">johnsonterry</a>
+                                            2016-06-14 20:55                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/akb48fans"><img height="50" src="../avatars/akb48fans-1556423730-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    如果能让其他汉化游戏实现正版汉化就好了
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/akb48fans">akb48fans</a>
+                                            2016-06-14 20:59                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/rma519"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/WWS_A/A0025.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    太赞了！！可惜我ps3好多合购的游戏，没法用，哎
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/rma519">rma519</a>
+                                            2016-06-14 21:04                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/shuanghuachun"><img height="50" src="../avatars/shuanghuachun-1556451725-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<img src="../emoticons\face\majiang\21.gif"/>格机好麻烦啊
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/shuanghuachun">shuanghuachun</a>
+                                            2016-06-14 21:06                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/bruis_x"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/SCEI/I0011.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/johnsonterry">@johnsonterry</a> 不清楚啊，我在网上搜了半天也只有大神的，刚好它的实体版只是负责安装<br/><br/>二之国和2OG的只能羡慕汉化了
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/bruis_x">bruis_x</a>
+                                            2016-06-14 21:07                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/bruis_x"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/SCEI/I0011.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/akb48fans">@akb48fans</a> ps4不是大部分都有中文了么，限定ps3的正版汉化，有这个需求的人还是不多的，没办法咯
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/bruis_x">bruis_x</a>
+                                            2016-06-14 21:08                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/bruis_x"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/SCEI/I0011.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/rma519">@rma519</a> <img src="../emoticons\face\majiang\13.gif"/>合购，不怕那天被ban了么
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/bruis_x">bruis_x</a>
+                                            2016-06-14 21:09                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/xiviii727"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA18093_00-13KAVATAR0000011_A5CEF926886B2FAEB7DE_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    竟然正版也可以用汉化啦，得去赶紧把吃灰的ps3找出来，感谢分享
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/xiviii727">xiviii727</a>
+                                            2016-06-14 21:09                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/bruis_x"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/SCEI/I0011.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/shuanghuachun">@shuanghuachun</a> 我大部分的游戏都是实体版的，数字版也都是100%后就删掉，所以160G的PS3还剩下120G可以用，还好了
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/bruis_x">bruis_x</a>
+                                            2016-06-14 21:10                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/waltzsd"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/UP1004/CUSA03041_00-AV00000000000022_6B1DB0326C5B986032F7_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    ps3的格机备份真心忍不了。。。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/waltzsd">waltzsd</a>
+                                            2016-06-14 21:19                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/wubs12345"><img height="50" src="../avatars/wubs12345-1607940783-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    ps3备份还原真是超级慢
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/wubs12345">wubs12345</a>
+                                            2016-06-14 21:27                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/fqow"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/WWS_J/J0040.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    下载版那里不太理解啊，是用pss助手将下载版的PKG文件弄到PC上，解压，替换文件再注入还原，这样的步骤吗？<br/>但是如果这样不是就任何没买过的下载版游戏都可以这样装到PS3上了吗，不是等于破解了一样？
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/fqow">fqow</a>
+                                            2016-06-14 21:58修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/hyltqf"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0102/CUSA02102_00-AV00000000000002_81D23A13B15513468193_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    2og也可以吗？
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/hyltqf">hyltqf</a>
+                                            2016-06-14 21:58                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/bruis_x"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/SCEI/I0011.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/fqow">@fqow</a> 下载版的启动文件换不了吧，就是那个eboot文件<br/><br/>实际上这个方法确实可以用来玩很多游戏，参考第2个链接，只不过我没试过
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/bruis_x">bruis_x</a>
+                                            2016-06-14 22:05                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/bruis_x"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/SCEI/I0011.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/hyltqf">@hyltqf</a>  不清楚，我也想知道
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/bruis_x">bruis_x</a>
+                                            2016-06-14 22:06                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/seven9997"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/3RD/EP40931302168_2C4305AB1B60DA6C0A75_L.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    太费劲了…不过还是赞一个
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/seven9997">seven9997</a>
+                                            2016-06-14 22:07                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/ssenkrad1994"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP9008/CUSA03605_00-PREMIUMAVATAR002_5FF04A237241B852F2D0_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/fqow">@fqow</a> 能装上但是没有授权文件也不能运行啊
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/ssenkrad1994">ssenkrad1994</a>
+                                            2016-06-14 22:09                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/leaforz"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA06197_00-PREMIUMAVATAR005_BCC65E303FB194ECCFCD_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<img src="../emoticons\face\majiang\25.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/leaforz">leaforz</a>
+                                            2016-06-14 22:21                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/nierqing"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/3RD/JP01021209006_2069274E947F5D18003D_L.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/bruis_x">@bruis_x</a> 你这个好详细啊，连要用上哪些工具都整合上了，明天就照着你这个弄了<img src="../emoticons\face\majiang\34.gif"/><br/><br/>想了一下还是干脆直接先格了算了，看看能把需要备份的东西减轻多少
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/nierqing">nierqing</a>
+                                            2016-06-14 22:33                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/nathaniel_wu"><img height="50" src="../avatars/nathaniel_wu-1676590428-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    这个帖子说明了学好外语的重要性
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/nathaniel_wu">nathaniel_wu</a>
+                                            2016-06-14 22:36                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/wonbin1110"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/3RD/JP05071402B01_EFDD9DE85E6939D157AB_L.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    好牛逼的样子
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/wonbin1110">wonbin1110</a>
+                                            2016-06-14 22:38                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/maki_izumi"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/SCEI/I0029.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    很详细，我之前也是参考A9的方法用中文玩的
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/maki_izumi">maki_izumi</a>
+                                            2016-06-14 22:40                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/woshiliuwa"><img height="50" src="../avatars/woshiliuwa-1573106113-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    虽然基本上是看不懂 但是我先收藏 为了大神这个游戏能汉化再麻烦我也愿意尝试 真是辛苦了666666可以的 这很天照
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/woshiliuwa">woshiliuwa</a>
+                                            2016-06-14 22:41                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/windy-wing"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA14326_00-AVATAR0000000001_DB3BFF44F07B1489299C_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    大神买了实体还没怎么玩 刚好PS3需要换硬盘 可以顺便汉化了<img src="../emoticons\face\majiang\1.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/windy-wing">windy-wing</a>
+                                            2016-06-14 22:42                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/hahapshaha"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP9002/CUSA09075_00-JS2DBON000000004_90BC0F2177C99AF0A02A_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    很早之前港服ps+送的英文版 可以用这个汉化吗？
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/hahapshaha">hahapshaha</a>
+                                            2016-06-15 00:42                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/bruis_x"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/SCEI/I0011.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/hahapshaha">@hahapshaha</a> 应该是可以的，过程和实体版一样，只是在第四步准备汉化文件那里稍微绕了一下，看一楼的倒数第二段
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/bruis_x">bruis_x</a>
+                                            2016-06-15 02:11                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/bruis_x"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/SCEI/I0011.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/woshiliuwa">@woshiliuwa</a> 是的，我也这么觉得<br/><br/>不过还是希望Capcom有生之年能再出个ps4移植或复刻，自带中文
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/bruis_x">bruis_x</a>
+                                            2016-06-15 02:14                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/bruis_x"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/SCEI/I0011.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/sai8808">@sai8808</a> 请问可以帮忙加上《大神》的游戏标签么？编辑帖子的时候忘了
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/bruis_x">bruis_x</a>
+                                            2016-06-15 02:17                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/yingtxx"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/UP4497/CUSA00527_00-AV00000000000021_3769459CBDF988102ABA_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    正版汉化赞一个~<br/>但是作为一个喜加一党，ps3里面200+g的东西感觉要折腾好久<br/>希望2og也能搞，这样直接俩游戏一起弄
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/yingtxx">yingtxx</a>
+                                            2016-06-15 02:35                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/hahapshaha"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP9002/CUSA09075_00-JS2DBON000000004_90BC0F2177C99AF0A02A_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/bruis_x">@bruis_x</a> 好的谢谢
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/hahapshaha">hahapshaha</a>
+                                            2016-06-15 02:35                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/hahapshaha"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP9002/CUSA09075_00-JS2DBON000000004_90BC0F2177C99AF0A02A_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/yingtxx">@yingtxx</a> 我也是 PS3是2000型320G，买的游戏还有PS+送的几乎满了，又不想删掉，备份一下的话起码要几十个小时了，这个汉化只能口头支持下了。以后换硬盘一定装上。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/hahapshaha">hahapshaha</a>
+                                            2016-06-15 02:43修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/zzzhzz"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/SCEI/IP91001401PR1_3E9E2158F1CFD1F59FE0_L.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    第一步一个清理内容就吓跑一堆人。。。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/zzzhzz">zzzhzz</a>
+                                            2016-06-15 03:06                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/prtina"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0700/CUSA07677_00-DEREVRDLCAVACL07_3028B3C0A6EC5CE2DA2E_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    支持一下... ... holyhigh！<img src="../emoticons\face\majiang\29.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/prtina">prtina</a>
+                                            2016-06-15 04:24                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/a8470004"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP1804/CUSA08621_00-AVATAR0000000005_9C200B98311124FBC4F5_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    其实，我想要约会大作战的汉化方法
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/a8470004">a8470004</a>
+                                            2016-06-15 04:43                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/cappu2345"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP9000/CUSA00547_00-AVATAR0000000005_2AD7CC78D19C5471B505_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    要是不改eboot就可以在正版机上玩汉化的话，那可汉化和修改的游戏就很多了啊？
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/cappu2345">cappu2345</a>
+                                            2016-06-15 05:03                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/shenshen127"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/3RD/UP10121207U03_0C5E8E2002125A8CB54E_L.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    只关心2og行不行→_→
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/shenshen127">shenshen127</a>
+                                            2016-06-15 06:35                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/decadef555"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0425/CUSA11911_00-AVATAR180920GAIU_07EA443FAF765D83DB8A_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<img src="../emoticons\face\majiang\41.gif"/>以前看到需要格机就作罢了
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/decadef555">decadef555</a>
+                                            2016-06-15 06:46                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/godgundam114"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0700/CUSA07677_00-DEREVRDLCAVACL09_F67320A82979038D2257_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    看完这个帖子让我觉得还是学日语简单一定是我的智商不够<img src="../emoticons\face\majiang\29.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/godgundam114">godgundam114</a>
+                                            2016-06-15 08:32                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/toonarmylc_jp"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/3RD/JP00821102028_699EEA1EA323740A05F0_L.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    又想玩二之国了，一直在坑着，话说新作一直没信儿啊，L5在干嘛<img src="../emoticons\face\majiang\40.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/toonarmylc_jp">toonarmylc_jp</a>
+                                            2016-06-15 09:09                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/death_kagari"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/3RD/JP04251309003_A61B859DFB311A244CAB_L.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    我想问，其他游戏能不能这样。<br/> 日文还好，英文就苦手。。<br/>大神 白金就卖了。然后港服也送了。我不知道该用什么表情好了。。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/death_kagari">death_kagari</a>
+                                            2016-06-15 09:18                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/aperturese"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/WWS_A/A0030.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    赞一个，这样也给其他类似的游戏提供了汉化的思路，传颂之物的汉化貌似也只是改了剧情文本部分，到时候去试试
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/aperturese">aperturese</a>
+                                            2016-06-15 09:20                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/khayrad-din"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0102/CUSA06605_00-PREMIUMAVATAR021_C9109F1A9E3A075EE225_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    同问之前港服送的英文版能不能用？<img src="../emoticons\face\majiang\11.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/khayrad-din">khayrad-din</a>
+                                            2016-06-15 09:20                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/tcsww_one"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0005/CUSA01557_00-P5AVATAR00000022_7838246AF740455EEC08_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    希望其他几个汉化也能这么搞
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/tcsww_one">tcsww_one</a>
+                                            2016-06-15 09:22                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/rma519"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/WWS_A/A0025.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/bruis_x">@bruis_x</a> ps3前两年合购的，好像那时候还没事。最近都在收经典游戏收藏
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/rma519">rma519</a>
+                                            2016-06-15 09:59                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/fremont_hk"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/3RD/30000.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    看起来好高深的方法，可惜现在没兴致折腾了。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/fremont_hk">fremont_hk</a>
+                                            2016-06-15 10:03                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/xiaobinggan"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0082/CUSA11060_00-AVATAR0000000002_27F67843716344DF4FD2_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    看了这个帖子，我决定还是玩英文版吧<img src="../emoticons\face\majiang\29.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/xiaobinggan">xiaobinggan</a>
+                                            2016-06-15 10:29                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/plclear"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/SCEI/I0016.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/bruis_x">@bruis_x</a> 请问其他游戏有汉化的也可以这么玩吗？
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/plclear">plclear</a>
+                                            2016-06-15 10:50                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/bruis_x"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/SCEI/I0011.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    备份法只是提供了一种思路，不同的汉化组对游戏文件的破解、汉化和打包过程可能不一致，我也不能确定其他游戏可不可以这么做。<br/><br/><a href="https://psnine.com/psnid/yingtxx">@yingtxx</a> <a href="https://psnine.com/psnid/shenshen127">@shenshen127</a> 2OG有剧情文本，我正在下扑家的汉化，看看是不是pkg，不过暂时没有富裕的机器测试了<br/><a href="https://psnine.com/psnid/cappu2345">@cappu2345</a> 我第一次看到这个方法时也是这么想的，待实践<br/><a href="https://psnine.com/psnid/toonarmylc_jp">@toonarmylc_jp</a> 还好，不急，最近的日式游戏还是有的玩的<br/><a href="https://psnine.com/psnid/tcsww_one">@tcsww_one</a> <a href="https://psnine.com/psnid/plclear">@plclear</a> 如上，不确定呢
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/bruis_x">bruis_x</a>
+                                            2016-06-15 11:03                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/scgabriel"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP1804/CUSA08621_00-AVATAR0000000021_4DD200084FD8A887DC2C_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    这么厉害喵？别的游戏以后能不能这样汉化喵？
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/scgabriel">scgabriel</a>
+                                            2016-06-15 11:07                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/shenshen127"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/3RD/UP10121207U03_0C5E8E2002125A8CB54E_L.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/bruis_x">@bruis_x</a> 好的 大佬如果测试成功请务必艾特我<img src="../emoticons\face\majiang\3.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/shenshen127">shenshen127</a>
+                                            2016-06-15 11:14                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/yin_valentine"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/3RD/JP04041112002_D5C1F0352911F1698663_L.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    2OG赶紧上PS4来一发中文吧，再花一份钱就是了，实在不高兴折腾PS3了 <img src="../emoticons\face\majiang\14.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/yin_valentine">yin_valentine</a>
+                                            2016-06-15 13:50                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/last-arceus"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA07195_00-P5AVATAR00000019_7F25D4E914D2D2D26B96_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    为了大神这个游戏可以一搞。ToT然而略头疼复杂步骤，收藏留待以后吧<br/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/last-arceus">last-arceus</a>
+                                            2016-06-15 14:57                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/magic1111s"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/WWS_A/UP90001209G03_BAEDE4B3D72B495E02D4_L.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    备份还原啊……我擦，我换了个 500G的硬盘，这样折腾要死人的……
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/magic1111s">magic1111s</a>
+                                            2016-06-15 15:35                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/last-arceus"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA07195_00-P5AVATAR00000019_7F25D4E914D2D2D26B96_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/bruis_x">@bruis_x</a> OG有汉化文本了？
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/last-arceus">last-arceus</a>
+                                            2016-06-15 15:37                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/bruis_x"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/SCEI/I0011.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/last-arceus">@last-arceus</a> <a href="http://pan.baidu.com/s/1kV50TAB" target="_blank">http://pan.baidu.com/s/1kV50TAB</a><br/><a href="https://psnine.com/psnid/yin_valentine">@yin_valentine</a> OGTMD吧
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/bruis_x">bruis_x</a>
+                                            2016-06-15 16:42                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/aiorosy"><img height="50" src="../avatars/aiorosy-1676474778-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    看上去很麻烦，先收藏下！<img src="../emoticons\face\majiang\13.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/aiorosy">aiorosy</a>
+                                            2016-06-15 16:49                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/last-arceus"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA07195_00-P5AVATAR00000019_7F25D4E914D2D2D26B96_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/bruis_x">@bruis_x</a> 非常感谢大兄弟
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/last-arceus">last-arceus</a>
+                                            2016-06-15 17:09                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/nierqing"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/3RD/JP01021209006_2069274E947F5D18003D_L.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    OK，测试成功<br/><br/>美版的也可以用这个方法实现汉化，不过下载版的话备份复原后要先用下载这游戏的帐号验证一下才能开始游戏<a href="https://psnine.com/psnid/hahapshaha">@hahapshaha</a> <a href="https://psnine.com/psnid/khayrad-din">@khayrad-din</a> <br/><br/><br/>把所有游戏都删光光之后备份就接近500M左右吧，备份速度还行吧，不用等太久<br/><br/>倒是解包那里用的时间比较长。。。。<br/><br/><br/>最智障的是最后一步注射时蒙蔽了好久，最后才发现原来是要返回主界面再按S<img src="../emoticons\face\majiang\40.gif"/>，真是药不能停<br/><br/>再次感谢~<a href="https://psnine.com/psnid/bruis_x">@bruis_x</a> <br/><br/><br/>要迈出第一步确实需要一点勇气哈哈<img src="../emoticons\face\majiang\3.gif"/>，然后现在主机空荡荡什么都没有，重新下游戏去了<img src="../emoticons\face\majiang\29.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/nierqing">nierqing</a>
+                                            2016-06-15 18:09                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/twist6677"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/3RD/EP43121401136_E610C77B031BFF038B6E_L.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    二之国能用这种方法吗?有汉化就有填坑的动力了。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/twist6677">twist6677</a>
+                                            2016-06-15 18:11                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/cc302"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/3RD/JP04041105005_EC62152B2FFDABD3F8C8_L.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    这个NB，就问问宵星传说可以不
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/cc302">cc302</a>
+                                            2016-06-15 18:24                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/bruis_x"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/SCEI/I0011.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/nierqing">@nierqing</a> 恭喜，游戏愉快<br/><a href="https://psnine.com/psnid/ayazokkon">@ayazokkon</a> 这位是A9原帖的楼主，请问这个方法可以套在别的汉化游戏上么？
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/bruis_x">bruis_x</a>
+                                            2016-06-15 19:08                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/yuehuatianzhan"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP9002/CUSA10625_00-NEIRMCAV2B000001_3FF151024DE34FC3CDC2_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    为什么我的移动硬盘分区之后ps3无法识别？现在两个分区，第一个20g的fat32，第二个ntfs，ps4可以正常识别第一个分区……<img src="../emoticons\face\majiang\13.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/yuehuatianzhan">yuehuatianzhan</a>
+                                            2016-06-16 02:02                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/lovept1219"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP9000/CUSA14006_00-TLOUPIIELLIETAVA_0239162239FD2B864EEA_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    mark一下，有点复杂
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/lovept1219">lovept1219</a>
+                                            2016-06-16 03:16修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/cappu2345"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP9000/CUSA00547_00-AVATAR0000000005_2AD7CC78D19C5471B505_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/yuehuatianzhan">@yuehuatianzhan</a> 我昨天试了试把移动硬盘分100G的FAT32成一个独立盘符，然后连ps3，有显示USB设备，但是备份就显示错误也不知道怎么搞的。无奈只好先吧800G的资料转移到了电脑上，直接格了盘才能用的
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/cappu2345">cappu2345</a>
+                                            2016-06-16 04:15                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/last-arceus"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA07195_00-P5AVATAR00000019_7F25D4E914D2D2D26B96_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    大兄弟<a href="https://psnine.com/psnid/bruis_x">@bruis_x</a> ，我问一下，我用pkg1.3解压的时候貌似很慢啊，3小时，你也是吗，正常不？
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/last-arceus">last-arceus</a>
+                                            2016-06-16 08:41                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/last-arceus"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA07195_00-P5AVATAR00000019_7F25D4E914D2D2D26B96_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/nierqing">@nierqing</a> 空荡荡了+1，哈哈我800G的文件一狠心全删了，挡不住对大神的爱啊，日文通了1遍，英文通了1遍，中文再来一遍。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/last-arceus">last-arceus</a>
+                                            2016-06-16 08:43                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/tonymonster760"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/3RD/UP10631304009_9EEB5D072AAA95302926_L.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/last-arceus">@last-arceus</a> 其他游戏还好，gt6文档真心不敢删，更新太蛋疼<img src="../emoticons\face\majiang\30.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/tonymonster760">tonymonster760</a>
+                                            2016-06-16 08:54修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/yuehuatianzhan"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP9002/CUSA10625_00-NEIRMCAV2B000001_3FF151024DE34FC3CDC2_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/cappu2345">@cappu2345</a> ……我的是直接没有显示，算了……不折腾了<img src="../emoticons\face\majiang\15.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/yuehuatianzhan">yuehuatianzhan</a>
+                                            2016-06-16 11:28                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/bruis_x"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/SCEI/I0011.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/last-arceus">@last-arceus</a> 正常，这个就是挺慢的<br/><a href="https://psnine.com/psnid/yuehuatianzhan">@yuehuatianzhan</a> <a href="https://psnine.com/psnid/cappu2345">@cappu2345</a> 移动硬盘这个真的是没辙，说下我的经验，我最开始是用的一个500G的3.5寸（得插外置电源那种），全部格式化成fat32格式后，ps3可以识别也可以往里面拷贝存档，但就是没法进行备份，显示备份错误<br/>之后我是换成一个2.5寸移动硬盘，用DG分了一个30G的区就可以正常地备份和还原了
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/bruis_x">bruis_x</a>
+                                            2016-06-16 12:21                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/last-arceus"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA07195_00-P5AVATAR00000019_7F25D4E914D2D2D26B96_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/bruis_x">@bruis_x</a> 我实体版成功了，不过还是打算替换成下载版，实体会看到两个大神，为了避免读盘还是推荐下载版
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/last-arceus">last-arceus</a>
+                                            2016-06-16 13:31                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/bruis_x"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/SCEI/I0011.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/last-arceus">@last-arceus</a> 不会有读盘的，实体盘只是起到验证作用，所有的数据应该都是直接用的ps3已经装好的文件，不过确实2个图标不太好看
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/bruis_x">bruis_x</a>
+                                            2016-06-16 13:40                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/last-arceus"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA07195_00-P5AVATAR00000019_7F25D4E914D2D2D26B96_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/bruis_x">@bruis_x</a> 重搞完毕，下载版替换后舒服多了，最后要点游戏去pstore重新认证下凭证。不知道其他CDN的游戏能否如此，然而有大神这一个我就知足了。补充下，认证后，会发现ps3端的pstore的大神不是已购买而是显示108hk，实际不用担心，PSN账户那里，点游戏验证，重新认证下就恢复正常了。另外A9VG那帖子标明要注意汉化版终盘，如果先打八岐大蛇再打赤铠会死机，反过来先打赤铠再打八岐大蛇就可以避免。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/last-arceus">last-arceus</a>
+                                            2016-06-18 02:02修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/cappu2345"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP9000/CUSA00547_00-AVATAR0000000005_2AD7CC78D19C5471B505_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/bruis_x">@bruis_x</a> 二之国日服下载版也能汉化～<br/>另外自己试着修改了一下歌姬计划2的游戏文件，进去之后没有报错
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/cappu2345">cappu2345</a>
+                                            2016-06-17 20:06                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/bruis_x"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/SCEI/I0011.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/cappu2345">@cappu2345</a> 其实我昨天也试了下实体版二之国，不过备份还原后，还没到验证的环节直接显示数据错误，不知道是不是我操作的方法有误<br/>我用的是扑家的文件夹版
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/bruis_x">bruis_x</a>
+                                            2016-06-17 21:23                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/last-arceus"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA07195_00-P5AVATAR00000019_7F25D4E914D2D2D26B96_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/cappu2345">@cappu2345</a> ！！？请问这方法对二之国日服下载版也管用吗？
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/last-arceus">last-arceus</a>
+                                            2016-06-17 21:42                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/wowmijing"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP9008/CUSA03605_00-LNY2021AVATAR000_EA28FBBDC5AB00B0B18A_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    这样不会导致被ban吗
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/wowmijing">wowmijing</a>
+                                            2016-06-17 21:45                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/last-arceus"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA07195_00-P5AVATAR00000019_7F25D4E914D2D2D26B96_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/wowmijing">@wowmijing</a>  正常来说不会，因为本身eboot未改动，都是正版验证能通过的。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/last-arceus">last-arceus</a>
+                                            2016-06-17 21:47                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/cappu2345"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP9000/CUSA00547_00-AVATAR0000000005_2AD7CC78D19C5471B505_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/last-arceus">@last-arceus</a> 我的就是日服下载版的，也买了美服的不过没测试<br/>PKG下载：http://zeus.dl.playstation.net/cdn/JP0720/NPJB00238_00/EOVcdnvsoijEIWxwvfIbzZFbpuatXUNRvMxrxzXYjFrYxngUmyubroxLqyBKbxqQKEuGuRUvIEBPBWRPDDchSmWGyzSrAqodtdtNy.pkg?product=008E&amp;country=jp&amp;downloadId=d330064d&amp;q=28a8600ae5b4c296d5b8e9bc1575c88d5f3d87284051bd4b37d9cfa041176188&amp;serverIpAddr=221.179.217.160&amp;downloadType=bg<br/><br/>汉化补丁：http://www.pujia8.com/library/2959/<br/><br/>这游戏有两个组做过汉化，可惜都不完整
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/cappu2345">cappu2345</a>
+                                            2016-06-17 22:43                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/last-arceus"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA07195_00-P5AVATAR00000019_7F25D4E914D2D2D26B96_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/cappu2345">@cappu2345</a> 额，弱弱的问一下你的意思是你测试日服了没测试美服,还是两个都没测试？因为楼主说了他用扑家的那个貌似最后报错了。PS蒹葭的最后据说100%了，不过吐槽翻译质量的人不少就是，扑家的是90%
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/last-arceus">last-arceus</a>
+                                            2016-06-17 22:52修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/bruis_x"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/SCEI/I0011.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/last-arceus">@last-arceus</a> 扑家的那个有点特殊，两层文件夹，外面一层有个小文件，我不清楚是哪个就全都放进去了，可能是这样导致的
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/bruis_x">bruis_x</a>
+                                            2016-06-17 23:05                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/bruis_x"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/SCEI/I0011.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/cappu2345">@cappu2345</a> 我去，这个二之国的PKG怎么这么大？扑家的才3个G
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/bruis_x">bruis_x</a>
+                                            2016-06-17 23:06                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/bruis_x"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/SCEI/I0011.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/cappu2345">@cappu2345</a> 要不你写下二之国的教程？<br/><br/><a href="https://psnine.com/psnid/last-arceus">@last-arceus</a> 有可能我下载的扑家的那个只是一个替换包，并不完全
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/bruis_x">bruis_x</a>
+                                            2016-06-17 23:09修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/last-arceus"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA07195_00-P5AVATAR00000019_7F25D4E914D2D2D26B96_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/bruis_x">@bruis_x</a> 我猜，他那个是本体?这游戏本身大小18G左右呢，所以真搞起来很费劲。我不知道那哥们测试日服下载过没有，不过手头有欧版也能看懂，其实喜欢的还有rpg很多，经典的有静籁铃音，异魂传承，这两都没奖杯但是非常非常的棒。前者有汉化文本可以对照，后者有实体中文版。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/last-arceus">last-arceus</a>
+                                            2016-06-17 23:10                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/bruis_x"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/SCEI/I0011.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/last-arceus">@last-arceus</a> 嗯，应该是这样的<br/><br/>不过我只有实体版，暂时就不测试了，等我把其他几个ps3游戏的坑填完后一起弄一个汉化的版本进行收藏吧
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/bruis_x">bruis_x</a>
+                                            2016-06-17 23:18                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/last-arceus"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA07195_00-P5AVATAR00000019_7F25D4E914D2D2D26B96_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/bruis_x">@bruis_x</a> 其实已经足够惊喜了，我感觉想大神这种情况是少数，而且正版用户也不怕，不论是光盘还是会员的下载版，购买信息验证都摆在那里，基本上不存在ban机的危险，这也是为什么你链接里第二个帖子里提到4.70之后版本不行，而本游戏在4.8系统之下依然可以生效的缘故，目的不同导致结果不同。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/last-arceus">last-arceus</a>
+                                            2016-06-17 23:29修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/cappu2345"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP9000/CUSA00547_00-AVATAR0000000005_2AD7CC78D19C5471B505_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/bruis_x">@bruis_x</a> <a href="https://psnine.com/psnid/last-arceus">@last-arceus</a> <br/>我只测试了日版啦，美版游戏有两个PKG我看太麻烦就不测试了<br/>18个G的是游戏本体，汉化补丁只是个替换包，要把里面USRDIR文件夹下的文件扔到原版游戏目录下替换同名文件<br/><br/>我几乎所有游戏都是下载版，所以对于实体版要安装什么的不太了解，大概是不行吧？
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/cappu2345">cappu2345</a>
+                                            2016-06-17 23:48                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/last-arceus"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA07195_00-P5AVATAR00000019_7F25D4E914D2D2D26B96_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/cappu2345">@cappu2345</a> 考虑到二之国的大小我就头疼。。。18G啊。。。TOT
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/last-arceus">last-arceus</a>
+                                            2016-06-18 01:36修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/cappu2345"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP9000/CUSA00547_00-AVATAR0000000005_2AD7CC78D19C5471B505_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/last-arceus">@last-arceus</a> 额……EBOOT里不含账号信息的<br/>你能想象每次有人要下载游戏的时候，索尼的服务器都会把帐号信息封包进一个几十G的PKG里头，服务器表示压力山大啊
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/cappu2345">cappu2345</a>
+                                            2016-06-18 01:03                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/bruis_x"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/SCEI/I0011.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/cappu2345">@cappu2345</a> 游戏本体的psn下载链接怎么弄出来的？<br/><br/>我记得P9有过一期会免的帖子里有类似的，但是没有找到方法<br/><a href="http://d7vg.com/topic/16030" target="_blank">http://d7vg.com/topic/16030</a>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/bruis_x">bruis_x</a>
+                                            2016-06-18 01:04                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/last-arceus"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA07195_00-P5AVATAR00000019_7F25D4E914D2D2D26B96_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/bruis_x">@bruis_x</a> psxdownload helper，主机端的代理proxy地址写电脑的就行了。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/last-arceus">last-arceus</a>
+                                            2016-06-18 01:35                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/last-arceus"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA07195_00-P5AVATAR00000019_7F25D4E914D2D2D26B96_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/cappu2345">@cappu2345</a> soga受教了，多谢指点~
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/last-arceus">last-arceus</a>
+                                            2016-06-18 01:35                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/xjs1213"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/UT0016/CUSA06833_00-DOP2021DSAVATAR0_F3C39EDC829C0AFF4FD1_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    这么弄是不是每台机只能装一个汉化游戏，因为每次装都要格机？
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/xjs1213">xjs1213</a>
+                                            2016-06-18 08:06                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/jameslewisliu"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA05030_00-PREMIUMAVATAR008_E824AA9336C9AB37ED7F_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    可以可以 这很清真<br/>这样的话我记得有个工作室好像也可以这样做？
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/jameslewisliu">jameslewisliu</a>
+                                            2016-06-18 08:23                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/bruis_x"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/SCEI/I0011.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/last-arceus">@last-arceus</a> psxdownload的前提是你能下载那个游戏的电子版吧，比如买过的<br/><a href="https://psnine.com/psnid/xjs1213">@xjs1213</a> 不是，在注射那步可以多放几个汉化进去<br/><a href="https://psnine.com/psnid/jameslewisliu">@jameslewisliu</a> 这个我不太清楚，但是A14之后的工作室都是有官方中文版的
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/bruis_x">bruis_x</a>
+                                            2016-06-18 12:11                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/xjs1213"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/UT0016/CUSA06833_00-DOP2021DSAVATAR0_F3C39EDC829C0AFF4FD1_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/bruis_x">@bruis_x</a> 可以多放几个汉化 总共是不是不能超过32g？
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/xjs1213">xjs1213</a>
+                                            2016-06-18 12:14                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/bruis_x"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/SCEI/I0011.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/xjs1213">@xjs1213</a> 32G是什么情况？
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/bruis_x">bruis_x</a>
+                                            2016-06-18 12:16                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/xjs1213"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/UT0016/CUSA06833_00-DOP2021DSAVATAR0_F3C39EDC829C0AFF4FD1_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/bruis_x">@bruis_x</a> 你上面写的 Windows的格式化后选择FAT32格式的操作不支持32G以上的移动硬盘
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/xjs1213">xjs1213</a>
+                                            2016-06-18 12:20                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/bruis_x"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/SCEI/I0011.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/xjs1213">@xjs1213</a> 那个没影响的，你可以用上面提到的DG软件对移动硬盘的分区和格式随便更改，想分多大分多大<br/>备份文件都是被分割成N个4G以下的文件回传到PS3里的
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/bruis_x">bruis_x</a>
+                                            2016-06-18 12:22                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/yue237"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0700/CUSA11685_00-JUMP50THANNIVA01_2FF9028C5D0F0F88CA20_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    技术贴 支持 现在没时间研究
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/yue237">yue237</a>
+                                            2016-06-18 13:15                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/jameslewisliu"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA05030_00-PREMIUMAVATAR008_E824AA9336C9AB37ED7F_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/bruis_x">@bruis_x</a> 就是问得老的 A14以后我尽量都买了Premium Box<img src="../emoticons\face\majiang\41.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/jameslewisliu">jameslewisliu</a>
+                                            2016-06-18 14:28                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/leaforz"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA06197_00-PREMIUMAVATAR005_BCC65E303FB194ECCFCD_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    要是能汉化恶魔之魂就好了，现在港版中文黑的一b
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/leaforz">leaforz</a>
+                                            2016-06-20 23:26                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/tcsww_one"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0005/CUSA01557_00-P5AVATAR00000022_7838246AF740455EEC08_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    薄暮传说<br/>无尽传说<br/>托托莉的工作室<br/>凯瑟琳<br/>战场女武神<br/>约会大作战<br/>传颂之物<br/>影牢<br/>旺达与巨像<br/><br/>记得这些也都有民间汉化<img src="../emoticons\face\majiang\8.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/tcsww_one">tcsww_one</a>
+                                            2016-06-20 23:50                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/bruis_x"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/SCEI/I0011.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/tcsww_one">@tcsww_one</a> 没经测试的我都不会放在上面的，免得误导别人<br/><br/>我倒是有旺达的盘还没开封，不过这游戏需要汉化的地方多么？我记得跟ICO一样都是火星语吧
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/bruis_x">bruis_x</a>
+                                            2016-06-20 23:58修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/sanaemi"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0507/CUSA04966_00-AVATAR0000000019_80E2B52C791ED3D7EFEF_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    二之国也能汉化？<br/>阿啊啊啊啊啊啊啊啊啊啊真的吗
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/sanaemi">sanaemi</a>
+                                            2016-06-21 00:01                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/khayrad-din"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0102/CUSA06605_00-PREMIUMAVATAR021_C9109F1A9E3A075EE225_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    恢复备份到99%失败，提示800283f0<img src="../emoticons\face\majiang\40.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/khayrad-din">khayrad-din</a>
+                                            2016-06-21 07:49                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/bruis_x"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/SCEI/I0011.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/sanaemi">@sanaemi</a> 上面有人下载版汉化成功，你可以试试<br/><a href="https://psnine.com/psnid/khayrad-din">@khayrad-din</a> 不应该啊，换个硬盘试试？
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/bruis_x">bruis_x</a>
+                                            2016-06-21 11:13                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/leaf_age"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0404/CUSA04456_00-AVATAR1601000001_39512594C2959F1B5861_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/bruis_x">@bruis_x</a> 注射那步没写清楚是完全退回到最先的画面才 s 注射 <img src="../emoticons\face\majiang\29.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/leaf_age">leaf_age</a>
+                                            2016-06-22 17:44                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/bruis_x"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/SCEI/I0011.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/leaf_age">@leaf_age</a> sorry，我更新一下主楼吧<br/><br/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/bruis_x">bruis_x</a>
+                                            2016-06-22 18:34                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/scxvv"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0704/CUSA02582_00-AVATAR1511N1MARI_D746B851E322468A17A8_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    有人汉化别的游戏成功吗
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/scxvv">scxvv</a>
+                                            2016-06-23 09:17                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/cc302"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/3RD/JP04041105005_EC62152B2FFDABD3F8C8_L.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/bruis_x">@bruis_x</a> 试了下宵星（薄暮）传说，选择扑家汉化的，游戏启动失败，另一个实体盘的图标可正常游戏。不知道是步骤有问题还是游戏本身不行。问下lz，我的是实体版，那么只要下载汉化的替换包注射到备份文件中就行了，是吗？另外，lz的大神，游戏区号下面就是各个文件，扑家的不是，是游戏区号下面有ps3game文件夹和另一个小文件，ps3game文件夹下是各个文件（没有奖杯目录文件夹），我操作的时候把ps3game文件夹改名成游戏区号，注射了，不知道有无关系。<br/>现在怀疑是游戏文件不完整导致的，lz可否把大神的汉化包usrdir目录下的文件列出来，让我对比一下。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/cc302">cc302</a>
+                                            2016-06-23 23:48修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/last-arceus"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA07195_00-P5AVATAR00000019_7F25D4E914D2D2D26B96_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/cc302">@cc302</a> 你宵星传说汉化成功了？听你那意思，两个图标，光盘启动的那个图标可以运行，另一个不行？
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/last-arceus">last-arceus</a>
+                                            2016-06-24 00:25修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/bruis_x"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/SCEI/I0011.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/cc302">@cc302</a> “实体盘的图标可正常游戏”是指运行的日文版？<br/><br/>大神这个游戏是因为没有动过官方的eboot文件，所以直接用汉化打包好的进行注射就可以，最后用实体盘进行运行<br/><br/>大神的usrdir目录文件如下<br/><br/><img class="imgclick" referrerpolicy="no-referrer" src="http://ww2.sinaimg.cn/large/6e73f691jw1f55lgaprvzj20nl08o0ub.jpg"/><br/><br/><a href="https://psnine.com/psnid/scxvv">@scxvv</a> 目前只有大神和二之国成功，感兴趣的话你也可以尝试用这个方法测试一下别的游戏
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/bruis_x">bruis_x</a>
+                                            2016-06-23 23:57修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/bruis_x"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/SCEI/I0011.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/cc302">@cc302</a> 有一点需要注意，我在测试二之国汉化的时候，只下载了扑家的汉化替换包注射进备份，结果数据错误<br/>后来经讨论才发现需要将原PKG解包后把里面的usrdir目录替换成汉化版的才行
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/bruis_x">bruis_x</a>
+                                            2016-06-24 00:11修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/last-arceus"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA07195_00-P5AVATAR00000019_7F25D4E914D2D2D26B96_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/bruis_x">@bruis_x</a> (*@ο@*) 哇～，你还没睡，我去看了下扑家那个，他们标注了eboot未作修改，理论上霄星传说也是可以这个搞的，就是层主那句话我也迷惑。“实体盘的图标可正常游戏”啥意思@cc302？
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/last-arceus">last-arceus</a>
+                                            2016-06-24 00:11                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/bruis_x"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/SCEI/I0011.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/last-arceus">@last-arceus</a> 正好在打2OG，一周目通了，上来看看
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/bruis_x">bruis_x</a>
+                                            2016-06-24 00:12                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/last-arceus"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA07195_00-P5AVATAR00000019_7F25D4E914D2D2D26B96_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/bruis_x">@bruis_x</a> 2OG对照剧本打得感觉就好比我如龙维新对照官方剧本那样。。。艰辛，都是泪。顺便我去日服看了下，霄星这游戏没有下载版。所以我估摸着cc302那意思是，两个图标里光盘启动的那个图标可以运行，但另一个无法启动。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/last-arceus">last-arceus</a>
+                                            2016-06-24 00:26修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/bruis_x"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/SCEI/I0011.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/last-arceus">@last-arceus</a> 时狱我打的时候基本不看剧情，演出又很弱，基本上只能看懂逆袭的夏亚、独角兽和天元突破的剧情，其他的都靠猜的，2OG还好，就是脖子疼，转来转去的<br/>天狱篇也在psv上第10话，进度缓慢
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/bruis_x">bruis_x</a>
+                                            2016-06-24 00:27                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/cc302"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/3RD/JP04041105005_EC62152B2FFDABD3F8C8_L.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/last-arceus">@last-arceus</a> 没有，汉化的那个运行不了，实体盘运行的是日文版
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/cc302">cc302</a>
+                                            2016-06-24 08:22                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/cc302"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/3RD/JP04041105005_EC62152B2FFDABD3F8C8_L.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/bruis_x">@bruis_x</a> 那我估计我不行是因为缺少了原PKG，就是文件不完整，但宵星也没下载版……，我的目录大概5G左右，下面除了一个dat文件其他都是svo文件。<br/>发现多玩上有遇到一样问题的，果然那个就是个补丁，还需要原游戏文件，问题是如果玩实体版的话搞个pkg游戏文件过来，再和汉化补丁整合，这真不是破解吗？lz看看大神这个文件夹有多大？我现在觉得大神是已经把游戏和汉化整合了，另外，不插实体盘是运行不了的是吗？插了实体盘可以运行两个图标？
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/cc302">cc302</a>
+                                            2016-06-24 08:36修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/last-arceus"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA07195_00-P5AVATAR00000019_7F25D4E914D2D2D26B96_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/cc302">@cc302</a> 我找的个带本体的，这个不用担心，这游戏本身很老了，那时候都没有修改eboot，你可以试试这个，http://pan.baidu.com/share/link?shareid=3121288506&amp;uk=1007268310
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/last-arceus">last-arceus</a>
+                                            2016-06-24 09:20                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/leaforz"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA06197_00-PREMIUMAVATAR005_BCC65E303FB194ECCFCD_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    二之国实体版能不能汉化
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/leaforz">leaforz</a>
+                                            2016-06-24 09:23                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/ice_von"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/EP4497/CUSA01439_00-AV00000000000001_C8307BEA30673335330A_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    500G的硬盘满满的游戏实在没有勇气去备份或者格式化
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/ice_von">ice_von</a>
+                                            2016-06-24 09:30                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/hzpwyf"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/WWS_J/J0003.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/last-arceus">@last-arceus</a> 
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/hzpwyf">hzpwyf</a>
+                                            2016-06-24 09:55                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/scxvv"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0704/CUSA02582_00-AVATAR1511N1MARI_D746B851E322468A17A8_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/last-arceus">@last-arceus</a> 买了个移动硬盘，等到货了，测试2og实体盘汉化
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/scxvv">scxvv</a>
+                                            2016-06-24 10:26                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/bruis_x"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/SCEI/I0011.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/cc302">@cc302</a> 这个看你怎么定义破解了？确实是有修改官方的游戏内容，毋庸置疑，但是没有修改任何正版授权的文件，也是买了实体盘或者下载版才能玩的<br/>steam的正版大部分也可以打汉化补丁啊，ps系防盗版搞得这么封闭，我们也不想的<br/><br/>大神的文件夹有6.3个g，确实是已经把游戏和汉化整合了，不插实体盘或者购买下载版是玩不了的，插了实体盘后运行已经安装好的游戏文件就行<br/>实体盘的作用也只是重新安装一遍游戏文件和起引导作用，没必要去运行<br/><br/><br/><a href="https://psnine.com/psnid/leaforz">@leaforz</a> 可以试试，我觉得问题不大
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/bruis_x">bruis_x</a>
+                                            2016-06-24 16:06                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/cc302"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/3RD/JP04041105005_EC62152B2FFDABD3F8C8_L.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/last-arceus">@last-arceus</a> 试过了，不行，启动失败，80029530
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/cc302">cc302</a>
+                                            2016-06-25 16:51                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/scxvv"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0704/CUSA02582_00-AVATAR1511N1MARI_D746B851E322468A17A8_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    2og试了一下，还是日文，系统语言也换成日语了，没有成功汉化。<br/>只成功汉化了logo，好奇怪啊。<br/><img class="imgclick" src="http://upload.api.weibo.com/2/mss/msget_thumbnail?fid=3990368138037870&amp;high=120&amp;width=120&amp;size=120,68&amp;source=209678993"/><br/><img class="imgclick" src="http://upload.api.weibo.com/2/mss/msget_thumbnail?fid=3990368586098449&amp;high=120&amp;width=120&amp;size=120,68&amp;source=209678993"/><br/>游戏内文本，还是日文的
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/scxvv">scxvv</a>
+                                            2016-06-25 21:32修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/bruis_x"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/SCEI/I0011.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/scxvv">@scxvv</a> 图挂了，还有，系统语言换成日文应该是大神特有的，你切换成繁中试试呢？<br/><br/>logo是指主界面的图片吧？应该跟文本无关
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/bruis_x">bruis_x</a>
+                                            2016-06-25 22:32                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/last-arceus"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA07195_00-P5AVATAR00000019_7F25D4E914D2D2D26B96_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/scxvv">@scxvv</a> 大兄弟我没记错的话，2OG没有单独的汉化文件，都是整合好的吧？
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/last-arceus">last-arceus</a>
+                                            2016-06-25 23:09                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/sanaemi"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0507/CUSA04966_00-AVATAR0000000019_80E2B52C791ED3D7EFEF_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/bruis_x">@bruis_x</a> 我想买了个2.5英寸 1TB的移动硬盘请问可以吗？
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/sanaemi">sanaemi</a>
+                                            2016-06-26 00:02                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/scxvv"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0704/CUSA02582_00-AVATAR1511N1MARI_D746B851E322468A17A8_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/last-arceus">@last-arceus</a> 嗯，是整合好的，用的扑家汉化组，文件夹版的。感觉里面的内容和up主发的大神汉化文件很类似<br/><a href="https://psnine.com/psnid/bruis_x">@bruis_x</a> 我所有语言都试了一遍，反正只有主界面的logo变成中文的了= =
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/scxvv">scxvv</a>
+                                            2016-06-26 16:30修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/bruis_x"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/SCEI/I0011.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/sanaemi">@sanaemi</a> 一般都没问题的<br/><a href="https://psnine.com/psnid/scxvv">@scxvv</a> 实体版么？不插盘就进入不了游戏？那可能真的就是不行了
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/bruis_x">bruis_x</a>
+                                            2016-06-26 17:58                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/sanaemi"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0507/CUSA04966_00-AVATAR0000000019_80E2B52C791ED3D7EFEF_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/bruis_x">@bruis_x</a> 我想了想还是算了，感觉太麻烦了。为了玩个游戏
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/sanaemi">sanaemi</a>
+                                            2016-06-26 18:32                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/scxvv"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0704/CUSA02582_00-AVATAR1511N1MARI_D746B851E322468A17A8_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/bruis_x">@bruis_x</a> 实体版的，我估计就是因为我的汉化文件有问题，我用的是整合好的文件。不知道大神用的是哪种。<br/><img class="imgclick" src="https://www.modelscope.cn/studio/flyheadko/J2Z_experience/resolve/master/data/images/26780_001.webp"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/scxvv">scxvv</a>
+                                            2016-06-26 22:59修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/spirit_of_steel"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/WWS_E/EP90001002005l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/scxvv">@scxvv</a> 各位大神要是能用这方法替换汉化版的2OG的话，我就立马抛弃我的2OG实体盘，再去日服搞个下载版<br/>刚去日服看了下，2OG只有实体版么。。。估计出的早那时候下载版还不流行么=。=
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/spirit_of_steel">spirit_of_steel</a>
+                                            2016-06-26 20:13                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/bruis_x"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/SCEI/I0011.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/scxvv">@scxvv</a> 发帖教学<a href="http://d7vg.com/topic/10422" target="_blank">http://d7vg.com/topic/10422</a>插图片的话用微博相册或者P9的图床<br/>大神的实体版是用的整合好的内容，下载版则是手动替换<br/><br/><a href="https://psnine.com/psnid/sanaemi">@sanaemi</a> 保存资料啥的也都有用，或者能找个大点的U盘试试也行<br/><br/><a href="https://psnine.com/psnid/spirit_of_steel">@spirit_of_steel</a> 2OG确实没有下载版，不行就对着我上面发的文本看吧，稍微麻烦了点
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/bruis_x">bruis_x</a>
+                                            2016-06-27 00:15                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/fengtaoff"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/3RD/UP40731301006_B80B3F8FE321D0398C8B_L.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/bruis_x">@bruis_x</a> 下载版是不是不用备份操作直接改游戏包然后传回主机?
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/fengtaoff">fengtaoff</a>
+                                            2016-07-06 21:12                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/bruis_x"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/SCEI/I0011.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/fengtaoff">@fengtaoff</a> 下载版和实体盘一样都是通过备份的方法传回主机的，唯一的区别在于准备备份文件
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/bruis_x">bruis_x</a>
+                                            2016-07-06 21:24                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/forever_zhou"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/UP8805/CUSA03855_00-AV00000000000028_0B5D8D3F61B47305E2F3_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    请问lz这个技术目前有新的突破吗？要是能用这个方法玩上机战2og和生化危机0,1怎么麻烦都是值得的
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/forever_zhou">forever_zhou</a>
+                                            2016-07-21 10:35                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/bruis_x"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/SCEI/I0011.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/forever_zhou">@forever_zhou</a> <br/><br/>2OG实验失败，因为没有psn下载版可以替换，我已经放弃汉化，二周目EXHARD攻略中，之后去玩官方中文的月之民了<br/>二之国实体版汉化失败，但是理论上有购买日服下载版的话可以汉化成功<br/><br/>生化危机这个我不太清楚，有兴趣可以自行尝试
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/bruis_x">bruis_x</a>
+                                            2016-07-21 12:31                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/tonymonster760"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/3RD/UP10631304009_9EEB5D072AAA95302926_L.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/bruis_x">@bruis_x</a> 想问下lz用的大神实体盘是港版的还是日版的，我用的港版实体版按教程弄完没用<img src="../emoticons\face\alu\13.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/tonymonster760">tonymonster760</a>
+                                            2016-10-03 16:02修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/bruis_x"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/SCEI/I0011.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/tonymonster760">@tonymonster760</a> 港版无误，具体出差在哪里呢？备份还原后的xmb界面是怎样的？
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/bruis_x">bruis_x</a>
+                                            2016-10-03 16:22                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/jang_"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0102/CUSA02102_00-AV00000000000010_EEEBBCC8A0AA6609CF17_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    这肯定很麻烦啊，我PS3下了几百G的游戏，备份大法这个状态下弄，不切实际。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/jang_">jang_</a>
+                                            2016-10-03 17:00                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/tonymonster760"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/3RD/UP10631304009_9EEB5D072AAA95302926_L.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/bruis_x">@bruis_x</a> <s>完全按步骤走的，不知道哪里出了问题……</s><br/>完了，老眼昏花没看到要把原来的大神安装文件也删了。。。。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/tonymonster760">tonymonster760</a>
+                                            2016-10-03 19:17修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/hbhdzk0000004"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP9000/CUSA07413_00-AVATAR0000000019_C1CC0A87E5461586C6C7_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    之前为了换硬盘，备份恢复过一次，过程相当痛苦+可怕…如今1T硬盘满满的数据…虽然很想玩汉化但实在没有勇气再去备份恢复一遍了…<img src="../emoticons\face\majiang\14.gif"/>只能仰望各位大神……
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/hbhdzk0000004">hbhdzk0000004</a>
+                                            2016-10-04 13:37                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/bruis_x"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/SCEI/I0011.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    本月日服二之国会免，下载版已实验汉化成功，感兴趣的可以试试<br/><br/><a href="https://psnine.com/psnid/last-arceus">@last-arceus</a> <a href="https://psnine.com/psnid/twist6677">@twist6677</a> <a href="https://psnine.com/psnid/cappu2345">@cappu2345</a> <a href="https://psnine.com/psnid/sanaemi">@sanaemi</a> @leaforz
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/bruis_x">bruis_x</a>
+                                            2016-10-06 15:19修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/twist6677"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/3RD/EP43121401136_E610C77B031BFF038B6E_L.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/bruis_x">@bruis_x</a> 谢谢大神通知，请问二之国美版下载版可以用这个汉化吗？之前美版开了2个铜杯的坑。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/twist6677">twist6677</a>
+                                            2016-10-06 15:40                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/bruis_x"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/SCEI/I0011.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/twist6677">@twist6677</a> 美版的下载文件跟日版不一样，日版是一个18G的文件，美版是2个9G，汉化文件替换方法可能不一致<br/><br/>我建议是按照我上面的流程下把日服的下载文件和汉化文件备份到ps3里，再登陆美服账号后打开游戏，去美服的psstore里验证一下，不保证成功哈
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/bruis_x">bruis_x</a>
+                                            2016-10-06 15:59                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/cappu2345"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP9000/CUSA00547_00-AVATAR0000000005_2AD7CC78D19C5471B505_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/bruis_x">@bruis_x</a> 日英两个版本都坑了<img src="../emoticons\face\alu\30.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/cappu2345">cappu2345</a>
+                                            2016-10-06 16:02                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/bruis_x"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/SCEI/I0011.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/cappu2345">@cappu2345</a> 我的2OG还在缓慢SP模式58话攻略中，最近都没时间打游戏，就为了一个三周目通关的杯子卡了快俩月了<img src="../emoticons\face\majiang\39.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/bruis_x">bruis_x</a>
+                                            2016-10-06 16:11                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/last-arceus"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA07195_00-P5AVATAR00000019_7F25D4E914D2D2D26B96_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/bruis_x">@bruis_x</a> 卧槽简直利好消息！看来是时候麻烦一趟了。为了二之国值得！
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/last-arceus">last-arceus</a>
+                                            2016-10-06 20:35修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/last-arceus"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA07195_00-P5AVATAR00000019_7F25D4E914D2D2D26B96_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/bruis_x">@bruis_x</a> ps二之国那个是完全汉化吗？我记得魔法书没汉化吧？
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/last-arceus">last-arceus</a>
+                                            2016-10-06 20:25                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/bruis_x"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/SCEI/I0011.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/last-arceus">@last-arceus</a> 我还没进游戏，不知道魔法书是什么情况，不过我有一个中文的pdf<br/><a href="http://pan.baidu.com/s/1nvFCtkP" target="_blank">http://pan.baidu.com/s/1nvFCtkP</a>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/bruis_x">bruis_x</a>
+                                            2016-10-06 21:13                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/last-arceus"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA07195_00-P5AVATAR00000019_7F25D4E914D2D2D26B96_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/bruis_x">@bruis_x</a> 多谢了大手子，我发现日版英文版是两套杯子太爽了，我先白英文版，回头再白日文版。非常感谢你的pdf。现在苦恼的是我那漫长的备份时间了，我1TB的硬盘已经用了500G了。。。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/last-arceus">last-arceus</a>
+                                            2016-10-06 21:20修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/bruis_x"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/SCEI/I0011.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/last-arceus">@last-arceus</a> 主楼里的pkg好像是日版的，如果你用那个文件备份成功后在美服psstore里认证成功了也来这里说下吧
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/bruis_x">bruis_x</a>
+                                            2016-10-06 21:25                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/last-arceus"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA07195_00-P5AVATAR00000019_7F25D4E914D2D2D26B96_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/bruis_x">@bruis_x</a> 啊啥意思？你是说那个汉化补丁是基于日版的吗？我就是搞个日服那个会免的版本汉化就行，英文版不打算汉化了。因为杯子是两套，日文一套，英文一套。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/last-arceus">last-arceus</a>
+                                            2016-10-06 21:32                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/bruis_x"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/SCEI/I0011.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/last-arceus">@last-arceus</a> 因为日服的下载版就一个PKG文件18G，美服的有两个16G+9G，所以我还在想汉化美版的是不是得单独下载美版的PKG后备份或者用日版的备份后进美服认证就行<br/><br/>既然你美服的不汉化那就没这个问题了<br/><br/>话说这种RPG双白实在是很有毅力啊
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/bruis_x">bruis_x</a>
+                                            2016-10-06 21:37                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/last-arceus"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA07195_00-P5AVATAR00000019_7F25D4E914D2D2D26B96_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/bruis_x">@bruis_x</a> O(∩_∩)O哈哈~谁叫我是RPG爱好者呢。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/last-arceus">last-arceus</a>
+                                            2016-10-06 21:46                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/flt666"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/UP0102/CUSA11513_00-AV00000000000010_583DDA68AA507E51567E_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    美服大神hd  日服二之国  均汉化成功<img src="../emoticons\face\alu\10.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/flt666">flt666</a>
+                                            2016-11-04 22:11                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/bruis_x"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/SCEI/I0011.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/flt666">@flt666</a> 恭喜，大神的汉化比较成熟，可以尽情享受<br/>二之国只有主线是比较OK的，支线比较蛋疼，素材名汉化之后攻略都用不了了
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/bruis_x">bruis_x</a>
+                                            2016-11-06 16:55                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/starfield_x"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/WWS_J/J0001.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    我玩的是美服大神，最后在方舟内，赤铠是在左边第二个，而不是楼主说的最中间。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/starfield_x">starfield_x</a>
+                                            2017-02-28 12:08                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/lefteyezjq"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP1804/CUSA08621_00-AVATAR0000000004_2FD02700BB568698438B_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/starfield_x">@starfield_x</a> dalao求个美服大神pkg下载地址，我这边psx用不起<img src="../emoticons\face\alu\13.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/lefteyezjq">lefteyezjq</a>
+                                            2017-03-14 22:21                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/blackball830713"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/3RD/UP01021004010l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/bruis_x">@bruis_x</a> 二之国的汉化，原版PKG解开后没有eboot这个文件，只需要把汉化包USRDIR文件夹里的文件拷贝进对应文件夹就可以了吗？
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/blackball830713">blackball830713</a>
+                                            2017-03-25 18:38                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/bruis_x"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/SCEI/I0011.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/blackball830713">@blackball830713</a> 嗯，是的
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/bruis_x">bruis_x</a>
+                                            2017-03-25 19:42                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/blackball830713"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/3RD/UP01021004010l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/bruis_x">@bruis_x</a> 已汉化成功，感谢
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/blackball830713">blackball830713</a>
+                                            2017-03-25 20:23                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/rin21295751a"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA18093_00-13KAVATAR0000003_77C13A41E06C495A74E3_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/bruis_x">@bruis_x</a> <img src="../emoticons\face\alu\30.gif"/>楼主求指导PS3还有什么东西要删除的，主题和游戏、存档之类的全删干净了只留个二之国结果还剩40多G，这个跟账号有关系么
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/rin21295751a">rin21295751a</a>
+                                            2017-04-07 10:33                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/bruis_x"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/SCEI/I0011.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/rin21295751a">@rin21295751a</a> 安装资料，有些游戏会把整个盘里的内容或者一部分装在PS3的硬盘里加快读取速度
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/bruis_x">bruis_x</a>
+                                            2017-04-07 10:50                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/rin21295751a"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA18093_00-13KAVATAR0000003_77C13A41E06C495A74E3_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/bruis_x">@bruis_x</a> <img src="../emoticons\face\alu\30.gif"/>安装资料是在游戏目录下面么，我找遍了全都是空的。。现在机子就剩个二之国19G，但是我备份的东西要46G
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/rin21295751a">rin21295751a</a>
+                                            2017-04-07 10:53                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/rin21295751a"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA18093_00-13KAVATAR0000003_77C13A41E06C495A74E3_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/blackball830713">@blackball830713</a> <img src="../emoticons\face\majiang\36.gif"/>问一下，汉化二之国需要后面注射汉化文件到备份的步骤吗
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/rin21295751a">rin21295751a</a>
+                                            2017-04-07 11:39                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/bruis_x"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/SCEI/I0011.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/rin21295751a">@rin21295751a</a> 某些游戏的安装文件也可以删除，在“游戏资料管理”里找到比较大的文件；
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/bruis_x">bruis_x</a>
+                                            2017-04-07 14:51修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/bruis_x"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/SCEI/I0011.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/rin21295751a">@rin21295751a</a> 二之国的汉化就是“下载数字版到电脑——解压缩——替换其中的汉化文件——注射汉化文件到备份——将备份文件拷贝到移动硬盘——备份还原”
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/bruis_x">bruis_x</a>
+                                            2017-04-07 14:50                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/rin21295751a"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA18093_00-13KAVATAR0000003_77C13A41E06C495A74E3_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/bruis_x">@bruis_x</a> <img src="../emoticons\face\alu\39.gif"/>PKG解包怎么办，插移动硬盘发现解到移动硬盘去好慢，解到别的硬盘又复制不进去移动硬盘里面
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/rin21295751a">rin21295751a</a>
+                                            2017-04-08 15:13修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/rin21295751a"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA18093_00-13KAVATAR0000003_77C13A41E06C495A74E3_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/bruis_x">@bruis_x</a> <img src="../emoticons\face\majiang\29.gif"/>我把PKG下载之后解压，替换了补丁里面的USRDIR文件夹文件，之后按照上面大神教程注射汉化文件汉化失败了
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/rin21295751a">rin21295751a</a>
+                                            2017-04-09 00:55                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/rin21295751a"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA18093_00-13KAVATAR0000003_77C13A41E06C495A74E3_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/flt666">@flt666</a> <img src="../emoticons\face\majiang\29.gif"/>求解二之国汉化怎么弄的，我替换进去注射完备份不能汉化
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/rin21295751a">rin21295751a</a>
+                                            2017-04-09 18:27修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/bruis_x"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/SCEI/I0011.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/rin21295751a">@rin21295751a</a> PKG解包的工作可以在电脑里完成，只需要把最后的备份文件复制到移动硬盘里就可以<br/><br/>解包的过程很慢，大概需要花2-3个小时<br/><br/>如果是严格按照流程里的替换文件后备份还原应该是没有问题的<br/><br/>这个方法仅对数字版有效（日服美服皆可），备份完成后切换到有这个游戏使用权的账号点进去认证一下就OK
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/bruis_x">bruis_x</a>
+                                            2017-04-10 12:37修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/rin21295751a"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA18093_00-13KAVATAR0000003_77C13A41E06C495A74E3_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/bruis_x">@bruis_x</a> <img src="../emoticons\face\alu\39.gif"/>我照着方法汉化失败，难道是系统问题么？我是4.81的。。汉化文件好像就4,5个吧，我是把那个文件直接丢进去解压后的包的usr文件夹里面的
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/rin21295751a">rin21295751a</a>
+                                            2017-04-10 13:01修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/bruis_x"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/SCEI/I0011.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/rin21295751a">@rin21295751a</a> 有没有现在的XMB系统截图？确定是有这个游戏的使用权的吧？
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/bruis_x">bruis_x</a>
+                                            2017-04-11 10:45                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/rin21295751a"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA18093_00-13KAVATAR0000003_77C13A41E06C495A74E3_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/bruis_x">@bruis_x</a> 有的，一开始备份完不是还要验证才能打开游戏么
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/rin21295751a">rin21295751a</a>
+                                            2017-04-11 11:04                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/kahn_hk"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/WWS_J/J0003.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/bruis_x">@bruis_x</a> 港服下载的pkg用pkgview解包失败，提示this file is not supported，求救啊<img src="../emoticons\face\majiang\29.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/kahn_hk">kahn_hk</a>
+                                            2017-05-17 10:57                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/bruis_x"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/SCEI/I0011.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/kahn_hk">@kahn_hk</a> 大神还是二之国？按理说不应该啊
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/bruis_x">bruis_x</a>
+                                            2017-05-17 13:31                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/kahn_hk"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/WWS_J/J0003.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/bruis_x">@bruis_x</a> 大神。另外下载的汉化版pkg可以正常解包，pss下载助手下到电脑上的港服正版提示错误。<img src="../emoticons\face\majiang\14.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/kahn_hk">kahn_hk</a>
+                                            2017-05-17 15:54                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/kahn_hk"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/WWS_J/J0003.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/bruis_x">@bruis_x</a> 重新下了一次，可以了<img src="../emoticons\face\majiang\14.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/kahn_hk">kahn_hk</a>
+                                            2017-05-17 16:15                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/holletian"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/UP4396/CUSA04449_00-AV00000000000008_FC35D10A42450D6131AC_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    教程有点复杂，前两天买了美版英文的，是否也通用？
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/holletian">holletian</a>
+                                            2017-05-24 09:32                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/holletian"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/UP4396/CUSA04449_00-AV00000000000008_FC35D10A42450D6131AC_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/bruis_x">@bruis_x</a> 是否美版英文也可以汉化？还有就是一定要用2.5硬盘？u盘32g行吗？
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/holletian">holletian</a>
+                                            2017-06-06 19:33                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/bruis_x"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/SCEI/I0011.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/holletian">@holletian</a> 大神美版？可以的<br/>硬盘那个只是个人推荐，理论上只要是FAT32格式的U盘，PS3能够识别就可以
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/bruis_x">bruis_x</a>
+                                            2017-06-06 21:35                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/holletian"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/UP4396/CUSA04449_00-AV00000000000008_FC35D10A42450D6131AC_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/bruis_x">@bruis_x</a> 请问二之国汉化只能用下载版吗？注射跟大神一样的教程吗？
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/holletian">holletian</a>
+                                            2017-06-08 03:03修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/bruis_x"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/SCEI/I0011.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/holletian">@holletian</a> 对，只能用下载版进行汉化，流程和大神一样<br/><br/>我是用日服汉化成功的，具体的美服注意事项可以问问@flt666
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/bruis_x">bruis_x</a>
+                                            2017-06-08 11:09修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/pokemon_233"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/UP1024/CUSA12126_00-AV00000000000017_5BE7296420F176912EC6_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    二之国汉化下载不到了<img src="../emoticons\face\majiang\9.gif"/>跪求扑家的汉化包
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/pokemon_233">pokemon_233</a>
+                                            2017-09-15 00:40                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/pokemon_233"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/UP1024/CUSA12126_00-AV00000000000017_5BE7296420F176912EC6_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    美服没法用汉化，游戏进入后黑屏<img src="../emoticons\face\alu\9.gif"/><br/>感觉多了一样文件，hs08.adat.sdat，这个不知道怎么搞<img src="../emoticons\face\alu\39.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/pokemon_233">pokemon_233</a>
+                                            2017-09-16 04:15                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/bruis_x"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/SCEI/I0011.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/pokemon_233">@pokemon_233</a> <br/><br/>扑家好像挂了，我当时存了一份<br/>https://pan.baidu.com/s/1c1UlFVE
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/bruis_x">bruis_x</a>
+                                            2017-10-10 00:03                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/pokemon_233"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/UP1024/CUSA12126_00-AV00000000000017_5BE7296420F176912EC6_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/bruis_x">@bruis_x</a> 灰常感谢
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/pokemon_233">pokemon_233</a>
+                                            2017-10-10 00:06                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/yui6952"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0082/CUSA11060_00-AVATAR0000000008_07BB7B96C4828D11FE0B_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/bruis_x">@bruis_x</a> 感谢！有大神的吗？
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/yui6952">yui6952</a>
+                                            2017-11-23 14:33                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/bruis_x"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/SCEI/I0011.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/yui6952">@yui6952</a> 大神的在我主楼发的网盘里就有
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/bruis_x">bruis_x</a>
+                                            2017-12-06 00:14                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/yui6952"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0082/CUSA11060_00-AVATAR0000000008_07BB7B96C4828D11FE0B_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/bruis_x">@bruis_x</a> 谢谢你
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/yui6952">yui6952</a>
+                                            2017-12-06 08:27                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/yui6952"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0082/CUSA11060_00-AVATAR0000000008_07BB7B96C4828D11FE0B_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/bruis_x">@bruis_x</a> 二之国的密码是啥？<img src="../emoticons\face\alu\30.gif"/><br/><br/>找到了，是www.pujiahh.com
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/yui6952">yui6952</a>
+                                            2017-12-15 15:52修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/yui6952"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0082/CUSA11060_00-AVATAR0000000008_07BB7B96C4828D11FE0B_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    4.82还原失败，提示800283F0
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/yui6952">yui6952</a>
+                                            2017-12-17 21:54                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/zwei_ce"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0036/CUSA14993_00-CRYSTARDLA000019_5B9AFBB79B0BCCB242E0_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    虽然汉化应该是用不上了，但是攻略是很有价值的，感谢分享！
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/zwei_ce">zwei_ce</a>
+                                            2019-03-27 19:09                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/yuiloveu"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/WWS_J/J2084_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    4.pkg解包工具pkgview：http://vdisk.weibo.com/s/C4OFnJSTXliWs<br/>5.备份注射工具TrueAncestor BACKUP Injector：http://vdisk.weibo.com/s/C4OFnJSTQTUVo<br/><br/>这两个能补档么
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/yuiloveu">yuiloveu</a>
+                                            2020-10-18 22:05                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/chanchunonon"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/UT0016/CUSA06833_00-PSPLUS24AVATAR03_84622C1C2AEE267BCC90_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    目前4.88还能用吗<img src="../emoticons\face\majiang\13.gif"/><br/><br/>啊。。收了二之国实体才发现实体版不支持汉化。。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/chanchunonon">chanchunonon</a>
+                                            2021-09-23 23:37修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div>
+</body></html>

@@ -1,0 +1,1222 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8"/><title>一个PS4游戏降级小工具，适用于PS4/PS5主机，下载任意旧版本。</title><meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="style.css" rel="stylesheet"/></head>
+<body>
+<div class="original-url-container"><p><strong>原始链接:</strong> <a href="https://psnine.com/topic/37574" target="_blank">https://psnine.com/topic/37574</a></p></div>
+<h1>一个PS4游戏降级小工具，适用于PS4/PS5主机，下载任意旧版本。</h1><div class="main-post-container"><div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/aikikalaskamaido" itemprop="author">aikikalaskamaido</a>
+<span class="text-warning">
+2023-10-08 21:57编辑
+</span>   
+108评论
+</div><div class="content pd10" itemprop="articleBody">P9逛了这么久，发现很多情况下对游戏存在降级的需求。研究了一下原理，发现PS4游戏确实可以任意降级，不用改造机器，其实原理和以前常用的PSXdownloadhelper差不多，让PS主机通过电脑代理上网，然后对一些数据进行映射。<br/><br/>正常情况下，下载数字版游戏都会自动下载最新版本。但是索尼的服务器里面存着所有历史版本的数据，并且是开放下载的，大概在2018年的时候被发现可以利用Charles这类网络抓包工具，让主机下载老版本补丁，但是操作比较繁琐，<br/>于是我写了一个小工具RewindPS4来降低操作难度，你只需要准备需要降级的版本的补丁就行了。<br/>一般情况下，要在https://orbispatches.com/查询需要下载的版本的链接（网站某些地方需要梯子才能显示）。<br/><br/>注意<span style="color:red;">只支持</span>PS4游戏的降级，PS5游戏真没办法。为啥没办法降级PS5游戏，可以拉到本文最后查看。<br/><br/><span style="color:red;">下载</span>：https://pan.baidu.com/s/1uBSgzngW3EuhNVtAK9uDxg?pwd=4m3d<br/><a href="https://foggy-bath-a54.notion.site/RewindPS4-Guide-e130c168d2814ec288aad32d57518ed8" target="_blank">文字版指南</a><br/>做了个视频介绍以及演示如何使用：<iframe allowfullscreen="true" border="0" frameborder="no" framespacing="0" height="490" scrolling="no" src="https://player.bilibili.com/player.html?bvid=BV1sh4y167Jn&amp;page=1" width="100%"></iframe><br/>有站友对那个配音感兴趣..在这里可以用：https://ailyth-multi-voice-tts.hf.space/    视频是第一个声音<br/><br/>翻了下旧贴以及红迪以及psnp上一些讨论降级的帖子，总结了一下，降级需求主要有以下几种：<br/>1.某旧版本存在可以方便打杯的机制或BUG，比如《血源诅咒》1.02版以前可以复制道具，《流放者柯南》的早期版本全部可以调控制台自定义游戏，《吸血鬼 》1.0版可以插键盘，直接开启debug模式<img src="../emoticons\face\majiang\41.gif"/>。<br/><br/>2.某些游戏由于后续更新，让新版本不能拿到某些奖杯或拿杯变得更困难。最典型的是FF15的战友奖杯，1.27以后不能拿到，又比如《黑手党3》，通常建议降级到1.09才能稳定白金。FLATOUT4必须要1.3以前版本才能白金。<br/><br/>3.只是单纯的想体验老版本的特性，比如《食人大鹫》1.0版是支持60FPS的，后面更新居然只有30了，或者想猎奇，亲自尝试首发版本的PS4版2077。以及更多的后期升级经历过数值调整的游戏。<br/><br/><span style="font-size:20px;"><b><span style="color:red;">功能演示</span></b></span><br/>本工具提供两种模式：模式1下载任意版本，模式2跳过补丁，只下载本体。需要下载的游戏都先入库，之后去游戏库点下载键。<br/><br/><span style="font-size:16px;"><b><span style="color:cyan;">模式1：下载任意版本</span></b></span><br/><br/><span style="color:red;"><b>数字版游戏</b></span><br/>这里使用《星之海》作为例子，目前最新版是1.03，<br/>正常下载就会下载到最新的1.03，来测试下载老一点的1.01版本<br/><img class="imgclick" src="https://www.modelscope.cn/studio/flyheadko/J2Z_experience/resolve/master/data/images/37574_001.webp"/><br/><img class="imgclick" src="https://www.modelscope.cn/studio/flyheadko/J2Z_experience/resolve/master/data/images/37574_002.webp"><br/><br/>PS5更方便，游戏没下载完就可以看版本是多少<img class="imgclick" src="https://www.modelscope.cn/studio/flyheadko/J2Z_experience/resolve/master/data/images/37574_003.webp"/><br/><br/><span style="color:red;"><b>光盘游戏升级到任意版本</b></span><br/>这里拿《艾尔登法环》光盘版（亚版CUSA28527）做例子：<br/>先安装光盘数据1.0版，选一个老版本降级，这里选个1.06<br/><img class="imgclick" src="https://www.modelscope.cn/studio/flyheadko/J2Z_experience/resolve/master/data/images/37574_004.webp" width="500"/><br/><br/>主界面选游戏检测更新，开始下载更新，最后确认一下，确实是1.06（但主机显示的是1.15，实际下载的是我们指定的1.06）<br/><img class="imgclick" src="https://www.modelscope.cn/studio/flyheadko/J2Z_experience/resolve/master/data/images/37574_005.webp"/><br/><br/><span style="font-size:16px;"><b><span style="color:cyan;">模式2：屏蔽补丁，只下载本体</span></b></span><br/>这个模式只能在PS4主机上面生效，PS5会报错CE-105799-1或CE-105927-4，即使能下载，也是下载的最新版。<br/><br/>这里仍以《星之海》为例，下载最原始的1.0版。<br/><img class="imgclick" src="https://www.modelscope.cn/studio/flyheadko/J2Z_experience/resolve/master/data/images/37574_006.webp"/><br/>开始下载游戏，下完就是1.0<img class="imgclick" src="https://www.modelscope.cn/studio/flyheadko/J2Z_experience/resolve/master/data/images/37574_007.webp"/><br/><br/><span style="color:deeppink;">补充：为啥PS5游戏不能降级</span><br/>因为存放PS4游戏补丁信息的json文件在“http://gs2.ww.prod.dl.playstation.net”这个服务器，游戏本身的数据pkg也放在这，传输数据用的传统的http，可以被抓包，因此可以看到内容。<br/>以前大家用来加速下载的PSXDownloadHelper也是这个原理，先抓到gs2这服务器上的pkg，放在电脑下载，再通过本地映射的方式传回主机。<br/>PS5游戏下载的机制和PS4差不多，也是点击下载后，先请求服务器，PS5会收到一个返过来的json，PS5再根据json包含的内容下载文件。但是这个包含版本信息的json是https://sgst.prod.dl.playstation.net发过来的 ，用的HTTPS加密传输，问题就出在这里，正常情况下不可能给PS5安装受信任的证书，所以无法看到HTTPS传输的内容，也就不能做其他操作了。<br/><br/></img></div></div>
+<h2>评论</h2><div class="post">
+<a class="l" href="https://psnine.com/psnid/ltffly"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0700/CUSA17351_00-7037209613285893_9244750AE8279EBA4DA3_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    你这视频女声是AI么？性冷淡风格。<img src="../emoticons\face\alu\9.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/ltffly">ltffly</a>
+                                            2023-10-06 21:43修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/dark-knight-shui"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/UP1018/CUSA00133_00-AV00000000000005_4FA44780B7C97FEDF836_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    太有用了，太棒了，赞一个<img src="../emoticons\face\alu\35.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/dark-knight-shui">dark-knight-shui</a>
+                                            2023-10-06 22:10                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/remix_0312"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP9002/CUSA10625_00-NEIRMCAV2B000001_3FF151024DE34FC3CDC2_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<img src="../emoticons\face\alu\35.gif"/><img src="../emoticons\face\alu\43.gif"/><img src="../emoticons\face\alu\1.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/remix_0312">remix_0312</a>
+                                            2023-10-06 23:52                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/spudsl-hk"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP9008/CUSA03605_00-YOPLAY23AVTLN006_C0C194E71983C6EEA8D3_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    真大佬<img src="../emoticons\face\alu\35.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/spudsl-hk">spudsl-hk</a>
+                                            2023-10-07 00:13                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/yoga0196"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP9000/PPSA01971_00-DEATHSDCAVATAR08_DDCB6961636DD2B215F1_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    码一下，等着ps5上降级ff15<img src="../emoticons\face\majiang\8.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/yoga0196">yoga0196</a>
+                                            2023-10-07 00:51                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/showadaibutsu"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP9000/PPSA21559_00-PREORDERAVATAR01_C931593F47B5D7394549_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    真是<img src="../emoticons\face\alu\38.gif"/>太感谢了
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/showadaibutsu">showadaibutsu</a>
+                                            2023-10-07 02:15                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/cn_vvvvv"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP1804/CUSA08621_00-AVATAR0000000040_22CB8D1DCF1AB145621A_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/yoga0196">@yoga0196</a> ff15需要刷什么道具吗？太久之前白的了，已经忘了
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/cn_vvvvv">cn_vvvvv</a>
+                                            2023-10-07 04:59                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/eklesdeeny03"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP9002/CUSA09076_00-NIERBON000000002_A184BF387496B14E3FE3_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    大佬强<img src="../emoticons\face\alu\35.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/eklesdeeny03">eklesdeeny03</a>
+                                            2023-10-07 05:37                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/kurusu-hibiki"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/WWS_A/A2105_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/cn_vvvvv">@cn_vvvvv</a> 本体战友DLC过了1.6就进不去只能去打独立奖杯列表那个
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/kurusu-hibiki">kurusu-hibiki</a>
+                                            2023-10-07 07:17                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/dyq9900"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/UP1004/CUSA03041_00-AV00000000000022_6B1DB0326C5B986032F7_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<img src="../emoticons\face\alu\16.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/dyq9900">dyq9900</a>
+                                            2023-10-07 07:22                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/jiecaodi"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0082/CUSA00301_00-AVATAR1511NPC007_DD0A0B46929F78529910_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    芜湖，太好了，造福杯友，感谢大佬
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/jiecaodi">jiecaodi</a>
+                                            2023-10-07 07:26                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/misaka10029"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA14326_00-AVATAR0000000001_DB3BFF44F07B1489299C_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    大佬好强<img src="../emoticons\face\alu\35.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/misaka10029">misaka10029</a>
+                                            2023-10-07 07:53                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/misaki_py"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP9008/CUSA03605_00-GENSHINNINGGUANG_04DAD81C2AA8DF85D55C_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    虽然可能或许大概率也许不会用到，但还是给楼主一个大大的点赞，太太太强了<img src="../emoticons\face\majiang\4.gif"/><img src="../emoticons\face\alu\35.gif"/><img src="../emoticons\face\alu\35.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/misaki_py">misaki_py</a>
+                                            2023-10-07 07:54                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/liangchao2017"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0031/CUSA01054_00-AVATAR1505NEP011_0C72EB65CB18F6AF317D_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    太好了，造福杯友，感谢大佬
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/liangchao2017">liangchao2017</a>
+                                            2023-10-07 08:46                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/yangmiyo"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/WWS_J/J2085_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    收藏了！暂时最近没有什么需要降级才能白金的游戏了，ff15之前降级研究了好久才成功的，下载也是一波三折。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/yangmiyo">yangmiyo</a>
+                                            2023-10-07 08:47                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/wang3731596"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/UP9000/PPSA26344_00-KITSUNEAVATAR000_ED983A597E17939A0BF1_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    大革命应该能用吧，跳过补丁下载1.0的60帧版本<img src="../emoticons\face\alu\5.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/wang3731596">wang3731596</a>
+                                            2023-10-07 08:47                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/l059o_o"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP9000/PPSA21559_00-PREORDERAVATAR01_C931593F47B5D7394549_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<img src="../emoticons\face\alu\35.gif"/><img src="../emoticons\face\alu\35.gif"/><img src="../emoticons\face\alu\35.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/l059o_o">l059o_o</a>
+                                            2023-10-07 09:57                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/yellowbigbird-ps"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/WWS_A/UP90001411REI_3E7485EDA19383D5B2B8_L.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    现在基本都ps5下载玩了, 还是必须up
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/yellowbigbird-ps">yellowbigbird-ps</a>
+                                            2023-10-07 10:04                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/king-risking"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/UP8812/CUSA05210_00-AV00000000000006_EEA1FAD117B3679BE745_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    给大佬鼓掌<img src="../emoticons\face\alu\43.gif"/><img src="../emoticons\face\alu\43.gif"/><img src="../emoticons\face\alu\43.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/king-risking">king-risking</a>
+                                            2023-10-07 10:05                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/xianjixiance"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP9000/CUSA07413_00-AVATAR0000000019_C1CC0A87E5461586C6C7_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    而你我的刨友 你是真正的英雄
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/xianjixiance">xianjixiance</a>
+                                            2023-10-07 10:33                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/lepingps"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP9000/CUSA16972_00-AV00000000000001_3920E87A5E9B286582AC_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    奖杯党必遇降级，这文章太厉害了。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/lepingps">lepingps</a>
+                                            2023-10-07 10:34                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/bakcczy"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA17544_00-P5RAVATAR000006C_B61E24259601A8449A0B_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    大佬太强了。666<img src="../emoticons\face\majiang\8.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/bakcczy">bakcczy</a>
+                                            2023-10-07 10:53                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/an121394"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA17544_00-P5RAVATAR000006A_C787E4AC677E22E0EAD9_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    太感谢了<img src="../emoticons\face\majiang\8.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/an121394">an121394</a>
+                                            2023-10-07 10:55                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/wu6_114477786"><img height="50" src="../avatars/wu6_114477786-1655699507-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    看来要把家里的电脑弄起来了！！<img src="../emoticons\face\alu\5.gif"/><img src="../emoticons\face\alu\5.gif"/>盟军敢死队3重制版，游戏版本更新以后，导致奖杯无法获取，已经9个月了，我首发买的游戏阿，官方太坑了。！！！<img src="../emoticons\face\alu\31.gif"/><img src="../emoticons\face\alu\31.gif"/><img src="../emoticons\face\alu\31.gif"/>，希望这个工具能解决我的困局。<img src="../emoticons\face\alu\39.gif"/><br/><br/>研究了半天，发现自己没梯子！！白高兴了。！！<img src="../emoticons\face\alu\39.gif"/><img src="../emoticons\face\alu\39.gif"/><img src="../emoticons\face\alu\39.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/wu6_114477786">wu6_114477786</a>
+                                            2023-10-07 12:22修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/largeorsmall007"><img height="50" src="../avatars/largeorsmall007-1557765029-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    牛逼~~~~
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/largeorsmall007">largeorsmall007</a>
+                                            2023-10-07 11:40                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/aikikalaskamaido"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/3RD/JP05061405D03_1ADB67C200CD560AB705_L.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/ltffly">@ltffly</a>  对的是AI，之前训练的一个语音生成模型，就那种音色，实际默认说话速度更慢，可以在这里用 <br/>ailyth-multi-voice-tts.hf.space<br/><br/>第一个就是
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/aikikalaskamaido">aikikalaskamaido</a>
+                                            2023-10-07 12:17                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/zhangzong8598"><img height="50" src="../avatars/zhangzong8598-1749382052-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    太可以了<img src="../emoticons\face\majiang\8.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/zhangzong8598">zhangzong8598</a>
+                                            2023-10-07 13:27                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/wewesty6"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/UP9000/PPSA28180_00-DAYSGONETWITCH00_115CEA415884102A51DF_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    感谢<img src="../emoticons\face\majiang\8.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/wewesty6">wewesty6</a>
+                                            2023-10-07 13:45                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/sixologyyy"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/UT0016/CUSA06833_00-PSWRPUP2022AVTR2_A65202D545CB658F616E_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    支持大佬！之前用charles在ps5成功降级过ps4游戏，确实挺麻烦的，感谢<img src="../emoticons\face\majiang\8.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/sixologyyy">sixologyyy</a>
+                                            2023-10-07 14:44                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/omegapig050"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/WWS_A/UP90001111J02_639FF69B38D24B185C62_L.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    还好PS4没卖。。。正好想回到装甲核心6初版重新感受下初版武装饰带的AI与攻击距离
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/omegapig050">omegapig050</a>
+                                            2023-10-07 16:18                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/fareast-520"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/3RD/EP40931302168_2C4305AB1B60DA6C0A75_L.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    真是好东东啊！感谢大佬的无私分享!请问大佬不知这个软件有没有苹果体统的版本？
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/fareast-520">fareast-520</a>
+                                            2023-10-07 16:53                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/stephenls1984"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/UT0016/CUSA06833_00-PSWRAPUP2024AVTR_09241D9C1D04EC569F1F_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    支持大佬<img src="../emoticons\face\majiang\41.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/stephenls1984">stephenls1984</a>
+                                            2023-10-07 17:12                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/e-rubecula"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP1804/CUSA08621_00-AVATAR0000000011_9FDE50A9EA6F353F4FEF_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    感谢感谢，留着备用，FF15的战友还没打完
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/e-rubecula">e-rubecula</a>
+                                            2023-10-07 17:49                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/rapiecage2015"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/UP8812/CUSA05210_00-AV00000000000178_5E95F5B705002A1367C6_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    这个好啊 有些游戏的良性BUG就不怕更新修复了<img src="../emoticons\face\majiang\41.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/rapiecage2015">rapiecage2015</a>
+                                            2023-10-07 18:21                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/lzvtor"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP9000/CUSA07183_00-AVATAR0000000013_8E426AF228CFB3B19467_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    大佬好厉害。mua
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/lzvtor">lzvtor</a>
+                                            2023-10-08 07:26                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/mollycode"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA12281_00-AVATAR0000000012_023A1A50E73677E76D01_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/wang3731596">@wang3731596</a> 看了下那个网站，大革命不管是美版欧版还是日版都没有1.0版本的链接，所以想60帧只能用光盘了<img src="../emoticons\face\majiang\21.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/mollycode">mollycode</a>
+                                            2023-10-08 11:31                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/yaksa1234"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/UP0002/CUSA07402_00-AV00000000000008_BFA69914B20B03BE1431_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    感谢大佬，支持大佬分享好东西
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/yaksa1234">yaksa1234</a>
+                                            2023-10-08 11:32修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/mollycode"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA12281_00-AVATAR0000000012_023A1A50E73677E76D01_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/yaksa1234">@yaksa1234</a> 不是辐射4啊<br/>是横冲直撞4<br/>辐射4是fallout4
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/mollycode">mollycode</a>
+                                            2023-10-08 11:33                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/mikucyh2"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/WWS_A/A2114_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    不错，马克
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/mikucyh2">mikucyh2</a>
+                                            2023-10-08 11:34                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/ouran1112"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/WWS_J/J0033.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    谁知道老版本我的世界的杯可不可以通过这个方式跳杯 新版本是基岩版 有一些杯跳不了
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/ouran1112">ouran1112</a>
+                                            2023-10-08 11:39                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/aikikalaskamaido"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/3RD/JP05061405D03_1ADB67C200CD560AB705_L.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/mollycode">@mollycode</a>  那个网站只收录了18年以后发布的更新，之前的游戏只能抓到最新版。<br/>所以只能去网上搜搜看能不能找到老补丁链接<br/><br/><a href="https://psnine.com/psnid/ouran1112">@ouran1112</a>  如果可以老版本可以继承新版本存档的话可以试试
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/aikikalaskamaido">aikikalaskamaido</a>
+                                            2023-10-08 13:41                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/lizhong0108"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0102/CUSA09554_00-AV00000000000019_59F05D43ECF64D3E22C6_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    试了几个都提示“版本获取失败，请检查网络”这个怎么解决？梯子开不开都是这个提示。<br/>网址：gs-sec.ww.np.dl.playstation.net<br/>显示：Not a file<br/>网址：http://gs2.ww.prod.dl.playstation.net/<br/>显示：<br/>&lt;Error&gt;<br/>&lt;Code&gt;AccessDenied&lt;/Code&gt;<br/>&lt;Message&gt;Access Denied&lt;/Message&gt;<br/>&lt;RequestId&gt;MK751TDK6ZX5E54G&lt;/RequestId&gt;<br/>&lt;HostId&gt;vHbJGJ4TFsMatr4gmrMq4wZ9S0mlwiE7axOHHc5pnaIwYVG0I8KMQAdEFk7YZ8/+RR+H2kYrnOU=&lt;/HostId&gt;<br/>&lt;/Error&gt;
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/lizhong0108">lizhong0108</a>
+                                            2023-10-08 14:20修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/aikikalaskamaido"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/3RD/JP05061405D03_1ADB67C200CD560AB705_L.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/lizhong0108">@lizhong0108</a> 应该就是电脑这边连不到那两个地址<br/>gs-sec.ww.np.dl.playstation.net 是PS4游戏的版本检测服务器<br/>gs2.ww.prod.dl.playstation.net 是存放游戏文件的服务器。<br/>并不存放网页，所以浏览器打开没内容。检测能否链接到这俩服务器需要通过在<br/>cmd里面输入 ping gs-sec.ww.np.dl.playstation.net 这种方式，看能不能正常接受数据，能的话就没问题。<a href="https://cdnjson.com/images/2023/10/08/QQ20231008161509.jpg" target="_blank">就像这样</a><br/><br/>如果不能就试试梯子，按理说这俩地址都能裸连，没被墙<br/>或者也可能是你电脑防火墙之类的安全工具给限制了
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/aikikalaskamaido">aikikalaskamaido</a>
+                                            2023-10-08 16:26                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/yhnetfish0620"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP9000/CUSA06935_00-AVATAR0000000003_8196D9FA5B7658F9D2B8_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    支持大佬<img src="../emoticons\face\alu\35.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/yhnetfish0620">yhnetfish0620</a>
+                                            2023-10-08 17:28                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/lizhong0108"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0102/CUSA09554_00-AV00000000000019_59F05D43ECF64D3E22C6_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/aikikalaskamaido">@aikikalaskamaido</a> 结果是这样的，这样应该算能连上的吧。但小工具里还是获取版本失败的提示。<br/>C:\Users\Administrator&gt;ping gs-sec.ww.np.dl.playstation.net<br/><br/>正在 Ping e1800.d.akamaiedge.net [23.58.115.233] 具有 32 字节的数据:<br/>来自 23.58.115.233 的回复: 字节=32 时间=257ms TTL=52<br/>来自 23.58.115.233 的回复: 字节=32 时间=255ms TTL=52<br/>来自 23.58.115.233 的回复: 字节=32 时间=255ms TTL=52<br/>来自 23.58.115.233 的回复: 字节=32 时间=255ms TTL=52<br/><br/>23.58.115.233 的 Ping 统计信息:<br/>    数据包: 已发送 = 4，已接收 = 4，丢失 = 0 (0% 丢失)，<br/>往返行程的估计时间(以毫秒为单位):<br/>    最短 = 255ms，最长 = 257ms，平均 = 255ms
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/lizhong0108">lizhong0108</a>
+                                            2023-10-08 17:31                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/rulerpro"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP9000/CUSA34394_00-GOWRGAVATARATREU_787A5CF4DD914B8CAB27_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<img src="../emoticons\face\majiang\3.gif"/>感谢大佬写的神器！<br/>杯友们，都有啥适合玩老版本拿杯的游戏啊！《虹吸战士3》白了，还有啥可以爽白滴游戏？
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/rulerpro">rulerpro</a>
+                                            2023-10-08 21:08                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/aikikalaskamaido"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/3RD/JP05061405D03_1ADB67C200CD560AB705_L.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/lizhong0108">@lizhong0108</a>  那串报错确实是为了连接不上 gs-sec来准备的。我之前在几个电脑都测试过，也找其他朋友帮忙测试过，自然情况下都没遇到连不了这个。<img src="../emoticons\face\majiang\13.gif"/><br/>只有我自己在人为屏蔽gs-sec这个地址时出现过那个报错。<br/>今晚我又找了两个不同运营商网络的朋友测试..也没问题。所以我觉得还是某种原因造成你本地网络在链接那个地址时，出了点问题<img src="../emoticons\face\alu\13.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/aikikalaskamaido">aikikalaskamaido</a>
+                                            2023-10-08 21:39                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/roundabout_yes"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP9008/CUSA03605_00-GENSHINLYNETTE00_9DECF48607089D148DFA_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    给大佬磕头了！<img src="../emoticons\face\majiang\8.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/roundabout_yes">roundabout_yes</a>
+                                            2023-10-08 21:44                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/lizhong0108"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0102/CUSA09554_00-AV00000000000019_59F05D43ECF64D3E22C6_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/aikikalaskamaido">@aikikalaskamaido</a> 大佬能否给几个可能的尝试方向？那个链接我能获取，然后防火墙我这边也关了（我看视频里防火墙提醒是在更后面的地方出现的），其他还有什么可以尝试的地方么？
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/lizhong0108">lizhong0108</a>
+                                            2023-10-08 22:26                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/yaksa1234"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/UP0002/CUSA07402_00-AV00000000000008_BFA69914B20B03BE1431_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/mollycode">@mollycode</a> 是的，我也发现我看错了，哈哈，感谢大佬回复
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/yaksa1234">yaksa1234</a>
+                                            2023-10-08 23:36                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/srvenx-07"><img height="50" src="../avatars/srvenx-07-1663817094-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    大佬牛逼<img src="../emoticons\face\majiang\4.gif"/>github有开源吗<img src="../emoticons\face\majiang\16.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/srvenx-07">srvenx-07</a>
+                                            2023-10-09 02:07                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/aikikalaskamaido"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/3RD/JP05061405D03_1ADB67C200CD560AB705_L.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/lizhong0108">@lizhong0108</a> 正常情况下，输入补丁的链接（json结尾那个）后，软件会自动链接gs-sec那个地址去查询补丁的最新信息以及游戏名等。<br/>如果连不到就试试换换网，比如开启手机热点，让主机和PC暂时都连手机，在手机网络下看看行不行。<img src="../emoticons\face\alu\10.gif"/><br/><br/><a href="https://psnine.com/psnid/srvenx-07">@srvenx-07</a>  有的 https://github.com/Ailyth99/RewindPS4，py写的。<img src="../emoticons\face\majiang\38.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/aikikalaskamaido">aikikalaskamaido</a>
+                                            2023-10-09 02:52                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/aikikalaskamaido"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/3RD/JP05061405D03_1ADB67C200CD560AB705_L.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/rulerpro">@rulerpro</a>  这游戏我专门试过..降级到1.1还是多少，开秘籍全程游戏都不打，直接跳关就白了<img src="../emoticons\face\majiang\41.gif"/> 怪不得Bend后面直接把作弊码禁了。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/aikikalaskamaido">aikikalaskamaido</a>
+                                            2023-10-09 02:54                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/enuemu_2990"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0507/CUSA06333_00-AVATAR190307R002_89526887DA2DC413F4E1_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    good work！サンキュー,ダーリン。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/enuemu_2990">enuemu_2990</a>
+                                            2023-10-09 12:41修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/enuemu_2990"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0507/CUSA06333_00-AVATAR190307R002_89526887DA2DC413F4E1_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    顺便问问还有没有，ps4macro可代替录屏操控的，这个索尼remote升级后就不能操作了，少了一份挂件乐趣。求请教分享
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/enuemu_2990">enuemu_2990</a>
+                                            2023-10-09 13:08修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/aikikalaskamaido"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/3RD/JP05061405D03_1ADB67C200CD560AB705_L.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/enuemu_2990">@enuemu_2990</a>   可以，参考这里：https://psnine.com/topic/37486?page=7<br/>有给老版本remote play打补丁的方法，让它能够登陆。老板的remote play支持ps4macro
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/aikikalaskamaido">aikikalaskamaido</a>
+                                            2023-10-09 15:33                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/fripside-n-"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/3RD/HP00821004006l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    自己写工具，大佬牛逼<img src="../emoticons\face\alu\35.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/fripside-n-">fripside-n-</a>
+                                            2023-10-09 17:07                                        英国                                    </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/angel0zeroh"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA17932_00-JPGBVSAV00000010_0F753F62F06DE6510419_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    大佬，请问为什么我点粘贴地址那里，没反应？右键只有复制和全选<br/>喔，要先粘贴，在连接主机
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/angel0zeroh">angel0zeroh</a>
+                                            2023-10-09 19:17修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/lizhong0108"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0102/CUSA09554_00-AV00000000000019_59F05D43ECF64D3E22C6_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    在单位用笔记本试了下，有线，WIFI，手机热点，都是版本获取失败，请检查网络<img src="../emoticons\face\alu\13.gif"/><br/><br/>等下，不会是要同时连主机吧？不过看视频里是先获取的链接，再连的主机，这个应该没关系吧。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/lizhong0108">lizhong0108</a>
+                                            2023-10-12 14:08                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/koikoiyo"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP9002/CUSA01666_00-2018HWCHMACARONM_C2F13D0839A869A98D44_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    鼓掌           <img src="../emoticons\face\majiang\41.gif"/><img src="../emoticons\face\majiang\41.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/koikoiyo">koikoiyo</a>
+                                            2023-10-12 19:11修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/aikikalaskamaido"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/3RD/JP05061405D03_1ADB67C200CD560AB705_L.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/lizhong0108">@lizhong0108</a> 只去获取版本，不用接主机。都是通过索尼的公开服务器获取的数据，如果显示检查网络，就是电脑连不到PSN的那个更新用的服务器。有可能是电脑本身设置问题（防火墙，本地网络设置，本地代理等），也有可能就是当地网络链接psn服务器的问题。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/aikikalaskamaido">aikikalaskamaido</a>
+                                            2023-10-12 21:11                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/rainy_sai"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA14326_00-AVATAR0000000009_B19CF6DF2D2A716CA320_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    牛牛牛<img src="../emoticons\face\alu\35.gif"/><img src="../emoticons\face\alu\35.gif"/><img src="../emoticons\face\alu\35.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/rainy_sai">rainy_sai</a>
+                                            2023-10-13 02:52                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/bshjackbauer"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/SCEI/I0078.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    三档游戏 无法降级 提示出了些错误
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/bshjackbauer">bshjackbauer</a>
+                                            2023-10-13 14:59                                        英国                                    </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/aikikalaskamaido"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/3RD/JP05061405D03_1ADB67C200CD560AB705_L.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/bshjackbauer">@bshjackbauer</a>  请问是哪个游戏，我去测一下。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/aikikalaskamaido">aikikalaskamaido</a>
+                                            2023-10-13 15:12修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/koroshi33"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/UT0016/CUSA06833_00-PSPLUS24AVATAR02_56D483D0B9F4EC6493B9_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    感谢大佬提供 比charles方便多了
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/koroshi33">koroshi33</a>
+                                            2023-10-13 15:15修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/bshjackbauer"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/SCEI/I0078.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/aikikalaskamaido">@aikikalaskamaido</a> 虹吸战士3 我这里用ps5主机降级ps4版游戏 老是提示错误
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/bshjackbauer">bshjackbauer</a>
+                                            2023-10-13 15:16                                        英国                                    </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/aikikalaskamaido"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/3RD/JP05061405D03_1ADB67C200CD560AB705_L.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/bshjackbauer">@bshjackbauer</a>   我猜也是这个，之前发现了这个游戏的问题，只要是后续更新让容量变得更小的游戏都会出现这种情况。<br/>在使用说明里面写了这类游戏的应对办法。<br/>先模式2屏蔽更新下载完1.0。<br/>再模式1，填写目标版本补丁（记得是1.01）后开启代理，选择检测更新，就能升级到1.01。 做法和光盘版升级特定版本类似，都从1.0开始。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/aikikalaskamaido">aikikalaskamaido</a>
+                                            2023-10-13 15:20修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/aikikalaskamaido"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/3RD/JP05061405D03_1ADB67C200CD560AB705_L.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/bshjackbauer">@bshjackbauer</a>  忘说了。PS5上面没办法先降级到1.0，所以这种办法只能在PS4上面操作。<img src="../emoticons\face\alu\13.gif"/><br/>这种游戏我一共发现三个，虹吸战士3，雪地奔驰和古墓暗影
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/aikikalaskamaido">aikikalaskamaido</a>
+                                            2023-10-13 15:19                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/tyler59862"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/WWS_A/UP90001312L42_ACBB048B8E17C49CBF18_L.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    牛逼，我的黑手党3有救了<img src="../emoticons\face\alu\5.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/tyler59862">tyler59862</a>
+                                            2023-10-13 15:53                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/zhaoyuanliang"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP9000/CUSA07413_00-AVATAR0000000013_C637F4BE5B1DE1190673_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    开始下载后可以关电脑吗？
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/zhaoyuanliang">zhaoyuanliang</a>
+                                            2023-10-13 20:06                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/aikikalaskamaido"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/3RD/JP05061405D03_1ADB67C200CD560AB705_L.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/zhaoyuanliang">@zhaoyuanliang</a>  可以，主机网络设置里不用开代理就行，换回原来网络，直连路由器。<br/>不过换网络整个过程不要暂停下载，如果暂停了重开下载，主机会检测一次更新，就会变成最新版。<br/>换网络前后可以留意下下载文件的总大小，如果突然变大了可能就开始下新版了。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/aikikalaskamaido">aikikalaskamaido</a>
+                                            2023-10-13 20:23修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/zhaoyuanliang"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP9000/CUSA07413_00-AVATAR0000000013_C637F4BE5B1DE1190673_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/aikikalaskamaido">@aikikalaskamaido</a> 感谢大佬，希望能把ff15完美了
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/zhaoyuanliang">zhaoyuanliang</a>
+                                            2023-10-13 21:04                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/xlphxj"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/3RD/JP07001201YUK_69163984863AE500070F_L.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    所以2077又可以刷油画了吗？<img src="../emoticons\face\alu\44.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/xlphxj">xlphxj</a>
+                                            2023-10-13 21:40                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/sadnes_necklace"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/WWS_A/UP90001209G02_08F7E8A60B670126C182_L.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    好东西 非常有用处
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/sadnes_necklace">sadnes_necklace</a>
+                                            2023-10-14 09:14                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/zhaoyuanliang"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP9000/CUSA07413_00-AVATAR0000000013_C637F4BE5B1DE1190673_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/rulerpro">@rulerpro</a> <a href="https://psnine.com/psnid/rulerpro">@rulerpro</a> 我下虹吸战士总是报错，ff15都能顺利下到1.26
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/zhaoyuanliang">zhaoyuanliang</a>
+                                            2023-10-14 12:26                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/devil7320"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/UP9000/PPSA08329_00-GOW20THANNIVAVAT_112B67AAFFD9FBCF0F1E_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    自己写工具，大佬牛逼
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/devil7320">devil7320</a>
+                                            2023-10-14 18:42                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/devil7320"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/UP9000/PPSA08329_00-GOW20THANNIVAVAT_112B67AAFFD9FBCF0F1E_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/aikikalaskamaido">@aikikalaskamaido</a> orbispatches.com找不到神海4 1.0版本的json，请问一下还有什么办法找本体链接吗
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/devil7320">devil7320</a>
+                                            2023-10-15 02:02                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/rulerpro"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP9000/CUSA34394_00-GOWRGAVATARATREU_787A5CF4DD914B8CAB27_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/zhaoyuanliang">@zhaoyuanliang</a> 你是用ps5下的么？我ps5也是报错，然后我用家里闲置的ps4下就好了
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/rulerpro">rulerpro</a>
+                                            2023-10-15 10:49                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/rulerpro"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP9000/CUSA34394_00-GOWRGAVATARATREU_787A5CF4DD914B8CAB27_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/zhaoyuanliang">@zhaoyuanliang</a> 关好像可以 但是下载过程中不能停，我就关了电脑下了一半然后觉得太慢了 寻思暂停在继续下看看能不能速度快点，系统一下子把旧版本刷新成新版本了
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/rulerpro">rulerpro</a>
+                                            2023-10-15 10:51                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/aikikalaskamaido"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/3RD/JP05061405D03_1ADB67C200CD560AB705_L.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/devil7320">@devil7320</a> <br/><img src="../emoticons\face\alu\13.gif"/><br/>遗憾了，试了下找不到神海4早期版本，网上搜不到，以前没人记录下来。<br/>orbis网站只收录了从2018年起的全部补丁json，之前几年推出的绝大部分补丁都没有。<br/>主要是补丁链接里面的一串随机字符不知道是怎么算出来的..所以没法靠穷举版本号把所有补丁链接都给试出来。orbis网站也是每天去爬索尼服务器，抓到新版本补丁就记录下来链接。<br/><br/>如果是PS5上面玩现在确实没办法了，PS4还能整个1.0版神海4下来。<br/>主要是PS5上面索尼搞了很多很细节的防范措施，连不上PS4游戏更新服务器即报错，所以屏蔽了也没用。甚至连以前PS4那种，在硬盘只留够本体下载空间，没空间下补丁，因此只下1.0的方法也失效了。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/aikikalaskamaido">aikikalaskamaido</a>
+                                            2023-10-15 12:23修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/aikikalaskamaido"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/3RD/JP05061405D03_1ADB67C200CD560AB705_L.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/rulerpro">@rulerpro</a>  确实不能暂停，换网络过程别管下载。。让他自然过渡。暂停了会再次连一次服务器，一下就变成最新版了<img src="../emoticons\face\alu\39.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/aikikalaskamaido">aikikalaskamaido</a>
+                                            2023-10-15 12:20                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/rexsarge"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/WWS_J/J0006.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    刚好需要，非常感谢<img src="../emoticons\face\alu\35.gif"/><img src="../emoticons\face\alu\35.gif"/><img src="../emoticons\face\alu\35.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/rexsarge">rexsarge</a>
+                                            2023-10-19 16:34                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/akain_0410"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA17544_00-P5RAVATAR000010A_E372FC3685DE3B56D538_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    感谢大佬<img src="../emoticons\face\alu\35.gif"/><img src="../emoticons\face\alu\35.gif"/><img src="../emoticons\face\alu\35.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/akain_0410">akain_0410</a>
+                                            2023-10-20 17:52                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/buaoye"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/EP8943/CUSA06594_00-AV00000000000109_B6ED749305946D8EE692_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    感谢大佬！<br/>之前的psx download helper不稳定了。<br/>不过好像只支持ps4的游戏降级<img src="../emoticons\face\majiang\25.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/buaoye">buaoye</a>
+                                            2023-10-20 20:55修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/bakcczy"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA17544_00-P5RAVATAR000006C_B61E24259601A8449A0B_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    深海迷航，港版-CUSA13529<br/>模式1报错，只能在ps4上下载1.0，再模式1才能正常下载，后面传输到ps5即可
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/bakcczy">bakcczy</a>
+                                            2023-11-02 17:07                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/bakcczy"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA17544_00-P5RAVATAR000006C_B61E24259601A8449A0B_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/bakcczy">@bakcczy</a> 顺带说一下，从1.0更新到最新版是6gb，更新到1.12版本是8gb
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/bakcczy">bakcczy</a>
+                                            2023-11-02 17:17                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/scyphozoameteor"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0082/CUSA16170_00-AV00000000000000_97596A6C1329CF5DA15A_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    感谢大佬！成功下载老版本游戏了<img src="../emoticons\face\alu\29.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/scyphozoameteor">scyphozoameteor</a>
+                                            2023-11-21 21:40                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/domineering-7"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP5846/CUSA20175_00-HJMRAVATARREAN00_F472E7D650ED544EC08B_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    楼主你好 我想咨询下 ff15已经降级1.26下载中了 ，可以关掉小程序下载吗，因为速度太慢了4个小时才下了10g。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/domineering-7">domineering-7</a>
+                                            2024-01-14 19:06                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/lepingps"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP9000/CUSA16972_00-AV00000000000001_3920E87A5E9B286582AC_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    之前偶尔用过psx download helper降级，很麻烦，昨天用了楼主的工具，好用之极，非常感谢！！
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/lepingps">lepingps</a>
+                                            2024-01-17 10:34                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/tiny_light_"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/WWS_A/A2119_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    有没有遇到启动RewindPS4.exe程序报错的情况
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/tiny_light_">tiny_light_</a>
+                                            2024-04-03 17:55                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/kevinzhang84"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0082/CUSA11060_00-AVATAR0000000006_90C6959BE72972D931F7_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    要是能降级PS5的游戏就好了
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/kevinzhang84">kevinzhang84</a>
+                                            2024-04-05 12:23修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/bio_cherish"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/UT0016/CUSA06833_00-PSWRPUP2022AVTR2_A65202D545CB658F616E_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/lizhong0108">@lizhong0108</a> 后来有解决不？一毛一样的问题。。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/bio_cherish">bio_cherish</a>
+                                            2024-04-05 22:24                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/lujunhualove"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0704/CUSA02582_00-AVATAR1511N2REMI_8C8E0D6C6E49852B101D_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    虹吸战士3不知道为啥模式一显示错误，模式二下载默认最新版本<img src="../emoticons\face\majiang\40.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/lujunhualove">lujunhualove</a>
+                                            2024-04-08 07:58                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/kisspapayas"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0507/CUSA04966_00-AVATAR0000000006_BB8EBEC025E0C4E5B6AC_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    win7 64bit 程序报错
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/kisspapayas">kisspapayas</a>
+                                            2024-04-09 18:39                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/kisspapayas"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0507/CUSA04966_00-AVATAR0000000006_BB8EBEC025E0C4E5B6AC_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/tiny_light_">@tiny_light_</a> 我也报错，用不了
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/kisspapayas">kisspapayas</a>
+                                            2024-04-09 18:40                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/zhangzw36_hk"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/3RD/JP07001110I05_64148D91DEDFA00278FA_L.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<img src="../emoticons\face\alu\31.gif"/>下载下来居然报毒
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/zhangzw36_hk">zhangzw36_hk</a>
+                                            2024-04-11 06:56                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/aikikalaskamaido"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/3RD/JP05061405D03_1ADB67C200CD560AB705_L.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/bio_cherish">@bio_cherish</a> <a href="https://psnine.com/psnid/kisspapayas">@kisspapayas</a> <a href="https://psnine.com/psnid/tiny_light_">@tiny_light_</a>   WIN10以上才能打开<img src="../emoticons\face\majiang\41.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/aikikalaskamaido">aikikalaskamaido</a>
+                                            2024-04-19 16:19修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/aikikalaskamaido"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/3RD/JP05061405D03_1ADB67C200CD560AB705_L.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/zhangzw36_hk">@zhangzw36_hk</a>  直接git clone源码运行也行，这样总不会报毒
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/aikikalaskamaido">aikikalaskamaido</a>
+                                            2024-04-19 16:19修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/moxing2336662"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP9008/CUSA03605_00-GENSHINLYNETTE00_9DECF48607089D148DFA_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/aikikalaskamaido">@aikikalaskamaido</a> 大哥，我这里提示＂从psn服务器获取版本失败＂＂无法连接更新服务器＂<br/>是破产的ttg的游戏 我的世界故模式第二季<br/>更新不了，想试图用这种方法更新失败了，是不是游戏的问题<img src="../emoticons\face\majiang\29.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/moxing2336662">moxing2336662</a>
+                                            2024-04-23 19:11                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/ginoecho"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/WWS_A/UP90001411DAI_048E84DF84ED1C23B954_L.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    提问：在用实体盘的情况下，如何不断网，但阻止游戏自动更新？
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/ginoecho">ginoecho</a>
+                                            2024-04-29 17:32                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/aikikalaskamaido"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/3RD/JP05061405D03_1ADB67C200CD560AB705_L.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    P9没有消息提醒，所以看到回复也迟了<br/><a href="https://psnine.com/psnid/moxing2336662">@moxing2336662</a>   这种情况试试把防火墙彻底关了 <br/><a href="https://psnine.com/psnid/ginoecho">@ginoecho</a>  如果路由器有屏蔽功能，可以把这个地址屏蔽了：，这是PS4更新服务器的地址：gs-sec.ww.np.dl.playstation.net   ，不影响其他联网功能，就是不能更新
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/aikikalaskamaido">aikikalaskamaido</a>
+                                            2024-05-15 12:48                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/aikikalaskamaido"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/3RD/JP05061405D03_1ADB67C200CD560AB705_L.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    现在WIN7和安卓也可以用<br/>当然win7用那个简陋了一点，没写界面<img src="../emoticons\face\majiang\41.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/aikikalaskamaido">aikikalaskamaido</a>
+                                            2024-05-15 12:49                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/ginoecho"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/WWS_A/UP90001411DAI_048E84DF84ED1C23B954_L.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/aikikalaskamaido">@aikikalaskamaido</a> 感谢回复
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/ginoecho">ginoecho</a>
+                                            2024-05-17 14:52                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/mastman429"><img height="50" src="../avatars/mastman429-1577943653-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/aikikalaskamaido">@aikikalaskamaido</a> 大佬，可以在gui版本那个封面获取加个timeout，不然如果获取到封面url，但是从url下载封面很慢的话会直接导致程序假死。<br/>467                 self.ui.cover.image_url = cover_link  <br/>468                    response = requests.get(cover_link<span style="color:red;">, timeout= 2</span>)<br/>469                    image = QtGui.QImage()<br/><br/>我这就是网不好，每次都要在这等好几分钟，才去看了源码，另外谢谢大佬！
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/mastman429">mastman429</a>
+                                            2024-06-07 15:11修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/mastman429"><img height="50" src="../avatars/mastman429-1577943653-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    重复了编辑掉
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/mastman429">mastman429</a>
+                                            2024-06-07 14:58修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/sword_kiseki"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0425/CUSA12230_00-AVATAR180920TIO0_646AF568E4ED4851A499_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    网站恢复，能显示JSON文件了
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/sword_kiseki">sword_kiseki</a>
+                                            2024-10-28 18:41修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/flippy-rick-47"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/UP8236/PPSA19115_00-0485937125905742_B15464CA9876377C6496_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    用不了。。。主机死活连不上代理
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/flippy-rick-47">flippy-rick-47</a>
+                                            2024-11-02 18:01                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/domineering-7"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP5846/CUSA20175_00-HJMRAVATARREAN00_F472E7D650ED544EC08B_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    up 能不能试下暗黑血统3 我每次都失败。之前下ff15就可以用
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/domineering-7">domineering-7</a>
+                                            05-08 16:39                                                                            </div>
+<!--回复结束-->
+</div>
+</div>
+</body></html>

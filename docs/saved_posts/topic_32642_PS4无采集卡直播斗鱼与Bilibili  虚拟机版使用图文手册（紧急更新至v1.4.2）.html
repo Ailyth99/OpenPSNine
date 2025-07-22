@@ -1,0 +1,2247 @@
+
+        <!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><title>PS4无采集卡直播斗鱼与Bilibili  虚拟机版使用图文手册（紧急更新至v1.4.2）</title><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="stylesheet" href="style.css"></head>
+        <body>
+            <div class="original-url-container"><p><strong>原始链接:</strong> <a href="https://psnine.com/topic/32642" target="_blank">https://psnine.com/topic/32642</a></p></div>
+            <h1>PS4无采集卡直播斗鱼与Bilibili  虚拟机版使用图文手册（紧急更新至v1.4.2）</h1><div class="main-post-container"><div class="meta">
+
+<a class="psnnode" href="https://psnine.com/psnid/tilerphy" itemprop="author">tilerphy</a>
+<span class="text-warning">
+2017-10-30 14:44编辑
+</span>   
+201评论
+</div><div class="content pd10" itemprop="articleBody">！！首先注意！！<br/><br/>1. 大部分笔记本无法通过无线网来支持虚拟机网络混杂，所以记得插网线，给虚拟机选网卡的时候选有线网卡。<br/>2. 请提前注册一个Twitch账号，并和PS4进行绑定。<br/>3. 有问题请留言或者在Github给我发issue： https://github.com/Tilerphy/ps4broadcast/<br/>4. psnine.com是作者唯一承认的首发网站，转载请注意言辞与描述细节。<br/>5. 特别鸣谢<a href="https://psnine.com/psnid/jwq-1416">@jwq-1416</a> 在支持bilibili弹幕时对测试做出的杰出贡献。<img src="../emoticons\face\alu\10.gif"/><br/>6. 现在工具功能不多，开发者也就我自己一个，所以会有一种更新很快的错觉，对，就是高产如母猪。<br/><br/>===================================================================<br/><b>v1.4.2 发布更新包，请bilibili用户积极更新</b><br/>修复问题：<br/>bilibili弹幕有可能造成程序崩溃。<br/><br/><b>v1.4 制作完成，加入以下功能：</b><br/><br/>1. 同时直播到多个直播间。（注意有些直播平台可能会封禁这样的账号，用或者不用，使用者自己考虑。）<br/>2. 多个直播间弹幕混合回传到PS4右侧边栏。<br/>点击操作界面的Update and Restart，等待重启完成后就更新了。<br/><br/><b>效果图：</b><br/>bilibili直播间所见：<br/><img class="imgclick" referrerpolicy="no-referrer" src="http://ww4.sinaimg.cn/large/bfae17b6gy1fkwp3muu5xj21400u0juv.jpg"><br/>斗鱼直播间所见：<br/><img class="imgclick" referrerpolicy="no-referrer" src="http://ww4.sinaimg.cn/large/bfae17b6gy1fkwp3te7c5j21hc0u0q53.jpg"/><br/><br/>===================================================================<br/><br/><b>v1.3.2增加了一个魔改功能：</b><br/>同步PS4前获得奖杯的事件到直播室弹幕，但是实现方法比较丑陋，急需的可以用，方法在Github的发布日志上面有： https://github.com/Tilerphy/ps4broadcast/releases<br/><br/>===================================================================<br/>这是我自己的开发、测试、生产all in one环境……这个树莓派3，马云只要不到200块钱了，性能高端，功能刁钻。感兴趣的去查查也不错的，挺好的东西。 我自己有一个树莓派1 和 一个树莓派3，忠实粉丝。<br/><br/>树莓派3有个ARM v7 1.2GHz的四核博通CPU，1GB内存，存储空间根据TF卡来定，自带蓝牙，WIFI，HDMI还有40个物理口输出能做硬件编程。 简直爱不释手。<br/><br/>长成这样，下面压着的是营改增后的机打发票……可见这货有多小：<br/><img class="imgclick" referrerpolicy="no-referrer" src="http://ww4.sinaimg.cn/large/bfae17b6gy1fkwrg8o3g6j20u014041n.jpg"/><br/><br/>===================================================================<br/><br/>1. 下载虚拟机: 百度搜个VirtualBox，版本当然越新越好。<br/>2. 下载虚拟机镜像： <br/>百度网盘 ： https://pan.baidu.com/s/1o87hKuQ<br/>Github： https://github.com/Tilerphy/ps4broadcast/releases<br/>3. 安装VirtualBox，一路下一步，让安装的就安装，该点确定点确定，因为有几个驱动要安装，不要点取消。<br/>4. 打开VirtualBox（MacType已知和VirtualBox有冲突，请开VirtualBox之前，关闭MacType之类的注入DLL的软件）<br/>5. 如图点击导入虚拟机镜像：<br/><img class="imgclick" referrerpolicy="no-referrer" src="http://ww4.sinaimg.cn/large/bfae17b6gy1fkukpnzqo8j20lu0gdq49.jpg"/><br/>6. 点击Browser/浏览，并选择下载到的虚拟机镜像文件，ova后缀名的。<br/><img class="imgclick" referrerpolicy="no-referrer" src="http://ww4.sinaimg.cn/large/bfae17b6gy1fkul1uf9mwj20kq0ffmyw.jpg"/><br/>7. 开始一路“下一步”+“确定”，其中有一个界面要注意，请重置你的虚拟机MAC地址：<br/><img class="imgclick" referrerpolicy="no-referrer" src="http://ww4.sinaimg.cn/large/bfae17b6gy1fkul34y1gsj20kq0ff40r.jpg"/><br/>8. 等待导入结束后，选中虚拟机，点击Settings/设置：<br/><img class="imgclick" referrerpolicy="no-referrer" src="http://ww4.sinaimg.cn/large/bfae17b6gy1fkuknvmhp9j20lu0gdjsr.jpg"/><br/>9. 找到网络/Network，并且选择正确的正在用来上网的网卡，选择桥接，最后一定要点击确定。<br/><img class="imgclick" referrerpolicy="no-referrer" src="http://ww4.sinaimg.cn/large/bfae17b6gy1fkukocu8k1j20lu0gdt9n.jpg"/><br/>10. 双击虚拟机图标开启这个虚拟机，等待界面到这样：<br/><img class="imgclick" referrerpolicy="no-referrer" src="http://ww4.sinaimg.cn/large/bfae17b6gy1fkukpx6j78j20kg0dcweo.jpg"/><br/>11. 输入root，回车：<br/><img class="imgclick" referrerpolicy="no-referrer" src="http://ww4.sinaimg.cn/large/bfae17b6gy1fkukq1xp3xj20kg0dc3yp.jpg"/><br/>12. 提示输入密码，输入密码（这里没有回显，慢慢输入密码ps4broadcast），按回车<br/><img class="imgclick" referrerpolicy="no-referrer" src="http://ww4.sinaimg.cn/large/bfae17b6gy1fkukq680eqj20kg0dcdg1.jpg"/><br/>13. 登录成功后，是这样的：<br/><img class="imgclick" referrerpolicy="no-referrer" src="http://ww4.sinaimg.cn/large/bfae17b6gy1fkul7kmghoj20kg0dcq3d.jpg"/><br/>14. 输入ifconfig并回车，找到自己的ip，我这里是10.1.83.12<br/><img class="imgclick" referrerpolicy="no-referrer" src="http://ww4.sinaimg.cn/large/bfae17b6gy1fkukqf40vmj20kg0dcgm7.jpg"/><br/>15. 现在回到实体机，找到浏览器，地址栏输入 http://上一步找到的ip:26666 , 我这里是http://10.1.83.12:26666，如果看到这个页面，并且能看到版本号，说明你距离成功不远了：<br/><img class="imgclick" referrerpolicy="no-referrer" src="http://ww4.sinaimg.cn/large/bfae17b6gy1fkuknzs4jpj20qk0i6jrn.jpg"/><br/>16. 输入自己的TwitchID，选择好直播网站，输入在那个直播网站的RoomId（bilibili的RoomID有时不是自己的url最后那些字母，自己百度一下寻找方法。），输入好rtmp推流地址和推流码（每个直播网站都有自己的获取方式，请自查），点击reset living，如果得到下图，说明，准备就绪：<br/><img class="imgclick" referrerpolicy="no-referrer" src="http://ww4.sinaimg.cn/large/bfae17b6gy1fkuko3iwo5j20me0h7dg2.jpg"/><br/>直播到斗鱼就显示LIVING STATUS： douyu，Bilibili就是 LIVING STATUS： bilibili<br/>另： 如果直播期间遇到问题，重启大法是相当好用的。重启虚拟机，稳。<br/>另另： Update and Restart是一个更新到最新代码的按钮，喜欢尝鲜的可以下播后点点。<br/><br/>17. PS4设置-&gt;网络-&gt;LAN或者WIFI都可以-&gt;自订-&gt;IP自订:<br/>IP: 192.168.200.65 (不止65， 2到253都可以)<br/>子网掩码/网络遮罩： 255.255.255.0<br/>网关/默认闸道： 192.168.200.1<br/>Primary DNS: 114.114.114.114 （这个随意，选你爱用的，8.8.8.8国内已经无法使用，不要再用8.8.8.8了）<br/>Secondary DNS：有就填，没有就略<br/><br/>-&gt;后面的都是自动<br/>18. 随便找个游戏，按share，选择“播放游玩过程”，选择Twitch，输入完一些信息（这个信息现在没啥用了），然后开始直播。<br/><br/>===========================================<br/><br/>原理简述：<br/>Linux做软网关，并对关键端口访问进行转发，比如把PS4向Twitch的RTMP端口1935的内容转发到虚拟机内Nginx，并由nginx转发给斗鱼或bilibili的直播地址。<br/>拦截PS4与Twitch的IRC服务器的消息，并伪造 Twitch IRC消息向PS4发送消息（连接斗鱼和Bilibili的弹幕服务器获得的即时弹幕消息）。<br/></img></div></div>
+            
+            <h2>评论</h2><div class="post">
+<a class="l" href="https://psnine.com/psnid/kjcm150"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0005/CUSA10602_00-13KAVATAR0000014_D48530F57A098D52BABE_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    帮顶一下<img src="../emoticons\face\majiang\41.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/kjcm150">kjcm150</a>
+                                            2017-10-25 17:05                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/conansherlock"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP3974/CUSA09340_00-AVATAR2019120401_38CF46F13A036E9BF605_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    前排占坑，日常给跪<img src="../emoticons\face\alu\35.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/conansherlock">conansherlock</a>
+                                            2017-10-25 17:07                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/qjs1994"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0425/CUSA11911_00-AVATAR180920ARIA_29C52C3FB6838BA254D3_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    给大佬打call
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/qjs1994">qjs1994</a>
+                                            2017-10-25 17:07                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/name1shard"><img height="50" src="../avatars/name1shard-1556436522-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<img src="../emoticons\face\alu\5.gif"/>有没有试过的
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/name1shard">name1shard</a>
+                                            2017-10-25 17:08                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/tilerphy"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP2374/CUSA12786_00-PREMIUMAVATAR004_A817A81FE57B060966E8_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/kjcm150">@kjcm150</a> <a href="https://psnine.com/psnid/conansherlock">@conansherlock</a> <a href="https://psnine.com/psnid/qjs1994">@qjs1994</a> <img src="../emoticons\face\alu\38.gif"/>蟹蟹大佬们<br/><a href="https://psnine.com/psnid/name1shard">@name1shard</a> 已经有了几个，这最初版本1.0.0，现在1.3.1说明改了好几个版本，都是试用者反馈，然后更新。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/tilerphy">tilerphy</a>
+                                            2017-10-25 17:09                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/bda-wong"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/UP1004/CUSA03041_00-AV00000000000026_57FD4343FDBB6BF02EAB_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    我选择采集卡<img src="../emoticons\face\majiang\41.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/bda-wong">bda-wong</a>
+                                            2017-10-25 17:11                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/osu-nightmare"><img height="50" src="../avatars/osu-nightmare-1556450402-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    虽然我有采集卡，但是我试用了一下发现弹幕是连上了，直播是黑的。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/osu-nightmare">osu-nightmare</a>
+                                            2017-10-25 17:15                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/the-rain-cats"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0404/CUSA02140_00-AVATAR1601000010_1CD748BE01C1379C8C37_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    帮顶，谢谢大神帮我解决问题<img src="../emoticons\face\alu\11.gif"/><img src="../emoticons\face\alu\11.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/the-rain-cats">the-rain-cats</a>
+                                            2017-10-25 17:16                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/tilerphy"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP2374/CUSA12786_00-PREMIUMAVATAR004_A817A81FE57B060966E8_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/bda-wong">@bda-wong</a> 有采集卡当然好啦！<img src="../emoticons\face\alu\36.gif"/><br/><a href="https://psnine.com/psnid/osu-nightmare">@osu-nightmare</a> 那有可能是直播推流码过期，或者nginx服务器并未启动，重启大法保平安，重走一遍直播流程：<br/><br/>页面输入数据，点reset living，ps4开游戏，ps4开始直播<br/><br/>大部分问题都能解决。<img src="../emoticons\face\alu\39.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/tilerphy">tilerphy</a>
+                                            2017-10-25 17:17                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/kjcm150"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0005/CUSA10602_00-13KAVATAR0000014_D48530F57A098D52BABE_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/name1shard">@name1shard</a> 我是个试用失败的，有空再试试新的<img src="../emoticons\face\majiang\41.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/kjcm150">kjcm150</a>
+                                            2017-10-25 17:19修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/osu-nightmare"><img height="50" src="../avatars/osu-nightmare-1556450402-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/tilerphy">@tilerphy</a> 没用。 B站推流码是基本不变的。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/osu-nightmare">osu-nightmare</a>
+                                            2017-10-25 17:18                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/ljw414307473"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA07195_00-P5AVATAR00000028_70FB66E0359CA297D299_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    看不懂 帮顶一下<img src="../emoticons\face\majiang\4.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/ljw414307473">ljw414307473</a>
+                                            2017-10-25 17:20                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/tilerphy"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP2374/CUSA12786_00-PREMIUMAVATAR004_A817A81FE57B060966E8_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/osu-nightmare">@osu-nightmare</a> B站我手头也没有直播权，前几天b站突然不让新号直播了。 <a href="https://psnine.com/psnid/jwq-1416">@jwq-1416</a> 帮我测试的，我看她已经测试成功。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/tilerphy">tilerphy</a>
+                                            2017-10-25 17:20                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/tilerphy"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP2374/CUSA12786_00-PREMIUMAVATAR004_A817A81FE57B060966E8_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/ljw414307473">@ljw414307473</a> <img src="../emoticons\face\majiang\3.gif"/>这已经是最简单的方案了哦
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/tilerphy">tilerphy</a>
+                                            2017-10-25 17:20                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/kinly94"><img height="50" src="../avatars/kinly94-1707980798-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    帮忙顶+战略性mark。下周弄弄直播试试。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/kinly94">kinly94</a>
+                                            2017-10-25 17:24                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/thymol1996"><img height="50" src="../avatars/thymol1996-1577274917-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    给程序员dalao打电话<img src="../emoticons\face\majiang\40.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/thymol1996">thymol1996</a>
+                                            2017-10-25 17:28                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/liu1751086"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/UP8805/CUSA03855_00-AV00000000000030_F4E62458EB508D545612_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    机器必须要网线连么？
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/liu1751086">liu1751086</a>
+                                            2017-10-25 17:29                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/osu-nightmare"><img height="50" src="../avatars/osu-nightmare-1556450402-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    有采集卡就不折腾这个了。  两边重启多次都没直播画面，只能推送弹幕。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/osu-nightmare">osu-nightmare</a>
+                                            2017-10-25 17:29                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/wyyu"><img height="50" src="../avatars/wyyu-1607957648-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<img src="../emoticons\face\alu\5.gif"/>有图文了 晚上回家可以试试了 一定回来问 智障问题的
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/wyyu">wyyu</a>
+                                            2017-10-25 17:30                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/tilerphy"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP2374/CUSA12786_00-PREMIUMAVATAR004_A817A81FE57B060966E8_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/thymol1996">@thymol1996</a> 你这是机翻啊……<img src="../emoticons\face\alu\39.gif"/><br/><a href="https://psnine.com/psnid/kinly94">@kinly94</a> 谢顶，变强<img src="../emoticons\face\alu\38.gif"/><br/><a href="https://psnine.com/psnid/liu1751086">@liu1751086</a> PS4没必要连网线。<br/><a href="https://psnine.com/psnid/osu-nightmare">@osu-nightmare</a> 嗯，猜不出啥问题呢。<br/><a href="https://psnine.com/psnid/wyyu">@wyyu</a> 实在不行就加qq，qq在github的邮箱前九位。<img src="../emoticons\face\alu\19.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/tilerphy">tilerphy</a>
+                                            2017-10-25 17:34                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/wty331"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/UT0016/CUSA06833_00-PSWRAPUP2023AVT2_BF83A8902A1BEC669D3D_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    大佬做图文教程了
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/wty331">wty331</a>
+                                            2017-10-25 17:35                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/jwq-1416"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP9000/CUSA12613_00-DSAV0000SCAREDBB_76BD05D6FF2FCE728D23_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/osu-nightmare">@osu-nightmare</a> <a href="https://psnine.com/psnid/osu-nightmare">@osu-nightmare</a> <a href="https://psnine.com/psnid/kjcm150">@kjcm150</a>  我偶尔也是这样，直播品质那里60帧、普通换一换试试，总有一个有画面的233。<br/>再次感谢大佬~~我也有采集卡，我觉得这个的好处主要是弹幕推送和支持听到派对语音<img src="../emoticons\face\majiang\41.gif"/><br/>尤其对于没有采集卡的胖友简直就是炒鸡福音！
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/jwq-1416">jwq-1416</a>
+                                            2017-10-25 17:44                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/thymol1996"><img height="50" src="../avatars/thymol1996-1577274917-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/tilerphy">@tilerphy</a> 影之诗圈有个很有名的谷歌机翻梗 トランブナイト招集（扑克骑士召集令） 被翻译成了特朗普夜间电话<img src="../emoticons\face\majiang\41.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/thymol1996">thymol1996</a>
+                                            2017-10-25 17:45                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/ellielzc"><img height="50" src="../avatars/ellielzc-1562808158-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    好东西，收藏了<img src="../emoticons\face\majiang\41.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/ellielzc">ellielzc</a>
+                                            2017-10-25 17:51                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/plclear"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/SCEI/I0016.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    可以！这次软件化了。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/plclear">plclear</a>
+                                            2017-10-25 17:54                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/huashi-seven"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA07195_00-P5AVATAR00000027_FE853FC544293398BEB0_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    膜拜大佬<img src="../emoticons\face\alu\5.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/huashi-seven">huashi-seven</a>
+                                            2017-10-25 17:54                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/akatsuki-ddl"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/WWS_E/E0038.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    666666啊！马克有时间试试
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/akatsuki-ddl">akatsuki-ddl</a>
+                                            2017-10-25 17:55                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/liu1751086"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/UP8805/CUSA03855_00-AV00000000000030_F4E62458EB508D545612_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    对不起我第一个没看到 傻了
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/liu1751086">liu1751086</a>
+                                            2017-10-25 17:59                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/fireofwild"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0507/CUSA04966_00-AVATAR0000000012_D1C2518AA4A68E1E70FE_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<img src="../emoticons\face\majiang\41.gif"/>  那个主机自定IP的192.168.200.65 中的 200 能换吗 我自己路由器是192.168.2.1 分配的都是192.168.2.***
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/fireofwild">fireofwild</a>
+                                            2017-10-25 18:02                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/nimamazhale"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0704/CUSA02582_00-AVATAR1511S1MARI_6E60CB4A4E5F09EF271A_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<img src="../emoticons\face\alu\13.gif"/>ps4那边始终都是分享几秒钟后发生错误（CE-33138-8）
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/nimamazhale">nimamazhale</a>
+                                            2017-10-25 18:03                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/jwq-1416"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP9000/CUSA12613_00-DSAV0000SCAREDBB_76BD05D6FF2FCE728D23_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/fireofwild">@fireofwild</a> 没猜错的话那个应该是虚拟机的模拟IP区段，65应该是可以随便改的……<br/><a href="https://psnine.com/psnid/nimamazhale">@nimamazhale</a> 刷新下26666那个网页，重新输下直播码，然后再点reset living试试
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/jwq-1416">jwq-1416</a>
+                                            2017-10-25 18:06修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/nimamazhale"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0704/CUSA02582_00-AVATAR1511S1MARI_6E60CB4A4E5F09EF271A_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/jwq-1416">@jwq-1416</a> <img src="../emoticons\face\alu\38.gif"/>成功了
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/nimamazhale">nimamazhale</a>
+                                            2017-10-25 18:14                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/tilerphy"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP2374/CUSA12786_00-PREMIUMAVATAR004_A817A81FE57B060966E8_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/fireofwild">@fireofwild</a> 就是为了不和一般的设置冲突，才弄得200网段，这个网段是有特殊作用的，所有这个网段的1935和6667端口都被拦截了。这个网段是专门给ps4用的，别的电脑不受影响。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/tilerphy">tilerphy</a>
+                                            2017-10-25 18:20                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/tilerphy"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP2374/CUSA12786_00-PREMIUMAVATAR004_A817A81FE57B060966E8_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/thymol1996">@thymol1996</a> <img src="../emoticons\face\alu\27.gif"/>打call
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/tilerphy">tilerphy</a>
+                                            2017-10-25 18:21                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/futexlocker"><img height="50" src="../avatars/futexlocker-1587166168-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    看来理论上路由器上改一把应该也可以。。。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/futexlocker">futexlocker</a>
+                                            2017-10-25 18:28                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/tilerphy"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP2374/CUSA12786_00-PREMIUMAVATAR004_A817A81FE57B060966E8_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/futexlocker">@futexlocker</a> 对，可惜我没设备，我的路由器换成了无脑的tplink，无法测试
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/tilerphy">tilerphy</a>
+                                            2017-10-25 18:32                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/szc901127"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP3372/CUSA09078_00-ALTLAVATAR000000_E923C70FEF5644DAA6D4_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    一路下来没什么问题，最后B站说要11级以上才能开播<img src="../emoticons\face\alu\39.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/szc901127">szc901127</a>
+                                            2017-10-25 18:33                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/tillwave97"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA05030_00-PREMIUMAVATAR011_22CC248E6969DC531A55_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    只会用remote play+obs<img src="../emoticons\face\alu\39.gif"/>有机会试试这个
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/tillwave97">tillwave97</a>
+                                            2017-10-25 18:50                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/ybabananab"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/UT0016/CUSA06833_00-AV00000000000180_96AABC405C28D5C9A8D9_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    这个应该是两年前就有了(印象中有直播过PT)<br/>缺点太多 还是采集卡或官方串联软件+OBS好
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/ybabananab">ybabananab</a>
+                                            2017-10-25 18:54                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/lw_yingjie"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/UT0016/CUSA06833_00-PSPLUS23AVATAR08_4F47DC7718A1A7FEB416_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    厉害了！先收藏了
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/lw_yingjie">lw_yingjie</a>
+                                            2017-10-25 18:56                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/hillfallen"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP9000/CUSA12613_00-AVA000000000MAMA_44A3F000293C75D61F48_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    到时候试试播MHW，嘿嘿<img src="../emoticons\face\majiang\7.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/hillfallen">hillfallen</a>
+                                            2017-10-25 18:58                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/maoyuqi7"><img height="50" src="../avatars/maoyuqi7-1589168838-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    技术贴支持
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/maoyuqi7">maoyuqi7</a>
+                                            2017-10-25 18:59                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/ziqingmoyi"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA14326_00-AVATAR0000000009_B19CF6DF2D2A716CA320_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<img src="../emoticons\face\majiang\41.gif"/>收藏先。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/ziqingmoyi">ziqingmoyi</a>
+                                            2017-10-25 19:02                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/tilerphy"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP2374/CUSA12786_00-PREMIUMAVATAR004_A817A81FE57B060966E8_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/szc901127">@szc901127</a> 哈哈哈是呀，11级<img src="../emoticons\face\majiang\3.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/tilerphy">tilerphy</a>
+                                            2017-10-25 19:05                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/tilerphy"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP2374/CUSA12786_00-PREMIUMAVATAR004_A817A81FE57B060966E8_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/ybabananab">@ybabananab</a> 不是两年前，是ps4 twitch直播一出就有了，那时候有dns欺骗，有路由转发俩方法。当时我写了几条路由转发，但是不适合普及且当时没支持弹幕。最近没啥事儿，弄了个普及版<img src="../emoticons\face\majiang\3.gif"/><img src="../emoticons\face\majiang\3.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/tilerphy">tilerphy</a>
+                                            2017-10-25 19:17修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/uhu005"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0404/CUSA11473_00-AVATAR1805310011_EB3CE29E19557FF8376B_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<img src="../emoticons\face\alu\1.gif"/>好耶，回头试试
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/uhu005">uhu005</a>
+                                            2017-10-25 19:09                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/liuhaodong971222"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/WWS_A/UP90001009023l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    惊了<img src="../emoticons\face\alu\38.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/liuhaodong971222">liuhaodong971222</a>
+                                            2017-10-25 19:17                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/spiritlyx617"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0425/CUSA08398_00-AVATAR0000000001_DCF82B0DB7480514595A_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/tilerphy">@tilerphy</a> 大佬.我自己搞定了= =发现github满速!
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/spiritlyx617">spiritlyx617</a>
+                                            2017-10-25 19:46修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/tilerphy"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP2374/CUSA12786_00-PREMIUMAVATAR004_A817A81FE57B060966E8_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/spiritlyx617">@spiritlyx617</a> 稳<img src="../emoticons\face\alu\38.gif"/>。 。。。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/tilerphy">tilerphy</a>
+                                            2017-10-25 19:56                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/ayane-amamiya"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0404/CUSA15374_00-JINRUIAVATAR0011_8B36E2D63AADCE07EBC9_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    这个方法没有意义，因为很多游戏会屏蔽分享画面的！比如机战V之类的。播放OP的时候也是黑屏的。。。建议用WIN10串流软件或者采集卡，这样没有任何画面黑屏限制！
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/ayane-amamiya">ayane-amamiya</a>
+                                            2017-10-25 22:11                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/sakura-n-kisetsu"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0082/CUSA09156_00-NTPLUS0000000036_1370A28D4E5F46FAD468_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    看不懂。但是感觉很厉害的样子
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/sakura-n-kisetsu">sakura-n-kisetsu</a>
+                                            2017-10-25 22:19                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/codcosdk"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0700/CUSA07163_00-NUGGETSTRIGGER01_77CE78D9294AB567E387_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    给大佬点赞，前面的都成功了，就等b站解封小主播的播放权限了<img src="../emoticons\face\majiang\29.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/codcosdk">codcosdk</a>
+                                            2017-10-25 22:42                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/akb48fans"><img height="50" src="../avatars/akb48fans-1556423730-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    未来可以试试<img src="../emoticons\face\alu\35.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/akb48fans">akb48fans</a>
+                                            2017-10-25 22:48                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/mrdeathsubaru"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/3RD/UP01771109D03_08FA3645F276D6F45D06_L.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<img src="../emoticons\face\majiang\33.gif"/> 厉害了 我的大佬 。。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/mrdeathsubaru">mrdeathsubaru</a>
+                                            2017-10-25 22:51                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/dw--shadow"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0425/CUSA12230_00-AVATAR180920JUNA_187B7EC39DACD486A369_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    程序员改变世界！！！！！
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/dw--shadow">dw--shadow</a>
+                                            2017-10-25 22:51                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/andyli_1015"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0746/CUSA08998_00-TSURIOTSUAVA0002_16350DA88EF0484FDD51_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    大佬我想问下，进展到第十步后就一个小黑框里一个光标闪着，并没出现你图里的三行字啊0 0<br/><br/>百度了下找到原因 bios里没看虚拟化技术
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/andyli_1015">andyli_1015</a>
+                                            2017-10-26 00:18修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/srvenx-07"><img height="50" src="../avatars/srvenx-07-1663817094-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    我貌似之前在斗鱼还是哪看过，那玩意儿是拦截twitch的定向流量来着。<br/>这拦截端口思路清奇<img src="../emoticons\face\majiang\4.gif"/><br/>研究一下路由器运行去<img src="../emoticons\face\majiang\5.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/srvenx-07">srvenx-07</a>
+                                            2017-10-26 00:08                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/martian_14"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/WWS_J/J0003.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    还有这种操作？
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/martian_14">martian_14</a>
+                                            2017-10-26 00:14                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/fred_sanity"><img height="50" src="../avatars/fred_sanity-1556419143-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<img src="../emoticons\face\alu\35.gif"/><img src="../emoticons\face\alu\35.gif"/>给dalao打电话
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/fred_sanity">fred_sanity</a>
+                                            2017-10-26 00:41                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/pw__1316"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/WWS_J/J2064_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    喜闻乐见chmod 777<img src="../emoticons\face\alu\5.gif"/><img src="../emoticons\face\alu\11.gif"/><img src="../emoticons\face\alu\11.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/pw__1316">pw__1316</a>
+                                            2017-10-26 00:43                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/tilerphy"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP2374/CUSA12786_00-PREMIUMAVATAR004_A817A81FE57B060966E8_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/andyli_1015">@andyli_1015</a> 百度到了答案，可以可以可以。<img src="../emoticons\face\majiang\4.gif"/><br/><a href="https://psnine.com/psnid/martian_14">@martian_14</a> 是的，窒息<img src="../emoticons\face\majiang\7.gif"/><br/><a href="https://psnine.com/psnid/fred_sanity">@fred_sanity</a>  哈哈哈哈 这个梗<img src="../emoticons\face\majiang\3.gif"/><br/><a href="https://psnine.com/psnid/pw__1316">@pw__1316</a> 哈哈哈，这个虚拟机也不放什么东西 管他什么777 +x +ar的，就是777莽起来 <img src="../emoticons\face\majiang\38.gif"/><br/><a href="https://psnine.com/psnid/srvenx-07">@srvenx-07</a> 拦截twitch流量有两种方式，一种是DNS欺骗，一种是路由重定向。 根据端口来重定向属于路由的一种。<br/><a href="https://psnine.com/psnid/codcosdk">@codcosdk</a> 我也等这个。。。等好了我测试一下另外一个功能……双播+整合弹幕。<br/><br/><a href="https://psnine.com/psnid/ayane-amamiya">@ayane-amamiya</a> 是的，那些保护型的东西播不出。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/tilerphy">tilerphy</a>
+                                            2017-10-26 00:48                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/exiaqiang"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA18093_00-13KAVATAR0000005_110AB0479E0B15E3A3A3_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    路过支持<img src="../emoticons\face\alu\35.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/exiaqiang">exiaqiang</a>
+                                            2017-10-26 07:58                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/q71486013"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/EP8943/CUSA06594_00-AV00000000000030_438DB061B3C7651D258A_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<img src="../emoticons\face\alu\17.gif"/>看完决定买个菜鸡卡
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/q71486013">q71486013</a>
+                                            2017-10-26 08:04                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/jyuhougi"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP5015/CUSA02518_00-PREMIUMAVATAR002_BBF5EE8BFFCC2098D8AB_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    采集卡路过
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/jyuhougi">jyuhougi</a>
+                                            2017-10-26 08:42                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/allen-yuan919"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0507/CUSA04966_00-AVATAR0000000001_7444CE9DCD9C281037F8_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    哇 省了个采集卡的钱 感觉挣了一个亿<img src="../emoticons\face\majiang\41.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/allen-yuan919">allen-yuan919</a>
+                                            2017-10-26 08:49                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/n0t0non"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/UP0680/CUSA02724_00-AV00000000000016_37EEE0C7C657AD9566FB_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    已经很不错了,那些采集卡很多都是盗播..主机片头都是禁止录像的,采集卡直接录....
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/n0t0non">n0t0non</a>
+                                            2017-10-26 08:54                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/slime_shine"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/UT0016/CUSA06833_00-AV00000000000273_2832CF5E8800BFD82935_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    感觉用docker会更方便
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/slime_shine">slime_shine</a>
+                                            2017-10-26 08:55                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/tilerphy"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP2374/CUSA12786_00-PREMIUMAVATAR004_A817A81FE57B060966E8_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/slime_shine">@slime_shine</a> docker对于会用docker的人方便，对于完全没有这些知识的人来说，简直头疼。 有网友没接触过linux，甚至不知道怎么用ifconfig这个命令
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/tilerphy">tilerphy</a>
+                                            2017-10-26 08:58                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/n0t0non"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/UP0680/CUSA02724_00-AV00000000000016_37EEE0C7C657AD9566FB_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    想问,那我应该没有在Twitch上播吧.<br/>话说好像有不需要虚拟机直接截取信号源的方法吧!!!
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/n0t0non">n0t0non</a>
+                                            2017-10-26 08:58                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/tilerphy"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP2374/CUSA12786_00-PREMIUMAVATAR004_A817A81FE57B060966E8_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/n0t0non">@n0t0non</a> 播了不让播的才……更有吸引力。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/tilerphy">tilerphy</a>
+                                            2017-10-26 08:59                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/lxgf"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA18093_00-13KAVATAR0000014_44B6140B46514EC6E5C4_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    几年前春节就这样直播过几天<br/>在A9看的教程<br/>结果没人看就弃了<br/><img src="../emoticons\face\alu\39.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/lxgf">lxgf</a>
+                                            2017-10-26 09:02                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/ascensionco"><img height="50" src="../avatars/ascensionco-1715613653-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    没有采集卡用串流应该也行吧<br/>用账户B登陆串流软件串流 自己原本的账户A继续玩游戏
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/ascensionco">ascensionco</a>
+                                            2017-10-26 09:03                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/suika_xixi"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0102/CUSA06605_00-PREMIUMAVATAR027_5CC2165A291378ECD2E8_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    支持支持 找时间学习一下 应该会遇到一些问题...
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/suika_xixi">suika_xixi</a>
+                                            2017-10-26 09:06                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/scgabriel"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP1804/CUSA08621_00-AVATAR0000000021_4DD200084FD8A887DC2C_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<img src="../emoticons\face\alu\43.gif"/><img src="../emoticons\face\alu\43.gif"/><img src="../emoticons\face\alu\43.gif"/>收藏收藏
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/scgabriel">scgabriel</a>
+                                            2017-10-26 09:17                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/aasiscon"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0005/CUSA01557_00-P5AVATAR00000020_947EE2E3B8E02E1EF38E_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    之前弄过，不过老PS4只能有720p，还是用采集卡了
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/aasiscon">aasiscon</a>
+                                            2017-10-26 10:09                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/suika_xixi"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0102/CUSA06605_00-PREMIUMAVATAR027_5CC2165A291378ECD2E8_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/tilerphy">@tilerphy</a> 大佬儿求个联系方式 我准备研究学习一下 肯定会有弱智问题要问<img src="../emoticons\face\majiang\7.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/suika_xixi">suika_xixi</a>
+                                            2017-10-26 18:53                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/gxfdomino"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/WWS_J/J0018.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    给大佬递茶
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/gxfdomino">gxfdomino</a>
+                                            2017-10-26 18:59                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/liugy2012"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/UP8805/CUSA03855_00-AV00000000000028_0B5D8D3F61B47305E2F3_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    设置200网段后ps还能不能联网?
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/liugy2012">liugy2012</a>
+                                            2017-10-26 21:00                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/suika_xixi"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0102/CUSA06605_00-PREMIUMAVATAR027_5CC2165A291378ECD2E8_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    在大佬的帮助下成功了 给大佬疯狂打电话
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/suika_xixi">suika_xixi</a>
+                                            2017-10-27 02:17                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/unclesev"><img height="50" src="../avatars/unclesev-1556434632-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    有docker版吗dalao…<br/><br/>感觉可以不用在Ubuntu里装虚拟机…
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/unclesev">unclesev</a>
+                                            2017-10-27 02:30                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/tilerphy"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP2374/CUSA12786_00-PREMIUMAVATAR004_A817A81FE57B060966E8_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/liugy2012">@liugy2012</a> 能<br/><a href="https://psnine.com/psnid/unclesev">@unclesev</a> docker没做，不过GitHub clone下来，执行install.sh 就可以了，有docker的使用能力，应该没问题
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/tilerphy">tilerphy</a>
+                                            2017-10-27 07:54                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/imso18"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0700/CUSA11685_00-JUMP50THANNIVA01_2FF9028C5D0F0F88CA20_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    问下大佬，我把ova文件放到C盘，第十步不能出现那4行字，ova放到D盘后正常，这是怎么回事？
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/imso18">imso18</a>
+                                            2017-10-27 09:22                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/tilerphy"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP2374/CUSA12786_00-PREMIUMAVATAR004_A817A81FE57B060966E8_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/imso18">@imso18</a> 这个和ova在哪儿应该没关系。这几天我遇到的不出字的情况有两种，一种是磁盘空间不够了，另一种是机器CPU的虚拟化技术没有打开。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/tilerphy">tilerphy</a>
+                                            2017-10-27 09:38                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/camilleenfield"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP9000/PPSA01287_00-RETURNALAVATAR04_9D0150467EB90A85EC44_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    昨儿晚上修仙的时候试了一下，能直接看见弹幕实在是太爽了，非常感谢大佬<img src="../emoticons\face\majiang\3.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/camilleenfield">camilleenfield</a>
+                                            2017-10-27 10:02                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/yellowbigbird-ps"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/WWS_A/UP90001411REI_3E7485EDA19383D5B2B8_L.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    好像很nx
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/yellowbigbird-ps">yellowbigbird-ps</a>
+                                            2017-10-27 10:15                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/tilerphy"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP2374/CUSA12786_00-PREMIUMAVATAR004_A817A81FE57B060966E8_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/camilleenfield">@camilleenfield</a> <br/><img class="imgclick" referrerpolicy="no-referrer" src="http://ww4.sinaimg.cn/large/bfae17b6gy1fkwlhcrt6vj206305kjrc.jpg"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/tilerphy">tilerphy</a>
+                                            2017-10-27 10:28修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/money-qian"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP9002/CUSA10625_00-NEIRMCAV9S000002_32CCC0588DC941EE806A_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    大大，PS4贴吧上那篇也是你吗
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/money-qian">money-qian</a>
+                                            2017-10-27 10:39                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/tilerphy"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP2374/CUSA12786_00-PREMIUMAVATAR004_A817A81FE57B060966E8_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/money-qian">@money-qian</a> 似我，辣个P9的水货，欧阳风轩这个名字是我的青春期网名，简直无情<img src="../emoticons\face\majiang\14.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/tilerphy">tilerphy</a>
+                                            2017-10-27 10:51修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/hereiszx1996"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/WWS_J/J2015_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    支持下技术贴
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/hereiszx1996">hereiszx1996</a>
+                                            2017-10-27 10:55                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/salvere017"><img height="50" src="../avatars/salvere017-1665283612-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    码农来给dalao点赞<img src="../emoticons\face\alu\35.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/salvere017">salvere017</a>
+                                            2017-10-27 11:07                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/zeucrucis"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0425/CUSA12230_00-AVATAR180920ALTI_ED6F6FDFA307DD98B98C_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    这个操作是不是需要本地网络连Twitch很流畅？
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/zeucrucis">zeucrucis</a>
+                                            2017-10-27 11:14                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/money-qian"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP9002/CUSA10625_00-NEIRMCAV9S000002_32CCC0588DC941EE806A_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/zeucrucis">@zeucrucis</a> 应该不需要，本地拦截再转发
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/money-qian">money-qian</a>
+                                            2017-10-27 11:20                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/tillwave97"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA05030_00-PREMIUMAVATAR011_22CC248E6969DC531A55_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    到第17步改了IP之后不能联网怎么办<img src="../emoticons\face\alu\39.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/tillwave97">tillwave97</a>
+                                            2017-10-27 11:24                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/tilerphy"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP2374/CUSA12786_00-PREMIUMAVATAR004_A817A81FE57B060966E8_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/zeucrucis">@zeucrucis</a> <a href="https://psnine.com/psnid/money-qian">@money-qian</a> 恩不需要，因为除了登录一下twitch（这里跳不过去，https就是狠），其余的地方和twitch无关了。<br/><br/><a href="https://psnine.com/psnid/tillwave97">@tillwave97</a> 其余的都可以用，就这里不能联网吗？下面这些情况可能造成的：<br/>1. 虚拟机运行在笔记本，使用无线网卡进行联网。<br/>2. PS4的IP、掩码、网关、DNS其中某一个设置错误，最好发个照片上来。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/tilerphy">tilerphy</a>
+                                            2017-10-27 11:36                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/tillwave97"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA05030_00-PREMIUMAVATAR011_22CC248E6969DC531A55_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<img class="imgclick" src="http://chuantu.biz/t6/114/1509076444x2061622407.jpg"/><img class="imgclick" src="http://chuantu.biz/t6/114/1509076464x2061622407.jpg"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/tillwave97">tillwave97</a>
+                                            2017-10-27 11:54                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/tilerphy"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP2374/CUSA12786_00-PREMIUMAVATAR004_A817A81FE57B060966E8_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/tillwave97">@tillwave97</a> 虚拟机运行的机器和PS4在同一个局域网吧？ 虚拟机运行的机器是通过wifi联网吗？
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/tilerphy">tilerphy</a>
+                                            2017-10-27 12:28                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/tillwave97"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA05030_00-PREMIUMAVATAR011_22CC248E6969DC531A55_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/tilerphy">@tilerphy</a> 虚拟机一定要网线是吗 我再去试试
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/tillwave97">tillwave97</a>
+                                            2017-10-27 12:33                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/tilerphy"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP2374/CUSA12786_00-PREMIUMAVATAR004_A817A81FE57B060966E8_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/tillwave97">@tillwave97</a> 对，虚拟机所用的机器一定要是网线连接的，并且虚拟机的-设置-网络 使用的桥接网卡必须是有线网卡。 <img src="../emoticons\face\majiang\33.gif"/> 无线网卡其实也能行，但是操作起来比较繁琐，倒不如一根网线，粗暴一插 <img src="../emoticons\face\majiang\40.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/tilerphy">tilerphy</a>
+                                            2017-10-27 12:36修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/tillwave97"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA05030_00-PREMIUMAVATAR011_22CC248E6969DC531A55_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/tilerphy">@tilerphy</a> 好像解决了这个问题 但是最后的直播一直出不来<img src="../emoticons\face\alu\13.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/tillwave97">tillwave97</a>
+                                            2017-10-27 13:07                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/tilerphy"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP2374/CUSA12786_00-PREMIUMAVATAR004_A817A81FE57B060966E8_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/tillwave97">@tillwave97</a> 你折腾这么久……直播码过期了，重新去申请。 我记得两家直播网站，直播码如果超过五分钟不用，那就作废了。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/tilerphy">tilerphy</a>
+                                            2017-10-27 13:09                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/tillwave97"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA05030_00-PREMIUMAVATAR011_22CC248E6969DC531A55_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/tilerphy">@tilerphy</a> 好像不是直播码的问题
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/tillwave97">tillwave97</a>
+                                            2017-10-27 13:37修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/tilerphy"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP2374/CUSA12786_00-PREMIUMAVATAR004_A817A81FE57B060966E8_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/tillwave97">@tillwave97</a> 这里看不出任何问题，另外看到我说的这句话后，把你的图删了，暴露了oauth了。你现在是啥现象呢？
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/tilerphy">tilerphy</a>
+                                            2017-10-27 13:31                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/tillwave97"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA05030_00-PREMIUMAVATAR011_22CC248E6969DC531A55_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/tilerphy">@tilerphy</a> PS4上播送是成功的 但是直播没有画面
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/tillwave97">tillwave97</a>
+                                            2017-10-27 13:38                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/tilerphy"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP2374/CUSA12786_00-PREMIUMAVATAR004_A817A81FE57B060966E8_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/tillwave97">@tillwave97</a> 码率是720p+标准吗？ 我测试这个可以用。 b站貌似对码率和fps有要求，得匹配上。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/tilerphy">tilerphy</a>
+                                            2017-10-27 13:40修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/tillwave97"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA05030_00-PREMIUMAVATAR011_22CC248E6969DC531A55_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/tilerphy">@tilerphy</a> 码率都试过了 还是没画面<img src="../emoticons\face\alu\34.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/tillwave97">tillwave97</a>
+                                            2017-10-27 13:47                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/tilerphy"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP2374/CUSA12786_00-PREMIUMAVATAR004_A817A81FE57B060966E8_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/tillwave97">@tillwave97</a> 难道……难道……rtmp://txy.live-send.acg.tv/live-txy/ 斗鱼的这个url 最后的/你没删掉…… 你的地址可能不是这个，但是请删掉最后的 /<br/><br/>最新版本已经自动删掉了这个 / ，不过很显然你用的不是最新的版本。<br/><br/>ps. 想要尝鲜……点一下那个update and restart，红红火火恍恍惚惚 后果自负。<br/>pppps我的psn Tilerphy，音译： 提了废。 意思就是   每次提交代码都会废。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/tilerphy">tilerphy</a>
+                                            2017-10-27 13:50修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/tillwave97"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA05030_00-PREMIUMAVATAR011_22CC248E6969DC531A55_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/tilerphy">@tilerphy</a> 惊了 居然有这个细节 终于成功了<img src="../emoticons\face\alu\38.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/tillwave97">tillwave97</a>
+                                            2017-10-27 13:53                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/tilerphy"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP2374/CUSA12786_00-PREMIUMAVATAR004_A817A81FE57B060966E8_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/tillwave97">@tillwave97</a> 哈哈，因为bilibili给的地址后面多个/，导致合并成功的地址是最后是 //，就跑到了根目录，那就不对啦。 这个问题在新版已修复。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/tilerphy">tilerphy</a>
+                                            2017-10-27 14:06                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/jwq-1416"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP9000/CUSA12613_00-DSAV0000SCAREDBB_76BD05D6FF2FCE728D23_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    咦，大佬，为啥我的弹幕前面没有显示【D】【B】
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/jwq-1416">jwq-1416</a>
+                                            2017-10-27 16:57                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/suika_xixi"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0102/CUSA06605_00-PREMIUMAVATAR027_5CC2165A291378ECD2E8_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    是不是点那个update就可以更新
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/suika_xixi">suika_xixi</a>
+                                            2017-10-27 17:41                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/tilerphy"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP2374/CUSA12786_00-PREMIUMAVATAR004_A817A81FE57B060966E8_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/suika_xixi">@suika_xixi</a> 对，点了，发现虚拟机重启了，说明更新了<br/><br/><a href="https://psnine.com/psnid/jwq-1416">@jwq-1416</a> 因为我把ps4端的bd删了，怕被平台发现混播，导致封号。 控制台还能看到的
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/tilerphy">tilerphy</a>
+                                            2017-10-27 18:46                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/xmoon76"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0101/CUSA01099_00-AVATAR1511000023_E00A145A4B7BB66C839D_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    我把iptable部分分离在Openwrt<br/>nginx-rtmp运行在windows成功了<br/>现在能成功转发直播流 等会装个nodejs for windows测试下弹幕
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/xmoon76">xmoon76</a>
+                                            2017-10-27 21:10                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/suika_xixi"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0102/CUSA06605_00-PREMIUMAVATAR027_5CC2165A291378ECD2E8_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/tilerphy">@tilerphy</a> 已经测试过了 很好用 然后720p 60fps也很流畅 虽然没人看 不过还是感谢大佬
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/suika_xixi">suika_xixi</a>
+                                            2017-10-27 21:16                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/xmoon76"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0101/CUSA01099_00-AVATAR1511000023_E00A145A4B7BB66C839D_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/tilerphy">@tilerphy</a> 请问奖杯这里的192.168.88.139是哪里的IP？
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/xmoon76">xmoon76</a>
+                                            2017-10-27 21:44                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/tilerphy"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP2374/CUSA12786_00-PREMIUMAVATAR004_A817A81FE57B060966E8_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/xmoon76">@xmoon76</a> 这是我虚拟机的真实ip。奖杯那部分功能其实没必要移植，只是个尝试的功能
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/tilerphy">tilerphy</a>
+                                            2017-10-27 22:58修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/tilerphy"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP2374/CUSA12786_00-PREMIUMAVATAR004_A817A81FE57B060966E8_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/xmoon76">@xmoon76</a> 66666
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/tilerphy">tilerphy</a>
+                                            2017-10-27 22:57                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/tilerphy"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP2374/CUSA12786_00-PREMIUMAVATAR004_A817A81FE57B060966E8_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/suika_xixi">@suika_xixi</a> 多谢多谢多谢测试
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/tilerphy">tilerphy</a>
+                                            2017-10-27 22:59                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/xmoon76"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0101/CUSA01099_00-AVATAR1511000023_E00A145A4B7BB66C839D_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/tilerphy">@tilerphy</a> 测试过了 除了nginx启动关闭以及写conf这部分需要修改匹配windows 只修改了三句exec 其他完全兼容 刚刚B站试播了一下 弹幕也能同步过来<br/><br/>此外就是。。关闭nodejs进程后nginx进程不会关闭。。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/xmoon76">xmoon76</a>
+                                            2017-10-28 00:19                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/tilerphy"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP2374/CUSA12786_00-PREMIUMAVATAR004_A817A81FE57B060966E8_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/xmoon76">@xmoon76</a> <img src="../emoticons\face\majiang\4.gif"/><img src="../emoticons\face\majiang\4.gif"/><img src="../emoticons\face\majiang\4.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/tilerphy">tilerphy</a>
+                                            2017-10-28 09:09                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/killerxiaohe"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP9000/CUSA03667_00-PREMIUMAVATAR025_82D4BF95FD81E8FBD0D2_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    大佬 为啥我打开虚拟机 一直黑屏 只有个光标一直在闪
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/killerxiaohe">killerxiaohe</a>
+                                            2017-10-28 09:28                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/tilerphy"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP2374/CUSA12786_00-PREMIUMAVATAR004_A817A81FE57B060966E8_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/killerxiaohe">@killerxiaohe</a> 上一次遇到这个问题，是小伙伴的计算机没有打开虚拟化技术。需要到bios中开启虚拟化技术，具体教程可以百度一下，很简单。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/tilerphy">tilerphy</a>
+                                            2017-10-28 12:50                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/srvenx-07"><img height="50" src="../avatars/srvenx-07-1663817094-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    （举手！<br/>1. 要是树莓派也要插网线吗？（树莓派插PS4就行？）<br/>2. start.sh的danmu.js貌似没在git源里？<br/>3. heartbeat就是捕捉到了推向Twitch的流吗？<br/>4. 我觉得你需要一个前端，以及一个写文档的选手<img src="../emoticons\face\majiang\5.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/srvenx-07">srvenx-07</a>
+                                            2017-10-28 13:23修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/tilerphy"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP2374/CUSA12786_00-PREMIUMAVATAR004_A817A81FE57B060966E8_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/srvenx-07">@srvenx-07</a> start.sh和danmu.sh已经废弃了，现在入口是start-web.sh<br/>heartbeat是bilibili的连接心跳。<br/>树莓派和ps4在同一局域网就好了。树莓派要插网线。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/tilerphy">tilerphy</a>
+                                            2017-10-28 15:48                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/srvenx-07"><img height="50" src="../avatars/srvenx-07-1663817094-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/tilerphy">@tilerphy</a> 搞定啦！感谢dalao么么哒（等我直播完给你写个css吧
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/srvenx-07">srvenx-07</a>
+                                            2017-10-28 16:11                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/killerxiaohe"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP9000/CUSA03667_00-PREMIUMAVATAR025_82D4BF95FD81E8FBD0D2_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/tilerphy">@tilerphy</a> 这次是http://上一步找到的ip:26666 这个网址打开没有看到 版本号 最下面的框是空白的
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/killerxiaohe">killerxiaohe</a>
+                                            2017-10-28 18:32                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/tilerphy"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP2374/CUSA12786_00-PREMIUMAVATAR004_A817A81FE57B060966E8_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/srvenx-07">@srvenx-07</a> css可以可以，我只用了width红红火火恍恍惚惚
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/tilerphy">tilerphy</a>
+                                            2017-10-28 18:33                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/tilerphy"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP2374/CUSA12786_00-PREMIUMAVATAR004_A817A81FE57B060966E8_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/killerxiaohe">@killerxiaohe</a> 网页能打开，但是没有提示运行对吗？ 你下载的是哪个版本？如果是1.2.0，那么请升级到1.3.1或者更换成火狐浏览器。1.2.0的js有问题，导致Chrome好人IE没法执行后面的脚本。<br/>如果你能在浏览器那按f12然后再刷新，然后截图给我浏览器控制台抛出的错误，那就更好了-或者加我qq346410840
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/tilerphy">tilerphy</a>
+                                            2017-10-28 18:36                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/killerxiaohe"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP9000/CUSA03667_00-PREMIUMAVATAR025_82D4BF95FD81E8FBD0D2_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/tilerphy">@tilerphy</a> 大佬 加你了
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/killerxiaohe">killerxiaohe</a>
+                                            2017-10-28 18:42                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/tilerphy"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP2374/CUSA12786_00-PREMIUMAVATAR004_A817A81FE57B060966E8_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/killerxiaohe">@killerxiaohe</a> 我来了<img src="../emoticons\face\majiang\3.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/tilerphy">tilerphy</a>
+                                            2017-10-28 19:26                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/xmoon76"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0101/CUSA01099_00-AVATAR1511000023_E00A145A4B7BB66C839D_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/tilerphy">@tilerphy</a> <img src="../emoticons\face\majiang\29.gif"/>大佬能把github裡廢棄的物品刪掉嗎
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/xmoon76">xmoon76</a>
+                                            2017-10-29 13:17修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/tilerphy"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP2374/CUSA12786_00-PREMIUMAVATAR004_A817A81FE57B060966E8_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/xmoon76">@xmoon76</a>  哈哈哈哈 好的。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/tilerphy">tilerphy</a>
+                                            2017-10-29 14:21                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/srvenx-07"><img height="50" src="../avatars/srvenx-07-1663817094-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<img class="imgclick" referrerpolicy="no-referrer" src="http://ww4.sinaimg.cn/large/bfae17b6gy1fkzbw12qv6j20w00qjmxu.jpg"/> v0.5<br/><a href="https://github.com/SrvenX-07/ps4broadcast" target="_blank">美化版</a><br/>不是很熟悉github的用法，于是_(:зゝ∠)_
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/srvenx-07">srvenx-07</a>
+                                            2017-10-29 19:42修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/tilerphy"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP2374/CUSA12786_00-PREMIUMAVATAR004_A817A81FE57B060966E8_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/srvenx-07">@srvenx-07</a> 给我发个pull Request<img src="../emoticons\face\majiang\33.gif"/><br/><br/>已添加
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/tilerphy">tilerphy</a>
+                                            2017-10-30 08:49修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/yabaimayor"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP9000/CUSA12613_00-DSAV000EXCITEDBB_E9F14C80B3D339041CD1_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    大佬，美化版不会用了啊。地址都往哪里打啊。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/yabaimayor">yabaimayor</a>
+                                            2017-10-30 21:49                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/tilerphy"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP2374/CUSA12786_00-PREMIUMAVATAR004_A817A81FE57B060966E8_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/yabaimayor">@yabaimayor</a> 美化版还是点加号，然后会多出一行，水印里面，第一格是房间号，第二格是rtmp地址，第三格是推流码。我记得有水印啊
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/tilerphy">tilerphy</a>
+                                            2017-10-31 10:49                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/devil_tcn"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/WWS_E/E0030.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    大大，我也遇到了问题，最后全设置好了以后成功living:bilibili了(那个reset左边的CODE我是空着的写什么啊？)，然后设置了ps4的网络，游戏开始，分享，b站上没画面。<br/>求解决 (在twitch上已经有画面了)<br/><br/><br/>关于前面虚拟机打开只有一个光点的问题，除了BIOS要打开，还有就是之前要改得和你一样，Debian64位，改了就好了。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/devil_tcn">devil_tcn</a>
+                                            2017-11-02 02:27                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/syhily"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0704/CUSA02582_00-AVATAR1511N2REMI_8C8E0D6C6E49852B101D_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    需要楼主讲解一下宿主机无线网卡上网情况下的设置方式。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/syhily">syhily</a>
+                                            2017-11-05 12:24                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/syhily"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0704/CUSA02582_00-AVATAR1511N2REMI_8C8E0D6C6E49852B101D_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    虚拟机版本折腾的心累，我还是看看源码机制，在 AC68U 上移植一下吧。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/syhily">syhily</a>
+                                            2017-11-05 12:32                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/ryougiazaka"><img height="50" src="../avatars/ryougiazaka-1572002784-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    同想问电脑无线网卡怎么进行第15步输入地址的步骤<br/>macbook没法插网线<img src="../emoticons\face\majiang\14.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/ryougiazaka">ryougiazaka</a>
+                                            2017-11-07 21:31                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/kiseki_kimi"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA05030_00-PREMIUMAVATAR040_27F4367FAFC6F6C502F7_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/tilerphy">@tilerphy</a> 大大，提个建议，直播的时候显示直播观众数量的功能可以在后续版本增加进来么，我是B站直播的，直播人数在PS4上看一直都是0.。。<img src="../emoticons\face\alu\10.gif"/><img src="../emoticons\face\alu\10.gif"/><img src="../emoticons\face\alu\10.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/kiseki_kimi">kiseki_kimi</a>
+                                            2017-11-10 19:27                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/spiritlyx617"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0425/CUSA08398_00-AVATAR0000000001_DCF82B0DB7480514595A_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/tilerphy">@tilerphy</a> 大佬，为了便携性，我在mac上面装了虚拟机，我用bridge模式下，似乎mac和vm可以通讯，但是ps4为什么就链接不到vm呢。。。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/spiritlyx617">spiritlyx617</a>
+                                            2017-11-10 21:01                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/chn-alexl"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/UP0082/CUSA00288_00-FFXIVEX3AVATAR01_28387F68E31567940026_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    我的PS4设置成默认IP地址之后Twitch直播正常，换成楼主给的IP之后网络测试正常，但是没法直播，显示错误代码CE-33138-8
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/chn-alexl">chn-alexl</a>
+                                            2017-11-10 21:39                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/tilerphy"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP2374/CUSA12786_00-PREMIUMAVATAR004_A817A81FE57B060966E8_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/chn-alexl">@chn-alexl</a> 因为你设置完了之后没点reset living，这个按钮多点几次没事儿<img src="../emoticons\face\majiang\3.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/tilerphy">tilerphy</a>
+                                            2017-11-11 00:16                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/tilerphy"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP2374/CUSA12786_00-PREMIUMAVATAR004_A817A81FE57B060966E8_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/spiritlyx617">@spiritlyx617</a> 笔记本吧……笔记本的无线网卡貌似很少支持这种混杂模式，只能插网线用lan口
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/tilerphy">tilerphy</a>
+                                            2017-11-11 00:17                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/tilerphy"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP2374/CUSA12786_00-PREMIUMAVATAR004_A817A81FE57B060966E8_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/kiseki_kimi">@kiseki_kimi</a> 这个功能还真挺难实现，因为在线人数ps4读取的是https协议的api，被证书保护的数据无法被拦截和修改....所以....没办法啦
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/tilerphy">tilerphy</a>
+                                            2017-11-11 00:19                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/tilerphy"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP2374/CUSA12786_00-PREMIUMAVATAR004_A817A81FE57B060966E8_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/devil_tcn">@devil_tcn</a> 老哥，那个code必填，b站的话看看那个直播帮助，现在貌似更简单了，在直播设置里，最后有个大按钮叫开始直播，点一下就出来两行，分别是url和code
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/tilerphy">tilerphy</a>
+                                            2017-11-11 00:21                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/tilerphy"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP2374/CUSA12786_00-PREMIUMAVATAR004_A817A81FE57B060966E8_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/syhily">@syhily</a> <a href="https://psnine.com/psnid/ryougiazaka">@ryougiazaka</a> 无线网卡其实有解决办法，百度一下“无线网卡混杂模式”就能找到办法，就是麻烦点，主要步骤大概是再创建一个虚拟网卡，这个虚拟网卡共享无线网卡上网，然后虚拟机桥接这个虚拟网卡。<a href="https://psnine.com/psnid/spiritlyx617">@spiritlyx617</a> mac能不能这么办我就不知道了，win是可以的。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/tilerphy">tilerphy</a>
+                                            2017-11-11 00:25                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/tilerphy"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP2374/CUSA12786_00-PREMIUMAVATAR004_A817A81FE57B060966E8_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    实在是对不起各位，最近沉迷于看孩子，时间比较少……解答有些晚.
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/tilerphy">tilerphy</a>
+                                            2017-11-11 00:25                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/chn-alexl"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/UP0082/CUSA00288_00-FFXIVEX3AVATAR01_28387F68E31567940026_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/tilerphy">@tilerphy</a> 已经解决问题了，可能是DNS的问题，直播码我也更新了一次，问题解决了，谢谢楼主~！
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/chn-alexl">chn-alexl</a>
+                                            2017-11-11 00:31修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/tilerphy"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP2374/CUSA12786_00-PREMIUMAVATAR004_A817A81FE57B060966E8_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/chn-alexl">@chn-alexl</a> 稳了老铁
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/tilerphy">tilerphy</a>
+                                            2017-11-11 00:45                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/sheldonlalala"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0507/CUSA04966_00-AVATAR0000000018_B372ADD16A2F3D1BDEBA_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/tilerphy">@tilerphy</a> 为什么b站直播一开始有ps4画面后面就没了 而且为什么在电脑上看我的直播间一直是花屏
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/sheldonlalala">sheldonlalala</a>
+                                            2017-11-12 10:46                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/tilerphy"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP2374/CUSA12786_00-PREMIUMAVATAR004_A817A81FE57B060966E8_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/sheldonlalala">@sheldonlalala</a> 不知道说的花屏是什么效果，有些受保护的内容不让直播，会出灰色遮挡。如果一开始能直播后来不行了，考虑是码率高导致断线，建议调低分辨率
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/tilerphy">tilerphy</a>
+                                            2017-11-12 12:17                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/spiritlyx617"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0425/CUSA08398_00-AVATAR0000000001_DCF82B0DB7480514595A_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/tilerphy">@tilerphy</a> 我那天查了下，也许是mac的问题。。我即使关闭了防火墙，通过ps4能访问到虚拟机的页面，不带端口的。但是在ps上面的测试网络不通，同样设置windows没问题。。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/spiritlyx617">spiritlyx617</a>
+                                            2017-11-12 18:27                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/ryougiazaka"><img height="50" src="../avatars/ryougiazaka-1572002784-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<img src="../emoticons\face\alu\30.gif"/>大佬 现在直播完全没问题了就是不知道怎么在obs里截取视频流
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/ryougiazaka">ryougiazaka</a>
+                                            2017-11-14 17:21                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/kiseki_kimi"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA05030_00-PREMIUMAVATAR040_27F4367FAFC6F6C502F7_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/tilerphy">@tilerphy</a> <img src="../emoticons\face\alu\10.gif"/><img src="../emoticons\face\alu\10.gif"/>请问一下，如果PS4左上角弹出消息，无论是什么消息，直播画面上都会有一大块马赛克，消息消失后马赛克也消失，这个是什么情况？
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/kiseki_kimi">kiseki_kimi</a>
+                                            2017-11-16 19:10                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/tilerphy"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP2374/CUSA12786_00-PREMIUMAVATAR004_A817A81FE57B060966E8_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/ryougiazaka">@ryougiazaka</a> 试试vlc能不能截，不行的话只好我添加hls功能了。<br/><br/><a href="https://psnine.com/psnid/kiseki_kimi">@kiseki_kimi</a> 正常的，除了游戏内容别的都屏蔽的。<br/><br/><a href="https://psnine.com/psnid/spiritlyx617">@spiritlyx617</a> 可惜我没mac<img src="../emoticons\face\majiang\29.gif"/>无法着手修复啊。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/tilerphy">tilerphy</a>
+                                            2017-11-16 19:22                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/ryougiazaka"><img height="50" src="../avatars/ryougiazaka-1572002784-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/tilerphy">@tilerphy</a> 大佬说的太专业了完全听不懂 等大佬更新功能吧<img src="../emoticons\face\majiang\17.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/ryougiazaka">ryougiazaka</a>
+                                            2017-11-16 19:25                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/tilerphy"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP2374/CUSA12786_00-PREMIUMAVATAR004_A817A81FE57B060966E8_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/ryougiazaka">@ryougiazaka</a> 最近我战线拉的太长了<img src="../emoticons\face\majiang\7.gif"/>实在是太不好意思啦
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/tilerphy">tilerphy</a>
+                                            2017-11-16 19:32                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/ryougiazaka"><img height="50" src="../avatars/ryougiazaka-1572002784-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/tilerphy">@tilerphy</a> 大佬太客气 我们这些伸手党已经很感谢菊苣开发的工具了<img src="../emoticons\face\alu\35.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/ryougiazaka">ryougiazaka</a>
+                                            2017-11-16 20:21                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/good-luck_qwq"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA05030_00-PREMIUMAVATAR040_27F4367FAFC6F6C502F7_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    大神，最后的vlc截取怎么整啊(づ ●─● )づ<br/>卡最后一步了
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/good-luck_qwq">good-luck_qwq</a>
+                                            2017-11-28 22:24                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/good-luck_qwq"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA05030_00-PREMIUMAVATAR040_27F4367FAFC6F6C502F7_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    大神，最后的vlc截取怎么整啊(づ ●─● )づ<br/>卡最后一步了
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/good-luck_qwq">good-luck_qwq</a>
+                                            2017-11-28 22:24                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/hz_s_chiang"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/UP9000/CUSA07408_00-AV00000000000012_C8722ED96C7AB99C89CF_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    多谢大佬，斗鱼已直播
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/hz_s_chiang">hz_s_chiang</a>
+                                            2017-12-02 10:26                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/lw_yingjie"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/UT0016/CUSA06833_00-PSPLUS23AVATAR08_4F47DC7718A1A7FEB416_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/tilerphy">@tilerphy</a> 大佬，請問我按照你設置的 然後開啟虛擬機 怎麼就沒反應了啊 沒出現你圖中的那幾行話啊？
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/lw_yingjie">lw_yingjie</a>
+                                            2017-12-02 15:14                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/tilerphy"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP2374/CUSA12786_00-PREMIUMAVATAR004_A817A81FE57B060966E8_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/lw_yingjie">@lw_yingjie</a> 中间出错了么，或者直接访问提到的管理地址试试
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/tilerphy">tilerphy</a>
+                                            2017-12-02 15:43                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/lw_yingjie"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/UT0016/CUSA06833_00-PSPLUS23AVATAR08_4F47DC7718A1A7FEB416_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/tilerphy">@tilerphy</a> 主要是沒出現 輸入ROOT和密碼的界面啊 打開就沒反應了 黑屏 只有一個橫杠一閃一閃的。。前面設置都對的
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/lw_yingjie">lw_yingjie</a>
+                                            2017-12-02 16:02                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/lw_yingjie"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/UT0016/CUSA06833_00-PSPLUS23AVATAR08_4F47DC7718A1A7FEB416_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/tilerphy">@tilerphy</a> 可以了，原来我电脑的BIOS里没开启 VT 现在行了
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/lw_yingjie">lw_yingjie</a>
+                                            2017-12-02 17:18                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/lw_yingjie"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/UT0016/CUSA06833_00-PSPLUS23AVATAR08_4F47DC7718A1A7FEB416_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/tilerphy">@tilerphy</a> 都设定好了 PS4里也显示正在播送 怎么斗鱼里面没画面啊
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/lw_yingjie">lw_yingjie</a>
+                                            2017-12-02 18:21                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/tilerphy"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP2374/CUSA12786_00-PREMIUMAVATAR004_A817A81FE57B060966E8_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/lw_yingjie">@lw_yingjie</a> 26666的页面上重新点击reset living然后ps4里面重新直播，应该是直播码过期了。<img src="../emoticons\face\majiang\33.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/tilerphy">tilerphy</a>
+                                            2017-12-02 20:52                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/sol_nameless"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/3RD/EP07001401144_F7B3300393204F553063_L.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/tilerphy">@tilerphy</a> 大佬想请教一下 弹幕留言是要自己设置的吗？我有画面但是留言显示不出来
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/sol_nameless">sol_nameless</a>
+                                            2017-12-10 11:01                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/tilerphy"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP2374/CUSA12786_00-PREMIUMAVATAR004_A817A81FE57B060966E8_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/sol_nameless">@sol_nameless</a> 其实弹幕只需要设置对房间号然后reset living就行了
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/tilerphy">tilerphy</a>
+                                            2017-12-10 14:04                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/zuozuo3507"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA17544_00-P5RAVATAR000007A_E5C285EFFCEA0045DEAF_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    。。。。。。。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/zuozuo3507">zuozuo3507</a>
+                                            2017-12-14 00:06                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/zuozuo3507"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA17544_00-P5RAVATAR000007A_E5C285EFFCEA0045DEAF_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    LAODA有些游戏播不出，播放画面是twitch蓝色画面，比如 热血高校 全程都不给播放
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/zuozuo3507">zuozuo3507</a>
+                                            2017-12-14 01:44修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/zuozuo3507"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA17544_00-P5RAVATAR000007A_E5C285EFFCEA0045DEAF_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    哦哦，有些游戏是不然播的，不过能这样串流过B站来已经很不错了，感谢dalao，就是游戏全屏的时候看弹幕有点吃力
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/zuozuo3507">zuozuo3507</a>
+                                            2017-12-14 03:40                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/kiseki_kimi"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA05030_00-PREMIUMAVATAR040_27F4367FAFC6F6C502F7_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/tilerphy">@tilerphy</a> <img src="../emoticons\face\alu\10.gif"/><img src="../emoticons\face\alu\10.gif"/>大佬我想问问现在收到弹幕没有提示了么？
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/kiseki_kimi">kiseki_kimi</a>
+                                            2017-12-30 22:17                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/zuozuo3507"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA17544_00-P5RAVATAR000007A_E5C285EFFCEA0045DEAF_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    B站貌似不能用了，直播黑屏
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/zuozuo3507">zuozuo3507</a>
+                                            2018-01-19 17:33                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/plwhjha1994"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/3RD/30000.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    请问一下，我的ifconfig 显示出我的地址是ipv6地址，输入浏览器后也没有反应。我需要做什么呢？谢谢！
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/plwhjha1994">plwhjha1994</a>
+                                            2018-02-02 09:45                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/plwhjha1994"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/3RD/30000.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    输入了26666显示无法接入，请问是什么原因造成呢？
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/plwhjha1994">plwhjha1994</a>
+                                            2018-02-02 09:45                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/fred_sanity"><img height="50" src="../avatars/fred_sanity-1556419143-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    今天使用了一次，效果拔群，再次感谢楼主<img src="../emoticons\face\majiang\4.gif"/><img src="../emoticons\face\majiang\4.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/fred_sanity">fred_sanity</a>
+                                            2018-02-21 01:57                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/mapleshore"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP9000/CUSA07350_00-AVATAR0000000010_47AC0869A794239E20DB_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    是不是在index里面加几个选项，各大平台都能发推流了？
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/mapleshore">mapleshore</a>
+                                            2018-02-27 13:39                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/mmx357190212"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA07195_00-P5AVATAR00000013_4231DDB9D41749B5B8A0_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    我想说，其实只要一根网线，一个win10电脑就行，ps4网线链接电脑，电脑的网络打开共享，ps4用lan连接方式，成功后，电脑下载remote play，再新建第二桌面打开并链接ps4最大化，切换到第一桌面，手柄插到电脑的usb口上，obs直播remote play然后显示器切换到ps4画面玩，完美，ps4pro直播支持1080p
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/mmx357190212">mmx357190212</a>
+                                            2018-03-17 01:23                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/proud_cats_"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0102/CUSA09554_00-AV00000000000013_0E6C9A3B1F2122FAF18A_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/mmx357190212">@mmx357190212</a> 首先,先肯定一下你这样做是可行的.<br/>然后再来说一下这样做的缺点...<br/><br/>第一,也是唯一一个缺点:PS4向PC串流会有延迟,我用6类线+万兆交换机互联PS和PC,也会出现近0.5秒的串流延迟.我用的PS4PRO
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/proud_cats_">proud_cats_</a>
+                                            2018-03-19 17:53修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/mmx357190212"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA07195_00-P5AVATAR00000013_4231DDB9D41749B5B8A0_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/proud_cats_">@proud_cats_</a> 反正我这么直播玩仁王什么的动作游戏没有任何延迟，fps网战什么的估计有延迟
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/mmx357190212">mmx357190212</a>
+                                            2018-03-20 09:58                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/xigua_88"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0082/CUSA09575_00-AVATAR0000000002_29AEC7B6A8D6B25417D8_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/tilerphy">@tilerphy</a> 大神你好，我用您的方法可以顺利直播了，有个问题想请教一下，有没有什么办法把信号劫持到OBS上，这样就能直播的时候在OBS上加各种插件了，谢谢
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/xigua_88">xigua_88</a>
+                                            2018-03-20 20:18                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/tilerphy"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP2374/CUSA12786_00-PREMIUMAVATAR004_A817A81FE57B060966E8_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/xigua_88">@xigua_88</a> 那样还得加入hls插件 你在git上写个issue 我找时间加上这功能
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/tilerphy">tilerphy</a>
+                                            2018-03-21 07:30                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/huangyu00007"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP1804/CUSA08621_00-AVATAR0000000005_9C200B98311124FBC4F5_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    楼主楼主，我只有一根网线，用的是笔记本，是网线插笔记本然后笔记本共享网络给PS4的吗?
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/huangyu00007">huangyu00007</a>
+                                            2018-04-02 20:32                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/huangyu00007"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP1804/CUSA08621_00-AVATAR0000000005_9C200B98311124FBC4F5_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    输入密码后提示login incorrect，，按对了呀
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/huangyu00007">huangyu00007</a>
+                                            2018-04-02 21:25                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/taleszone"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/3RD/JP01061111052_92C6EF9B0A333FC96FE9_L.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    我想问下，更新包怎么用呀
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/taleszone">taleszone</a>
+                                            2018-04-05 15:03                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/liu1751086"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/UP8805/CUSA03855_00-AV00000000000030_F4E62458EB508D545612_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/tilerphy">@tilerphy</a> 大佬您好，我有一个路由器hg255d 能不能把这个程序直接刷进去呀？方便大概提示下怎么做么？谢谢啦！
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/liu1751086">liu1751086</a>
+                                            2018-05-06 08:42                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/tilerphy"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP2374/CUSA12786_00-PREMIUMAVATAR004_A817A81FE57B060966E8_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/liu1751086">@liu1751086</a> 路由器不太行啊目前
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/tilerphy">tilerphy</a>
+                                            2018-05-06 18:08                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/srvenx-07"><img height="50" src="../avatars/srvenx-07-1663817094-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    （悲伤的消息，我树莓派烧了貌似……上点芯片超烫，也没个灯点亮<br/>（伤痛的其实还是钱包
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/srvenx-07">srvenx-07</a>
+                                            2018-06-07 01:38                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/tilerphy"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP2374/CUSA12786_00-PREMIUMAVATAR004_A817A81FE57B060966E8_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/taleszone">@taleszone</a> 更新包其实不用怎么用，点界面上的Update and Restart就更新完了。<br/><a href="https://psnine.com/psnid/srvenx-07">@srvenx-07</a> 要说树莓派挺瓷实的啊，我之前弄个小机械臂，不小心电流过大了20分钟，全身而退了。<br/><a href="https://psnine.com/psnid/huangyu00007">@huangyu00007</a> 密码不回显，先在记事本上演练一下。正常用其实不需要进入系统。 另外 你说的接线方式可以。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/tilerphy">tilerphy</a>
+                                            2018-07-02 17:00                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/tilerphy"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP2374/CUSA12786_00-PREMIUMAVATAR004_A817A81FE57B060966E8_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    各位有问题最好在github上也给我发issue，不然回复可能会很慢的。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/tilerphy">tilerphy</a>
+                                            2018-07-02 17:01                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/hlejrmo"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/UP9000/CUSA07408_00-AV00000000000014_7C85B6F45EEEF3FDD056_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    楼主大大，怎么直播到虎牙平台
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/hlejrmo">hlejrmo</a>
+                                            2018-08-14 23:07                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/camilleenfield"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP9000/PPSA01287_00-RETURNALAVATAR04_9D0150467EB90A85EC44_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    twitch被墙了，真是坑爹...现在开直播还得科学上网。<img src="../emoticons\face\majiang\5.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/camilleenfield">camilleenfield</a>
+                                            2018-09-20 10:04                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/jetlinlj"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA17932_00-JPGBVSAV00000013_C715BC8A2B98AD1CD683_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    dalao，我load好虚拟机之后无法进入26666页面，是什么问题啊？mac系统，我是家里一个大的路由，然后自己房间里一个路由，但是设了桥接模式，我看本机ip是192.168.0.xxx，但是虚拟机里ifconfig是192.168.2.xxx。virtual box的设置也反复确认了没问题，确实选的桥接模式，网卡也只有一个。。。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/jetlinlj">jetlinlj</a>
+                                            2018-10-09 11:08                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/littleokami_mhf"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP8902/CUSA43524_00-GBVSRAVATARDJEET_A3B09E8FB0AE30970411_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    twitch 被墙了
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/littleokami_mhf">littleokami_mhf</a>
+                                            2019-01-20 18:32修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/littleokami_mhf"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP8902/CUSA43524_00-GBVSRAVATARDJEET_A3B09E8FB0AE30970411_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    连接虚拟机+开好SS，局域网分享，修改proxy就行
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/littleokami_mhf">littleokami_mhf</a>
+                                            2019-01-20 18:32修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/wujinqiang"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP9002/CUSA10625_00-NEIRMCAV2B000001_3FF151024DE34FC3CDC2_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    楼主，不能用虚拟电脑打开新任务，用的最新的VirtualBox<br/>不能为虚拟电脑 PS4Broadcast_1 打开一个新任务.<br/><br/>The virtual machine 'PS4Broadcast_1' has terminated unexpectedly during startup with exit code 1 (0x1).  More details may be available in 'C:\Users\wjq\VirtualBox VMs\PS4Broadcast_1\Logs\VBoxHardening.log'.<br/><br/>返回 代码: E_FAIL (0x80004005)<br/>组件: MachineWrap<br/>界面: IMachine {5047460a-265d-4538-b23e-ddba5fb84976}
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/wujinqiang">wujinqiang</a>
+                                            2019-06-14 17:28                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/eboy_wcl"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/WWS_E/E0007.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    请问PS5可以正常使用吗？我目前pc端配置ok。ps5设置ok而且已经绑定twitch账号，网络测试也通过了，开直播可以选择Twitch选项，且显示已经关联，但确认开播以后ps5显示443，无法开播。烦请指导。难道pc需要梯子吗？
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/eboy_wcl">eboy_wcl</a>
+                                            2021-09-07 16:35                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/xjjbbb"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP9000/PPSA01971_00-DEATHSDCAVATAR08_DDCB6961636DD2B215F1_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/eboy_wcl">@eboy_wcl</a> 朋友，我也是同样的问题，请问解决了吗?
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/xjjbbb">xjjbbb</a>
+                                            2021-09-25 23:59                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/shincurryy"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA07195_00-P5AVATAR00000031_D1E1BC0A26CF9C18C5EF_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    ps4broadcast + 代理才能在PS5上成功直播bilibili<br/><br/>主要原因是，PS5开启直播的流程中<br/>1. 选择直播平台<br/>2. 设置直播标题<br/>3. 开始<br/><br/>第2个步骤好像会请求平台相关的接口，而这个接口是被墙了的<br/><br/>想问一下有没有什么办法可以只代理这个接口，但是rtmp流还是直连
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/shincurryy">shincurryy</a>
+                                            2021-09-30 15:52                                                                            </div>
+<!--回复结束-->
+</div>
+</div>
+        </body></html>

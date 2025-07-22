@@ -1,0 +1,859 @@
+
+        <!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><title>《鬼泣5》分数计算简析（附带两个最难关卡无伤视频）</title><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="stylesheet" href="style.css"></head>
+        <body>
+            <div class="original-url-container"><p><strong>原始链接:</strong> <a href="https://psnine.com/topic/34637" target="_blank">https://psnine.com/topic/34637</a></p></div>
+            <h1>《鬼泣5》分数计算简析（附带两个最难关卡无伤视频）</h1><div class="main-post-container"><div class="meta">
+
+<a class="psnnode" href="https://psnine.com/psnid/mersang" itemprop="author">mersang</a>
+<span class="text-warning">
+2019-03-20 01:20编辑
+</span>   
+76评论
+</div><div class="content pd10" itemprop="articleBody">《鬼泣5》分数计算简析<br/><span style="color:red;">未经授权，禁止转载，否则死马</span><br/>在游戏中，玩家会有一个分数一直跟随着玩家，我们可以理解为玩家的头顶上顶着个数字，先称为玩家分数。<br/><br/><b><span style="color:brown;">初始改变</span></b><br/><span style="color:blue;">玩家分数</span>的初始值为0，根据玩家的动作会使得这个分数发生改变。<br/>以HOH难度为例，通过枪械在E评价（就是右侧还没跳出评价）秒杀一只虫子，玩家分数会从0涨幅到1000,。目前测试的结果是第一个分数不会有任何的衰减。<br/>1000=伤害×评价系数（D、C、B、A、S的系数）×敌人系数，这些系数目前都是未知的<br/><br/>但通过这个计算方式可以明白不同的敌人的得分是不相同的，有些敌人是很难刷上高分。而有些敌人的得分相当惊人，例如你能在S以上评价击杀一只藤蔓，那个分数啧啧啧。<br/>此外还要注意《鬼泣5》是根据伤害来计算，所以会有伤害溢出的情况，所以<span style="color:red;">伤害溢出能给更大的收益</span>。<br/><br/><span style="color:red;"><b>曲线增幅</b></span><br/>那么第二次攻击的得分会怎么影响上文所提的1000分呢？大致计算方式其实就是平均分，根据玩家得分差距这个结果会趋向于更有利玩家的方向。并且每一次攻击的增幅程度不会超过一个阀值，但无意义的随意攻击非强制战敌人仍是会严重影响玩家的得分。<br/>大家可以用特殊关卡M1测试自己感受一下，HOH难度先跳过所有敌人击杀BOSS得到一个分数，然后之后再击杀敌人，用同样的手段击杀BOSS得到两个分数，去比较之间的关系。<br/>（M1的结算页面会有一个分数，然后BOSS胜利后会跳出一个分数，CG动画又会有一个相同的分数，这是惟一一个会二次显示最后分数的关卡，很适合用来测试得分。）<br/><br/><span style="color:blue;">上面一段话太复杂了可以跳过</span>，只要懂得打的要比现在的玩家得分更高才能加分，比现在的玩家得分低就会扣分。加减幅度约等于两个数据取平均值再往有利玩家的方向偏移一些。加减幅度不会超过一个阀值。<br/><br/>这里在强调一下，这个结论指得是<span style="color:red;">每一次攻击都会发生的计算结果</span>，并不是击杀敌人或者完成战斗才会计算。所以完整战斗时玩家的分数曲线开始都会下降，然后再根据表现上升。<br/><br/><br/><span style="color:red;"><b>实际运用</b></span><br/>上面都是些狗屁的原理知识，现在说说具体怎么用。用处就是可以评估这场战斗对于玩家而言的<span style="color:red;">期望值</span>是多少，来判断这场战斗是减分战还是加分战，这个分数一直打下去是否可以达到S。<br/><br/>此外非强制战斗也可以对敌人进行评估，这个敌人的期望值是多少，是能加分还是减分。<br/>这个期望值需要玩家自己去体会，大体感觉一下。个人目前得出的结论是 小黑、菜刀属于4500-5000分档位，剃须刀是5000-5300的档位。最菜的昆虫类敌人可以达到6000甚至更高，但是SSS下击杀他们本身就是很困难的一件事。藤蔓的话如果期望值数据与DEMO没有变化，大约是一万左右（但是得SSS击杀藤蔓）。<br/>BOSS的分数都很高，只要能维持长时间高评价削减BOSS血量，分数都可以朝着五位数进发，当然这也是很难的一件事情。个人测试一SSS评价削减SOS难度下 M17 BOSS 百分之80的血量，分数是8000多<br/><br/><span style="color:red;"><b>总分计算</b></span><br/>之前DEMO（不是指公开的那个DEMO）的算法是取各个节点分数（也就是结算时弹出的几个数据）加上最后的节点分数（隐藏）取平均值。<br/>不过正式版直接使用玩家分数最终结果而定总分，也就是这个玩家得分曲线的最终结果，中间的这些<span style="color:red;">节点分数说实话已经没有什么意义了</span>。<br/><br/>HAH M10<br/><iframe allowfullscreen="true" border="0" frameborder="no" framespacing="0" height="490" scrolling="no" src="https://player.bilibili.com/player.html?bvid=av46665157&amp;page=1" width="100%"></iframe><br/><br/>HAH M12<br/><iframe allowfullscreen="true" border="0" frameborder="no" framespacing="0" height="490" scrolling="no" src="https://player.bilibili.com/player.html?bvid=av46119149&amp;page=1" width="100%"></iframe><br/><br/></div></div>
+            
+            <h2>评论</h2><div class="post">
+<a class="l" href="https://psnine.com/psnid/nevereogh"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0797/CUSA13427_00-AV00000000000003_EBD3AB42FC2CC63612B9_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    感觉白嫖到了UCG的杂志内容
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/nevereogh">nevereogh</a>
+                                            2019-03-19 15:30                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/sora0612"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/SCEI/I0059.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    这不是全球首白的MM大佬么 <img src="../emoticons\face\majiang\33.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/sora0612">sora0612</a>
+                                            2019-03-19 15:35                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/wangqianguang"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/3RD/JP05071304110_E66D2A29EF0335E8E6C7_L.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<img src="../emoticons\face\majiang\3.gif"/>藤曼分数居然这么高！？所以我就想问了，300W挑衅对藤曼有效吗？有的话直接上SSS，简直酸爽
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/wangqianguang">wangqianguang</a>
+                                            2019-03-19 15:46                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/ptdisco"><img height="50" src="../avatars/ptdisco-1556446102-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    不明觉厉，只是觉得似乎m8m10的计分有问题，昨天来来回回打了好几次m8才正好过了s门槛
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/ptdisco">ptdisco</a>
+                                            2019-03-19 15:48                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/karasu0112"><img height="50" src="../avatars/karasu0112-1695800317-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/wangqianguang">@wangqianguang</a> 你好sao啊
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/karasu0112">karasu0112</a>
+                                            2019-03-19 15:53                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/wangqianguang"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/3RD/JP05071304110_E66D2A29EF0335E8E6C7_L.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/karasu0112">@karasu0112</a> <img src="../emoticons\face\alu\7.gif"/>不行，对着藤曼挑衅一点反应都没，我第二关试了下，先一枪射爆一颗评价D，然后对着另外三颗300W挑衅没反应，然后去边上的红魂怪那里杀了它保持A评价回过头来继续挑衅，还是没反应（表现为评价不上涨），最后射完剩下几颗6K多的分数
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/wangqianguang">wangqianguang</a>
+                                            2019-03-19 15:57                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/shiliudetian"><img height="50" src="../avatars/shiliudetian-1632234478-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<img src="../emoticons\face\majiang\41.gif"/>我就发现打瞬移蜥蜴稳定掉分
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/shiliudetian">shiliudetian</a>
+                                            2019-03-19 15:57                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/headlights2001"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP3974/CUSA09340_00-AVATAR2019110601_A0A329FA439972617F41_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    完美<img src="../emoticons\face\alu\44.gif"/>新一期的ucg我可以不用买了<img src="../emoticons\face\alu\30.gif"/><br/><br/>蔓藤分高但也不太好刷吧<img src="../emoticons\face\alu\42.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/headlights2001">headlights2001</a>
+                                            2019-03-19 16:09                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/zhioslong_hk"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA07195_00-P5AVATAR00000040_E89C122F34DB2B621DDE_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<img src="../emoticons\face\alu\30.gif"/>所以DMD的M18总分计分只看最后一场boss战，前面的都没意义是吗？卡在这儿了<img src="../emoticons\face\alu\39.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/zhioslong_hk">zhioslong_hk</a>
+                                            2019-03-19 16:12                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/misty1falcon"><img height="50" src="../avatars/misty1falcon-1556418206-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/zhioslong_hk">@zhioslong_hk</a> 所有战点都有意义啊，这关你拿浮士德无伤射过去就行了，猫和鸟方块射死，梦魇上陨石，中间可以宰了那几只红蚂蚁凑凑评分
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/misty1falcon">misty1falcon</a>
+                                            2019-03-19 16:38                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/komaeda_ovo"><img height="50" src="../avatars/komaeda_ovo-1564619560-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/zhioslong_hk">@zhioslong_hk</a> 计分最奇葩的一关，站点分数平均5300+，结算乘以1.2=4000分，哈哈我简直黑人问号脸。最后钞能力一路砸过去无伤S了<img src="../emoticons\face\alu\26.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/komaeda_ovo">komaeda_ovo</a>
+                                            2019-03-19 16:45                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/lo_zx"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0031/CUSA01054_00-AVATAR1505NEP005_F752BFEF2E825C750BAE_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<img src="../emoticons\face\majiang\31.gif"/><img src="../emoticons\face\alu\10.gif"/>大佬你来啦
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/lo_zx">lo_zx</a>
+                                            2019-03-19 17:01                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/aconga_chn"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/UT0016/CUSA06833_00-PSWRPUP2022AVTR5_271B80FCF02FB0E799B4_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/nevereogh">@nevereogh</a> 不用白嫖，他就是ucg的六等星
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/aconga_chn">aconga_chn</a>
+                                            2019-03-19 17:01                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/acg19940506"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/EP8943/CUSA06594_00-AV00000000000165_1660263CE41CC40E6C74_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    如果说敌人也有倍率的话，我觉得boss的倍率应该都是比较高的，毕竟boss哪里基本都在加分，昨天打dmd狗狗打的满嘴啃泥还加了分<img src="../emoticons\face\majiang\41.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/acg19940506">acg19940506</a>
+                                            2019-03-19 17:19修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/sa11011079"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0106/CUSA16157_00-NIOH2PRE01AVA002_6CFE1EE05FD1CB98BE50_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    HOH可以在其他关卡测一下，比如第8关打死第一只小怪得分是833而不是1000，说明各个关卡起评分不一样，导致某几关特别难刷分
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/sa11011079">sa11011079</a>
+                                            2019-03-19 17:21                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/akari_saigao"><img height="50" src="../avatars/akari_saigao-1556546038-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<img src="../emoticons\face\alu\35.gif"/>大佬都在研究计分算法了，真是优秀
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/akari_saigao">akari_saigao</a>
+                                            2019-03-19 17:23                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/gd03d"><img height="50" src="../avatars/gd03d-1752052632-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    围观学习<img src="../emoticons\face\alu\42.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/gd03d">gd03d</a>
+                                            2019-03-19 17:26                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/otboibtio"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/3RD/JP01021107003_C121AD9270B6124561A5_L.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    这么多白金的，却只有MM出来分享心得，支持一下儿。<img src="../emoticons\face\majiang\41.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/otboibtio">otboibtio</a>
+                                            2019-03-19 17:36                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/mersang"><img height="50" src="../avatars/mersang-1556118843-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/zhioslong_hk">@zhioslong_hk</a> 我是指最后结算那点告诉你拿了多少分的数字没有意义，不是说这几场战斗没有意义
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/mersang">mersang</a>
+                                            2019-03-19 17:49                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/zhioslong_hk"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA07195_00-P5AVATAR00000040_E89C122F34DB2B621DDE_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/mersang">@mersang</a> 就说M18吧，想拿S最后计算总分似乎只看boss战结束后CG时右侧一闪而过的分数，而这个分数是怎么来的还是受前面的战斗的影响？<img src="../emoticons\face\alu\42.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/zhioslong_hk">zhioslong_hk</a>
+                                            2019-03-19 17:54                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/sa11011079"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0106/CUSA16157_00-NIOH2PRE01AVA002_6CFE1EE05FD1CB98BE50_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/zhioslong_hk">@zhioslong_hk</a> 这个分数就是你一路打过来的平均分<br/>M18这关，一路帽子射过去最后梦魇用15万陨石砸死，保持无伤就可以了
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/sa11011079">sa11011079</a>
+                                            2019-03-19 18:03修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/zhioslong_hk"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA07195_00-P5AVATAR00000040_E89C122F34DB2B621DDE_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/sa11011079">@sa11011079</a> M18我两个战点，5100和5500的分数，boss战结束后右侧4800,x1.2不够7000拿不到S。所以还是boss战打的分数不够咯<img src="../emoticons\face\alu\30.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/zhioslong_hk">zhioslong_hk</a>
+                                            2019-03-19 17:57                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/sa11011079"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0106/CUSA16157_00-NIOH2PRE01AVA002_6CFE1EE05FD1CB98BE50_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    但丁有陨石，帽子普通射击，真魔人，都是大杀器。打S评价有两个思路，RG刷分(HAH不能用)或者无伤。<br/>尼禄我在奖杯tips里讲了，有鬼手抓取挑衅这样的赖皮方法刷分，用这方法把全部战点刷到SSS就行了，甚至HAH某些关你死一次没有1.2倍加成也够S
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/sa11011079">sa11011079</a>
+                                            2019-03-19 18:01                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/littleokami_mhf"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP8902/CUSA43524_00-GBVSRAVATARDJEET_A3B09E8FB0AE30970411_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<img src="../emoticons\face\alu\7.gif"/>卡爸爸设计这种计数方式有病吗，老老实实用4那种不好得很
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/littleokami_mhf">littleokami_mhf</a>
+                                            2019-03-19 20:11                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/kevin_nx"><img height="50" src="../avatars/kevin_nx-1602256644-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<img src="../emoticons\face\alu\29.gif"/>目測碩士天際即將拿起洗衣粉來洗文了.
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/kevin_nx">kevin_nx</a>
+                                            2019-03-19 20:22                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/nevanlol"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/EP8943/CUSA06594_00-AV00000000000125_30906373D16918F3A2C6_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    膜拜大佬<img src="../emoticons\face\majiang\8.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/nevanlol">nevanlol</a>
+                                            2019-03-19 20:35                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/feipang2"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP9000/PPSA01971_00-DEATHSDCAVATAR04_B2876EA11038CB158772_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    高手 膜拜
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/feipang2">feipang2</a>
+                                            2019-03-19 20:42                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/lee_kwun_lung"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/UP2538/CUSA05620_00-AV00000000000099_AAB38D4B2EC7417581CD_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    大佬 等你攻略本<img src="../emoticons\face\alu\11.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/lee_kwun_lung">lee_kwun_lung</a>
+                                            2019-03-19 22:19                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/daisukirin"><img height="50" src="../avatars/daisukirin-1555059393-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<img src="../emoticons\face\alu\38.gif"/>这作有boss战的基本都一次s，没boss战的就有点烦（比如m10之类的）有的点直接上来就boss战斗，甚至可以死1次（m6之类的）
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/daisukirin">daisukirin</a>
+                                            2019-03-19 22:52                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/anneletter"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/UP1004/CUSA03041_00-AV00000000000027_DD40DA328641E0243F07_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    m1岂不是可以抓个怪带到藤蔓那挑衅到ss然后砍了藤蔓刷分？
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/anneletter">anneletter</a>
+                                            2019-03-19 23:06                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/recemiku"><img height="50" src="../avatars/recemiku-1712363593-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    hah卡在m12了<img src="../emoticons\face\majiang\41.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/recemiku">recemiku</a>
+                                            2019-03-20 01:09                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/wangding123"><img height="50" src="../avatars/wangding123-1588852704-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    未经授权，禁止转载感觉是对硕士星空说的<img src="../emoticons\face\majiang\41.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/wangding123">wangding123</a>
+                                            2019-03-20 01:43                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/wackyperry"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0507/CUSA03274_00-FATEEXAVATAR0014_6588AC4E54ADFF81657E_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    关于藤蔓刷分，我觉得可以参考一下国外某位在DEMO里面刷到2w pts的视频<br/><br/>https://youtu.be/bl1LLdecJ5Q
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/wackyperry">wackyperry</a>
+                                            2019-03-20 02:43                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/wackyperry"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0507/CUSA03274_00-FATEEXAVATAR0014_6588AC4E54ADFF81657E_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/sa11011079">@sa11011079</a> 如果能保证完美RG的话，HAH也不是不能用<img src="../emoticons\face\alu\13.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/wackyperry">wackyperry</a>
+                                            2019-03-20 02:44                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/zhioslong_hk"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA07195_00-P5AVATAR00000040_E89C122F34DB2B621DDE_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/wackyperry">@wackyperry</a> HAH难度非完美RG直接被破而且清空DT槽<img src="../emoticons\face\alu\39.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/zhioslong_hk">zhioslong_hk</a>
+                                            2019-03-20 08:49                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/shiyuliu"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/WWS_A/UP90001312L30_67CD896BD0CE261F473B_L.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/daisukirin">@daisukirin</a> 你好厉害啊，HOH打完到HAH全S用了八个小时<img src="../emoticons\face\majiang\41.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/shiyuliu">shiyuliu</a>
+                                            2019-03-20 08:52修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/yancc_slimemk2"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0704/CUSA06366_00-AVA0000000000001_2844C17113CE9C21231B_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/zhioslong_hk">@zhioslong_hk</a> dmd m18我打了6006分，压线<img src="../emoticons\face\alu\5.gif"/>进boss战前4800多，boss战还涨了点评价。<br/>你如果还没刷到s，可以考虑下5000分左右进boss前备份下存档，打完看分数不到5000，没出过关结算，直接退游戏重开就行。<br/>备份存档只是为了退游戏太慢导致已经存档好了。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/yancc_slimemk2">yancc_slimemk2</a>
+                                            2019-03-20 09:01                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/acg19940506"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/EP8943/CUSA06594_00-AV00000000000165_1660263CE41CC40E6C74_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/yancc_slimemk2">@yancc_slimemk2</a> 妹的m18我只有h难度是自己打的，别的都是靠无伤……
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/acg19940506">acg19940506</a>
+                                            2019-03-20 09:11                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/zhioslong_hk"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA07195_00-P5AVATAR00000040_E89C122F34DB2B621DDE_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/yancc_slimemk2">@yancc_slimemk2</a> 谢谢！我进boss战前4900备份存档打了几次都是降分数，最后尝试钞能力无伤11000分过了<img src="../emoticons\face\alu\35.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/zhioslong_hk">zhioslong_hk</a>
+                                            2019-03-20 09:11                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/daisukirin"><img height="50" src="../avatars/daisukirin-1555059393-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/shiyuliu">@shiyuliu</a> hoh就调剂用的，几个难度混着打，昨天早上起床顺手撸了10关之类的<br/><br/>本来想hah打完再打hoh的，后来觉得白金截图是hoh就少了点什么，结果最后打完的白金截图连结算画面都没截到...
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/daisukirin">daisukirin</a>
+                                            2019-03-20 09:40修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/wangqianguang"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/3RD/JP05071304110_E66D2A29EF0335E8E6C7_L.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/daisukirin">@daisukirin</a> <img src="../emoticons\face\alu\13.gif"/>我就是特地留着最后的M20打个S白金截图的，本来想截但丁维吉尔背靠背那张当白金图的，结果手贱点了option，只截了一张黑漆漆的玩意
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/wangqianguang">wangqianguang</a>
+                                            2019-03-20 10:08                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/daisukirin"><img height="50" src="../avatars/daisukirin-1555059393-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/wangqianguang">@wangqianguang</a> <img src="../emoticons\face\majiang\40.gif"/>比我还惨，我手忙脚乱的截到一个弹孔...
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/daisukirin">daisukirin</a>
+                                            2019-03-20 10:13                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/yancc_slimemk2"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0704/CUSA06366_00-AVA0000000000001_2844C17113CE9C21231B_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/wangqianguang">@wangqianguang</a> m20打完s评价，不是应该在结算界面跳杯么？
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/yancc_slimemk2">yancc_slimemk2</a>
+                                            2019-03-20 10:14                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/unsil_255"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP9000/CUSA16972_00-AV00000000000001_3920E87A5E9B286582AC_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/zhioslong_hk">@zhioslong_hk</a> 请问所谓钞能力就是靠帽子和红符石的话，所有战斗都可以轻松S吗？
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/unsil_255">unsil_255</a>
+                                            2019-03-20 10:26                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/kasekidd"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/3RD/JP00361111B12_FF81CCD07B1AFBC2366E_L.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/unsil_255">@unsil_255</a> 只能说轻松无伤吧<img src="../emoticons\face\majiang\29.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/kasekidd">kasekidd</a>
+                                            2019-03-20 10:34                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/zhioslong_hk"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA07195_00-P5AVATAR00000040_E89C122F34DB2B621DDE_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/unsil_255">@unsil_255</a> 只能保证快速击杀，降低无伤难度，并不能保证战点S评价，但是无伤对总评加成很高，关卡容易拿S<img src="../emoticons\face\majiang\41.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/zhioslong_hk">zhioslong_hk</a>
+                                            2019-03-20 11:00                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/wangqianguang"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/3RD/JP05071304110_E66D2A29EF0335E8E6C7_L.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/yancc_slimemk2">@yancc_slimemk2</a> 其实是在进结算前就跳杯了，我绝佳猎手的图就是D和V背靠背那张<img src="../emoticons\face\majiang\29.gif"/>，无愧传奇是一片黑，白金图则是多了四个弹孔<img src="../emoticons\face\majiang\21.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/wangqianguang">wangqianguang</a>
+                                            2019-03-20 11:01修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/unsil_255"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP9000/CUSA16972_00-AV00000000000001_3920E87A5E9B286582AC_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/zhioslong_hk">@zhioslong_hk</a> HAH也好用么？那就在棘手的地方用一下，对全S也很有帮助？这样突然感觉不是很难的样子。。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/unsil_255">unsil_255</a>
+                                            2019-03-20 11:08                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/yancc_slimemk2"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0704/CUSA06366_00-AVA0000000000001_2844C17113CE9C21231B_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/wangqianguang">@wangqianguang</a> 我也想用这张截图来着，正确操作是不是打完M20完全不能跳过附加的两段战斗和剧情，还有STAFF表么？
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/yancc_slimemk2">yancc_slimemk2</a>
+                                            2019-03-20 11:22                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/v838monova"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/UP8805/CUSA03855_00-AV00000000000030_F4E62458EB508D545612_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    替游民星空家的马感到担忧<img src="../emoticons\face\alu\4.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/v838monova">v838monova</a>
+                                            2019-03-20 11:33                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/zhioslong_hk"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA07195_00-P5AVATAR00000040_E89C122F34DB2B621DDE_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/unsil_255">@unsil_255</a> 但丁HAH有些关卡基本就是钞能力了
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/zhioslong_hk">zhioslong_hk</a>
+                                            2019-03-20 12:03                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/wangqianguang"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/3RD/JP05071304110_E66D2A29EF0335E8E6C7_L.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/yancc_slimemk2">@yancc_slimemk2</a> 战斗能不能跳不清楚，你可以先随便打一关M20跳了战斗看看STAFF后有没有那段剧情
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/wangqianguang">wangqianguang</a>
+                                            2019-03-20 12:18                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/bigsea0311"><img height="50" src="../avatars/bigsea0311-1577115007-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/otboibtio">@otboibtio</a> 唉，一堆都是修改的。不过话说哪里有妹子啊
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/bigsea0311">bigsea0311</a>
+                                            2019-03-20 13:22                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/wangbinwei"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/3RD/HP00821004004l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    藤蔓我没故意去杀过，这次的评价机制太辣鸡了<img src="../emoticons\face\alu\37.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/wangbinwei">wangbinwei</a>
+                                            2019-03-20 14:18                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/otboibtio"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/3RD/JP01021107003_C121AD9270B6124561A5_L.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/bigsea0311">@bigsea0311</a> 哈哈 大佬误会了 MM指的是作者MERSANG。<img src="../emoticons\face\alu\15.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/otboibtio">otboibtio</a>
+                                            2019-03-20 15:07                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/bt_mie"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP2374/CUSA12786_00-PREMIUMAVATAR008_7B50AF6775E2ED22410D_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    划总结 每场战斗都会对你平均分造成影响,如果觉得该场战斗会拖累平均分而这场战斗又不是强制的。最好跳过。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/bt_mie">bt_mie</a>
+                                            2019-03-20 16:25修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/vengence0417"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0005/CUSA01557_00-P5AVATAR00000011_5D01979B4B4AFD314279_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    大佬问一下，hah我除了m8都s了，m8到底需要怎么打，因为有剧情杀没有无伤加成，1.2倍我5400分只有a评价。该怎么打？还有dmd   M18噩梦回血机制能说说吗。这两个过了就白金了
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/vengence0417">vengence0417</a>
+                                            2019-03-20 21:40                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/daisukirin"><img height="50" src="../avatars/daisukirin-1555059393-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/vengence0417">@vengence0417</a> m18路上有3个植物需要打掉，另外根据之前隔壁问答贴里面的测试内容，应该还需要在nm在场上的时候对nm要保持一定的输出，不然也会回血<br/>http://d7vg.com/qa/20978<br/><br/>顺便我自己的m8打法就是参考之前机因那个油管民工流打法的帖子，尼禄刷分方法同样还是抓怪踩怪挑衅，然后第一个落下的非强制战斗那个点也是直接跳过了的。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/daisukirin">daisukirin</a>
+                                            2019-03-20 22:11修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/bt_mie"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP2374/CUSA12786_00-PREMIUMAVATAR008_7B50AF6775E2ED22410D_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/daisukirin">@daisukirin</a> 大佬 你发的是M18的。。。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/bt_mie">bt_mie</a>
+                                            2019-03-20 22:03                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/daisukirin"><img height="50" src="../avatars/daisukirin-1555059393-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/bt_mie">@bt_mie</a> <img src="../emoticons\face\majiang\29.gif"/>m8我是土味民工流打法，感觉没什么好说的，就只能说说nm的回血机制了
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/daisukirin">daisukirin</a>
+                                            2019-03-20 22:04                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/bt_mie"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP2374/CUSA12786_00-PREMIUMAVATAR008_7B50AF6775E2ED22410D_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/vengence0417">@vengence0417</a> 你很接近了 HAH和SOS一样只要5500分就能S..我觉得你再试几次就ok了<br/>能打到5400分那打法你应该都懂的<br/>试试开始的3个镰刀,抓取挑衅到C再开始打。Fury时停+投机秒,之后的蜥蜴、nobody、最后一个平台的犀牛+小怪保持5500左右的评价就好 (按这篇文章的思路 如果觉得打不到S以上的战斗就一律不打,比如血管后的死神,路上的树根之类)<br/>boss只第二阶段可以直接自杀,不影响评价的
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/bt_mie">bt_mie</a>
+                                            2019-03-20 22:09                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/vengence0417"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0005/CUSA01557_00-P5AVATAR00000011_5D01979B4B4AFD314279_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/bt_mie">@bt_mie</a> 其实这篇文章说的我早就开始做了。m8我只打了强制战斗5400分，感觉必须要刷分。<br/><br/>二阶段自杀怎么自杀？自杀能有无伤加成吗。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/vengence0417">vengence0417</a>
+                                            2019-03-20 22:22                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/vengence0417"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0005/CUSA01557_00-P5AVATAR00000011_5D01979B4B4AFD314279_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/daisukirin">@daisukirin</a> 我就是没懂nm会掏几个井，然后涨很多血，我自己也会回血。该怎么避免。我记得我过dmd的时候没怎么让噩梦回血
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/vengence0417">vengence0417</a>
+                                            2019-03-20 22:23                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/vengence0417"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0005/CUSA01557_00-P5AVATAR00000011_5D01979B4B4AFD314279_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/daisukirin">@daisukirin</a> 路上的植物不打有什么影响吗？我除了一周目打了，后面觉得没影响就再也不打了，所有关不挡路的，我都没打，没发现区别啊。影响噩梦回血吗
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/vengence0417">vengence0417</a>
+                                            2019-03-20 22:27                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/daisukirin"><img height="50" src="../avatars/daisukirin-1555059393-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/vengence0417">@vengence0417</a> 有3植物 打掉的话 boss战nm就会少个回血点 然后玩家多一个，全部打掉就没有了
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/daisukirin">daisukirin</a>
+                                            2019-03-20 22:29                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/yingbi1"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA17544_00-P5RAVATAR000001A_4403DD414944CE149A78_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<img src="../emoticons\face\majiang\29.gif"/>M10啊。。。M10我但丁全难度都拿不了S。。又打不了无伤。。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/yingbi1">yingbi1</a>
+                                            2019-03-20 22:39                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/sa11011079"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0106/CUSA16157_00-NIOH2PRE01AVA002_6CFE1EE05FD1CB98BE50_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/vengence0417">@vengence0417</a> M8开场3个镰刀分很高，可以拿他们刷到SSS
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/sa11011079">sa11011079</a>
+                                            2019-03-20 22:52                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/vengence0417"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0005/CUSA01557_00-P5AVATAR00000011_5D01979B4B4AFD314279_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/sa11011079">@sa11011079</a> 好的，明天试试
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/vengence0417">vengence0417</a>
+                                            2019-03-20 23:10                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/komaeda_ovo"><img height="50" src="../avatars/komaeda_ovo-1564619560-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/yingbi1">@yingbi1</a> M10的计分方法同摸不着头脑，刷了无数次都是A，只能靠无伤的2倍分数拿S，Urizen不用打，躲好招式一段时间后会自动进入剧情。遇事不绝钞能力，这可是官方外挂<img src="../emoticons\face\alu\40.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/komaeda_ovo">komaeda_ovo</a>
+                                            2019-03-21 00:07                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/vengence0417"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0005/CUSA01557_00-P5AVATAR00000011_5D01979B4B4AFD314279_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/bt_mie">@bt_mie</a> 开机看了看，我5491，就差9分，哭了<img src="../emoticons\face\alu\13.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/vengence0417">vengence0417</a>
+                                            2019-03-21 12:04                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/daburo_wind"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0507/CUSA04966_00-AVATAR0000000015_1F4A90FEC6A97FF021E9_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    真滴牛，手残党白金无望
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/daburo_wind">daburo_wind</a>
+                                            2019-03-21 12:18                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/bt_mie"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP2374/CUSA12786_00-PREMIUMAVATAR008_7B50AF6775E2ED22410D_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/vengence0417">@vengence0417</a> <img src="../emoticons\face\alu\13.gif"/>今天一次就S了, 开场3死神就打了S,3400分左右。之后就只打强制战斗了,最后一个轮盘(一堆小怪那个) 刷到SS跳下去, 之后时停手+投技手秒了犀牛,保持SSS击杀剩下的一堆小怪,差不多有5400分。最后的冰法+nobody战打完有5100分左右,最后boss 2阶段自杀,只要有1.2倍加成应该是没啥问题的
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/bt_mie">bt_mie</a>
+                                            2019-03-21 15:59修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/vengence0417"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0005/CUSA01557_00-P5AVATAR00000011_5D01979B4B4AFD314279_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/bt_mie">@bt_mie</a> 我也s了，最难受的打完了，周末放假应该就白了
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/vengence0417">vengence0417</a>
+                                            2019-03-21 19:12                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/otboibtio"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/3RD/JP01021107003_C121AD9270B6124561A5_L.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/bt_mie">@bt_mie</a> 咩总流弊！<img src="../emoticons\face\majiang\17.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/otboibtio">otboibtio</a>
+                                            2019-03-21 23:30                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/kihanx18"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/WWS_J/J2094_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    每次看到<br/>阈（yù）值 ✅<br/>阀   值 X<br/>强迫症就会犯 <br/>最后，大佬牛逼❕
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/kihanx18">kihanx18</a>
+                                            2019-03-22 06:11                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/jang_"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0102/CUSA02102_00-AV00000000000010_EEEBBCC8A0AA6609CF17_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    大佬碉堡了。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/jang_">jang_</a>
+                                            2019-03-24 15:27                                                                            </div>
+<!--回复结束-->
+</div>
+</div>
+        </body></html>

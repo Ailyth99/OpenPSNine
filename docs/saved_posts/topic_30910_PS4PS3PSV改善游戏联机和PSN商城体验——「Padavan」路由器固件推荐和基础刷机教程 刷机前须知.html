@@ -1,0 +1,1352 @@
+
+        <!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><title>PS4/PS3/PSV改善游戏联机和PSN商城体验——「Padavan」路由器固件推荐和基础刷机教程 刷机前须知</title><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="stylesheet" href="style.css"></head>
+        <body>
+            <div class="original-url-container"><p><strong>原始链接:</strong> <a href="https://psnine.com/topic/30910" target="_blank">https://psnine.com/topic/30910</a></p></div>
+            <h1>PS4/PS3/PSV改善游戏联机和PSN商城体验——「Padavan」路由器固件推荐和基础刷机教程 刷机前须知</h1><div class="main-post-container"><div class="meta">
+
+<a class="psnnode" href="https://psnine.com/psnid/scgabriel" itemprop="author">scgabriel</a>
+<span class="text-warning">
+2017-03-10 09:15编辑
+</span>   
+122评论
+</div><div class="post-page-content"><h3 class="page-title">刷机前须知</h3><div class="content pd10" itemprop="articleBody"><span style="font-size:18px;">刷机前须知</span><br/>之前站长在另一篇<a href="http://psnine.com/topic/26039" target="_blank">文章</a>中提到如何给华硕路由器刷梅林固件改善PSN联机体验，但是能刷梅林固件的路由器相较都比较贵。相比之下，这次推荐的来自俄罗斯老毛子的Padavan固件，最低能流畅稳定运行的路由器，基本在百元左右，能省去不少开支。但是Padavan固件的联机效果比梅林固件还是差上一点，也比梅林固件操作复杂，如果不差钱的话，建议跳掉本篇文章，直接入手梅林固件。<br/><blockquote><b>Padavan路由器效果展示</b></blockquote><br/>PSN网络测速效果（使用网络为中国中部地区电信，下行带宽100Mb上行10Mb）<br/><center><img class="imgclick" referrerpolicy="no-referrer" src="http://ww4.sinaimg.cn/large/bfae17b6gy1fdgf9xoxohj21hc0u04gj.jpg"/></center><br/>游戏下载效果<br/><center><img class="imgclick" referrerpolicy="no-referrer" src="http://ww4.sinaimg.cn/large/bfae17b6gy1fdgfc6fahaj21hc0u0qof.jpg"/></center><br/>荣耀战魂<br/><center><img class="imgclick" referrerpolicy="no-referrer" src="http://ww4.sinaimg.cn/large/bfae17b6gy1fdgfcp7x7yj21hc0u0qrm.jpg"/></center><br/>彩虹六号<br/><center><img class="imgclick" referrerpolicy="no-referrer" src="http://ww4.sinaimg.cn/large/bfae17b6gy1fdgfdbi4moj21hc0u04ju.jpg"/></center><br/>战地1日服<br/><center><img class="imgclick" referrerpolicy="no-referrer" src="http://ww4.sinaimg.cn/large/bfae17b6gy1fdgfdwxtv1j21hc0u0tl6.jpg"/></center><br/><center><img class="imgclick" referrerpolicy="no-referrer" src="http://ww4.sinaimg.cn/large/bfae17b6gy1fdgfe1wcl4j21hc0u0x3b.jpg"/></center><br/><center><img class="imgclick" referrerpolicy="no-referrer" src="http://ww4.sinaimg.cn/large/bfae17b6gy1fdgfe6qx2kj21hc0u0n95.jpg"/></center><br/><center><img class="imgclick" referrerpolicy="no-referrer" src="http://ww4.sinaimg.cn/large/bfae17b6gy1fdgfeavyzzj21hc0u07f2.jpg"/></center><br/><blockquote><b>「Padavan」支持路由器型号一览</b></blockquote><br/>※基本上CPU是MT7620A/N的路由，只要配置相同，复位键相同就能用，推荐使用表内路由器<br/><div style="overflow-x:auto;width: 100%;"><table cellpadding="6" cellspacing="0" class="tbl" style="background-color:#EEC"><tr><td>固件名称</td><td>固件配置</td></tr><tr><td>RT-N14U_GPIO_1_7620_128M</td><td>MT7620A/N通用，复位键GPIO#1，16M闪存，128M内存，2.4GWi-Fi，USB，SD卡</td></tr><tr><td>RT-N14U_GPIO_13_7620_128M</td><td>MT7620A/N通用，复位键GPIO#13，16M闪存，128M内存，2.4GWi-Fi，USB，SD卡</td></tr><tr><td>RT-N14U_GPIO_1_youku1_128M</td><td>优酷路由宝，复位键GPIO#1，16M闪存，128M内存，2.4GWi-Fi，USB，SD卡</td></tr><tr><td>RT-N14U_GPIO_12_xiaodu_ji1S_128M</td><td>小度路由/极路由-极壹S（HC5661），复位键GPIO#12，16M闪存，128M内存，2.4GWi-Fi，USB，SD卡</td></tr><tr><td>RT-N14U_GPIO_1_RY1_64M</td><td>如意云ry1，复位键GPIO#1，8/16M闪存，64M内存，2.4GWi-Fi，USB，SD卡</td></tr><tr><td>RT-N14U_GPIO_26_ZTEQ7_64M</td><td>中兴ZTEQ7，复位键GPIO#26，8/16M闪存，64M内存，2.4GWi-Fi，USB，SD卡</td></tr><tr><td>RT-N14U_GPIO_2_FIR300M_32M</td><td>斐讯FIR300M/302M，复位键GPIO#2，4M闪存，32M内存，2.4GWi-Fi</td></tr><tr><td>RT-AC1200-GPIO-38-ji1A-128M</td><td>极路由-极壹S（HC5661A），复位键GPIO#38，16M闪存，128M内存，2.4GWi-Fi，USB，SD卡</td></tr><tr><td>RT-AC51U_GPIO_12_ji2_128M</td><td>极路由-极贰（HC5761），复位键GPIO#12，16M闪存，128M内存，2.4/5GWi-Fi，USB，SD卡</td></tr><tr><td>RT-AC1200HP-GPIO-12-JI3-128M</td><td>极路由-极三（HC5861），复位键GPIO#12，16M闪存，128M内存，2.4/5GWi-Fi，USB、LAN一个千兆口</td></tr><tr><td>RT-AC1200HP_GPIO_52_1166DHP_128M</td><td>水牛1166DHP，复位键GPIO#52，16M闪存，128M内存，2.4/5GWi-Fi，USB、LAN一个千兆口</td></tr><tr><td>RT-AC54U_GPIO_11_newifimini_128M</td><td>联想Y1（newifi mini），复位键GPIO#11，16M闪存，128M内存，2.4/5GWi-Fi，USB</td></tr><tr><td>RT-AC54U_GPIO_30_xiaomimini_128M</td><td>小米Mini，复位键GPIO#30，16M闪存，128M内存，2.4/5GWi-Fi，USB</td></tr><tr><td>RT-AC1200HP_GPIO_11_Y1S_256M</td><td>联想Y1S（newifi），复位键GPIO#11，16M闪存，256M内存，2.4/5GWi-Fi，USB * 3个，WAN、LAN各一个千兆口（端口反转）</td></tr><tr><td>RT-N14U-GPIO-53-BUFFALO-WHR-300HP2-64M</td><td>BUFFALO-WHR-300HP2，WPS键GPIO#53，8M闪存，64M内存，2.4GWi-Fi</td></tr><tr><td>RT-AC51U_GPIO_1_PSG712_64M</td><td>斐讯PSG712，WPS键GPIO#1，8M闪存，64M内存，2.4/5GWi-Fi</td></tr><tr><td>RT-AC54U_GPIO_1_PSG1208_64M</td><td>斐讯PSG1208，WPS键GPIO#1，8M闪存，64M内存，2.4/5GWi-Fi</td></tr><tr><td>RT-N14U_GPIO_1_WT3020H_64M</td><td>乐携WT3020迷你无线路由器，WPS键GPIO#1，8M闪存，64M内存，2.4Wi-Fi，USB</td></tr><tr><td>RT-N14U_GPIO_12_5K_64M</td><td>5K无线路由器，WPS键GPIO#12，16M闪存，64M内存，2.4Wi-Fi，USB</td></tr><tr><td>RT-N56UB1_newif2D1_256M</td><td>联想newif2(D1)，WPS键GPIO#15，复位键键GPIO#18，32M闪存，256M内存，2.4/5GWi-Fi，USB2.0 * 2个，SD卡</td></tr><tr><td>RT-N56UB1_youkuL2_256M</td><td>优酷路由宝L2，WPS键GPIO#17，复位键键GPIO#18，16M闪存，256M内存，2.4/5GWi-Fi，USB3.0，SD卡</td></tr><tr><td>MT7621_7602_7612_256M</td><td>WPS键GPIO#15，复位键键GPIO#18，16M闪存，256M内存，2.4/5GWi-Fi，USB2.0 * 2个，SD卡</td></tr><tr><td>MT7621_7602_7612_512M</td><td>WPS键GPIO#15，复位键键GPIO#18，16M闪存，512M内存，2.4/5GWi-Fi，USB2.0 * 2个，SD卡</td></tr><tr><td>RT-N56UB1-RE6500-64M</td><td>WPS键GPIO#10，8M闪存，64M内存，2.4/5GWi-Fi</td></tr><tr><td>RT-AC51U、RT-N56U、RT-N65U</td><td>RT-AC51U、RT-N56U、RT-N65U华硕专用版</td></tr></table></div><br/><br/><span style="color:red;">※所有路由器刷机皆有风险</span><br/><br/></div></div><div class="post-page-content"><h3 class="page-title">刷入Breed控制台</h3><div class="content pd10" itemprop="articleBody"><span style="font-size:18px;">刷入Breed控制台</span><br/><blockquote><b>Breed Web控制台是什么？</b></blockquote><br/>Breed控制台是hackpascal大神编写的一个路由器的Bootloader引导加载器，即为用于加载操作系统的程序。它是一大类此类功能程序的统称。现在的 BIOS、UEFI、GRUB、RedBoot、U-Boot、CFE、Breed 等都是 Bootloader。<br/><img class="imgclick" referrerpolicy="no-referrer" src="http://ww4.sinaimg.cn/large/bfae17b6gy1fdgfnfvfghj20nl0erdgw.jpg"/><br/><br/><blockquote><b>为什么要刷Breed Web控制台？</b></blockquote><br/>因为有些官方升级固件自带 Bootloader，如果从官方固件的 Web 进行升级，那么会导致 Breed 被覆盖。Breed 在刷入固件时会自动去掉固件自带的 Bootloader，让所有固件更新操作都在在 Breed 里面完成，因此可以避免路由器变砖。<br/><br/><blockquote><b>Breed Web控制台下载地址</b></blockquote><br/><a href="http://www.right.com.cn/forum/thread-161906-1-1.html" target="_blank">恩山无线论坛Breed发布原贴</a><br/>如果你不想看整个原贴复杂的内容，可以直接点击<a href="http://breed.hackpascal.net/" target="_blank">这里</a>进入大神搭建下载服务器下载Breed，或者<a href="http://pan.baidu.com/share/init?shareid=3155865523&amp;uk=453240639" target="_blank">百度盘</a>，密码: 3if1<br/><br/><blockquote><b>刷入Breed Web控制台步骤</b></blockquote><br/>这里以一台联想Newifi Mini（90元包邮购买<img src="../emoticons\face\alu\44.gif"/>）为例<span class="mark">（才不会说咱因为帮别人刷了一次路由器才想写这个教程，而且咱只刷过Newifi Mini<img src="../emoticons\face\alu\39.gif"/>）</span><br/><img class="imgclick" referrerpolicy="no-referrer" src="http://ww4.sinaimg.cn/large/bfae17b6gy1fdfezkhbwtj21kw0w0hdt.jpg"><br/><br/>①首先下载对应路由器的Breed文件，Newifi Mini的就是「breed-mt7620-lenovo-y1.bin」。下完之后，断开电脑与其他网络的连接，最好先禁用无线网络，然后更改电脑网卡的IP地址如下图所示并保存。<br/><center><img class="imgclick" referrerpolicy="no-referrer" src="http://ww4.sinaimg.cn/large/bfae17b6gy1fdgkr2tyc5j20cs0eoju0.jpg"/></center><br/>②用网线将电脑连接在路由器LAN1口上，接上路由器电源，待路由器开机2.4G及5G指示灯亮起之后，长按路由器背面的Reset键不放，直到如图所示路由器的指示灯狂闪之后，放开Reset键。<br/><center><img class="imgclick" referrerpolicy="no-referrer" src="http://ww4.sinaimg.cn/large/bfae17b6gy1fdgl2szmjoj20x5094n2t.jpg"/></center><br/><center><img class="imgclick" src="http://p1.bqimg.com/567571/f8ff664f7ba320df.gif"/></center><br/>③在电脑上打开浏览器，在地址输入“192.168.1.1”，进入Newifi Mini的恢复模式，选择「breed-mt7620-lenovo-y1.bin」这个文件，点击恢复。<br/><center><img class="imgclick" referrerpolicy="no-referrer" src="http://ww4.sinaimg.cn/large/bfae17b6gy1fdgl6bakxgj20zj0iegoi.jpg"/></center><br/>④这个刷机过程最好多等一会儿，看到电源指示灯重新亮起并且2.4G及5Gwifi指示灯亮起之后，Breed控制台就刷好了。长按Reset键不放，直到像刚刚指示灯都闪烁的时候，在电脑浏览器地址栏输入192.168.1.1之后，就能看到Breed Web控制台了。<br/><center><img class="imgclick" referrerpolicy="no-referrer" src="http://ww4.sinaimg.cn/large/bfae17b6gy1fdgleiysjwj20xy0jy79h.jpg"/></center><br/></img></div></div><div class="post-page-content"><h3 class="page-title">刷入Padavan固件</h3><div class="content pd10" itemprop="articleBody"><span style="font-size:18px;">刷入Padavan固件</span><br/><blockquote><b>Padavan固件下载地址</b></blockquote><br/>Padavan固件的话，咱推荐hiboy大神重新汉化编译过的Padavan固件，原固件是只有俄文和英文的<br/><a href="http://www.right.com.cn/forum/thread-161324-1-1.html" target="_blank">hiboy大神发布汉化Padavan固件原地址</a><br/>如果不想看原发布页的话，直接点击<a href="https://eyun.baidu.com/s/3kV0JV19?errno=0&amp;errmsg=Auth%20Login%20Sucess&amp;&amp;bduss=&amp;ssnerror=0#sharelink/path=%2F" target="_blank">这里</a>找到对应路由器的固件下载（对应路由器固件文件名参考本文第一页表格）<br/>顺带，这里咱提供一个检测文件MD5、Share1值的软件<a href="http://pan.baidu.com/s/1i5dZcCt" target="_blank">下载</a><br/><blockquote><b>刷入Padavan固件步骤</b></blockquote><br/>①下载好要刷的Padavan固件文件（比如Newifi Mini就是「RT-AC54U_GPIO_11_newifimini_128M」）以及检测MD5值的软件到电脑上，断开电脑与其他网络的连接，设置电脑网卡IP地址为上一页的192.168.1.5 ，将电脑用网线连至路由器LAN1口。长按路由器Reset键直到指示灯闪烁时松开，操作方法与上一页一样，电脑浏览器输入192.168.1.1，进入Breed控制台。<br/><center><img class="imgclick" referrerpolicy="no-referrer" src="http://ww4.sinaimg.cn/large/bfae17b6gy1fdglvbnisfj20yc0hd78r.jpg"/></center><br/>在Breed控制台左侧菜单栏选「固件更新」，然后勾选固件那栏，点击「选择文件」按钮选中之前下载的Padavan固件文件，勾选下方的「自动重启」，然后单机「上传」<br/>②文件上传完毕后，Breed控制台会显示上传文件的MD5值以供校验。用下好的MD5检测软件检测Padavan固件MD5，与Breed控制台显示的MD5一致之后，方能点击「更新」<br/><img class="imgclick" referrerpolicy="no-referrer" src="http://ww4.sinaimg.cn/large/bfae17b6gy1fdgly7rppfj20no09awh6.jpg"/><br/><img class="imgclick" referrerpolicy="no-referrer" src="http://ww4.sinaimg.cn/large/bfae17b6gy1fdglzta2exj20do09a0uz.jpg"/><br/>③之后便是一漫长的等待时间<br/><center><img class="imgclick" referrerpolicy="no-referrer" src="http://ww4.sinaimg.cn/large/bfae17b6gy1fdgm31wki2j20nn0790uf.jpg"/></center><br/>当Breed控制台显示更新完成时，不要急着关闭路由器电源，等待路由器2.4G以及5G频段wifi指示灯全部亮起之后，才算真正刷好了Padavan固件<br/><center><img class="imgclick" referrerpolicy="no-referrer" src="http://ww4.sinaimg.cn/large/bfae17b6gy1fdgm34pqfdj20nq07agnq.jpg"/></center><br/>④然后将电脑网卡IP改自动，浏览器地址栏输入192.168.123.1，就能看到Padavan固件的页面了<br/><center><img class="imgclick" referrerpolicy="no-referrer" src="http://ww4.sinaimg.cn/large/bfae17b6gy1fdgs3ojlncj20rx0pedjd.jpg"/></center><br/><blockquote><b>hiboy大神编译的Padavan固件默认设置</b></blockquote><br/><center><div style="overflow-x:auto;width: 100%;"><table cellpadding="6" cellspacing="0" class="tbl" style="background-color:#EEC"><tr><td>默认网关</td><td>192.168.123.1</td></tr><tr><td>路由器管理页面默认地址</td><td><a href="http://my.router/" target="_blank">http://my.router/</a></td></tr><tr><td>路由器默认登陆账户</td><td>admin</td></tr><tr><td>路由器默认登陆密码</td><td>admin</td></tr><tr><td>Wifi默认密码</td><td>1234567890</td></tr></table></div></center><br/><center><span style="color:red;">※刷机不恢复默认值</span></center><br/></div></div><div class="post-page-content"><h3 class="page-title">Padavan固件设置参考</h3><div class="content pd10" itemprop="articleBody"><span style="font-size:18px;">Padavan固件设置参考</span><br/>既然刷了Padavan固件，大家自然最关注关键的<img class="imgclick" referrerpolicy="no-referrer" src="http://ww4.sinaimg.cn/large/bfae17b6gy1fdgsxvq56uj202d00ea9t.jpg"/>如何使用，路由器的普通设置就不再多述，下面写一点咱的设置方法提供参考。<br/><br/>首先进入<img class="imgclick" referrerpolicy="no-referrer" src="http://ww4.sinaimg.cn/large/bfae17b6gy1fdgsxvq56uj202d00ea9t.jpg"/>的设置界面，选中上方菜单栏的「节点配置」进入「节点配置」页面。<br/><br/>在①处输入你所购买的<img class="imgclick" referrerpolicy="no-referrer" src="http://ww4.sinaimg.cn/large/bfae17b6gy1fdgsxvq56uj202d00ea9t.jpg"/>账号的节点信息，点击②将该节点保存到路由器中，③处选择方案一。<br/><center><img class="imgclick" referrerpolicy="no-referrer" src="http://ww4.sinaimg.cn/large/bfae17b6gy1fdgssgt5f4j20rr0rwq7e.jpg"/></center><br/>添加完节点之后，选中你想要使用的节点，勾选④处的勾选框，然后单击⑤将该节点应用到主要的<img class="imgclick" referrerpolicy="no-referrer" src="http://ww4.sinaimg.cn/large/bfae17b6gy1fdgsxvq56uj202d00ea9t.jpg"/>配置，单击⑥处应用本页设置<br/><center><img class="imgclick" referrerpolicy="no-referrer" src="http://ww4.sinaimg.cn/large/bfae17b6gy1fdgsskuk19j20rr0rwn1r.jpg"/></center><br/>然后回到「基本配置」，参考下图设置（敏感地方已涂抹），然后应用本页设置，等待⑦处图标由白色变成蓝色，至此，<img class="imgclick" referrerpolicy="no-referrer" src="http://ww4.sinaimg.cn/large/bfae17b6gy1fdgsxvq56uj202d00ea9t.jpg"/>正常启动完毕，可以开始享受流畅的联机体验了<img src="../emoticons\face\majiang\3.gif"/><br/><center><img class="imgclick" referrerpolicy="no-referrer" src="http://ww4.sinaimg.cn/large/bfae17b6gy1fdgsvkkz5cj20rt1ey117.jpg"/></center><br/></div></div><div class="post-page-content"><h3 class="page-title">补充：Padavan固件其他教程</h3><div class="content pd10" itemprop="articleBody"><span style="font-size:18px;">补充：Padavan固件其他教程</span><br/>※这些教程里的功能咱没有用过，纯粹转贴一个地址，给大家参考下（转自<a href="http://rt.cn2k.net/" target="_blank">http://rt.cn2k.net/</a>站点）<br/><blockquote><b><a href="http://rt.cn2k.net/?p=316" target="_blank">kcptun使用教程</a></b></blockquote></div></div></div>
+            
+            <h2>评论</h2><div class="post">
+<a class="l" href="https://psnine.com/psnid/scgabriel"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP1804/CUSA08621_00-AVATAR0000000021_4DD200084FD8A887DC2C_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    本文所有<img class="imgclick" referrerpolicy="no-referrer" src="http://ww4.sinaimg.cn/large/bfae17b6gy1fdgsxvq56uj202d00ea9t.jpg"/>字眼皆为图片非文字<img src="../emoticons\face\majiang\25.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/scgabriel">scgabriel</a>
+                                            2017-03-09 19:34                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/shuanghuachun"><img height="50" src="../avatars/shuanghuachun-1556451725-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<img src="../emoticons\face\alu\35.gif"/>收藏以备不时之需
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/shuanghuachun">shuanghuachun</a>
+                                            2017-03-09 19:43                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/zhangzong8598"><img height="50" src="../avatars/zhangzong8598-1749382052-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    资瓷<img src="../emoticons\face\alu\9.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/zhangzong8598">zhangzong8598</a>
+                                            2017-03-09 19:45                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/ybabananab"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/UT0016/CUSA06833_00-AV00000000000180_96AABC405C28D5C9A8D9_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<img src="../emoticons\face\alu\39.gif"/>我的newifi是参加微博拆路由送路由活动免费得的..用起来还是挺不错的<img src="../emoticons\face\alu\40.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/ybabananab">ybabananab</a>
+                                            2017-03-09 19:46                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/bakaltq"><img height="50" src="../avatars/bakaltq-1660671589-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    感谢技术帖
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/bakaltq">bakaltq</a>
+                                            2017-03-09 19:46                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/haohao3165"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP9000/CUSA07413_00-AVATAR0000000023_E3298B065F071B35984C_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<img src="../emoticons\face\majiang\4.gif"/>厉害了，收藏
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/haohao3165">haohao3165</a>
+                                            2017-03-09 19:47                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/flysuffer"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0704/CUSA02582_00-AVATAR1511N1YOUM_84013BE7C4688CCF61A1_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    我刷了这个固件会变NAT3 不知道为什么....<img src="../emoticons\face\alu\13.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/flysuffer">flysuffer</a>
+                                            2017-03-09 19:50修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/osu-nightmare"><img height="50" src="../avatars/osu-nightmare-1556450402-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    原版极路由就够了，其他的黑科技不做介绍不打广告。反正我是无压力的。SS不敢拿来连游戏，怕不稳定
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/osu-nightmare">osu-nightmare</a>
+                                            2017-03-09 19:49                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/scgabriel"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP1804/CUSA08621_00-AVATAR0000000021_4DD200084FD8A887DC2C_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/flysuffer">@flysuffer</a> <img src="../emoticons\face\alu\30.gif"/>咱也不知道，你看下你DNS导向设置有没有问题。咱手上的newifi今天已经送人了，咱手上也没用padavan固件的设备。。。。咱现在用的是梅林
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/scgabriel">scgabriel</a>
+                                            2017-03-09 19:49                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/scgabriel"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP1804/CUSA08621_00-AVATAR0000000021_4DD200084FD8A887DC2C_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/osu-nightmare">@osu-nightmare</a> 咱还是不喜欢极路由，认为梅林最好用
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/scgabriel">scgabriel</a>
+                                            2017-03-09 19:50                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/slevin_kk"><img height="50" src="../avatars/slevin_kk-1558457424-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<img src="../emoticons\face\alu\35.gif"/>支持一下。其实有个好的ass ass线路才是最重要的，站内的联机还是延迟高了些
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/slevin_kk">slevin_kk</a>
+                                            2017-03-09 19:51                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/aicexhy"><img height="50" src="../avatars/aicexhy-1679478367-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    说起这个固件 开启Adbyby ps3浏览商店页面没问题 下载就会失败<img src="../emoticons\face\alu\39.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/aicexhy">aicexhy</a>
+                                            2017-03-09 19:52                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/eternalstart"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0425/CUSA08398_00-AVATAR0000000005_C25B7C77B2CBC12D1A8F_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    感谢分享，原来我都不知道我刷newifi刷的固件叫Padavan啊<img src="../emoticons\face\alu\30.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/eternalstart">eternalstart</a>
+                                            2017-03-09 19:55                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/scgabriel"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP1804/CUSA08621_00-AVATAR0000000021_4DD200084FD8A887DC2C_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/aicexhy">@aicexhy</a> Adbyby说真的，不要怎么用。那个应用占用cpu极大，而且效果没那么好。咱还是更倾向于浏览器端干掉广告。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/scgabriel">scgabriel</a>
+                                            2017-03-09 19:56                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/purple22moon"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA05030_00-PREMIUMAVATAR008_E824AA9336C9AB37ED7F_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/ybabananab">@ybabananab</a> 拆路由送路由，假如拆了没得奖怎么办？<img src="../emoticons\face\alu\39.gif"/><img src="../emoticons\face\alu\30.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/purple22moon">purple22moon</a>
+                                            2017-03-09 19:57                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/scgabriel"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP1804/CUSA08621_00-AVATAR0000000021_4DD200084FD8A887DC2C_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/slevin_kk">@slevin_kk</a> p9那个确实没那么好用，<span class="mark">不过咱用了这个上传了54g视频到youtube<img src="../emoticons\face\alu\44.gif"/></span>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/scgabriel">scgabriel</a>
+                                            2017-03-09 19:59修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/scgabriel"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP1804/CUSA08621_00-AVATAR0000000021_4DD200084FD8A887DC2C_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/ybabananab">@ybabananab</a> <a href="https://psnine.com/psnid/purple22moon">@purple22moon</a> <img class="imgclick" referrerpolicy="no-referrer" src="http://ww4.sinaimg.cn/large/bfae17b6gy1fdguaigpwyj207j09oq32.jpg"><br/><img src="../emoticons\face\alu\44.gif"/>其实这个才是最强的
+                </img></div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/scgabriel">scgabriel</a>
+                                            2017-03-09 20:02                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/mozidea"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/3RD/JP00821101016_8534DE7B5C69EA05ACFF_L.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/scgabriel">@scgabriel</a> 默默的拿出来刷起先！
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/mozidea">mozidea</a>
+                                            2017-03-09 20:28                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/applicationalc"><img height="50" src="../avatars/applicationalc-1560088949-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/scgabriel">@scgabriel</a> 大佬，用你推荐的那个的话是不是简单点？还是大部分要自己操作？
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/applicationalc">applicationalc</a>
+                                            2017-03-09 20:40                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/orochihk"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP9000/CUSA00912_00-PREMIUMAVATAR002_340062BC52B47674C6CE_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    这个在a9也有个教程
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/orochihk">orochihk</a>
+                                            2017-03-09 20:43                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/youmenjun"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP3974/CUSA09340_00-AVATAR2019060501_9C026A75676521EE0B73_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<img src="../emoticons\face\majiang\41.gif"/><img class="imgclick" referrerpolicy="no-referrer" src="http://ww4.sinaimg.cn/large/bfae17b6gy1fdgsxvq56uj202d00ea9t.jpg">全用图片也是强
+                </img></div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/youmenjun">youmenjun</a>
+                                            2017-03-09 20:48                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/derrick-li"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/WWS_E/E0031.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    极路由3可以刷吗
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/derrick-li">derrick-li</a>
+                                            2017-03-09 20:51                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/sunqiangodgoku"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0507/CUSA04966_00-AVATAR0000000019_80E2B52C791ED3D7EFEF_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    这个设置页面和我自己刷的华硕固件是一样的 是不是同一种
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/sunqiangodgoku">sunqiangodgoku</a>
+                                            2017-03-09 20:53                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/mordom0404"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/WWS_A/UP90001312L18_231B0B94A43B832DE28B_L.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/flysuffer">@flysuffer</a> 打开DMZ主机，把你的PS4暴露给外网
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/mordom0404">mordom0404</a>
+                                            2017-03-09 20:54                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/kiseki_kimi"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA05030_00-PREMIUMAVATAR040_27F4367FAFC6F6C502F7_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    收藏一下＠kiseki_kimi <img src="../emoticons\face\majiang\41.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/kiseki_kimi">kiseki_kimi</a>
+                                            2017-03-09 21:14修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/ybabananab"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/UT0016/CUSA06833_00-AV00000000000180_96AABC405C28D5C9A8D9_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/purple22moon">@purple22moon</a> <img src="../emoticons\face\alu\30.gif"/>新产品搞噱头,不兑现承诺就是拆自己招牌<br/><a href="https://psnine.com/psnid/scgabriel">@scgabriel</a> <img src="../emoticons\face\alu\44.gif"/>再强再腻害,用不上都是辣鸡~斐讯经常搞这些xx时间后全额退的活动,要绑定身份信息什么的
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/ybabananab">ybabananab</a>
+                                            2017-03-09 21:34                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/scgabriel"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP1804/CUSA08621_00-AVATAR0000000021_4DD200084FD8A887DC2C_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/applicationalc">@applicationalc</a> newifi其实好刷点，因为有恢复模式，能很容易的刷入breed，刷完breed了就好办了，固件可以随意刷不怕死<img src="../emoticons\face\alu\30.gif"/><br/><br/><img class="imgclick" referrerpolicy="no-referrer" src="http://ww4.sinaimg.cn/large/bfae17b6gy1fdgsxvq56uj202d00ea9t.jpg">的设置，咱那个设置是咱昨天晚上上试了一晚上出来效果最好的，你可以自己基本设置里多试下。如果要玩游戏的话还是需要udp转发效果才好，padavan的udp转发只有在方案一所有外网ip全走<img class="imgclick" referrerpolicy="no-referrer" src="http://ww4.sinaimg.cn/large/bfae17b6gy1fdgsxvq56uj202d00ea9t.jpg">的方案下才能开启。
+                </img></img></div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/scgabriel">scgabriel</a>
+                                            2017-03-09 21:50修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/scgabriel"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP1804/CUSA08621_00-AVATAR0000000021_4DD200084FD8A887DC2C_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/sunqiangodgoku">@sunqiangodgoku</a> 嗯，华硕AC54U的UI改的
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/scgabriel">scgabriel</a>
+                                            2017-03-09 21:51                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/scgabriel"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP1804/CUSA08621_00-AVATAR0000000021_4DD200084FD8A887DC2C_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/derrick-li">@derrick-li</a> 极3可以刷的，只不过你可能要自己百度下怎么刷breed控制台。刷好breed控制台后的操作都差不多，并且你想换ddwrt tomato之类的固件都很简单。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/scgabriel">scgabriel</a>
+                                            2017-03-09 21:54                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/scgabriel"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP1804/CUSA08621_00-AVATAR0000000021_4DD200084FD8A887DC2C_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/ybabananab">@ybabananab</a> 很多人买来第一时间刷成其他固件的啦<img src="../emoticons\face\alu\44.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/scgabriel">scgabriel</a>
+                                            2017-03-09 21:54                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/lcflove2"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA18093_00-13KAVATAR0000003_77C13A41E06C495A74E3_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    和我一样路由器，我拿来刷PandoraBox破解电信坑爹校园网了<img src="../emoticons\face\alu\31.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/lcflove2">lcflove2</a>
+                                            2017-03-09 22:33                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/ybabananab"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/UT0016/CUSA06833_00-AV00000000000180_96AABC405C28D5C9A8D9_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/scgabriel">@scgabriel</a> <img src="../emoticons\face\alu\37.gif"/>绑定信息又不是在路由器里..是申请0元体验填写的个人资料,还要身份证复印件什么的.算是他们"搜刮资金"投资
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/ybabananab">ybabananab</a>
+                                            2017-03-09 22:52                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/m_miang"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/WWS_A/A0004.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    家里50M的宽带，本来入了R7000打算刷个SS的梅林，结果官方固件设置好QOS里面PS4为最高优先，然后PS4改下DNS。现在基本下载能达到满速，就是仁王连线上模式总是掉线，不想再折腾了，等以后不行了再说，先收藏着。<img src="../emoticons\face\majiang\1.gif"/><img src="../emoticons\face\majiang\41.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/m_miang">m_miang</a>
+                                            2017-03-09 23:48                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/havinshall"><img height="50" src="../avatars/havinshall-1569714146-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    其实吧什么梅林啊石像鬼啊还是都不如openwrt靠谱，只是openwrt搞ss需要自己搭建，并且由于ss和ss-client的版本太老导致还缺失组件需要找源补上。。。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/havinshall">havinshall</a>
+                                            2017-03-09 23:55                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/death_steps_"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA05030_00-DIVAFTAVATAR0053_D880C7214D933C4ED11D_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    其实我一直觉得最大的问题不是路由器，是找一个好用的服务器提供商，稍微出名点的线路都被玩坏了<img src="../emoticons\face\alu\39.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/death_steps_">death_steps_</a>
+                                            2017-03-10 00:06                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/akira_st_test"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0704/CUSA06366_00-AVA0000000000005_2D87C7F4DA7EBEF20F32_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    国内还凑合，ss之所以快，主要还是目前用这个通道的人相对少一些。<br/><br/>现在ss出了新的技术，Kcptun转发，结合SS之后基本上能始终维持宽带上限速度。<br/><br/>LZ这个教程比较久了，原文在恩山也好某些路由器专门论坛也好到处都有。<br/><br/>转发不标出处，也原贴后续更新的详细UDP转发和端口优化。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/akira_st_test">akira_st_test</a>
+                                            2017-03-10 00:19                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/nekos-91"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0704/CUSA02582_00-AVATAR1511N2REMI_8C8E0D6C6E49852B101D_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    不需要路由啦…手机下个支持http共享的SS APP就行了…比如shadowrocket
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/nekos-91">nekos-91</a>
+                                            2017-03-10 00:37                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/acekiller58822"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0082/CUSA11060_00-AVATAR0000000002_27F67843716344DF4FD2_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    求推荐个给力的SS服务商...以前用草莓的 1080的土鳖都看不起
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/acekiller58822">acekiller58822</a>
+                                            2017-03-10 01:04                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/yong_bin"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0082/CUSA16170_00-AV00000000000003_7C15DE2B12384E5A50F0_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/scgabriel">@scgabriel</a> 有这样的路由？买了还会反钱？
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/yong_bin">yong_bin</a>
+                                            2017-03-10 02:27                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/scgabriel"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP1804/CUSA08621_00-AVATAR0000000021_4DD200084FD8A887DC2C_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/akira_st_test">@akira_st_test</a> 额，这个是咱自己写的。。。这个里面贴的固件之类的，论坛上最近一次更新已经是2017.2.27的了，不会很旧，固件里kcptun以及ssr都有，只不过咱不会用，不会用的东西总不能随便乱教吧，其实这个也就是咱帮别人刷了个newifi mini后觉得还不错，写上去的，里面并没写什么很高深的玩意。另外涉及恩山论坛的东西，都有贴原帖
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/scgabriel">scgabriel</a>
+                                            2017-03-10 08:36                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/scgabriel"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP1804/CUSA08621_00-AVATAR0000000021_4DD200084FD8A887DC2C_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/havinshall">@havinshall</a> openwrt之前咱也想推荐的，不过更新了好几次版本之后，游戏丢包的问题咱自己都不能解决，而且openwrt操作也比这个复杂，实在不适合拿来推广
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/scgabriel">scgabriel</a>
+                                            2017-03-10 08:37                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/otube_ice"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP9002/CUSA01666_00-2018HWCHCANDYCAN_FB56279F5969C8B4FE98_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/m_miang">@m_miang</a> 仁王掉线是SS质量不好，R7000性能上算强劲的了
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/otube_ice">otube_ice</a>
+                                            2017-03-10 09:06                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/otube_ice"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP9002/CUSA01666_00-2018HWCHCANDYCAN_FB56279F5969C8B4FE98_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/acekiller58822">@acekiller58822</a> 我这里有一家不错的
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/otube_ice">otube_ice</a>
+                                            2017-03-10 09:08                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/fireofwild"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0507/CUSA04966_00-AVATAR0000000012_D1C2518AA4A68E1E70FE_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/otube_ice">@otube_ice</a> 求告知 谢谢
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/fireofwild">fireofwild</a>
+                                            2017-03-10 09:11                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/qw6033"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/3RD/JP00051409049_4CB1B5C66E96488904B1_L.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    我用这个固件很久了，不知道为什么反正游戏模式如果开了，不填PS4的IP，PS4网络会变NAT3或失败，在UDP转发里打上PS4的内网IP，然后静态IP绑定PS4的MAC，就变成NAT2了，不过依然会出现不支持碎片封包转发（UPNP功能开了），不知道为什么，不过这样已经是用这个固件最佳的联机体验了，现在用梅林6220(性价比爆表)，比这个好很多。。。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/qw6033">qw6033</a>
+                                            2017-03-10 09:22                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/otube_ice"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP9002/CUSA01666_00-2018HWCHCANDYCAN_FB56279F5969C8B4FE98_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/fireofwild">@fireofwild</a> 加我企鹅柒肆零肆零捌伍叁柒
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/otube_ice">otube_ice</a>
+                                            2017-03-10 09:30                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/scgabriel"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP1804/CUSA08621_00-AVATAR0000000021_4DD200084FD8A887DC2C_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/otube_ice">@otube_ice</a> <img src="../emoticons\face\alu\30.gif"/>同求告知，咱可以搞个来试试
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/scgabriel">scgabriel</a>
+                                            2017-03-10 09:32                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/scgabriel"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP1804/CUSA08621_00-AVATAR0000000021_4DD200084FD8A887DC2C_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/qw6033">@qw6033</a> 还是问下你的<img class="imgclick" referrerpolicy="no-referrer" src="http://ww4.sinaimg.cn/large/bfae17b6gy1fdgsxvq56uj202d00ea9t.jpg"/>支持UDP转发吧？<br/>还有你的路由器是否是接在宽带光猫上？光猫是桥接还是宽带直接拨号了（就是问是在路由器里PPPoe拨号的还是在光猫里）？还有其实咱AC68U装小宝的梅林固件，也是显示不支持碎片封包转发。你遇到的这个问题咱一晚上测试的时候其实都没遇到过，搞不清是哪方面出了什么问题。不过能上梅林还是最好
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/scgabriel">scgabriel</a>
+                                            2017-03-10 09:37                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/otube_ice"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP9002/CUSA01666_00-2018HWCHCANDYCAN_FB56279F5969C8B4FE98_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/scgabriel">@scgabriel</a> 我用的那家搭配深圳中转使用效果很好，线路都是支持UDP转发的，但是前提是路由器的固件要支持auth_aes128_sha1协议或auth_aes128_md5协议，否则用不了中转<br/>小宝那个固件有点玄乎，有时候我测速的时候没有弹出封包碎片说明，有时候却会，按理说高端点的路由器都支持才对的，有兴趣的话可以加我企鹅柒肆零肆零捌伍叁柒，先说明，我这家是没有试用的
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/otube_ice">otube_ice</a>
+                                            2017-03-10 09:44修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/scgabriel"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP1804/CUSA08621_00-AVATAR0000000021_4DD200084FD8A887DC2C_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/otube_ice">@otube_ice</a> <img src="../emoticons\face\alu\30.gif"/>那个咱没管它，反正封包碎片不影响咱游戏
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/scgabriel">scgabriel</a>
+                                            2017-03-10 09:44                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/heitaianiki"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0367/CUSA05668_00-OMEGAZAVATAR00UA_E066358E49DE642E1534_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    刷固件怎么能改善网络环境呢<img src="../emoticons\face\alu\42.gif"/> <img src="../emoticons\face\alu\44.gif"/>想必和openwrt装软件包一个套路 比如SSR
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/heitaianiki">heitaianiki</a>
+                                            2017-03-10 09:49                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/scgabriel"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP1804/CUSA08621_00-AVATAR0000000021_4DD200084FD8A887DC2C_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/heitaianiki">@heitaianiki</a> <img src="../emoticons\face\alu\30.gif"/>不用想必，后面都写了
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/scgabriel">scgabriel</a>
+                                            2017-03-10 09:57                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/telamia"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/3RD/JP00311208006_2B2EE580AB339BB09D58_L.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    dalao我就问一个最菜的问题：哪里才能找到卖ss的？<img src="../emoticons\face\alu\22.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/telamia">telamia</a>
+                                            2017-03-10 11:07                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/orewa-gundam"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/3RD/JP01061403007_5859FDF98ACFA72A6F9D_L.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/scgabriel">@scgabriel</a> 这个不支持「Padavan」呢
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/orewa-gundam">orewa-gundam</a>
+                                            2017-03-10 11:15                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/scgabriel"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP1804/CUSA08621_00-AVATAR0000000021_4DD200084FD8A887DC2C_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/orewa-gundam">@orewa-gundam</a> ？？？
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/scgabriel">scgabriel</a>
+                                            2017-03-10 11:27                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/kinly94"><img height="50" src="../avatars/kinly94-1707980798-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    有推荐的路由器吗？<img src="../emoticons\face\alu\2.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/kinly94">kinly94</a>
+                                            2017-03-10 12:20                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/mi-silver"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/WWS_J/J0021.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/flysuffer">@flysuffer</a> 我也是
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/mi-silver">mi-silver</a>
+                                            2017-03-10 12:40                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/noire0210"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0031/CUSA01054_00-AVATAR1505NEP002_07F8818AE6B09BEC3818_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/qw6033">@qw6033</a> UDP转发是不是 内部网络 (LAN) - DHCP 服务器 手动指定 IP 的 DHCP 列表
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/noire0210">noire0210</a>
+                                            2017-03-10 12:45                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/goodluck1990"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/WWS_J/J0003.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    我记得小米路由3也行？
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/goodluck1990">goodluck1990</a>
+                                            2017-03-10 12:47                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/orcasdli"><img height="50" src="../avatars/orcasdli-1556430870-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    分享一个我个人使用极路由1S刷老毛子固件+锐捷拨号+SS的经验<img src="../emoticons\face\majiang\38.gif"/>，虽然现在改用斐讯了，大同小异：<br/><a href="http://www.right.com.cn/FORUM/forum.php?mod=viewthread&amp;tid=198284&amp;page=1#pid1677187" target="_blank">http://www.right.com.cn/FORUM/forum.php?mod=viewthread&amp;tid=198284&amp;page=1#pid1677187</a><br/>目前我遇到的问题就是这种mentohust锐捷拨号方式感觉有时候会掉线，路由器卡死一样，SS也说不上稳定，搞不懂是路由问题还是学校网络问题还是SS服务器问题……
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/orcasdli">orcasdli</a>
+                                            2017-03-10 12:52                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/blood_xia"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP9000/CUSA14006_00-TLOUPIIELLIETAVA_0239162239FD2B864EEA_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    便宜的方案不是毛子方案，毛子固件对游戏支持并不好，便宜的推荐极路由刷极玩固件，ss和s微辟恩都支持的。并且支持策略路由，非常方便。主要是成本低。如果自己肯动手，。最好的是刷lede的op x86。可玩性很高，非常不推荐梅林，。自从变成全家桶以后，就是垃圾了。dnsmasq都能和ss绑定。无语。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/blood_xia">blood_xia</a>
+                                            2017-03-10 12:57                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/phenixchenhl"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/UP0334/CUSA02328_00-AV00000000000005_33A37B7B229F01E8E9C5_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/scgabriel">@scgabriel</a> 哈～我就是这个
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/phenixchenhl">phenixchenhl</a>
+                                            2017-03-10 13:44                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/orewa-gundam"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/3RD/JP01061403007_5859FDF98ACFA72A6F9D_L.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/scgabriel">@scgabriel</a> 你发的那个斐讯PSG1218
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/orewa-gundam">orewa-gundam</a>
+                                            2017-03-10 13:49                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/otube_ice"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP9002/CUSA01666_00-2018HWCHCANDYCAN_FB56279F5969C8B4FE98_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/blood_xia">@blood_xia</a> 极玩固件很多地方都是为保障了他们自家的利益，而没有那么开放，有好多协议都是无法设置，之前用了好一段时间，被恶心到了
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/otube_ice">otube_ice</a>
+                                            2017-03-10 14:22                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/otube_ice"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP9002/CUSA01666_00-2018HWCHCANDYCAN_FB56279F5969C8B4FE98_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/kinly94">@kinly94</a> AC66U B1刷梅林挺好的
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/otube_ice">otube_ice</a>
+                                            2017-03-10 14:23                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/lamiaruri"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP9000/CUSA00547_00-AVATAR0000000002_6B9333C319DB9DD9FB8B_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    网件的电磁炉刷梅林蛮好用的，贵倒是真的
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/lamiaruri">lamiaruri</a>
+                                            2017-03-10 14:25                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/hereiszx1996"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/WWS_J/J2015_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    padavan感觉也就哪样了。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/hereiszx1996">hereiszx1996</a>
+                                            2017-03-10 14:28                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/blood_xia"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP9000/CUSA14006_00-TLOUPIIELLIETAVA_0239162239FD2B864EEA_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/otube_ice">@otube_ice</a> 极玩的ss和s微辟恩都挺好的。虽然问题很多，但是专门用来玩游戏，成本还是挺低的。比梅林和老毛子好太多，目前玩游戏，最好的就是s微辟恩这种无状态的微辟恩了，做个路由表，配置一下dnsmasq，基本上就完美了。udp，tcp，全隔离，策略路由，完全没任何影响。非常好。属于傻瓜化的，如果自己有点动手能力，熟悉linux，也可以用ddwrt，自由度也还行。装个entware，可玩性比梅林好太多。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/blood_xia">blood_xia</a>
+                                            2017-03-10 15:26修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/qw6033"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/3RD/JP00051409049_4CB1B5C66E96488904B1_L.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/scgabriel">@scgabriel</a> 首先，用的是自己搭的SSR，SSR默认支持UDP转发（现在的SS应该都支持了吧），我打10000保修让电信小工帮我换了个千兆猫（不带路由的那种），然后直接路由拨号。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/qw6033">qw6033</a>
+                                            2017-03-10 16:01                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/qw6033"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/3RD/JP00051409049_4CB1B5C66E96488904B1_L.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/noire0210">@noire0210</a> 游戏模式UDP转发里直接打PS4内网地址192.168.123.x（padavan默认应该是123吧），然后锁内网IP就是你说的那个了，用PS4的MAC锁你现在连上PS4时候的IP（PS4网络状态能看到），以后永远是这个静态内网IP了。。。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/qw6033">qw6033</a>
+                                            2017-03-10 16:06                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/zgk83200"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/WWS_A/UP90001209G02_08F7E8A60B670126C182_L.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/scgabriel">@scgabriel</a> <br/>家里弄了台2000多的思科企业级路由器，破解光猫做桥连自己拨号，找电信的同学搞了个固定ip。<br/>成都电信现在带宽免费升级200m了，貌似今年还要免费升级1000m。<br/>目前联机都是秒连。<br/>psn测试 上行180+，下行2m左右
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/zgk83200">zgk83200</a>
+                                            2017-03-10 16:12修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/futexlocker"><img height="50" src="../avatars/futexlocker-1587166168-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    这个Padavan，在不开kcptun的情况下，我觉得跟openwrt跑ss差别不大？<br/><br/>关键还是在于本地连SS服务器的延迟吧。<br/><br/>kcptun只在pc上用过，很爽，没有流量限制的可以试试
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/futexlocker">futexlocker</a>
+                                            2017-03-10 16:17修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/scgabriel"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP1804/CUSA08621_00-AVATAR0000000021_4DD200084FD8A887DC2C_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/futexlocker">@futexlocker</a> 你这样一说咱想起来了，kcptun是不是那个暴力发包的协议？<br/>其实现在不是很多<img class="imgclick" referrerpolicy="no-referrer" src="http://ww4.sinaimg.cn/large/bfae17b6gy1fdgsxvq56uj202d00ea9t.jpg"/>都是那种先连到国内服务器上，再转发到国外服务器上那种？那张咱用感觉会好很多<br/>Padavan咱的<img class="imgclick" referrerpolicy="no-referrer" src="http://ww4.sinaimg.cn/large/bfae17b6gy1fdgsxvq56uj202d00ea9t.jpg"/>如果用香港节点连战地日服，就永远10%的丢包下不去，必须日本节点，梅林就没这个问题。<br/>咱用Openwrt也是会出现同样问题，咱也是觉得其实Padavan和Openwrt确实差不多。不过Openwrt各种集成固件里软件的版本参差不齐，除非自己手动弄进去，总之弄得非常费心费力，特别对咱这种也不是很会弄的人来说
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/scgabriel">scgabriel</a>
+                                            2017-03-10 16:47修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/scgabriel"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP1804/CUSA08621_00-AVATAR0000000021_4DD200084FD8A887DC2C_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/zgk83200">@zgk83200</a> <img src="../emoticons\face\majiang\36.gif"/>固定IP，1000M带宽，咱还能说什么呢，你完全可以自己搭服务器了
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/scgabriel">scgabriel</a>
+                                            2017-03-10 16:37                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/scgabriel"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP1804/CUSA08621_00-AVATAR0000000021_4DD200084FD8A887DC2C_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/blood_xia">@blood_xia</a> 极玩固件没那么开放吧？咱不清楚是不是一个东西，反正咱还记得极路由<img class="imgclick" referrerpolicy="no-referrer" src="http://ww4.sinaimg.cn/large/bfae17b6gy1fdgsxvq56uj202d00ea9t.jpg"/>直接被后台删除的事情
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/scgabriel">scgabriel</a>
+                                            2017-03-10 16:49                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/sion-xy"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/UT0016/CUSA06833_00-PSPLUS23AVATAR03_9A2841E67FBEC5766557_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    还有6天就下车了<img src="../emoticons\face\majiang\32.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/sion-xy">sion-xy</a>
+                                            2017-03-10 17:14                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/blood_xia"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP9000/CUSA14006_00-TLOUPIIELLIETAVA_0239162239FD2B864EEA_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/scgabriel">@scgabriel</a> 自己试试就知道了。目前是游戏加速成本最低的最优方案了，有条件一定用s微辟恩，ss加速游戏nat的问题比较严重。而且也没有策略路由。可能的情况下最好的方案就是s微辟恩
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/blood_xia">blood_xia</a>
+                                            2017-03-10 17:28                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/blood_xia"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP9000/CUSA14006_00-TLOUPIIELLIETAVA_0239162239FD2B864EEA_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/scgabriel">@scgabriel</a> kcp是个好协议，加速性不错。但是如果你是限流型的服务器，建议少用。kcp对游戏是有影响的，但是看片真的很棒
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/blood_xia">blood_xia</a>
+                                            2017-03-10 17:30                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/orcasdli"><img height="50" src="../avatars/orcasdli-1556430870-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/blood_xia">@blood_xia</a> 顺路请教，极玩固件有锐捷拨号功能吗
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/orcasdli">orcasdli</a>
+                                            2017-03-10 18:09                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/blood_xia"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP9000/CUSA14006_00-TLOUPIIELLIETAVA_0239162239FD2B864EEA_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/orcasdli">@orcasdli</a> 没有，需要锐捷的话，自己刷op吧。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/blood_xia">blood_xia</a>
+                                            2017-03-10 19:00                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/asuka_zuojiaming"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/WWS_E/E2099_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    我也用的padavan路由，现在试试。多谢。<img src="../emoticons\face\majiang\16.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/asuka_zuojiaming">asuka_zuojiaming</a>
+                                            2017-03-10 19:03                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/orcasdli"><img height="50" src="../avatars/orcasdli-1556430870-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/blood_xia">@blood_xia</a> 老毛子有锐捷。看来只能用极玩当二级路由了。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/orcasdli">orcasdli</a>
+                                            2017-03-10 19:10修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/futexlocker"><img height="50" src="../avatars/futexlocker-1587166168-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/scgabriel">@scgabriel</a> 对kcptun就是暴力发包，Y2B 4k可以一秒载完，然而流量<img src="../emoticons\face\majiang\3.gif"/><br/><br/>SS先连国内跳板再出去是可以的，不过没人一起合租的话成本有点高~ <br/><br/>另外走国内专线（类似上海精品网）这种也是不错的~ X宝蛮便宜
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/futexlocker">futexlocker</a>
+                                            2017-03-11 01:43                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/akira_st_test"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0704/CUSA06366_00-AVA0000000000005_2D87C7F4DA7EBEF20F32_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    看到已经更新了，挺好的。<br/>这里补充一个小姿势。<br/>毛子的这个固件有个特别大的好处是作AP转发时，可以搜索并显示到同一个SSID下不同的路由信号强度。<br/>比如大楼里每一层都有一个路由器，同时广播同样名字的网络，这时候就可以通过毛子固件判断出哪个信号最强。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/akira_st_test">akira_st_test</a>
+                                            2017-03-11 02:19                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/again_dm1204"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/WWS_J/J2086_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/scgabriel">@scgabriel</a> 斐讯k2可以用这个教程吗
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/again_dm1204">again_dm1204</a>
+                                            2017-03-21 14:03                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/scgabriel"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP1804/CUSA08621_00-AVATAR0000000021_4DD200084FD8A887DC2C_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/again_dm1204">@again_dm1204</a> <a href="http://www.right.com.cn/forum/thread-187654-1-1.html" target="_blank">http://www.right.com.cn/forum/thread-187654-1-1.html</a><br/>斐讯k2应该可以刷这个固件<br/>查了下斐讯k2貌似如果是版本比较高的原厂固件很难刷入Breed，下面这个刷入breed的教程适用于4.5.4之前的版本，4.5.4之后的方法不知道<br/><a href="http://blog.csdn.net/jqsad/article/details/51783885" target="_blank">http://blog.csdn.net/jqsad/article/details/51783885</a><br/><br/>另外还看到了这样的东西<br/><a href="http://www.right.com.cn/forum/thread-187441-1-1.html" target="_blank">http://www.right.com.cn/forum/thread-187441-1-1.html</a><br/><br/>看到一个2016.8.17上传的教程,这个教程你可以参考刷入Breed的方法，之后再刷入咱这个回复最上面那个固件就行<br/><a href="https://pan.baidu.com/share/link?shareid=3292903817&amp;uk=2572708115&amp;app=zd" target="_blank">https://pan.baidu.com/share/link?shareid=3292903817&amp;uk=2572708115&amp;app=zd</a>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/scgabriel">scgabriel</a>
+                                            2017-03-21 14:25修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/zhuoyu_ps"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA17544_00-P5RAVATAR000012A_1E77AC8279373F91922A_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    以前用极2刷过breed和Padavan，后来还是入了AC68刷梅林，毕竟转发性能和稳定性强很多
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/zhuoyu_ps">zhuoyu_ps</a>
+                                            2017-03-21 14:20                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/again_dm1204"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/WWS_J/J2086_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/scgabriel">@scgabriel</a> 刚在淘宝上买的 版本号应该比较高的吧 gg
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/again_dm1204">again_dm1204</a>
+                                            2017-03-21 14:26                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/hlx1991"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0082/CUSA08397_00-AVATAR0000000008_16AC478C166CD84B1D42_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/again_dm1204">@again_dm1204</a> 可以降级刷。<br/>你到手后可以试试刷V22.4.2.9这个版本的固件。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/hlx1991">hlx1991</a>
+                                            2017-03-21 14:32修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/again_dm1204"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/WWS_J/J2086_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/hlx1991">@hlx1991</a> 已下载固件 坐等路由器到了 还有觉得你的id好熟悉啊
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/again_dm1204">again_dm1204</a>
+                                            2017-03-21 15:02                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/hlx1991"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0082/CUSA08397_00-AVATAR0000000008_16AC478C166CD84B1D42_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/again_dm1204">@again_dm1204</a> 哈，我们一起刷过gta5的等级。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/hlx1991">hlx1991</a>
+                                            2017-03-21 15:13                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/mzgx2012"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA18093_00-13KAVATAR0000018_31D469379BC77A500CDF_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    最近玩游戏不能联机，记录上传总失败，楼主知道怎么破吗？
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/mzgx2012">mzgx2012</a>
+                                            2017-03-21 15:17                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/allen-yuan919"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0507/CUSA04966_00-AVATAR0000000001_7444CE9DCD9C281037F8_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    LZ是无线联网的吗？为啥你可以下这么快 我的100M电信在PS4上只能下到4M/S<img src="../emoticons\face\majiang\9.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/allen-yuan919">allen-yuan919</a>
+                                            2017-03-21 16:57                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/tilerphy"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP2374/CUSA12786_00-PREMIUMAVATAR004_A817A81FE57B060966E8_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    我是用我家的debian服务器做的路由，很轻松的转发了SS。<br/><br/>……并且还把一个普通的路由器变成了发射翻墙信号的服务器，连上那个，自动翻墙。<br/><br/>家里面有linux服务器的兄弟可以联系我拿脚本。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/tilerphy">tilerphy</a>
+                                            2017-03-21 17:00                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/scgabriel"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP1804/CUSA08621_00-AVATAR0000000021_4DD200084FD8A887DC2C_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/allen-yuan919">@allen-yuan919</a> 测这个的时候是wifi 2.4G频段<br/>有线的时候是下行 90Mbps，上行2Mbps左右
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/scgabriel">scgabriel</a>
+                                            2017-03-21 17:06                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/spirir_wu"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP9000/CUSA01740_00-PREMIUMAVATAR006_5B8B6DD37853FF79D614_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/nekos-91">@nekos-91</a> shadowrocket共享给ps4 怎么设置
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/spirir_wu">spirir_wu</a>
+                                            2017-03-21 17:27                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/shihiro123456"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0031/CUSA01054_00-AVATAR1505NEP122_3553A2C3B4F2E8CF92AF_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/qw6033">@qw6033</a> 我也是测试ps4或者psv都是失败。用梅林1.4.4的就完全没问题
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/shihiro123456">shihiro123456</a>
+                                            2017-03-22 08:02                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/allen-yuan919"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0507/CUSA04966_00-AVATAR0000000001_7444CE9DCD9C281037F8_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/scgabriel">@scgabriel</a> PS4的WIFI接收端是2.4G频段的 上网查了下2.4G极限就是4M/S 你能无线下载那么快不科学。。。<img src="../emoticons\face\majiang\13.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/allen-yuan919">allen-yuan919</a>
+                                            2017-03-22 09:01                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/nekos-91"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0704/CUSA02582_00-AVATAR1511N2REMI_8C8E0D6C6E49852B101D_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/spirir_wu">@spirir_wu</a> shadowrocket 里面点开 设置 - 代理 ，类型选http ，端口用ps4默认的1080，空闲超时设为0，然后点开 代理共享的，在允许的ip地址里填上PS4的内网IP，点启动就行了。（不下载的话建议这个时候设为全局代理…）。最后PS4连和手机同一个Wi-Fi，http代理里填上手机ip就行了。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/nekos-91">nekos-91</a>
+                                            2017-03-22 09:04修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/sccdzmh"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA17932_00-JPGBVSAVTH000001_F13195C55EEBB554B069_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    老毛子还是很不错的，梅林抽风时候也不少而且屁事多
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/sccdzmh">sccdzmh</a>
+                                            2017-03-22 09:08                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/scgabriel"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP1804/CUSA08621_00-AVATAR0000000021_4DD200084FD8A887DC2C_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/allen-yuan919">@allen-yuan919</a> <img src="../emoticons\face\alu\30.gif"/>不知道，这个测速其实不咋准吧，咱有线连，实际PSN下载也就每秒3MBps最多，这个测速显示90多Mbps，下载速度要达到10MBps才可能呢<img src="../emoticons\face\alu\39.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/scgabriel">scgabriel</a>
+                                            2017-03-22 09:25                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/blood_xia"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP9000/CUSA14006_00-TLOUPIIELLIETAVA_0239162239FD2B864EEA_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/tilerphy">@tilerphy</a> 不就和op x86一样吗。自由度高很多，linux用ss就太浪费了。可选的方案太多，效果也比ss好很多。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/blood_xia">blood_xia</a>
+                                            2017-03-22 10:14                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/tilerphy"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP2374/CUSA12786_00-PREMIUMAVATAR004_A817A81FE57B060966E8_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/blood_xia">@blood_xia</a> 微辟恩方案容易被和谐，SS省心，效果没啥区别。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/tilerphy">tilerphy</a>
+                                            2017-03-22 10:45                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/blood_xia"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP9000/CUSA14006_00-TLOUPIIELLIETAVA_0239162239FD2B864EEA_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/tilerphy">@tilerphy</a> 区别大了去了。和谐？怎么会想到这个词。别用pptp,l2tp之类的就行，微辟恩的话，推荐无状态的微辟恩，也有很多，只要自己注意NAT就行了，ss因为天生的缺陷问题，nat打洞会有bug和未知问题产生，同时也无法做全策略。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/blood_xia">blood_xia</a>
+                                            2017-03-22 11:17                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/scgabriel"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP1804/CUSA08621_00-AVATAR0000000021_4DD200084FD8A887DC2C_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/blood_xia">@blood_xia</a> <img src="../emoticons\face\alu\21.gif"/>微辟恩能不能透明代理呀？
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/scgabriel">scgabriel</a>
+                                            2017-03-22 15:37                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/again_dm1204"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/WWS_J/J2086_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/scgabriel">@scgabriel</a> 路由器到了 固件版本是22.4.6.3
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/again_dm1204">again_dm1204</a>
+                                            2017-03-22 15:59                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/blood_xia"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP9000/CUSA14006_00-TLOUPIIELLIETAVA_0239162239FD2B864EEA_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/scgabriel">@scgabriel</a> 为什么不能？
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/blood_xia">blood_xia</a>
+                                            2017-03-22 16:09                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/kirao_xiaoxiao"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0704/CUSA02582_00-AVATAR1511N1MARI_D746B851E322468A17A8_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    这不就是老毛子么<img src="../emoticons\face\majiang\23.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/kirao_xiaoxiao">kirao_xiaoxiao</a>
+                                            2017-03-22 16:15                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/kirao_xiaoxiao"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0704/CUSA02582_00-AVATAR1511N1MARI_D746B851E322468A17A8_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/sccdzmh">@sccdzmh</a> 而且老毛子经过国人魔改之后 更新的还不错 新版都支持SSR了
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/kirao_xiaoxiao">kirao_xiaoxiao</a>
+                                            2017-03-22 16:16                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/tilerphy"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP2374/CUSA12786_00-PREMIUMAVATAR004_A817A81FE57B060966E8_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/blood_xia">@blood_xia</a> ？ 无状态微辟恩是啥？ 目前我用ss没发现缺陷，至于策略，完全可以本地级别处理啊。<br/>而且微辟恩和ss都是点对点隧道处理，原理和实现上没有本质区别。而且ss给其他设备来用也比微辟恩更方便啊。<br/>我说的脚本也是一个开机脚本，设置本地虚拟网卡 -&gt; NAT TCP请求到SS本地客户端 / NAT UDP 53请求到openDNS的5353DNS服务器 -&gt; 启动本地SS客户端连接远程SS服务器。 方便快捷啊。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/tilerphy">tilerphy</a>
+                                            2017-03-22 16:32修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/blood_xia"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP9000/CUSA14006_00-TLOUPIIELLIETAVA_0239162239FD2B864EEA_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/tilerphy">@tilerphy</a> 无状态微辟恩可以自己wiki一下，简单点说就是并不是持续性连接的微辟恩，就是基于udp的微辟恩。所以并不存在断了无法拨号之类的问题。<br/>策略你在SS下面是无法更改的，因为ss是socks隧道打洞，所以udp没法做策略，并不能像微辟恩的策略路由表那样来操作，所以用ss的游戏模式之类的，转发udp的方式，就会变成所有的udp都走ss，不管国内国外。如果你下个bt之类的，或者其他的需要有大量udp操作的，就会杯具。<br/>你既然都是linux服务器了，用ss，也要做全局的透明代理吧。你当成路由的方式来做不就好了，dns更简单，只要和dnsmasq做一个配合，就能把所有的东西都彻底分离了。<br/>ss的udp打洞问题，并不是所有的游戏都会出现问题，如果你自己用tcpdump来自己跟一下流量，就会明白具体是为什么了。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/blood_xia">blood_xia</a>
+                                            2017-03-22 17:01                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/again_dm1204"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/WWS_J/J2086_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/scgabriel">@scgabriel</a> 已成功刷入breed<img src="../emoticons\face\majiang\1.gif"/> 顺便问下哪个ss比较好
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/again_dm1204">again_dm1204</a>
+                                            2017-03-22 17:08修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/tilerphy"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP2374/CUSA12786_00-PREMIUMAVATAR004_A817A81FE57B060966E8_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/blood_xia">@blood_xia</a> 很久之前的ss版本就支持udp和tcp两种连接了，而且可以通过iptables来决定走不走ss。 现在就是本地的透明代理。<br/><br/> <br/>这么一套下来，并没有什么问题，而且不会影响服务器本身的其他功能。<br/><br/><br/>主要还是轻便快捷。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/tilerphy">tilerphy</a>
+                                            2017-03-22 17:20修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/blood_xia"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP9000/CUSA14006_00-TLOUPIIELLIETAVA_0239162239FD2B864EEA_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/tilerphy">@tilerphy</a> 你压根没懂我说什么。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/blood_xia">blood_xia</a>
+                                            2017-03-22 17:58                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/tilerphy"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP2374/CUSA12786_00-PREMIUMAVATAR004_A817A81FE57B060966E8_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/blood_xia">@blood_xia</a> 可是我懂了啊，只是你阐明你的观点，我阐明我的观点。只不过好像都在说自己的
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/tilerphy">tilerphy</a>
+                                            2017-03-22 21:17修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/scgabriel"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP1804/CUSA08621_00-AVATAR0000000021_4DD200084FD8A887DC2C_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/again_dm1204">@again_dm1204</a> <img src="../emoticons\face\alu\21.gif"/>咱用的是<a href="https://monocloud.net/" target="_blank">这个</a>的DarkCloud高级版，你可以试下。。。。不过每个地区的网络状况不同，不一定指的哪个ss好用。一般是找家能从CN2线路出口的ss比较好，如果你自己有动手能力，不嫌麻烦，自己搭服务器也能更好的翻墙
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/scgabriel">scgabriel</a>
+                                            2017-03-23 09:07                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/spirir_wu"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP9000/CUSA01740_00-PREMIUMAVATAR006_5B8B6DD37853FF79D614_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/nekos-91">@nekos-91</a> <img src="../emoticons\face\alu\10.gif"/>回去试试 谢谢
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/spirir_wu">spirir_wu</a>
+                                            2017-03-23 10:23                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/maozeidong"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/WWS_A/UP90001009026l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/scgabriel">@scgabriel</a> 请问PS4自动或手动下载的游戏补丁，走的是SS流量还是国内普通非SS流量
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/maozeidong">maozeidong</a>
+                                            2017-04-08 17:06                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/scgabriel"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP1804/CUSA08621_00-AVATAR0000000021_4DD200084FD8A887DC2C_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/maozeidong">@maozeidong</a> 很玄学，说不清，基本上大部分都是不走翻墙流量的，但是日服和美服有几个游戏遇到过全走流量的
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/scgabriel">scgabriel</a>
+                                            2017-04-08 18:14                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/ylnaiwcz"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0102/CUSA09554_00-AV00000000000020_1C90A2C2927EE520142D_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    LZ你好，我最近弄了个这个固件的SS，连上PS4之后，PS4的上传测试一直是失败状态，导致无法玩MHW。同样的SS我通过PC代理给PS4，就能稳定游戏。请问这是固件的BUG还是路由器太烂了呀？搞了两天了没有眉目，想死的心都有了。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/ylnaiwcz">ylnaiwcz</a>
+                                            2018-04-06 00:40                                                                            </div>
+<!--回复结束-->
+</div>
+</div>
+        </body></html>

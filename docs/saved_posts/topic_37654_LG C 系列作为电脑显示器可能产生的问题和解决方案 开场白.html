@@ -1,0 +1,346 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8"/><title>LG C 系列作为电脑显示器可能产生的问题和解决方案 开场白</title><meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="style.css" rel="stylesheet"/></head>
+<body>
+<div class="original-url-container"><p><strong>原始链接:</strong> <a href="https://psnine.com/topic/37654" target="_blank">https://psnine.com/topic/37654</a></p></div>
+<h1>LG C 系列作为电脑显示器可能产生的问题和解决方案 开场白</h1><div class="main-post-container"><div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/wakune_kimu" itemprop="author">wakune_kimu</a>
+<span class="text-warning">
+2023-11-10 19:55编辑
+</span>   
+30评论
+</div><div class="post-page-content"><h3 class="page-title">开场白</h3><div class="content pd10" itemprop="articleBody"><span style="font-size:18px;">开场白</span><br/>虽然可能不是一个 PS 强相关的话题，但个人感觉这个大家也都有聊到，所以就发在这里。<br/><br/>LG C 系列作为 OLED 显示设备目前的性价比之王和一步退烧的解决方案，如果有人关心自己的显示设备可能多多少少都耳熟能详了，尤其是 Xbox 插上去以后显示设置全绿的那个截图可能很多人都见过。近期双 11 C3 又有大优惠可能很多人也在入手或者盘算入手，其中主流应该是 42/48，除了连接主机之外可能大家也想作为 PC 的显示器使用，因为有机油问我这个电视适不适合作为显示器，我感觉心情比较复杂。所以在这把自己踩过的坑分享一下，希望大家不要再踩了。<br/><br/>先说一下我的配置，我在用 42 寸的 LG C2，显卡是那会听到禁售消息赶紧下单的 RTX4090（是的小丑就是我），可能我遇到的问题有一部分是因为 4090 造成的，你不一定会遇到。对于 C 系列本身 1、2、3 就我在各个地方看连接问题基本都一致，所以应该是通用的，如有不同请指正。<br/><br/>本帖一大问题是我当时出故障的时候忘了拍照片，如果大家有故障照片欢迎分享。<br/>如果后续我又踩了别的坑或者有其他机油有分享，还会再一页一页开下去。<br/><br/></div></div><div class="post-page-content"><h3 class="page-title">屏幕白色条状闪烁（flicker）</h3><div class="content pd10" itemprop="articleBody"><span style="font-size:18px;">屏幕白色条状闪烁（flicker）</span><br/>请更新你电视的固件，默认自动更新，当然了有些朋友电视习惯性不联网，请主动更新下。<br/><br/></div></div><div class="post-page-content"><h3 class="page-title">屏幕紫色和黑色块状闪烁（artifact）</h3><div class="content pd10" itemprop="articleBody"><span style="font-size:18px;">屏幕紫色和黑色块状闪烁（artifact）</span><br/>这种情况尤其在开启 GSYNC 之后会很明显，实质原因是 HDMI 线材带宽不够，<span style="color:red;">请首先拿掉你的 HDMI 分配器</span>，然后如果你一根线直连依然有问题请买一根品质比较好的线。请避免使用光纤线，可能会有 HDMI 握手不畅通的问题，线材请确保你买到了 HDMI 组织认证的 Ultra High Speed 的线，或者你也可以买一大堆线一根一根试哪个没问题然后把有问题的都退了。<br/>然后我遭遇这个问题可能是因为 4090 把带宽吃满了导致的，各位可以先实测，没有这个问题就不用折腾。<br/><br/></div></div><div class="post-page-content"><h3 class="page-title">回音壁无法输出环绕声</h3><div class="content pd10" itemprop="articleBody"><span style="font-size:18px;">回音壁无法输出环绕声</span><br/>因为 NVIDIA 那边的问题，显卡只能识别出电视自己的声道数，而电视本身是没有真实环绕声的，所以就算你插了 eARC 设备显卡也不认环绕声，只能输出立体声。解决方案是使用<a href="https://www.monitortests.com/download/cru/cru-1.5.2.zip" target="_blank">Custom Resolution Utility (CRU) 点击下载</a>来修改显卡认知中电视的声道数，如图所示。<br/><img class="imgclick" src="https://www.modelscope.cn/studio/flyheadko/J2Z_experience/resolve/master/data/images/37654_001.webp"/><br/><img class="imgclick" src="https://www.modelscope.cn/studio/flyheadko/J2Z_experience/resolve/master/data/images/37654_002.webp"/><br/><img class="imgclick" src="https://www.modelscope.cn/studio/flyheadko/J2Z_experience/resolve/master/data/images/37654_003.webp"/><br/>把 TrueHD 等杜比格式选择 6 channels 或者 8 channels（取决于你的回音壁是 5.1 还是 7.1）即可。重启后，就会发现系统设置音频选项里可以选 Dolby Atmos for Home Theater 了。<br/>和游戏机一样请设置为比特流（Bitstream）与通过（Passthrough），并且可能依据你的设备可能需要设置音频延迟。<br/><span style="color:red;">请注意，每次更新显卡驱动之后都需要重新设置，电视固件更新也有可能会需要重新设置。</span><br/><br/></div></div><div class="post-page-content"><h3 class="page-title">屏幕显示区域蔓延到外边一小条</h3><div class="content pd10" itemprop="articleBody"><span style="font-size:18px;">屏幕显示区域蔓延到外边一小条</span><br/>这是因为 OLED 电视存在“画面移动”这一特性，通过肉眼难以分辨的小幅屏幕移动来减少烧屏的可能性，所以对于物理分辨率来说，显卡会认为你显示设备的最大分辨率是4096*2160而非真实情况的3840*2160。所以解决方案是使用<a href="https://www.monitortests.com/download/cru/cru-1.5.2.zip" target="_blank">Custom Resolution Utility (CRU) 点击下载</a>来删除错误识别的4096*2160，如图所示。<br/><img class="imgclick" src="https://www.modelscope.cn/studio/flyheadko/J2Z_experience/resolve/master/data/images/37654_001.webp"/><br/><img class="imgclick" src="https://www.modelscope.cn/studio/flyheadko/J2Z_experience/resolve/master/data/images/37654_004.webp"/><br/><img class="imgclick" src="https://www.modelscope.cn/studio/flyheadko/J2Z_experience/resolve/master/data/images/37654_005.webp"/><br/>当然了有人会让你把电视的“画面移动”关闭，我是觉得还是要对自己的设备好一点。记得改好以后重新启动以生效。<br/><span style="color:red;">请注意，每次更新显卡驱动之后都需要重新设置，电视固件更新也有可能会需要重新设置。</span><br/><br/></div></div><div class="post-page-content"><h3 class="page-title">游戏在 XBOX 上支持杜比视界但在 PC 上只能以普通 HDR 模式游玩</h3><div class="content pd10" itemprop="articleBody"><span style="font-size:18px;">游戏在 XBOX 上支持杜比视界但在 PC 上只能以普通 HDR 模式游玩</span><br/>这是因为不知道什么原因，PC 游戏就是开不了杜比视界，所以不要太早卖掉你的盒子，不要信那些说 PC 完全 XBOX 上位替代的鬼话。<br/>最典型的就是刚发售的无名之龙，4090 全开画面看起来也不如 XBOX 舒服，毕竟色彩还是不准，而如龙本来也不需要太强的性能，色彩不准就显得 PC 不如盒子了。<span class="mark">当然了，不管盒子还是 PC 都没有奖杯所以都是垃圾。</span><span class="mark">不过，毕竟首发 XGP，还要什么自行车，没有奖杯也忍了。</span></div></div></div>
+<h2>评论</h2><div class="post">
+<a class="l" href="https://psnine.com/psnid/teambrezzy417"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP9000/CUSA14006_00-AV00000000000014_0BAEDAE6FE035CC98535_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    牛逼先码，回头买了电视再看看，大佬技术贴先赞起来
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/teambrezzy417">teambrezzy417</a>
+                                            2023-11-10 20:30                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/heresy-zacefron"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP4312/PPSA23973_00-0216021285475289_E1B00ACEE8DCC1F9F76B_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    大佬牛B，先存了
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/heresy-zacefron">heresy-zacefron</a>
+                                            2023-11-10 20:31                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/kangyo232ng1994"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA17544_00-P5RAVATAR000010A_E372FC3685DE3B56D538_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    感谢分享，先顶你一下<img src="../emoticons\face\alu\1.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/kangyo232ng1994">kangyo232ng1994</a>
+                                            2023-11-10 21:16                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/donghuangtaiyi"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/WWS_J/J2064_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    好贴帮顶，手持LG的27GP95R显示器的表示支持<img src="../emoticons\face\alu\35.gif"/><img src="../emoticons\face\alu\10.gif"/>。等明年专门的4K高刷OLED显示器一步到位咯。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/donghuangtaiyi">donghuangtaiyi</a>
+                                            2023-11-10 21:43                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/ahabnt"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP9000/PPSA01971_00-DEATHSDCAVATAR03_F1AA9D9E902C4BA69EA9_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    我买的c3，用在电脑上总感觉颜色怪怪的哪个模式都不行<img src="../emoticons\face\alu\30.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/ahabnt">ahabnt</a>
+                                            2023-11-10 22:21                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/luanwu1997"><img height="50" src="../avatars/luanwu1997-1648338313-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    55c2 同4090路过 <img src="../emoticons\face\alu\35.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/luanwu1997">luanwu1997</a>
+                                            2023-11-10 22:49                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/redwy"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP9000/CUSA12613_00-DSAV00THUMBSUPBB_0B7543CC9D343A63560F_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    这篇很好 干货满满
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/redwy">redwy</a>
+                                            2023-11-10 23:10                                        法国                                    </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/pzw1998"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/3RD/JP00311111A27_2DE3C07ED753DAF0C3B2_L.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    电脑颜色怎么调都很奇怪，，
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/pzw1998">pzw1998</a>
+                                            2023-11-11 05:59                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/bimuakung"><img height="50" src="../avatars/bimuakung-1575206931-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    LG C2正在来的路上，看了下博主的问题，对于我应该问题不大
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/bimuakung">bimuakung</a>
+                                            2023-11-11 09:42                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/ichijonekomono"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0404/CUSA04752_00-AVATAR1602000007_2BD25DBC7A298C52EC5C_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    还有个MacBook接C2不能达到4K60Hz的问题。<br/><br/>本人机型是MacBook Pro 15" 2017，而且也买了官网一转三的转接口，官网说明是可以支持4K60Hz输出的，<br/>而且机型也刚好能支持。但无论怎样弄都只能是4K30Hz。<br/><br/>PS：拖了很久都没解决，双十一刚好已经买了一条HDMI2.1支持8K输出的Type-C to HDMI线在路上了。打算测试一下行不行。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/ichijonekomono">ichijonekomono</a>
+                                            2023-11-11 11:05修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/misaka10029"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA14326_00-AVATAR0000000001_DB3BFF44F07B1489299C_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    C2用户前来观摩<img src="../emoticons\face\majiang\25.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/misaka10029">misaka10029</a>
+                                            2023-11-11 11:20                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/harukawoo"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA17544_00-P5RAVATAR000006A_C787E4AC677E22E0EAD9_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    C2用户路过<img src="../emoticons\face\alu\5.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/harukawoo">harukawoo</a>
+                                            2023-11-11 13:07                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/kira0tan"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0082/CUSA08397_00-AVATAR0000000008_16AC478C166CD84B1D42_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    大佬问一下，C3只用来玩XSX，PS5这种主机，用不用买回音壁啊？XSX上有杜比和DTS
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/kira0tan">kira0tan</a>
+                                            2023-11-11 21:16                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/wakune_kimu"><img height="50" src="../avatars/wakune_kimu-1556505611-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/ahabnt">@ahabnt</a> <a href="https://psnine.com/psnid/pzw1998">@pzw1998</a> 没有杜比视界就只能去调色，调色这事正经讲需要用校色仪，但多少麻烦一些，如果调个差不多的话我研究研究写个方案吧。<br/><a href="https://psnine.com/psnid/ichijonekomono">@ichijonekomono</a> 我现在是用 M1 Mac Mini，可以稳定 4K 60Hz。全 C 口的 MBP 我记得有些型号存在一边的口速度快一边的口速度慢的问题，这块应该不是电视的问题。<br/><a href="https://psnine.com/psnid/kira0tan">@kira0tan</a> 还是建议买，电视没有环绕声，回音壁有。环绕声还是可以很明显感受出区别的。<br/>谢谢其他帮顶的朋友，就不一一@了<img src="../emoticons\face\majiang\6.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/wakune_kimu">wakune_kimu</a>
+                                            2023-11-11 21:59                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/noire0210"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0031/CUSA01054_00-AVATAR1505NEP002_07F8818AE6B09BEC3818_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/ichijonekomono">@ichijonekomono</a> 魔改线4k120了都
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/noire0210">noire0210</a>
+                                            2023-11-11 22:16                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/xiaomingzi"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/WWS_J/J2084_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    没有挑衅的意思啊，但是为啥看了这个帖子就想笑？是不是题主笔法的问题？哈哈  <img src="../emoticons\face\alu\11.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/xiaomingzi">xiaomingzi</a>
+                                            2023-11-11 23:47                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/uni_gao"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/UP4396/CUSA04449_00-AV00000000000002_2FDAB9099BDD1F930EB5_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    用的是42LX3，传言是用LG的G2的屏幕，用了快一年了，目前情况来看画面高亮场景情况下表现马马虎虎，也目前oled的保护机制吧
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/uni_gao">uni_gao</a>
+                                            2023-11-12 14:22                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/mizuharakoyomi"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/WWS_J/J2070_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    c1用户路过，使用两年感觉良好。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/mizuharakoyomi">mizuharakoyomi</a>
+                                            2023-11-13 17:27                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/nami_xm"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0177/CUSA18093_00-13KAVATAR0000014_44B6140B46514EC6E5C4_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    大佬牛B，先存了
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/nami_xm">nami_xm</a>
+                                            2023-11-13 18:29                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/yc_katerina"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/WWS_J/J0001.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    大佬厉害，可我是索尼电视
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/yc_katerina">yc_katerina</a>
+                                            2023-11-13 20:17                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/ichijonekomono"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0404/CUSA04752_00-AVATAR1602000007_2BD25DBC7A298C52EC5C_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/wakune_kimu">@wakune_kimu</a> <br/>我现在是用 M1 Mac Mini，可以稳定 4K 60Hz。全 C 口的 MBP 我记得有些型号存在一边的口速度快一边的口速度慢的问题，这块应该不是电视的问题。<br/> ---------------------------------------------<br/><br/>今晚线到了，测试可行！
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/ichijonekomono">ichijonekomono</a>
+                                            2023-11-13 21:41修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/ichijonekomono"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0404/CUSA04752_00-AVATAR1602000007_2BD25DBC7A298C52EC5C_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/noire0210">@noire0210</a> 我那破机器顶天能跑4K60。刚好今晚Type-C to HDMI2.1的线到了，能跑4K60，知足。<img src="../emoticons\face\alu\13.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/ichijonekomono">ichijonekomono</a>
+                                            2023-11-13 21:42                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/jianglai2014"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/UT0016/CUSA06833_00-DOP2021AVATAR000_2CF71545E4FC3F5B593E_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    性价比仅仅只是尺寸价格比看起来香，而且这个性价比建立在桌面环境适合放大尺寸显示设备上。作为电视使用可以的，显示器还差点，同样的技嘉fo42u,fo48u有dp,那个能叫显示器。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/jianglai2014">jianglai2014</a>
+                                            2023-11-13 22:41                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/kojimaandbigboss"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0005/CUSA01557_00-P5AVATAR00000021_90404ADDE254A96500A0_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    想问一下大佬们的42c3什么价入的，双十一找了一圈5999买的，到底算不算好价啊，第一次买这么贵的电视，感觉电视价格不好透明，各种询价私聊的<img src="../emoticons\face\majiang\40.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/kojimaandbigboss">kojimaandbigboss</a>
+                                            2023-11-15 22:38                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/dying_lyte"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/UP4312/CUSA02383_00-AV00000000000002_D2D041FBDF4FA8976ED7_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    65寸C1+4060笔记本+a7000全套，看个4k电影还行，之前打过一阵暗黑4，感觉还是不得劲，远了近的都不舒服
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/dying_lyte">dying_lyte</a>
+                                            2023-11-15 22:58                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/blackcat65011"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP5846/CUSA20175_00-HJMRAVATARLLOYD0_32A48549C6D1B4F7C72E_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    C3用户观摩帮顶
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/blackcat65011">blackcat65011</a>
+                                            2023-11-16 10:41                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/carryiiiiiiii"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP9000/CUSA12613_00-AVA00LUDENSCHIBI_8349E7A2EBBE0C2D9433_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    电视作为显示器，作为专门看视频和打游戏的副屏比较合理，最好有个专门处理信息流和文档工作的主屏。oled的硬件原因，你的打机环境如果太亮也不适合，窗帘一拉椅子一靠，视力去他妈的环境下的确爽。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/carryiiiiiiii">carryiiiiiiii</a>
+                                            2023-11-16 10:45                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/lockfaiz"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/WWS_E/E2106_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/kojimaandbigboss">@kojimaandbigboss</a> 差不多了 虽然最多能叠到5800
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/lockfaiz">lockfaiz</a>
+                                            2023-11-16 10:56                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/zhang221rj"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0102/CUSA18045_00-VILLAGEAVATAR013_4692D45F815CFE32CEB2_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    玩 PC 游戏开着 gsync 会紫色闪屏，关了就没有，是不是线有问题
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/zhang221rj">zhang221rj</a>
+                                            2023-11-17 11:45                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/tako_wolh"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP9000/PPSA01971_00-DEATHSDCAVATAR03_F1AA9D9E902C4BA69EA9_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    真牛B，保存了<img src="../emoticons\face\alu\43.gif"/><img src="../emoticons\face\alu\43.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/tako_wolh">tako_wolh</a>
+                                            2023-11-17 16:03                                                                            </div>
+<!--回复结束-->
+</div>
+</div>
+</body></html>

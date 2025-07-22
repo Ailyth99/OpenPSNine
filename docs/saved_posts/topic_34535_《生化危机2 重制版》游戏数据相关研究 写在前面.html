@@ -1,0 +1,666 @@
+
+        <!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><title>《生化危机2 重制版》游戏数据相关研究 写在前面</title><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="stylesheet" href="style.css"></head>
+        <body>
+            <div class="original-url-container"><p><strong>原始链接:</strong> <a href="https://psnine.com/topic/34535" target="_blank">https://psnine.com/topic/34535</a></p></div>
+            <h1>《生化危机2 重制版》游戏数据相关研究 写在前面</h1><div class="main-post-container"><div class="meta">
+
+<a class="psnnode" href="https://psnine.com/psnid/wiixbox_77" itemprop="author">wiixbox_77</a>
+<span class="text-warning">
+2019-02-25 19:22编辑
+</span>   
+60评论
+</div><div class="post-page-content"><h3 class="page-title">写在前面</h3><div class="content pd10" itemprop="articleBody"><span style="font-size:18px;">写在前面</span><br/><b>本文转自A9，由A9站友domosnake整理并首发。</b><br/>仅转帖，请大家理性讨论。<br/> <br/>本人是白金之后才知道，准心射击伤害才最高（生456玩儿多了，追头连打是本能...）。整整好几个周目都是跟各种头铁的丧尸较劲<img src="../emoticons\face\majiang\29.gif"/>...<br/>为防止大家走弯路，贴过来给大家研究一下~<br/><b>再次提醒大家，准心射击有伤害加成</b><br/></div></div><div class="post-page-content"><h3 class="page-title">动态难度</h3><div class="content pd10" itemprop="articleBody"><span style="font-size:18px;">动态难度</span><br/><br/>生化危机2重置版（以下简称生化2）的动态难度机制概括来说就是，你在游戏里表现越好，敌人的攻击力就越高，你的武器伤害力就越低。游戏中推进剧情，制造伤害，难度“级数”上升； 受伤，射偏，死亡等，级数下降。<br/><br/>0级: 武器伤害 180% 受到伤害 70% （辅助难度下限）<br/>1级: 武器伤害 160% 受到伤害 70%<br/>2级: 武器伤害 140% 受到伤害 80% <br/>3级: 武器伤害 120% 受到伤害 80% （普通难度下限）<br/>4级: 武器伤害 110% 受到伤害 90% （辅助难度上限）<br/>5级: 武器伤害 100% 受到伤害 100%<br/>6级: 武器伤害 90% 受到伤害 120% <br/>7级: 武器伤害 80% 受到伤害 160% <br/>8级: 武器伤害 70% 受到伤害 200% （普通难度上限/硬核难度下限）<br/>9级: 武器伤害 70% 受到伤害 300% （硬核难度上限）<br/><br/><img src="../emoticons\face\alu\36.gif"/>：丧尸一口从满血到黄血，动态难度在6级以上。一口danger，难度在9级以上。<br/><img src="../emoticons\face\alu\36.gif"/>：第四生存者和豆腐测试数据显示难度是7级。<br/><br/><br/><br/></div></div><div class="post-page-content"><h3 class="page-title">血量和移动速度</h3><div class="content pd10" itemprop="articleBody"><span style="font-size:18px;">血量和移动速度</span><br/>深绿Fine: 1200hp 100%<br/>浅绿Fine: 1199hp - 801hp 99%-67%<br/>黄色Caution: 800hp - 361hp 66%-30%<br/>红色Danger: 360hp以下 30%以下<br/><br/> 一颗绿草恢复400点hp，33%的血量。红+蓝的盾buff持续3分钟，防止中毒，受到伤害减半。除了必杀技，只要血量高于红色danger，敌人的攻击最多可以把你打到剩一滴血，但不能一击致命。<br/><br/>移动速度<br/>里昂<br/>绿Fine：步行58% 跑步100% 下楼跑步64% 上楼跑步80%<br/>黄Caution：步行54% 跑步96% 下楼跑步58% 上楼跑步70%<br/>红Danger：步行48% 跑步83% 下楼跑步48% 上楼跑步58%<br/>克莱尔<br/>绿Fine：步行58% 跑步100% 下楼跑步64% 上楼跑步80%<br/>黄Caution：步行54% 跑步106% 下楼跑步58% 上楼跑步70%<br/>红Danger：步行48% 跑步83% 下楼跑步48% 上楼跑步48%<br/>克莱尔黄血跑步速度比绿血还快，速攻有优势。<br/><br/></div></div><div class="post-page-content"><h3 class="page-title">敌人伤害</h3><div class="content pd10" itemprop="articleBody"><span style="font-size:18px;">敌人伤害</span><br/>以下数值都是在普通难度，动态难度5级下计算的。“*”表示可反击。<br/><br/>中毒<br/>每秒跳一下伤害，前4秒每跳20，第5秒那一跳40。也就是说，中毒状态下每5秒扣120，满血时的10%。你有50秒时间直到扣到最后一滴血，但是中毒不会直接导致死亡。所有难度下中毒伤害不变。<br/><br/>暴君<br/>推击：100<br/>拳击：300<br/>抓头*：必杀技<br/><br/>丧尸<br/>普通咬*：340<br/>背后咬：340<br/>中咬：270  （数据显示有，但是实际测试未发现这种攻击方式）<br/>轻咬：150  （数据显示有，但是实际测试未发现这种攻击方式）<br/>咬腿：240<br/>两个一起咬：400<br/><br/>舔食者<br/>扑倒*：395<br/>舌头：200<br/>挥击：300<br/>跳劈：450<br/>天花板跳劈：400<br/><br/>G1<br/>钢管：170<br/>钢管重击：340<br/>抓头*：450<br/><br/>丧尸犬<br/>扑倒*：200<br/>跳咬：180<br/><br/>G2<br/>天花板爪子：300<br/>爪击：240<br/>跳砍：320<br/>抓取*：必杀技<br/><br/>G3<br/>爪挥击：400<br/>爪前冲：500<br/>爪拍地：800<br/>扔罐子：600<br/>扔墙壁：1000<br/>跳踩*：必杀技<br/><br/>超级暴君<br/>爪挥击：350<br/>爪前冲：500<br/>冲锋：必杀技<br/><br/></div></div><div class="post-page-content"><h3 class="page-title">武器基础伤害</h3><div class="content pd10" itemprop="articleBody"><span style="font-size:18px;">武器基础伤害</span><br/><br/>以下数值采自在5级动态难度下，射击丧尸的身体。“暴击”是指武器暴击后的伤害加成（暴击率目前未知），“瞄准”是武器准心收缩到最小后的伤害加成， “~”是约等于。<br/><br/>火焰喷射器：~20 每燃料 (后续燃烧伤害浮动)<br/>MQ11：70, x3 暴击, 50% 瞄准（攻击除丧尸外的其他敌人）<br/>Samurai Edge （吉尔）： 80, x3 暴击, 50% 瞄准<br/>Samurai Edge （克里斯）： 90, x3 暴击, 50% 瞄准<br/>Matilda： 100, x3 暴击, 50% 瞄准<br/>Samurai Edge (阿尔伯特)：110, x3 暴击, 50% 瞄准<br/>SLS 60（普通弹）： 115, x2.5 暴击, 30% 瞄准<br/>M19：140, x3 暴击, 50% 瞄准<br/>JMB Hp3：150, x3 暴击, 永久瞄准状态<br/>Quickdraw Army左轮：180, x3 暴击, 50% 瞄准<br/>硫酸弹：（最多） 620<br/>SLS 60 （强化弹）： 650, x1.3 暴击, 20% 瞄准<br/>闪电鹰： 650, x1.3 暴击, 50% 瞄准<br/>W-870： 720, x2.66 暴击 （8个弹丸，每个弹丸90）<br/>电击枪： 1225<br/>手雷 （投掷）： 1300<br/>火焰弹：（最多） 2450<br/>火箭筒：1600（火焰属性攻击，可以秒杀植物人）<br/>加特林：150<br/>无限Samurai Edge和克里斯版一样。LE5 和未加装消音器的MQ11一样。<br/> <img src="../emoticons\face\alu\36.gif"/>：很多同学问刀伤害，基础伤害多处给出的数据有矛盾，所以尚不确定。<br/> <img src="../emoticons\face\alu\36.gif"/>：数据显示燃烧弹和硫酸弹命中基础伤害一样是200点，但是燃烧弹的dot伤害大得多，溅射范围大但是火焰原地不动。硫酸弹对特定敌人有击昏大硬直效果，但是溅射范围小，后续dot伤害小，酸液会附着在敌人身上。<br/> <img src="../emoticons\face\alu\36.gif"/>：火箭筒有破防效果，忽略敌人的部位和武器抗性。<br/><br/></div></div><div class="post-page-content"><h3 class="page-title">武器研究</h3><div class="content pd10" itemprop="articleBody"><span style="font-size:18px;">武器研究</span><br/><br/>火焰喷射器<br/>攻击会在前方留下一滩火焰，后续燃烧dot伤害取决于敌人是否持续停留在火焰中，从250到1000不等。武器配件只能减半燃料消耗速率，不影响伤害。无论击中敌人哪个部位，火焰喷射器都会带来全额伤害<br/><br/>MQ11<br/>消音器提升25%的攻击力并消除枪声。除了舔爷，丧尸和暴君都可以被枪声吸引。普通丧尸对MQ11有30%的减免，所有用这把枪打丧尸才会感觉特别弱。<br/><br/>Matilda<br/>枪托提升10%的伤害，并且增加3连发功能。3连发的后2发是未瞄准状态。ammunition吃紧的同学请单发。<br/><br/>SLS 60<br/>快速装弹器可以让普通手枪弹的暴击从2.5x提升到2.8x. 这把小左轮的暴击和瞄准加成都不如其他手枪，作为补偿，它的基础伤害略高。<br/><br/>JMB Hp3<br/>激光瞄准让这把枪永久处于瞄准状态，不用等准心缩小，每一发都是实实在在的瞄准加成伤害。加上大弹夹，可以说是克莱尔最好用的手枪。<br/><br/>榴弹发射器<br/>枪托只是增加远距离射击精度。大部分战斗都是近距离，说实在的这个配件有点鸡肋，还占2个格。<br/><br/>榴弹发射器 - 硫酸弹<br/>伤害不如燃烧弹。但是它对部分敌人有特殊效果。丧尸有大几率可以断（融化）腿。直接命中舔爷可以击晕。G1也有击晕效果。硫酸弹的溅射范围远远小于燃烧弹，但是命中后酸液是持续附着在敌人身上，所以它的伤害也比燃烧弹稳定得多。<br/><br/>榴弹发射器 - 燃烧弹<br/>除了火箭筒，克莱尔唯一可以消灭植物丧尸的武器。燃烧弹对大型，慢速的敌人有非常好的后续燃烧伤害。等boss原地不动的时候也可以来一发完全伤害。另外燃烧弹和硫酸弹的dot可以叠加，交替攻击可以最大化伤害。<br/><br/>W-870<br/>霰弹枪有2个优势：丧尸一发断腿（爆头），狗狗一发入魂。对付其他敌人，霰弹枪伤害都有不同程度的降低。 丧尸断腿爆头的最大距离大概是丧尸发动扑咬动作的距离。长枪管配件会降低子弹的散布，提高近距离暴击射程，但是不提高最远有效射程。<br/><br/>闪电鹰<br/>长枪管配件提高伤害25%。<br/><br/>电击枪<br/>85%的伤害在最后聚力一击。高电压**器配件增加20%的伤害，聚力时间从6秒降低到4秒。杂兵敌人被命中后到最后电力释放一直处于昏迷，无法行动。昏迷效果对boss无效。<br/><br/>手雷<br/>主动投掷出去后，烟雾范围内的敌人承受全额伤害，烟雾外一定范围内的敌人承受一半的伤害。溅射范围还是非常厚道。作为自卫防御投掷后，攻击者承受全额伤害，没有溅射伤害。<br/><br/>刀<br/>小刀有多段伤害特效。挥舞动作划过的碰撞体积越大，伤害越高。自卫反击造成100点基础伤害，但是不会直接杀死敌人。每划一下，无论造成多少伤害，耐久随机消耗1%-3%。无限小刀伤害数值和普通刀一样。<br/></div></div><div class="post-page-content"><h3 class="page-title">敌人</h3><div class="content pd10" itemprop="articleBody"><span style="font-size:18px;">敌人</span><br/><br/>每种敌人对不同武器有不同抗性，攻击不同部位伤害也不一样。以下数值是普通难度，动态难度5级。<br/><br/>丧尸(hp不固定)<br/>部位抗性：<br/>身体/头: 100% 大腿/上臂/肩膀: 80% 小腿: 60% 前臂: 20%<br/>武器抗性：<br/>全武器100%<br/>每只丧尸都是独立不同的hp，是游戏设计人员精心调整出来的。比如加油站第一只丧尸永远是880hp。断手断腿所需要的伤害的测试是随机的。霰弹枪8个弹丸全中头部100%几率爆头。普通手枪爆头几率取决于手枪暴击率。<br/><br/>舔食者(1500hp)<br/>部位抗性<br/>身体: 100% 大脑: 120%<br/>武器抗性<br/>手枪: 80%<br/>马格南, 手雷， 微冲: 100%<br/>霰弹枪: 62.5% (450)<br/>硫酸弹: 1400 (造成11秒昏迷外加3秒的恢复时间)<br/>燃烧弹: 2350 (火焰持续时造成恐慌效果，舔爷会原地手舞足蹈)<br/>火焰喷射器: 140%<br/>电击枪: 285%<br/>舔爷在墙上时不要用榴弹枪。它掉下来会离开燃烧弹火焰效果，所以只能造成直接命中伤害。墙上的舔爷承受全额的燃烧弹命中伤害，在天花板的只有26%燃烧弹伤害。硫酸弹会有全额伤害，但是没有昏迷效果。最好先等舔舔爬到地上在攻击。另外火焰喷射器也恐慌效果。<br/><br/>丧尸犬(300+hp)<br/>部位抗性<br/>头部和身体一样<br/>武器抗性<br/>手枪, 手雷, 微冲: 100%<br/>霰弹枪: 1040 (144%)<br/>榴弹枪: 一击必杀<br/>处理狗狗最好的方式蛇形避开，不用浪费ammunition。实在不行，霰弹或者微冲近距离秒杀。<br/><br/>G1 (5000hp)<br/>部位抗性<br/>头/眼: 100% 身体/腿/左手: 80% 钢管手: 50%<br/>武器抗性<br/>手枪, 马格南, 微冲: 100%<br/>霰弹枪: 220 (30%)<br/>手雷: 800 (62%)<br/>硫酸弹: 615 (附带5秒昏迷效果)<br/>燃烧弹: 682<br/>这场boss战硫酸弹有特效，所以克莱尔打会简单一点。G1的霰弹枪抗性非常非常高。头和眼承受全额伤害，不用刻意找眼睛打。手雷自卫和主动投掷伤害一样。熟练的话，刀杀什么的非常有效，因为每一刀最多可以攻击3个部位，左手，身体，右手。<br/><br/>G成体 (2000+hp)<br/>部位抗性<br/>眼: 100% 暴露的头部: 50% 头/腿: 25% 身体/手: 16.6%<br/>武器抗性<br/>手枪: 100%<br/>马格南: 696 (107%)<br/>微冲: 78 (111%)<br/>霰弹枪: 552 (77%)<br/>手雷: 900 (69%)<br/>硫酸弹: 1009 (无昏迷效果)<br/>燃烧弹: 1921 (10秒恐慌效果)<br/>火焰喷射器: 150%<br/>电击枪: 3096 (250%)<br/>暴露的头部就是吐G幼体的部位。规划好路线，这些敌人完全可以避开。G成体很肉，眼睛还有额外2层保护膜，每层保护膜还有自己独立的血量。满蓄力电击枪命中眼睛可以直接击杀。火焰武器也非常有效，可以忽略防御抗性。<br/><br/>G2 (有效 11000hp)<br/>部位抗性<br/>背后的眼: 195% 手上的眼: 150% 头: 100% 身体: 85%<br/>武器抗性<br/>手枪, 马格南, 微冲, 手雷, 霰弹枪: 100%<br/>硫酸弹: 1110 (无昏迷)<br/>燃烧弹: ~2500 (浮动很大) (无恐慌)<br/>火焰喷射器: 250%<br/>电击枪: 2170 (177%)<br/>必须至少造成11000点伤害才可以用货柜一击必杀。G2在50%血量以上时，需要2500点伤害使其跪地；50%以下时需要3200点伤害。电击枪伤害可观，但是没有昏迷效果，跪地时使用比较有效。火焰喷射器非常有效。通常情况下，2次货柜就可以击杀G2。<br/><br/>植物丧尸 (1500hp)<br/>植物人身上有数个囊肿，任何武器都可以一击打爆一个囊肿。囊肿全部被打爆，或者hp消耗光以后，植物人就会倒地回血。从30秒到3分钟不等，植物人会满血满复活。囊肿打爆得越多，复活越慢。植物人倒地后必须用火焰武器补刀才可以彻底消灭。<br/><br/>G3 (15000hp)<br/>部位抗性<br/>眼: 100% 头: 80% 身体: 50%<br/>武器抗性<br/>手枪, 手雷: 100%<br/>微冲: 60 (85%)<br/>马格南: 500 (77%)<br/>霰弹枪: 396 (55%)<br/>硫酸弹: 645 (有短暂的昏迷效果)<br/>燃烧弹: 660 (无恐慌)<br/>火焰喷射器: ~85%<br/>带配件的电击枪: 2090 (155%)<br/>三只眼睛被打爆后，G3会跪地然后咆哮。第一次跪地后，如果G3血量在70%以上，会被强制消减到70%。第二次跪地后，胸部的眼睛会永久暴露出来，如果它的血量在50%以上，会强制消减到50%。<br/><br/>G4<br/>G4血量数据显示是100万，理论上无法被玩家正常击杀。这场boss战的机制是必须短时间一次性打爆G4肚皮的所有眼睛，然后眼睛从重新长出来。反复几次后，大概5到6次，boss就跪地爬行，之后再承受一定的伤害或者固定时间后就结束。手雷是最有效的武器，扔在boss脚下的手雷可以一击灭掉所有眼睛，5到6枚就可以带走G4。此外加特林和微冲也有效果。单发的强化弹左轮和榴弹完全没有伤害效果。<br/><br/>超级暴君<br/>战斗开始有个隐藏的3分30秒的倒计时。boss每一次被打到后退踉跄，这个倒计时就会加快。<br/>第一次踉跄 166%<br/>第二次踉跄 233%<br/>第三次踉跄 300%<br/>跟克莱尔的G4战斗一样，手雷是王道。每一发手雷都可以直接让boss倒地一次，闪光雷也同样有效。对其心脏造成足够的伤害后也可以让起踉跄一次。三次后就可以风筝它了，因为其他任何攻击也不会加快倒计时了，直到ada送来火箭筒。记得留点闪光雷来打断boss的冲锋必杀。另外每次扔手雷有一定间隔，boss踉跄的动画有无敌时间。<br/><br/>G5 (20000hp)<br/>G5越近受到伤害加成越高。boss睁眼之前所有武器伤害减半。完全睁眼后伤害涨到300%，然后逐步上升到1000%。所以高手可以在最后极限距离两三刀秒杀boss。建议等睁眼后再全火力击杀，一般来说没问题，我从来没有被吃过。从G5睁眼到最后无退路大概有20秒时间。</div></div></div>
+            
+            <h2>评论</h2><div class="post">
+<a class="l" href="https://psnine.com/psnid/claudio7239"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/SCEI/I0011.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    先坐上沙发~~~
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/claudio7239">claudio7239</a>
+                                            2019-02-24 13:48                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/ronglin"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/UT0016/CUSA06833_00-KINGOFFIGHTERSS2_9E50D6D578B5ADE6F9E1_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    支持支持<br/><img src="../emoticons\face\majiang\2.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/ronglin">ronglin</a>
+                                            2019-02-24 13:52                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/s7e7ve7n7"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP9002/CUSA10625_00-NEIRMCAV2B000001_3FF151024DE34FC3CDC2_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    我只记得好像暴君10亿血吧
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/s7e7ve7n7">s7e7ve7n7</a>
+                                            2019-02-24 15:14                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/leping1974"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP2374/CUSA12786_00-PREMIUMAVATAR012_1A63E6CEAE86901F7504_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/s7e7ve7n7">@s7e7ve7n7</a> 锁血而已，只能剧情杀
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/leping1974">leping1974</a>
+                                            2019-02-24 15:41                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/ll_76dd"><img height="50" src="../avatars/ll_76dd-1556533180-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<img src="../emoticons\face\alu\17.gif"/>太可怕了
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/ll_76dd">ll_76dd</a>
+                                            2019-02-24 16:30                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/xiebazhi110_zy"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0178/CUSA13319_00-JPGBVSAVTH000004_42D1052B883B4C171FC7_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    小刀伤害120帧伤害比60帧翻倍<img src="../emoticons\face\majiang\9.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/xiebazhi110_zy">xiebazhi110_zy</a>
+                                            2019-02-24 16:54                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/wiixbox_77"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP9000/CUSA07413_00-AVATAR0000000019_C1CC0A87E5461586C6C7_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/xiebazhi110_zy">@xiebazhi110_zy</a> 是的，有视频240帧打G1，不到20刀吧
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/wiixbox_77">wiixbox_77</a>
+                                            2019-02-24 17:14                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/qiuhongchao123"><img height="50" src="../avatars/qiuhongchao123-1580747939-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    这让我想到了泥潭大佬
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/qiuhongchao123">qiuhongchao123</a>
+                                            2019-02-24 17:19                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/bombhaha"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0404/CUSA13508_00-LAPISAVATAR00032_48DCFAA7734C2E7B274D_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    赞，这就很详细了，每个SS都是不同血量虽然自己也体感到了，但是想不到真的是这样……
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/bombhaha">bombhaha</a>
+                                            2019-02-24 17:24                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/wiixbox_77"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP9000/CUSA07413_00-AVATAR0000000019_C1CC0A87E5461586C6C7_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/bombhaha">@bombhaha</a> 我当初只有9mm的时候，觉得这一代丧尸的血怎么这么厚...
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/wiixbox_77">wiixbox_77</a>
+                                            2019-02-24 19:09                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/ygy0912"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP5846/CUSA18099_00-AVATARYS09SDARGB_BD29A5FF360F3CB341B0_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    顶一个,好资料<img src="../emoticons\face\alu\35.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/ygy0912">ygy0912</a>
+                                            2019-02-24 19:15                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/wzy520cs"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/SCEI/I0033.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    没有王阿姨的数据？
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/wzy520cs">wzy520cs</a>
+                                            2019-02-24 19:57                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/wiixbox_77"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP9000/CUSA07413_00-AVATAR0000000019_C1CC0A87E5461586C6C7_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/wzy520cs">@wzy520cs</a> 王阿姨的数据大家都很清楚<img src="../emoticons\face\alu\11.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/wiixbox_77">wiixbox_77</a>
+                                            2019-02-24 20:02                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/pepoha28"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/WWS_J/J0033.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    怪不得，我标准难度绿血被咬一口直接danger，直接懵逼了<img src="../emoticons\face\alu\31.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/pepoha28">pepoha28</a>
+                                            2019-02-24 21:45                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/bigsea0311"><img height="50" src="../avatars/bigsea0311-1577115007-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    刚才还在a9看到这个帖子这么快就没了？a9什么套路
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/bigsea0311">bigsea0311</a>
+                                            2019-02-25 00:14                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/bigsea0311"><img height="50" src="../avatars/bigsea0311-1577115007-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    话说这作难度上升不是因为收集的道具越多难度越高么
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/bigsea0311">bigsea0311</a>
+                                            2019-02-25 00:15                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/rrobinvip"><img height="50" src="../avatars/rrobinvip-1558063750-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    比较好奇起重机在不能秒杀的情况下会对g2造成多少伤害
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/rrobinvip">rrobinvip</a>
+                                            2019-02-25 01:22                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/heimao1987"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0082/CUSA00301_00-AVATAR1511JOB006_8EC20565C9704B6F65C5_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/leping1974">@leping1974</a> 严格上来说是武器杀233...你S+评价的火箭炮也是可以秒他,不用等ADA救了<img src="../emoticons\face\alu\11.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/heimao1987">heimao1987</a>
+                                            2019-02-25 01:39                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/youga-type-0"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/3RD/JP00311111A11_37DA5D6BCE939771ED55_L.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<img src="../emoticons\face\alu\17.gif"/>光看资料会觉得自己没问题，实际玩起来却觉得这游戏咋这么难
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/youga-type-0">youga-type-0</a>
+                                            2019-02-25 06:19                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/wiixbox_77"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP9000/CUSA07413_00-AVATAR0000000019_C1CC0A87E5461586C6C7_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/bigsea0311">@bigsea0311</a> 是的，转个头的的功夫就没了，奇怪了好半天。回想一下，确实是东西收集的越多，动态难度越高。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/wiixbox_77">wiixbox_77</a>
+                                            2019-02-25 07:41                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/wiixbox_77"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP9000/CUSA07413_00-AVATAR0000000019_C1CC0A87E5461586C6C7_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/youga-type-0">@youga-type-0</a> 这个只是资料，告诉你不要做哪些无用功<img src="../emoticons\face\majiang\3.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/wiixbox_77">wiixbox_77</a>
+                                            2019-02-25 07:42                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/wiixbox_77"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP9000/CUSA07413_00-AVATAR0000000019_C1CC0A87E5461586C6C7_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/rrobinvip">@rrobinvip</a> 大胆猜测一下，莫不是强制到50%？
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/wiixbox_77">wiixbox_77</a>
+                                            2019-02-25 09:00修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/fjh212"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/UP4791/CUSA12243_00-AV00000000000004_FA8BDAAF72E7AF36A442_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    收藏收藏，看看大神的总结，学习一下<img src="../emoticons\face\alu\35.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/fjh212">fjh212</a>
+                                            2019-02-25 08:52                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/dg306767499"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0507/CUSA04966_00-AVATAR0000000016_F6F9A69911721CE05E01_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    电击枪也可以彻底杀死植物丧尸
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/dg306767499">dg306767499</a>
+                                            2019-02-25 08:55                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/steins1101"><img height="50" src="../avatars/steins1101-1652352467-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    原来红血速度变慢不是错觉
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/steins1101">steins1101</a>
+                                            2019-02-25 09:47                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/leping1974"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP2374/CUSA12786_00-PREMIUMAVATAR012_1A63E6CEAE86901F7504_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/heimao1987">@heimao1987</a> 原来如此<img src="../emoticons\face\majiang\41.gif"/>火箭筒限定版
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/leping1974">leping1974</a>
+                                            2019-02-25 10:30                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/ryusaki62"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/3RD/JP01771303001_64B01FB0E5A8FFB45A8C_L.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    生粉支持一下<img src="../emoticons\face\majiang\41.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/ryusaki62">ryusaki62</a>
+                                            2019-02-25 10:37                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/m678hk0078"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/WWS_J/J2033_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    想知道走樓梯時舉槍的小衝鋒真有加快速度嗎<img src="../emoticons\face\alu\17.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/m678hk0078">m678hk0078</a>
+                                            2019-02-25 11:11                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/wyyu"><img height="50" src="../avatars/wyyu-1607957648-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/wiixbox_77">@wiixbox_77</a> http://bbs.a9vg.com/thread-5422404-1-1.html<br/>阿九的哪里被删了,不是活的好好的?
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/wyyu">wyyu</a>
+                                            2019-02-25 12:12                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/wiixbox_77"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP9000/CUSA07413_00-AVATAR0000000019_C1CC0A87E5461586C6C7_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/wyyu">@wyyu</a> 估计我看的时候正好赶上了审核那个阶段。复制到Word中整理后想看看别人的留言，结果就看到了本帖不存在的提示...没想到下午四点多才又过审核<img src="../emoticons\face\majiang\18.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/wiixbox_77">wiixbox_77</a>
+                                            2019-02-25 12:26                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/leping1974"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP2374/CUSA12786_00-PREMIUMAVATAR012_1A63E6CEAE86901F7504_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/m678hk0078">@m678hk0078</a> 有，测试过的。一次很少，加起来就有效果了
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/leping1974">leping1974</a>
+                                            2019-02-25 12:40                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/leping1974"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP2374/CUSA12786_00-PREMIUMAVATAR012_1A63E6CEAE86901F7504_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/steins1101">@steins1101</a> 老生化1出来就是这种设定啊<img src="../emoticons\face\majiang\25.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/leping1974">leping1974</a>
+                                            2019-02-25 12:41                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/leping1974"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP2374/CUSA12786_00-PREMIUMAVATAR012_1A63E6CEAE86901F7504_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/dg306767499">@dg306767499</a> 不行，我试过只能暂时让它歇菜，过一会孢子会再长出来，只有焦黑的不会复活<img src="../emoticons\face\majiang\38.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/leping1974">leping1974</a>
+                                            2019-02-25 12:42                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/leping1974"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP2374/CUSA12786_00-PREMIUMAVATAR012_1A63E6CEAE86901F7504_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/youga-type-0">@youga-type-0</a> 主要原因是没自动瞄准吧<img src="../emoticons\face\majiang\41.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/leping1974">leping1974</a>
+                                            2019-02-25 12:43                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/revengeliuyu"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/UP9000/CUSA00571_00-AV00000000000004_E8AB6027C8AB5681D355_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    硬核数据流
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/revengeliuyu">revengeliuyu</a>
+                                            2019-02-25 13:15                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/wyyu"><img height="50" src="../avatars/wyyu-1607957648-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/wiixbox_77">@wiixbox_77</a> 阿九帖子,主楼修改了,就要重新审核
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/wyyu">wyyu</a>
+                                            2019-02-25 15:08                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/heimao1987"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0082/CUSA00301_00-AVATAR1511JOB006_8EC20565C9704B6F65C5_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/wiixbox_77">@wiixbox_77</a> 有人试过,不开枪情况下得3下才砸死,应该不是50%...
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/heimao1987">heimao1987</a>
+                                            2019-02-25 15:22                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/wiixbox_77"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP9000/CUSA07413_00-AVATAR0000000019_C1CC0A87E5461586C6C7_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/wyyu">@wyyu</a> 原来如此，好久不去那边，基本没发过帖子，竟然不知道<img src="../emoticons\face\majiang\9.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/wiixbox_77">wiixbox_77</a>
+                                            2019-02-25 15:58                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/wiixbox_77"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP9000/CUSA07413_00-AVATAR0000000019_C1CC0A87E5461586C6C7_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/heimao1987">@heimao1987</a> 广大玩家要不要这么认真<img src="../emoticons\face\majiang\12.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/wiixbox_77">wiixbox_77</a>
+                                            2019-02-25 15:58                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/kytc68431028"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0082/CUSA19072_00-REPAVATAR0000013_7F1C584E3032A9F58A49_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    怎麼沒小刀傷害<img src="../emoticons\face\alu\7.gif"/><br/>JMP Hp3準心加乘是30嗎？
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/kytc68431028">kytc68431028</a>
+                                            2019-02-25 19:02修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/lezen62"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP9000/PPSA01971_00-DS2BBPOD30000000_D167B3711E3F8213AEE7_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/lezen62">lezen62</a>
+                                            2019-02-25 18:43                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/wiixbox_77"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP9000/CUSA07413_00-AVATAR0000000019_C1CC0A87E5461586C6C7_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/kytc68431028">@kytc68431028</a> 并不是，JMP是永久准心状态，伤害很稳定。小刀伤害受多方影响，目前没定论。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/wiixbox_77">wiixbox_77</a>
+                                            2019-02-25 19:15                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/bombhaha"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0404/CUSA13508_00-LAPISAVATAR00032_48DCFAA7734C2E7B274D_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/wiixbox_77">@wiixbox_77</a> 一周目的时候被一些厚血的SS逼近也是很着急的，特别是只有手枪的时候。打也打不停。
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/bombhaha">bombhaha</a>
+                                            2019-02-25 19:32                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/wiixbox_77"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP9000/CUSA07413_00-AVATAR0000000019_C1CC0A87E5461586C6C7_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/bombhaha">@bombhaha</a> 是啊，特别是赶上reload的时候，更是绝望
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/wiixbox_77">wiixbox_77</a>
+                                            2019-02-25 19:58                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/chris_leonhart"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/JP0082/CUSA09156_00-AVATAR0000000008_CE294532E7B75286D3C9_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    硬核干货贴，收藏了
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/chris_leonhart">chris_leonhart</a>
+                                            2019-02-25 22:21                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/ciex-cc"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/3RD/JP01061403001_B6FBF060731CC7EF255B_L.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/wiixbox_77">@wiixbox_77</a> 无形氪金最为致命<img src="../emoticons\face\majiang\4.gif"/><img src="../emoticons\face\majiang\3.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/ciex-cc">ciex-cc</a>
+                                            2019-02-26 00:04                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/youga-type-0"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/3RD/JP00311111A11_37DA5D6BCE939771ED55_L.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/leping1974">@leping1974</a> 生化的瞄准倒是很简单，里头丧尸算是很乖巧的一类了，就是有点太热情，经常转身就是一扑什么的
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/youga-type-0">youga-type-0</a>
+                                            2019-02-26 09:14                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/renegade_wl"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP9000/CUSA12613_00-DSAV00THUMBSUPBB_0B7543CC9D343A63560F_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    我只想知道G3大硬直小刀划后背，三个伤害判定，一刀是多少伤害<img src="../emoticons\face\alu\30.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/renegade_wl">renegade_wl</a>
+                                            2019-02-26 10:12                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/wiixbox_77"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP9000/CUSA07413_00-AVATAR0000000019_C1CC0A87E5461586C6C7_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/renegade_wl">@renegade_wl</a> 我更想知道同样条件下，60帧和120帧伤害次数相差多少
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/wiixbox_77">wiixbox_77</a>
+                                            2019-02-26 11:03                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/leping1974"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP2374/CUSA12786_00-PREMIUMAVATAR012_1A63E6CEAE86901F7504_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/youga-type-0">@youga-type-0</a> 2re版确定丧尸是背面朝向你的话朝它右边跑过去基本不会被抓，注意不要贴身，这代版本丧尸习惯朝左扑。侧面的不行注意看清楚
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/leping1974">leping1974</a>
+                                            2019-02-27 12:44                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/leping1974"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP2374/CUSA12786_00-PREMIUMAVATAR012_1A63E6CEAE86901F7504_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/wiixbox_77">@wiixbox_77</a> 假设60帧是一刀的话，120帧＋3刀吧？
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/leping1974">leping1974</a>
+                                            2019-02-27 12:45                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/wiixbox_77"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP9000/CUSA07413_00-AVATAR0000000019_C1CC0A87E5461586C6C7_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/leping1974">@leping1974</a> 想一想都觉得复杂的很，毕竟不是能直接看到的数据
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/wiixbox_77">wiixbox_77</a>
+                                            2019-02-27 13:50                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/youga-type-0"><img height="50" src="https://static-resource.np.community.playstation.net/avatar/3RD/JP00311111A11_37DA5D6BCE939771ED55_L.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/leping1974">@leping1974</a> <img src="../emoticons\face\alu\15.gif"/>学到了
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/youga-type-0">youga-type-0</a>
+                                            2019-02-28 05:17                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/bigsea0311"><img height="50" src="../avatars/bigsea0311-1577115007-s.webp" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    把丧尸双手都打断，然后有一个快速咬，那个是不是就是中咬或者轻咬啊？
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/bigsea0311">bigsea0311</a>
+                                            2019-03-02 10:32                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/wiixbox_77"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP9000/CUSA07413_00-AVATAR0000000019_C1CC0A87E5461586C6C7_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/bigsea0311">@bigsea0311</a> 至今为止还么见过...
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/wiixbox_77">wiixbox_77</a>
+                                            2019-03-02 21:43修改
+                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/syslyc8"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/UP0177/CUSA10882_00-AV00000000000003_14DCB87668913E012FAA_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+<a href="https://psnine.com/psnid/bigsea0311">@bigsea0311</a> 可能双手打断算中咬，四肢都断算轻咬<img src="../emoticons\face\alu\43.gif"/><img src="../emoticons\face\alu\44.gif"/>
+</div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/syslyc8">syslyc8</a>
+                                            2019-03-08 20:38                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/jay4329"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/EP1004/CUSA08519_00-AV00000000000012_FA172EB7789EC286A57F_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    问一下，为了提高暴击率，装了枪托的李昂默认手枪马蒂尔达可以手动更改连发与单发吗？还是轻点开枪键一颗颗子弹打出去？
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/jay4329">jay4329</a>
+                                            2019-03-14 00:24                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/wick617"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0102/CUSA09554_00-AV00000000000004_9F782FB362E099F8D276_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    数据流大佬，神了，有些数据是怎么测出来的啊
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/wick617">wick617</a>
+                                            2019-04-08 10:17                                                                            </div>
+<!--回复结束-->
+</div>
+</div><div class="post">
+<a class="l" href="https://psnine.com/psnid/hnnnnnhnhn"><img height="50" src="https://psn-rsc.prod.dl.playstation.net/psn-rsc/avatar/HP0102/CUSA06605_00-PREMIUMAVATAR038_7A29E9D099104A940C77_l.png" width="50"/></a>
+<div class="ml64">
+<div class="content pb10">
+                    啥是准心设计啊....就是瞄准了出现准心再打吗....
+                </div>
+<div class="meta">
+<a class="psnnode" href="https://psnine.com/psnid/hnnnnnhnhn">hnnnnnhnhn</a>
+                                            2020-01-04 09:54                                                                            </div>
+<!--回复结束-->
+</div>
+</div>
+        </body></html>
